@@ -1,0 +1,43 @@
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+<responseDate>2023-08-20T22:27:34Z</responseDate>
+<request verb="GetRecord" identifier="oai:pubmedcentral.nih.gov:7840891" metadataPrefix="oai_dc">https:/www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi</request>
+<GetRecord>
+<record>
+<header>
+<identifier>oai:pubmedcentral.nih.gov:7840891</identifier>
+<datestamp>2021-02-01</datestamp>
+<setSpec>elsevierwt</setSpec>
+<setSpec>pmc-open</setSpec>
+</header>
+<metadata>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Reshaping preoperative treatment of pancreatic cancer in the era of precision medicine</dc:title>
+<dc:creator>Casolino, R.</dc:creator>
+<dc:creator>Braconi, C.</dc:creator>
+<dc:creator>Malleo, G.</dc:creator>
+<dc:creator>Paiella, S.</dc:creator>
+<dc:creator>Bassi, C.</dc:creator>
+<dc:creator>Milella, M.</dc:creator>
+<dc:creator>Dreyer, S.B.</dc:creator>
+<dc:creator>Froeling, F.E.M.</dc:creator>
+<dc:creator>Chang, D.K.</dc:creator>
+<dc:creator>Biankin, A.V.</dc:creator>
+<dc:creator>Golan, T.</dc:creator>
+<dc:source>Ann Oncol</dc:source>
+<dc:subject>Review</dc:subject>
+<dc:description>This review summarises the recent evidence on preoperative therapeutic strategies in pancreatic cancer and discusses the rationale for an imminent need for a personalised therapeutic approach in non-metastatic disease. The molecular diversity of pancreatic cancer and its influence on prognosis and treatment response, combined with the failure of ‘all-comer’ treatments to significantly impact on patient outcomes, requires a paradigm shift towards a genomic-driven approach. This is particularly important in the preoperative, potentially curable setting, where a personalised treatment allocation has the substantial potential to reduce pancreatic cancer mortality.</dc:description>
+<dc:publisher>Oxford University Press</dc:publisher>
+<dc:date>2021-02</dc:date>
+<dc:identifier>/pmc/articles/PMC7840891/</dc:identifier>
+<dc:identifier>/pubmed/33248227</dc:identifier>
+<dc:identifier>http://dx.doi.org/10.1016/j.annonc.2020.11.013</dc:identifier>
+<dc:type>Text</dc:type>
+<dc:language>en</dc:language>
+<dc:rights>© 2020 The Authors</dc:rights>
+<dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+<dc:rights>This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).</dc:rights>
+</oai_dc:dc>
+</metadata>
+</record>
+</GetRecord>
+</OAI-PMH>

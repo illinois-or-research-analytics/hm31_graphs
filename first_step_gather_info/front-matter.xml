@@ -1,0 +1,235 @@
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+<responseDate>2023-08-20T22:38:57Z</responseDate>
+<request verb="GetRecord" identifier="oai:pubmedcentral.nih.gov:7840891" metadataPrefix="pmc_fm">https:/www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi</request>
+<GetRecord>
+<record>
+<header>
+<identifier>oai:pubmedcentral.nih.gov:7840891</identifier>
+<datestamp>2021-02-01</datestamp>
+<setSpec>elsevierwt</setSpec>
+<setSpec>pmc-open</setSpec>
+</header>
+<metadata>
+<article xmlns="https://jats.nlm.nih.gov/ns/archiving/1.3/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="https://jats.nlm.nih.gov/ns/archiving/1.3/ https://jats.nlm.nih.gov/archiving/1.3/xsd/JATS-archivearticle1-3.xsd" article-type="review-article">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">Ann Oncol</journal-id>
+<journal-id journal-id-type="iso-abbrev">Ann Oncol</journal-id>
+<journal-title-group>
+<journal-title>Annals of Oncology</journal-title>
+</journal-title-group>
+<issn pub-type="ppub">0923-7534</issn>
+<issn pub-type="epub">1569-8041</issn>
+<publisher>
+<publisher-name>Oxford University Press</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="accession">PMC7840891</article-id>
+<article-id pub-id-type="pmcid">PMC7840891</article-id>
+<article-id pub-id-type="pmc-uid">7840891</article-id>
+<article-id pub-id-type="pmid">33248227</article-id>
+<article-id pub-id-type="pii">S0923-7534(20)43168-0</article-id>
+<article-id pub-id-type="doi">10.1016/j.annonc.2020.11.013</article-id>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Review</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>Reshaping preoperative treatment of pancreatic cancer in the era of precision medicine</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" id="au1">
+<name>
+<surname>Casolino</surname>
+<given-names>R.</given-names>
+</name>
+<xref rid="aff1" ref-type="aff">1</xref>
+<xref rid="aff2" ref-type="aff">2</xref>
+</contrib>
+<contrib contrib-type="author" id="au2">
+<name>
+<surname>Braconi</surname>
+<given-names>C.</given-names>
+</name>
+<xref rid="aff1" ref-type="aff">1</xref>
+</contrib>
+<contrib contrib-type="author" id="au3">
+<name>
+<surname>Malleo</surname>
+<given-names>G.</given-names>
+</name>
+<xref rid="aff3" ref-type="aff">3</xref>
+</contrib>
+<contrib contrib-type="author" id="au4">
+<name>
+<surname>Paiella</surname>
+<given-names>S.</given-names>
+</name>
+<xref rid="aff3" ref-type="aff">3</xref>
+</contrib>
+<contrib contrib-type="author" id="au5">
+<name>
+<surname>Bassi</surname>
+<given-names>C.</given-names>
+</name>
+<xref rid="aff3" ref-type="aff">3</xref>
+</contrib>
+<contrib contrib-type="author" id="au6">
+<name>
+<surname>Milella</surname>
+<given-names>M.</given-names>
+</name>
+<xref rid="aff4" ref-type="aff">4</xref>
+</contrib>
+<contrib contrib-type="author" id="au7">
+<name>
+<surname>Dreyer</surname>
+<given-names>S.B.</given-names>
+</name>
+<xref rid="aff1" ref-type="aff">1</xref>
+<xref rid="aff5" ref-type="aff">5</xref>
+</contrib>
+<contrib contrib-type="author" id="au8">
+<name>
+<surname>Froeling</surname>
+<given-names>F.E.M.</given-names>
+</name>
+<xref rid="aff6" ref-type="aff">6</xref>
+</contrib>
+<contrib contrib-type="author" id="au9">
+<name>
+<surname>Chang</surname>
+<given-names>D.K.</given-names>
+</name>
+<xref rid="aff1" ref-type="aff">1</xref>
+<xref rid="aff5" ref-type="aff">5</xref>
+</contrib>
+<contrib contrib-type="author" id="au10">
+<name>
+<surname>Biankin</surname>
+<given-names>A.V.</given-names>
+</name>
+<email>andrew.biankin@glasgow.ac.uk</email>
+<xref rid="aff1" ref-type="aff">1</xref>
+<xref rid="aff5" ref-type="aff">5</xref>
+<xref rid="aff7" ref-type="aff">7</xref>
+<xref rid="cor1" ref-type="corresp">∗</xref>
+</contrib>
+<contrib contrib-type="author" id="au11">
+<name>
+<surname>Golan</surname>
+<given-names>T.</given-names>
+</name>
+<xref rid="aff8" ref-type="aff">8</xref>
+</contrib>
+<aff id="aff1">
+<label>1</label>
+Wolfson Wohl Cancer Research Centre, Institute of Cancer Sciences, University of Glasgow, Bearsden, Glasgow, Scotland, UK
+</aff>
+<aff id="aff2">
+<label>2</label>
+Department of Medicine, University and Hospital Trust of Verona, Verona, Italy
+</aff>
+<aff id="aff3">
+<label>3</label>
+Department of Surgery, University and Hospital Trust of Verona, Verona, Italy
+</aff>
+<aff id="aff4">
+<label>4</label>
+Department of Medicine, Medical Oncology, University and Hospital Trust of Verona, Verona (VR), Italy
+</aff>
+<aff id="aff5">
+<label>5</label>
+West of Scotland Pancreatic Unit, Glasgow Royal Infirmary, Glasgow, UK
+</aff>
+<aff id="aff6">
+<label>6</label>
+Edinburgh Cancer Centre, Western General Hospital, NHS Lothian, Edinburgh, UK
+</aff>
+<aff id="aff7">
+<label>7</label>
+South Western Sydney Clinical School, Faculty of Medicine, University of NSW, Liverpool, NSW, Australia
+</aff>
+<aff id="aff8">
+<label>8</label>
+Oncology Institute, Sheba Medical Center, Tel Hashomer, Israel
+</aff>
+</contrib-group>
+<author-notes>
+<corresp id="cor1">
+<label>∗</label>
+<italic>Correspondence to:</italic>
+Prof. Andrew V. Biankin, Wolfson Wohl Cancer Research Centre, Institute of Cancer Sciences, University of Glasgow, Garscube Estate, Switchback Road, Bearsden, Glasgow G61 1BD, UK. Tel: +44-141-330-5670; Fax: +44-141-330-5834
+<email>andrew.biankin@glasgow.ac.uk</email>
+</corresp>
+</author-notes>
+<pub-date pub-type="pmc-release">
+<day>1</day>
+<month>2</month>
+<year>2021</year>
+</pub-date>
+<!--  PMC Release delay is 0 months and 0 days and was based on <pub-date
+						pub-type="ppub">. -->
+<pub-date pub-type="ppub">
+<month>2</month>
+<year>2021</year>
+</pub-date>
+<volume>32</volume>
+<issue>2</issue>
+<fpage>183</fpage>
+<lpage>196</lpage>
+<permissions>
+<copyright-statement>© 2020 The Authors</copyright-statement>
+<copyright-year>2020</copyright-year>
+<license license-type="CC BY" xlink:href="http://creativecommons.org/licenses/by/4.0/">
+<license-p>This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).</license-p>
+</license>
+</permissions>
+<abstract id="abs0010">
+<p>This review summarises the recent evidence on preoperative therapeutic strategies in pancreatic cancer and discusses the rationale for an imminent need for a personalised therapeutic approach in non-metastatic disease. The molecular diversity of pancreatic cancer and its influence on prognosis and treatment response, combined with the failure of ‘all-comer’ treatments to significantly impact on patient outcomes, requires a paradigm shift towards a genomic-driven approach. This is particularly important in the preoperative, potentially curable setting, where a personalised treatment allocation has the substantial potential to reduce pancreatic cancer mortality.</p>
+</abstract>
+<abstract abstract-type="author-highlights" id="abs0015">
+<title>Highlights</title>
+<p>
+<list list-type="simple" id="ulist0010">
+<list-item id="u0010">
+<label>•</label>
+<p id="p0010">Molecular diversity of pancreatic cancer requires a paradigm shift towards a genomic-driven therapeutic approach.</p>
+</list-item>
+<list-item id="u0015">
+<label>•</label>
+<p id="p0015">Unselected treatment strategies demonstrate only limited efficacy in early-stage pancreatic cancer.</p>
+</list-item>
+<list-item id="u0020">
+<label>•</label>
+<p id="p0020">Personalised treatment in non-metastatic disease has potential to reduce pancreatic cancer mortality.</p>
+</list-item>
+<list-item id="u0025">
+<label>•</label>
+<p id="p0025">It is fundamental to implement preoperative clinical studies enriched for potential prognostic/predictive biomarkers.</p>
+</list-item>
+<list-item id="u0030">
+<label>•</label>
+<p id="p0030">Novel models of therapeutic development are warranted to accelerate progress in pancreatic cancer care and research.</p>
+</list-item>
+</list>
+</p>
+</abstract>
+<kwd-group id="kwrds0010">
+<title>Key words</title>
+<kwd>Pancreatic cancer</kwd>
+<kwd>preoperative</kwd>
+<kwd>neoadjuvant</kwd>
+<kwd>precision medicine</kwd>
+<kwd>prognostic biomarkers</kwd>
+<kwd>predictive biomarkers</kwd>
+</kwd-group>
+</article-meta>
+</front>
+</article>
+</metadata>
+</record>
+</GetRecord>
+</OAI-PMH>

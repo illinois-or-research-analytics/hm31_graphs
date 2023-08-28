@@ -14,7 +14,7 @@ def open_csv_first_cluster_nodes(file='reformatted.tsv'):
         i = 0
         for row in tqdm(csv_reader):
             data.append(row)
-            # We add this part so we don't process the rest
+            # We add this part so we don't process the rest of lines
             i += 1
             # if i > 2003:
             #     break

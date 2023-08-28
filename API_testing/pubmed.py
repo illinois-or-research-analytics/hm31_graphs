@@ -19,7 +19,7 @@ def extract_nested_keys_from_dict(answer_string, current_dict):
 
 
 if __name__ == "__main__":
-    current_dir = 'first_step_gather_info/'
+    current_dir = 'API_testing/'
     files = os.listdir(current_dir);
     print (files)
 

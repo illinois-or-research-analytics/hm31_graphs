@@ -5,7 +5,7 @@ nodes_array, edge_array = assert_edges_are_within_first_cluster()
 
 import csv
 
-csv_file_path = 'data/exosome.csv'
+csv_file_path = '../data/exosome.csv'
 
 # Open the CSV file for reading
 with open(csv_file_path, 'r') as csv_file:

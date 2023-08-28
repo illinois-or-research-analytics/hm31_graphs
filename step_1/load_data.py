@@ -90,8 +90,8 @@ def write_int_list_to_tsv(int_list, file='output.tsv'):
 
 
 def assert_edges_are_within_first_cluster():
-    edges = open_csv_first_cluster_nodes('data/first_cluster_edges.tsv')
-    nodes = open_csv_first_cluster_nodes('data/first_cluster_nodes.tsv')
+    edges = open_csv_first_cluster_nodes('../data/first_cluster_edges.tsv')
+    nodes = open_csv_first_cluster_nodes('../data/first_cluster_nodes.tsv')
 
     # print(type(nodes))
     # print("nodes : ",nodes[0:10])

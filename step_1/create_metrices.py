@@ -122,7 +122,7 @@ nodes_lookup_dict = {}
 create_lookup_dict(nodes_array)
 adj_matrix = construct_adjacency_matrix(nodes_array)
 
-cocitation_matrix, co_citation_vals = construct_cocitation_matrix(adj_matrix, False)
+cocitation_matrix, co_citation_vals = construct_cocitation_matrix(adj_matrix, True)
 bib_coupling_matrix, bib_coupling_vals = construct_bib_coupling_matrix(adj_matrix, False)
 
 

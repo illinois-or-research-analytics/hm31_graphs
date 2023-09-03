@@ -2,10 +2,6 @@
     "3734909": {
         "mesh": [
             [
-                "D005431",
-                "Florida"
-            ],
-            [
                 "D006748",
                 "Hospital Departments"
             ],
@@ -377,10 +373,6 @@
                 "Malpractice"
             ],
             [
-                "D009426",
-                "Netherlands"
-            ],
-            [
                 "D009871",
                 "Operating Room Nursing"
             ]
@@ -688,10 +680,6 @@
     },
     "87944": {
         "mesh": [
-            [
-                "D004739",
-                "England"
-            ],
             [
                 "D049673",
                 "History, 20th Century"
@@ -1034,10 +1022,6 @@
                 "Kidney Diseases"
             ],
             [
-                "D014586",
-                "USSR"
-            ],
-            [
                 "D014572",
                 "Urology"
             ]
@@ -1222,10 +1206,6 @@
             [
                 "D004509",
                 "Education, Nursing, Continuing"
-            ],
-            [
-                "D005602",
-                "France"
             ],
             [
                 "D006779",
@@ -1784,20 +1764,12 @@
     "595675": {
         "mesh": [
             [
-                "D005859",
-                "Germany, East"
-            ],
-            [
                 "D007391",
                 "International Cooperation"
             ],
             [
                 "D009787",
                 "Occupational Medicine"
-            ],
-            [
-                "D014586",
-                "USSR"
             ]
         ],
         "grants": [],
@@ -2270,10 +2242,6 @@
             [
                 "D006801",
                 "Humans"
-            ],
-            [
-                "D007564",
-                "Japan"
             ],
             [
                 "D008297",
@@ -3266,10 +3234,6 @@
             [
                 "D011320",
                 "Primary Health Care"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -4114,10 +4078,6 @@
     "280432": {
         "mesh": [
             [
-                "D005602",
-                "France"
-            ],
-            [
                 "D006124",
                 "Group Practice, Dental"
             ],
@@ -4234,10 +4194,6 @@
             [
                 "D012947",
                 "Social Work"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -4842,14 +4798,6 @@
             [
                 "D049673",
                 "History, 20th Century"
-            ],
-            [
-                "D013019",
-                "South Africa"
-            ],
-            [
-                "D014852",
-                "Wales"
             ]
         ],
         "grants": [],
@@ -5022,10 +4970,6 @@
             [
                 "D014443",
                 "Tyrosine"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -5657,10 +5601,6 @@
             [
                 "D012988",
                 "Soil Microbiology"
-            ],
-            [
-                "D013620",
-                "Tajikistan"
             ]
         ],
         "grants": [],
@@ -5945,10 +5885,6 @@
     "253472": {
         "mesh": [
             [
-                "D003718",
-                "Denmark"
-            ],
-            [
                 "D004471",
                 "Economics, Nursing"
             ],
@@ -5992,10 +5928,6 @@
             [
                 "D006801",
                 "Humans"
-            ],
-            [
-                "D007196",
-                "Indiana"
             ],
             [
                 "D008297",
@@ -6269,10 +6201,6 @@
             [
                 "D010806",
                 "Physical Education and Training"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -6434,10 +6362,6 @@
             [
                 "D012958",
                 "Societies, Scientific"
-            ],
-            [
-                "D014481",
-                "United States"
             ],
             [
                 "D018172",
@@ -7228,10 +7152,6 @@
                 "Female"
             ],
             [
-                "D005602",
-                "France"
-            ],
-            [
                 "D006801",
                 "Humans"
             ],
@@ -7524,10 +7444,6 @@
             [
                 "D012480",
                 "Salmonella Infections"
-            ],
-            [
-                "D014037",
-                "Togo"
             ]
         ],
         "grants": [],
@@ -7670,10 +7586,6 @@
             [
                 "D015999",
                 "Multivariate Analysis"
-            ],
-            [
-                "D009426",
-                "Netherlands"
             ],
             [
                 "D009784",
@@ -7911,10 +7823,6 @@
             [
                 "D016896",
                 "Treatment Outcome"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -8745,10 +8653,6 @@
                 "Legislation, Medical"
             ],
             [
-                "D013548",
-                "Sweden"
-            ],
-            [
                 "D014019",
                 "Tissue Donors"
             ]
@@ -9356,10 +9260,6 @@
                 "Female"
             ],
             [
-                "D005860",
-                "Germany, West"
-            ],
-            [
                 "D006801",
                 "Humans"
             ],
@@ -9378,10 +9278,6 @@
             [
                 "D013997",
                 "Time Factors"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -9603,10 +9499,6 @@
             [
                 "D007391",
                 "International Cooperation"
-            ],
-            [
-                "D007558",
-                "Italy"
             ],
             [
                 "D012955",
@@ -10010,10 +9902,6 @@
                 "Male"
             ],
             [
-                "D009520",
-                "New Zealand"
-            ],
-            [
                 "D010612",
                 "Pharyngitis"
             ],
@@ -10193,10 +10081,6 @@
     },
     "1097033": {
         "mesh": [
-            [
-                "D004739",
-                "England"
-            ],
             [
                 "D049673",
                 "History, 20th Century"
@@ -10709,10 +10593,6 @@
                 "Investments"
             ],
             [
-                "D014481",
-                "United States"
-            ],
-            [
                 "D014730",
                 "Veterinary Medicine"
             ]
@@ -10839,14 +10719,6 @@
                 "International Cooperation"
             ],
             [
-                "D008097",
-                "Lithuania"
-            ],
-            [
-                "D011044",
-                "Poland"
-            ],
-            [
                 "D012952",
                 "Societies"
             ],
@@ -10930,10 +10802,6 @@
             [
                 "D008875",
                 "Middle Aged"
-            ],
-            [
-                "D012606",
-                "Scotland"
             ],
             [
                 "D002583",
@@ -11107,10 +10975,6 @@
             [
                 "D008967",
                 "Molecular Biology"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -12116,10 +11980,6 @@
                 "History, 20th Century"
             ],
             [
-                "D009031",
-                "Moscow"
-            ],
-            [
                 "D011859",
                 "Radiography"
             ],
@@ -12245,10 +12105,6 @@
             [
                 "D012014",
                 "Reference Books, Medical"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -12436,10 +12292,6 @@
             [
                 "D012955",
                 "Societies, Medical"
-            ],
-            [
-                "D014481",
-                "United States"
             ],
             [
                 "D014504",
@@ -12710,10 +12562,6 @@
             [
                 "D010506",
                 "Periodicals as Topic"
-            ],
-            [
-                "D014586",
-                "USSR"
             ]
         ],
         "grants": [],
@@ -13218,10 +13066,6 @@
                 "Humans"
             ],
             [
-                "D007558",
-                "Italy"
-            ],
-            [
                 "D008297",
                 "Male"
             ],
@@ -13567,10 +13411,6 @@
             [
                 "D010044",
                 "Outpatient Clinics, Hospital"
-            ],
-            [
-                "D010219",
-                "Papua New Guinea"
             ],
             [
                 "D010946",
@@ -14536,10 +14376,6 @@
             [
                 "D013044",
                 "Specialty Boards"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -15410,10 +15246,6 @@
             [
                 "D006739",
                 "Hospital Administration"
-            ],
-            [
-                "D013548",
-                "Sweden"
             ]
         ],
         "grants": [],
@@ -16484,10 +16316,6 @@
                 "Dogs"
             ],
             [
-                "D005858",
-                "Germany"
-            ],
-            [
                 "D049673",
                 "History, 20th Century"
             ],
@@ -16547,10 +16375,6 @@
             [
                 "D012737",
                 "Sex Factors"
-            ],
-            [
-                "D013781",
-                "Texas"
             ],
             [
                 "D013997",
@@ -16755,10 +16579,6 @@
             [
                 "D011296",
                 "Prenatal Diagnosis"
-            ],
-            [
-                "D013548",
-                "Sweden"
             ]
         ],
         "grants": [],
@@ -17073,10 +16893,6 @@
     "2291019": {
         "mesh": [
             [
-                "D007558",
-                "Italy"
-            ],
-            [
                 "D007802",
                 "Language"
             ],
@@ -17183,10 +16999,6 @@
             [
                 "D003098",
                 "Collective Bargaining"
-            ],
-            [
-                "D003718",
-                "Denmark"
             ],
             [
                 "D007750",
@@ -17547,10 +17359,6 @@
             [
                 "D009369",
                 "Neoplasms"
-            ],
-            [
-                "D009515",
-                "New Jersey"
             ],
             [
                 "D012106",
@@ -18495,10 +18303,6 @@
             [
                 "D007251",
                 "Influenza, Human"
-            ],
-            [
-                "D012426",
-                "Russia"
             ]
         ],
         "grants": [],
@@ -19184,10 +18988,6 @@
             [
                 "D009333",
                 "Neck"
-            ],
-            [
-                "D010568",
-                "Peru"
             ]
         ],
         "grants": [],
@@ -20247,10 +20047,6 @@
                 "Humans"
             ],
             [
-                "D007194",
-                "India"
-            ],
-            [
                 "D012106",
                 "Research"
             ]
@@ -20763,10 +20559,6 @@
             [
                 "D000328",
                 "Adult"
-            ],
-            [
-                "D003718",
-                "Denmark"
             ],
             [
                 "D005260",
@@ -21601,10 +21393,6 @@
             [
                 "D014505",
                 "Urban Population"
-            ],
-            [
-                "D014610",
-                "Uzbekistan"
             ]
         ],
         "grants": [],
@@ -21668,10 +21456,6 @@
                 "Humans"
             ],
             [
-                "D007564",
-                "Japan"
-            ],
-            [
                 "D009369",
                 "Neoplasms"
             ],
@@ -21699,10 +21483,6 @@
             [
                 "D003334",
                 "Coroners and Medical Examiners"
-            ],
-            [
-                "D004739",
-                "England"
             ],
             [
                 "D004830",
@@ -22207,10 +21987,6 @@
             [
                 "D008318",
                 "Malpractice"
-            ],
-            [
-                "D012237",
-                "Rhode Island"
             ]
         ],
         "grants": [],
@@ -23010,14 +22786,6 @@
             [
                 "D011832",
                 "Radiation Injuries"
-            ],
-            [
-                "D014455",
-                "Ukraine"
-            ],
-            [
-                "D014481",
-                "United States"
             ],
             [
                 "D014916",
@@ -24291,10 +24059,6 @@
                 "Sex Factors"
             ],
             [
-                "D012800",
-                "Siberia"
-            ],
-            [
                 "D013315",
                 "Stress, Psychological"
             ],
@@ -24449,10 +24213,6 @@
             [
                 "D012959",
                 "Socioeconomic Factors"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -24921,10 +24681,6 @@
                 "Health Occupations"
             ],
             [
-                "D013548",
-                "Sweden"
-            ],
-            [
                 "D014495",
                 "Universities"
             ]
@@ -25377,10 +25133,6 @@
             [
                 "D011445",
                 "Prospective Payment System"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -25602,10 +25354,6 @@
                 "Alcoholic Intoxication"
             ],
             [
-                "D003718",
-                "Denmark"
-            ],
-            [
                 "D000431",
                 "Ethanol"
             ],
@@ -25759,10 +25507,6 @@
     },
     "10682641": {
         "mesh": [
-            [
-                "D002681",
-                "China"
-            ],
             [
                 "D016172",
                 "DNA Fingerprinting"
@@ -25938,10 +25682,6 @@
                 "Birds"
             ],
             [
-                "D002140",
-                "California"
-            ],
-            [
                 "D004197",
                 "Disease Reservoirs"
             ],
@@ -25989,10 +25729,6 @@
             [
                 "D005524",
                 "Food Technology"
-            ],
-            [
-                "D005860",
-                "Germany, West"
             ],
             [
                 "D006801",
@@ -26300,10 +26036,6 @@
             [
                 "D006801",
                 "Humans"
-            ],
-            [
-                "D008404",
-                "Massachusetts"
             ],
             [
                 "D001523",
@@ -27289,10 +27021,6 @@
             [
                 "D014104",
                 "Torture"
-            ],
-            [
-                "D014586",
-                "USSR"
             ]
         ],
         "grants": [],
@@ -27367,10 +27095,6 @@
             [
                 "D007223",
                 "Infant"
-            ],
-            [
-                "D007564",
-                "Japan"
             ],
             [
                 "D008297",
@@ -30580,10 +30304,6 @@
                 "Developing Countries"
             ],
             [
-                "D005681",
-                "Gabon"
-            ],
-            [
                 "D006801",
                 "Humans"
             ],
@@ -32896,10 +32616,6 @@
                 "Male"
             ],
             [
-                "D009018",
-                "Morocco"
-            ],
-            [
                 "D009369",
                 "Neoplasms"
             ]
@@ -33233,10 +32949,6 @@
             [
                 "D012737",
                 "Sex Factors"
-            ],
-            [
-                "D014454",
-                "Uganda"
             ]
         ],
         "grants": [],
@@ -34042,10 +33754,6 @@
                 "Humans"
             ],
             [
-                "D007564",
-                "Japan"
-            ],
-            [
                 "D009369",
                 "Neoplasms"
             ]
@@ -34335,10 +34043,6 @@
             [
                 "D000368",
                 "Aged"
-            ],
-            [
-                "D002677",
-                "Chile"
             ],
             [
                 "D003638",
@@ -34731,10 +34435,6 @@
             [
                 "D009783",
                 "Dermatitis, Occupational"
-            ],
-            [
-                "D005859",
-                "Germany, East"
             ],
             [
                 "D006801",
@@ -35484,10 +35184,6 @@
                 "Humans"
             ],
             [
-                "D007557",
-                "Israel"
-            ],
-            [
                 "D008593",
                 "Menopause"
             ],
@@ -35652,10 +35348,6 @@
             [
                 "D005392",
                 "First Aid"
-            ],
-            [
-                "D005602",
-                "France"
             ],
             [
                 "D006801",
@@ -36561,10 +36253,6 @@
     "4572328": {
         "mesh": [
             [
-                "D004739",
-                "England"
-            ],
-            [
                 "D049673",
                 "History, 20th Century"
             ],
@@ -36575,10 +36263,6 @@
             [
                 "D009613",
                 "Nobel Prize"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -36670,10 +36354,6 @@
             [
                 "D006801",
                 "Humans"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -36818,10 +36498,6 @@
             [
                 "D008297",
                 "Male"
-            ],
-            [
-                "D009512",
-                "New Guinea"
             ]
         ],
         "grants": [],
@@ -37641,10 +37317,6 @@
                 "Single Person"
             ],
             [
-                "D014481",
-                "United States"
-            ],
-            [
                 "D044465",
                 "White People"
             ]
@@ -37657,10 +37329,6 @@
     },
     "4490907": {
         "mesh": [
-            [
-                "D001315",
-                "Australia"
-            ],
             [
                 "D003695",
                 "Delivery of Health Care"
@@ -38235,10 +37903,6 @@
                 "Molecular Sequence Data"
             ],
             [
-                "D009549",
-                "Nigeria"
-            ],
-            [
                 "D019590",
                 "Nucleocapsid Proteins"
             ],
@@ -38580,10 +38244,6 @@
                 "Female"
             ],
             [
-                "D005602",
-                "France"
-            ],
-            [
                 "D005808",
                 "Genes, Recessive"
             ],
@@ -38813,20 +38473,12 @@
     "5273566": {
         "mesh": [
             [
-                "D001315",
-                "Australia"
-            ],
-            [
                 "D004503",
                 "Education, Medical, Graduate"
             ],
             [
                 "D008511",
                 "Medicine"
-            ],
-            [
-                "D009520",
-                "New Zealand"
             ],
             [
                 "D012955",
@@ -39843,10 +39495,6 @@
             [
                 "D012586",
                 "Science"
-            ],
-            [
-                "D014455",
-                "Ukraine"
             ]
         ],
         "grants": [],
@@ -40270,10 +39918,6 @@
             [
                 "D000818",
                 "Animals"
-            ],
-            [
-                "D001315",
-                "Australia"
             ],
             [
                 "D002417",
@@ -41019,10 +40663,6 @@
                 "Chromosomes"
             ],
             [
-                "D003105",
-                "Colombia"
-            ],
-            [
                 "D004330",
                 "Drosophila"
             ],
@@ -41053,10 +40693,6 @@
             [
                 "D006720",
                 "Homozygote"
-            ],
-            [
-                "D006814",
-                "Hungary"
             ],
             [
                 "D008297",
@@ -41261,10 +40897,6 @@
             [
                 "D000328",
                 "Adult"
-            ],
-            [
-                "D000351",
-                "Africa, Eastern"
             ],
             [
                 "D000367",
@@ -41720,10 +41352,6 @@
             [
                 "D006778",
                 "Hospitals, Psychiatric"
-            ],
-            [
-                "D011044",
-                "Poland"
             ]
         ],
         "grants": [],
@@ -42385,10 +42013,6 @@
                 "Acquired Immunodeficiency Syndrome"
             ],
             [
-                "D001315",
-                "Australia"
-            ],
-            [
                 "D001782",
                 "Blood Donors"
             ],
@@ -42631,10 +42255,6 @@
             [
                 "D001500",
                 "BCG Vaccine"
-            ],
-            [
-                "D007558",
-                "Italy"
             ]
         ],
         "grants": [],
@@ -42776,10 +42396,6 @@
                 "Middle Aged"
             ],
             [
-                "D011044",
-                "Poland"
-            ],
-            [
                 "D012907",
                 "Smoking"
             ]
@@ -42916,10 +42532,6 @@
             [
                 "D013987",
                 "Ticks"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -43255,10 +42867,6 @@
             [
                 "D002675",
                 "Child, Preschool"
-            ],
-            [
-                "D002677",
-                "Chile"
             ],
             [
                 "D004826",
@@ -43710,10 +43318,6 @@
             [
                 "D004506",
                 "Education, Nursing"
-            ],
-            [
-                "D013557",
-                "Switzerland"
             ]
         ],
         "grants": [],
@@ -43854,10 +43458,6 @@
             [
                 "D006801",
                 "Humans"
-            ],
-            [
-                "D013019",
-                "South Africa"
             ],
             [
                 "D044465",
@@ -44945,10 +44545,6 @@
                 "Humans"
             ],
             [
-                "D009825",
-                "Oklahoma"
-            ],
-            [
                 "D011605",
                 "Psychoses, Substance-Induced"
             ],
@@ -45202,10 +44798,6 @@
             [
                 "D010820",
                 "Physicians"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -45478,10 +45070,6 @@
             [
                 "D011787",
                 "Quality of Health Care"
-            ],
-            [
-                "D013557",
-                "Switzerland"
             ]
         ],
         "grants": [],
@@ -45627,10 +45215,6 @@
     },
     "5928300": {
         "mesh": [
-            [
-                "D001315",
-                "Australia"
-            ],
             [
                 "D002971",
                 "Cleft Lip"
@@ -45778,10 +45362,6 @@
             [
                 "D012011",
                 "Red Cross"
-            ],
-            [
-                "D012426",
-                "Russia"
             ]
         ],
         "grants": [],
@@ -45969,10 +45549,6 @@
                 "Cattle Diseases"
             ],
             [
-                "D004739",
-                "England"
-            ],
-            [
                 "D004751",
                 "Enteritis"
             ],
@@ -45999,10 +45575,6 @@
             [
                 "D013553",
                 "Swine Diseases"
-            ],
-            [
-                "D014852",
-                "Wales"
             ]
         ],
         "grants": [],
@@ -46140,10 +45712,6 @@
             [
                 "D009785",
                 "Occupational Health Nursing"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -46194,10 +45762,6 @@
             [
                 "D000914",
                 "Antibodies, Viral"
-            ],
-            [
-                "D001315",
-                "Australia"
             ],
             [
                 "D001715",
@@ -47831,10 +47395,6 @@
                 "Male"
             ],
             [
-                "D014586",
-                "USSR"
-            ],
-            [
                 "D014947",
                 "Wounds and Injuries"
             ]
@@ -48832,10 +48392,6 @@
             [
                 "D007878",
                 "Legislation as Topic"
-            ],
-            [
-                "D008824",
-                "Michigan"
             ],
             [
                 "D008962",
@@ -49849,10 +49405,6 @@
             [
                 "D003365",
                 "Costs and Cost Analysis"
-            ],
-            [
-                "D004739",
-                "England"
             ],
             [
                 "D005260",
@@ -51273,10 +50825,6 @@
             [
                 "D006666",
                 "History of Medicine"
-            ],
-            [
-                "D014586",
-                "USSR"
             ]
         ],
         "grants": [],
@@ -51319,10 +50867,6 @@
             [
                 "D009310",
                 "National Health Insurance, United States"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -51552,10 +51096,6 @@
     },
     "252501": {
         "mesh": [
-            [
-                "D000349",
-                "Africa"
-            ],
             [
                 "D004506",
                 "Education, Nursing"
@@ -52107,10 +51647,6 @@
                 "Malaria"
             ],
             [
-                "D009549",
-                "Nigeria"
-            ],
-            [
                 "D010963",
                 "Plasmodium falciparum"
             ]
@@ -52238,10 +51774,6 @@
                 "Hypertension"
             ],
             [
-                "D007558",
-                "Italy"
-            ],
-            [
                 "D008297",
                 "Male"
             ],
@@ -52365,10 +51897,6 @@
                 "Bacteriology"
             ],
             [
-                "D005858",
-                "Germany"
-            ],
-            [
                 "D049673",
                 "History, 20th Century"
             ]
@@ -52403,24 +51931,12 @@
     "258488": {
         "mesh": [
             [
-                "D002641",
-                "Chicago"
-            ],
-            [
                 "D005551",
                 "Foreign Professional Personnel"
             ],
             [
-                "D007087",
-                "Illinois"
-            ],
-            [
                 "D008008",
                 "Licensure, Nursing"
-            ],
-            [
-                "D010679",
-                "Philippines"
             ],
             [
                 "D012956",
@@ -53058,20 +52574,12 @@
                 "Mental Disorders"
             ],
             [
-                "D009519",
-                "New York City"
-            ],
-            [
                 "D010343",
                 "Patient Admission"
             ],
             [
                 "D011203",
                 "Poverty"
-            ],
-            [
-                "D011647",
-                "Puerto Rico"
             ],
             [
                 "D012306",
@@ -53315,10 +52823,6 @@
             [
                 "D002908",
                 "Chronic Disease"
-            ],
-            [
-                "D005387",
-                "Finland"
             ],
             [
                 "D006801",
@@ -53921,14 +53425,6 @@
             [
                 "D011634",
                 "Public Health"
-            ],
-            [
-                "D012426",
-                "Russia"
-            ],
-            [
-                "D012425",
-                "Russia (Pre-1917)"
             ]
         ],
         "grants": [],
@@ -54768,10 +54264,6 @@
                 "Female"
             ],
             [
-                "D006723",
-                "Hong Kong"
-            ],
-            [
                 "D006801",
                 "Humans"
             ],
@@ -54811,10 +54303,6 @@
             [
                 "D001999",
                 "Bronchoscopy"
-            ],
-            [
-                "D005860",
-                "Germany, West"
             ],
             [
                 "D006801",
@@ -54911,10 +54399,6 @@
             [
                 "D013515",
                 "Surgery, Oral"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -54952,10 +54436,6 @@
             [
                 "D008297",
                 "Male"
-            ],
-            [
-                "D008966",
-                "Moldova"
             ],
             [
                 "D015995",
@@ -55096,10 +54576,6 @@
     },
     "1111905": {
         "mesh": [
-            [
-                "D002170",
-                "Canada"
-            ],
             [
                 "D006285",
                 "Health Planning"
@@ -55376,10 +54852,6 @@
             [
                 "D005423",
                 "Siphonaptera"
-            ],
-            [
-                "D014481",
-                "United States"
             ],
             [
                 "D015010",
@@ -55725,10 +55197,6 @@
             [
                 "D008887",
                 "Military Medicine"
-            ],
-            [
-                "D014586",
-                "USSR"
             ]
         ],
         "grants": [],
@@ -56281,10 +55749,6 @@
             [
                 "D007455",
                 "Iodine"
-            ],
-            [
-                "D007564",
-                "Japan"
             ],
             [
                 "D008297",
@@ -56889,10 +56353,6 @@
             [
                 "D002675",
                 "Child, Preschool"
-            ],
-            [
-                "D003364",
-                "Costa Rica"
             ],
             [
                 "D005260",
@@ -57602,10 +57062,6 @@
                 "Aged"
             ],
             [
-                "D002140",
-                "California"
-            ],
-            [
                 "D006801",
                 "Humans"
             ],
@@ -58231,10 +57687,6 @@
                 "Family Planning Services"
             ],
             [
-                "D008800",
-                "Mexico"
-            ],
-            [
                 "D012959",
                 "Socioeconomic Factors"
             ]
@@ -58363,10 +57815,6 @@
                 "Asian People"
             ],
             [
-                "D001317",
-                "Austria"
-            ],
-            [
                 "D016022",
                 "Case-Control Studies"
             ],
@@ -58379,20 +57827,8 @@
                 "Female"
             ],
             [
-                "D005858",
-                "Germany"
-            ],
-            [
                 "D006801",
                 "Humans"
-            ],
-            [
-                "D007194",
-                "India"
-            ],
-            [
-                "D007557",
-                "Israel"
             ],
             [
                 "D017270",
@@ -58413,10 +57849,6 @@
             [
                 "D012307",
                 "Risk Factors"
-            ],
-            [
-                "D014852",
-                "Wales"
             ]
         ],
         "grants": [],
@@ -58666,10 +58098,6 @@
             [
                 "D014397",
                 "Tuberculosis, Pulmonary"
-            ],
-            [
-                "D014586",
-                "USSR"
             ]
         ],
         "grants": [],
@@ -58748,10 +58176,6 @@
             [
                 "D006528",
                 "Carcinoma, Hepatocellular"
-            ],
-            [
-                "D002681",
-                "China"
             ],
             [
                 "D002872",
@@ -58850,10 +58274,6 @@
             [
                 "D000818",
                 "Animals"
-            ],
-            [
-                "D001938",
-                "Brazil"
             ],
             [
                 "D011821",
@@ -59080,10 +58500,6 @@
                 "Humans"
             ],
             [
-                "D011114",
-                "Polynesia"
-            ],
-            [
                 "D012623",
                 "Seawater"
             ],
@@ -59283,10 +58699,6 @@
             [
                 "D008297",
                 "Male"
-            ],
-            [
-                "D013781",
-                "Texas"
             ]
         ],
         "grants": [],
@@ -60227,10 +59639,6 @@
                 "Humans"
             ],
             [
-                "D007558",
-                "Italy"
-            ],
-            [
                 "D012306",
                 "Risk"
             ]
@@ -60491,10 +59899,6 @@
     },
     "1750999": {
         "mesh": [
-            [
-                "D009426",
-                "Netherlands"
-            ],
             [
                 "D009729",
                 "Nursing"
@@ -63519,10 +62923,6 @@
                 "Computer Simulation"
             ],
             [
-                "D005860",
-                "Germany, West"
-            ],
-            [
                 "D006801",
                 "Humans"
             ],
@@ -63545,10 +62945,6 @@
             [
                 "D015819",
                 "Substance Abuse, Intravenous"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -64423,10 +63819,6 @@
                 "Self Medication"
             ],
             [
-                "D014481",
-                "United States"
-            ],
-            [
                 "D014486",
                 "United States Food and Drug Administration"
             ]
@@ -64786,10 +64178,6 @@
             [
                 "D011795",
                 "Surveys and Questionnaires"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -65794,10 +65182,6 @@
             [
                 "D013663",
                 "Teaching"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -65839,10 +65223,6 @@
             [
                 "D012703",
                 "Serotyping"
-            ],
-            [
-                "D012846",
-                "Singapore"
             ]
         ],
         "grants": [],
@@ -66170,10 +65550,6 @@
             [
                 "D012943",
                 "Social Security"
-            ],
-            [
-                "D013548",
-                "Sweden"
             ]
         ],
         "grants": [],
@@ -66211,10 +65587,6 @@
             [
                 "D006973",
                 "Hypertension"
-            ],
-            [
-                "D007558",
-                "Italy"
             ],
             [
                 "D010817",
@@ -66894,10 +66266,6 @@
             [
                 "D002648",
                 "Child"
-            ],
-            [
-                "D003718",
-                "Denmark"
             ],
             [
                 "D005260",
@@ -67701,10 +67069,6 @@
                 "Manuals as Topic"
             ],
             [
-                "D008923",
-                "Missouri"
-            ],
-            [
                 "D009934",
                 "Organization and Administration"
             ],
@@ -67789,10 +67153,6 @@
             [
                 "D006801",
                 "Humans"
-            ],
-            [
-                "D007564",
-                "Japan"
             ],
             [
                 "D008297",
@@ -68830,10 +68190,6 @@
                 "Humans"
             ],
             [
-                "D007558",
-                "Italy"
-            ],
-            [
                 "D008297",
                 "Male"
             ],
@@ -69071,10 +68427,6 @@
             [
                 "D005260",
                 "Female"
-            ],
-            [
-                "D005387",
-                "Finland"
             ],
             [
                 "D006760",
@@ -70079,10 +69431,6 @@
             [
                 "D015397",
                 "Program Evaluation"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -70284,10 +69632,6 @@
                 "Antipsychotic Agents"
             ],
             [
-                "D002170",
-                "Canada"
-            ],
-            [
                 "D002648",
                 "Child"
             ],
@@ -70456,10 +69800,6 @@
             [
                 "D014187",
                 "Transportation of Patients"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -71574,10 +70914,6 @@
             [
                 "D010944",
                 "Plants"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -72161,10 +71497,6 @@
                 "Immunity, Cellular"
             ],
             [
-                "D007988",
-                "Liberia"
-            ],
-            [
                 "D008288",
                 "Malaria"
             ],
@@ -72347,10 +71679,6 @@
             [
                 "D012910",
                 "Snake Venoms"
-            ],
-            [
-                "D013785",
-                "Thailand"
             ]
         ],
         "grants": [],
@@ -72566,10 +71894,6 @@
     },
     "4029063": {
         "mesh": [
-            [
-                "D002140",
-                "California"
-            ],
             [
                 "D003479",
                 "Curriculum"
@@ -72878,10 +72202,6 @@
                 "Humans"
             ],
             [
-                "D007557",
-                "Israel"
-            ],
-            [
                 "D009729",
                 "Nursing"
             ],
@@ -72950,10 +72270,6 @@
             [
                 "D014186",
                 "Transportation"
-            ],
-            [
-                "D014903",
-                "West Virginia"
             ]
         ],
         "grants": [],
@@ -73887,10 +73203,6 @@
     "3695974": {
         "mesh": [
             [
-                "D004534",
-                "Egypt"
-            ],
-            [
                 "D006751",
                 "Hospital Information Systems"
             ],
@@ -74088,10 +73400,6 @@
             [
                 "D017321",
                 "Clinical Trials, Phase I as Topic"
-            ],
-            [
-                "D013030",
-                "Spain"
             ]
         ],
         "grants": [],
@@ -74413,10 +73721,6 @@
             [
                 "D014116",
                 "Toxicology"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -74583,10 +73887,6 @@
     },
     "3864134": {
         "mesh": [
-            [
-                "D000349",
-                "Africa"
-            ],
             [
                 "D003695",
                 "Delivery of Health Care"
@@ -75140,10 +74440,6 @@
                 "Child"
             ],
             [
-                "D003462",
-                "Cuba"
-            ],
-            [
                 "D005260",
                 "Female"
             ],
@@ -75156,20 +74452,12 @@
                 "Menarche"
             ],
             [
-                "D011647",
-                "Puerto Rico"
-            ],
-            [
                 "D012574",
                 "Schools"
             ],
             [
                 "D012959",
                 "Socioeconomic Factors"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -75422,10 +74710,6 @@
                 "Humans"
             ],
             [
-                "D009664",
-                "Norway"
-            ],
-            [
                 "D012956",
                 "Societies, Nursing"
             ]
@@ -75607,10 +74891,6 @@
             [
                 "D012570",
                 "School Admission Criteria"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -75700,10 +74980,6 @@
                 "Faculty, Medical"
             ],
             [
-                "D009922",
-                "Oregon"
-            ],
-            [
                 "D010361",
                 "Patients"
             ],
@@ -75764,10 +75040,6 @@
             [
                 "D009135",
                 "Muscular Diseases"
-            ],
-            [
-                "D010414",
-                "Pennsylvania"
             ],
             [
                 "D014728",
@@ -75922,10 +75194,6 @@
             [
                 "D010607",
                 "Pharmacy Service, Hospital"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -76431,10 +75699,6 @@
             [
                 "D006801",
                 "Humans"
-            ],
-            [
-                "D014041",
-                "Tokyo"
             ]
         ],
         "grants": [],
@@ -77380,10 +76644,6 @@
             [
                 "D006801",
                 "Humans"
-            ],
-            [
-                "D013548",
-                "Sweden"
             ]
         ],
         "grants": [],
@@ -77752,10 +77012,6 @@
             [
                 "D008421",
                 "Materials Management, Hospital"
-            ],
-            [
-                "D008910",
-                "Minnesota"
             ],
             [
                 "D013242",
@@ -78586,10 +77842,6 @@
                 "Attitude"
             ],
             [
-                "D003105",
-                "Colombia"
-            ],
-            [
                 "D003267",
                 "Contraception"
             ],
@@ -78634,10 +77886,6 @@
     },
     "4554242": {
         "mesh": [
-            [
-                "D001315",
-                "Australia"
-            ],
             [
                 "D004772",
                 "Entomology"
@@ -78776,10 +78024,6 @@
             [
                 "D005260",
                 "Female"
-            ],
-            [
-                "D005387",
-                "Finland"
             ],
             [
                 "D005819",
@@ -79061,10 +78305,6 @@
                 "Male"
             ],
             [
-                "D009657",
-                "North Carolina"
-            ],
-            [
                 "D014184",
                 "Transplantation, Homologous"
             ]
@@ -79150,10 +78390,6 @@
             [
                 "D000758",
                 "Anesthesia"
-            ],
-            [
-                "D004739",
-                "England"
             ],
             [
                 "D049671",
@@ -79471,10 +78707,6 @@
             [
                 "D049672",
                 "History, 19th Century"
-            ],
-            [
-                "D012425",
-                "Russia (Pre-1917)"
             ]
         ],
         "grants": [],
@@ -80298,10 +79530,6 @@
             [
                 "D007110",
                 "Immunity, Active"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -80383,10 +79611,6 @@
             [
                 "D009935",
                 "Organizational Affiliation"
-            ],
-            [
-                "D012237",
-                "Rhode Island"
             ],
             [
                 "D012577",
@@ -81181,10 +80405,6 @@
             [
                 "D012017",
                 "Referral and Consultation"
-            ],
-            [
-                "D013019",
-                "South Africa"
             ]
         ],
         "grants": [],
@@ -82316,10 +81536,6 @@
     "4792915": {
         "mesh": [
             [
-                "D000462",
-                "Algeria"
-            ],
-            [
                 "D003428",
                 "Cross Infection"
             ],
@@ -82489,10 +81705,6 @@
             [
                 "D012907",
                 "Smoking"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -82522,10 +81734,6 @@
             [
                 "D014881",
                 "Water Supply"
-            ],
-            [
-                "D015022",
-                "Yugoslavia"
             ]
         ],
         "grants": [],
@@ -82539,10 +81747,6 @@
     },
     "4834320": {
         "mesh": [
-            [
-                "D001315",
-                "Australia"
-            ],
             [
                 "D002675",
                 "Child, Preschool"
@@ -83087,10 +82291,6 @@
             [
                 "D008297",
                 "Male"
-            ],
-            [
-                "D008800",
-                "Mexico"
             ],
             [
                 "D008875",
@@ -84053,10 +83253,6 @@
                 "Skin Diseases, Parasitic"
             ],
             [
-                "D013781",
-                "Texas"
-            ],
-            [
                 "D007507",
                 "Therapeutic Irrigation"
             ],
@@ -84139,10 +83335,6 @@
                 "Humans"
             ],
             [
-                "D007194",
-                "India"
-            ],
-            [
                 "D007223",
                 "Infant"
             ],
@@ -84197,10 +83389,6 @@
             [
                 "D007878",
                 "Legislation as Topic"
-            ],
-            [
-                "D008404",
-                "Massachusetts"
             ],
             [
                 "D009747",
@@ -84808,10 +83996,6 @@
                 "Fishes"
             ],
             [
-                "D006814",
-                "Hungary"
-            ],
-            [
                 "D011529",
                 "Protozoan Infections, Animal"
             ]
@@ -84940,16 +84124,8 @@
                 "Aid to Families with Dependent Children"
             ],
             [
-                "D001317",
-                "Austria"
-            ],
-            [
                 "D019049",
                 "Developed Countries"
-            ],
-            [
-                "D005060",
-                "Europe"
             ],
             [
                 "D016656",
@@ -85123,10 +84299,6 @@
     },
     "5088328": {
         "mesh": [
-            [
-                "D003718",
-                "Denmark"
-            ],
             [
                 "D012955",
                 "Societies, Medical"
@@ -85659,10 +84831,6 @@
                 "Female"
             ],
             [
-                "D005860",
-                "Germany, West"
-            ],
-            [
                 "D006801",
                 "Humans"
             ],
@@ -85706,10 +84874,6 @@
             [
                 "D009482",
                 "Neurophysiology"
-            ],
-            [
-                "D009664",
-                "Norway"
             ]
         ],
         "grants": [],
@@ -85969,10 +85133,6 @@
             [
                 "D000328",
                 "Adult"
-            ],
-            [
-                "D018153",
-                "Czech Republic"
             ],
             [
                 "D005260",
@@ -86894,10 +86054,6 @@
     "5183239": {
         "mesh": [
             [
-                "D001315",
-                "Australia"
-            ],
-            [
                 "D004506",
                 "Education, Nursing"
             ],
@@ -87072,10 +86228,6 @@
             [
                 "D006769",
                 "Hospitals, General"
-            ],
-            [
-                "D008131",
-                "London"
             ],
             [
                 "D008499",
@@ -87276,10 +86428,6 @@
     "5857504": {
         "mesh": [
             [
-                "D003223",
-                "Congo"
-            ],
-            [
                 "D006801",
                 "Humans"
             ],
@@ -87315,10 +86463,6 @@
             [
                 "D052756",
                 "Nutritional Sciences"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -87596,10 +86740,6 @@
             [
                 "D006801",
                 "Humans"
-            ],
-            [
-                "D006814",
-                "Hungary"
             ],
             [
                 "D008297",
@@ -88083,10 +87223,6 @@
                 "Humans"
             ],
             [
-                "D007558",
-                "Italy"
-            ],
-            [
                 "D007680",
                 "Kidney Neoplasms"
             ],
@@ -88377,10 +87513,6 @@
                 "Humans"
             ],
             [
-                "D007564",
-                "Japan"
-            ],
-            [
                 "D008297",
                 "Male"
             ],
@@ -88616,10 +87748,6 @@
             [
                 "D012907",
                 "Smoking"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -88726,10 +87854,6 @@
             [
                 "D000328",
                 "Adult"
-            ],
-            [
-                "D001315",
-                "Australia"
             ],
             [
                 "D006801",
@@ -89786,10 +88910,6 @@
                 "Adaptation, Physiological"
             ],
             [
-                "D001110",
-                "Arctic Regions"
-            ],
-            [
                 "D044466",
                 "Asian People"
             ],
@@ -89808,10 +88928,6 @@
             [
                 "D008833",
                 "Microcirculation"
-            ],
-            [
-                "D012800",
-                "Siberia"
             ]
         ],
         "grants": [],
@@ -90151,10 +89267,6 @@
             [
                 "D006801",
                 "Humans"
-            ],
-            [
-                "D007861",
-                "Lebanon"
             ],
             [
                 "D008297",
@@ -91072,10 +90184,6 @@
             [
                 "D008297",
                 "Male"
-            ],
-            [
-                "D013557",
-                "Switzerland"
             ],
             [
                 "D018677",
@@ -92439,10 +91547,6 @@
                 "Female"
             ],
             [
-                "D005387",
-                "Finland"
-            ],
-            [
                 "D005500",
                 "Follow-Up Studies"
             ],
@@ -93032,10 +92136,6 @@
             [
                 "D013997",
                 "Time Factors"
-            ],
-            [
-                "D014455",
-                "Ukraine"
             ]
         ],
         "grants": [],
@@ -93352,10 +92452,6 @@
             [
                 "D013405",
                 "Suicide"
-            ],
-            [
-                "D014481",
-                "United States"
             ],
             [
                 "D014857",
@@ -94045,10 +93141,6 @@
                 "Humans"
             ],
             [
-                "D007087",
-                "Illinois"
-            ],
-            [
                 "D011570",
                 "Psychiatry"
             ],
@@ -94387,10 +93479,6 @@
                 "Drug Administration Schedule"
             ],
             [
-                "D004739",
-                "England"
-            ],
-            [
                 "D005260",
                 "Female"
             ],
@@ -94567,10 +93655,6 @@
                 "Middle Aged"
             ],
             [
-                "D011044",
-                "Poland"
-            ],
-            [
                 "D011379",
                 "Prognosis"
             ],
@@ -94614,10 +93698,6 @@
             [
                 "D009729",
                 "Nursing"
-            ],
-            [
-                "D013548",
-                "Sweden"
             ]
         ],
         "grants": [],
@@ -96585,10 +95665,6 @@
     "6400725": {
         "mesh": [
             [
-                "D001118",
-                "Argentina"
-            ],
-            [
                 "D001426",
                 "Bacterial Proteins"
             ],
@@ -96696,10 +95772,6 @@
             [
                 "D006801",
                 "Humans"
-            ],
-            [
-                "D007861",
-                "Lebanon"
             ],
             [
                 "D012036",
@@ -97801,10 +96873,6 @@
             [
                 "D013338",
                 "Students, Nursing"
-            ],
-            [
-                "D014481",
-                "United States"
             ]
         ],
         "grants": [],
@@ -97874,10 +96942,6 @@
             [
                 "D012424",
                 "Rural Population"
-            ],
-            [
-                "D013636",
-                "Tanzania"
             ]
         ],
         "grants": [],
@@ -98277,10 +97341,6 @@
             [
                 "D010336",
                 "Pathology"
-            ],
-            [
-                "D014586",
-                "USSR"
             ]
         ],
         "grants": [],
@@ -98802,10 +97862,6 @@
             [
                 "D000653",
                 "Amniotic Fluid"
-            ],
-            [
-                "D002170",
-                "Canada"
             ],
             [
                 "D005188",

@@ -1,0 +1,197 @@
+{
+  "PubmedArticle": {
+    "MedlineCitation": {
+      "PMID": 1387753,
+      "DateCompleted": {
+        "Year": 1992,
+        "Month": 10,
+        "Day": 8
+      },
+      "DateRevised": {
+        "Year": 2019,
+        "Month": 7,
+        "Day": 14
+      },
+      "Article": {
+        "Journal": {
+          "ISSN": "0042-6822",
+          "JournalIssue": {
+            "Volume": 190,
+            "Issue": 2,
+            "PubDate": {
+              "Year": 1992,
+              "Month": "Oct"
+            }
+          },
+          "Title": "Virology",
+          "ISOAbbreviation": "Virology"
+        },
+        "ArticleTitle": "The BPV-1 E5 oncoprotein expressed in Schizosaccharomyces pombe exhibits normal biochemical properties and binds to the endogenous 16-kDa component of the vacuolar proton-ATPase.",
+        "Pagination": {
+          "StartPage": 889,
+          "EndPage": 893,
+          "MedlinePgn": "889-93"
+        },
+        "Abstract": {
+          "AbstractText": "The 44-amino-acid E5 oncoprotein of bovine papillomavirus type 1 transforms immortalized murine fibroblast cell lines. This highly hydrophobic protein forms homodimers, localizes to intracellular membrane compartments (including the Golgi apparatus), and forms a complex with the 16-kDa membrane-embedded constituent (16k) of the vacuolar proton-ATPase. To develop a system for the genetic and biochemical analysis of the E5/16k interaction, the E5 gene was cloned into a new vector which was designed for expression in the fission yeast Schizosaccharomyces pombe. The E5 protein synthesized in this system dimerized normally and bound to endogenous and overexpressed S. pombe 16k protein. Comparison of the S. pombe and mammalian 16k proteins showed strong conservation in carboxyl-terminal amino acids but greater variation in the amino-terminal sequences, suggesting that E5 was interacting with the 16k carboxyl domains. Finally, a new protein epitope tag is described which permitted for the first time the coprecipitation of E5 with antibodies directed against the 16k protein."
+        },
+        "AuthorList": {
+          "Author": [
+            {
+              "LastName": "Goldstein",
+              "ForeName": "D J",
+              "Initials": "DJ",
+              "AffiliationInfo": {
+                "Affiliation": "Department of Pathology, Georgetown University Medical School, Washington, D.C. 20007."
+              }
+            },
+            {
+              "LastName": "Toyama",
+              "ForeName": "R",
+              "Initials": "R"
+            },
+            {
+              "LastName": "Dhar",
+              "ForeName": "R",
+              "Initials": "R"
+            },
+            {
+              "LastName": "Schlegel",
+              "ForeName": "R",
+              "Initials": "R"
+            }
+          ]
+        },
+        "Language": "eng",
+        "GrantList": {
+          "Grant": {
+            "GrantID": "R01CA53371-01",
+            "Acronym": "CA",
+            "Agency": "NCI NIH HHS",
+            "Country": "United States"
+          }
+        },
+        "PublicationTypeList": {
+          "PublicationType": [
+            "Journal Article",
+            "Research Support, U.S. Gov't, P.H.S."
+          ]
+        }
+      },
+      "MedlineJournalInfo": {
+        "Country": "United States",
+        "MedlineTA": "Virology",
+        "NlmUniqueID": 110674,
+        "ISSNLinking": "0042-6822"
+      },
+      "ChemicalList": {
+        "Chemical": [
+          {
+            "RegistryNumber": 0,
+            "NameOfSubstance": "Oncogene Proteins, Viral"
+          },
+          {
+            "RegistryNumber": 0,
+            "NameOfSubstance": "oncogene protein E5, Bovine papillomavirus type 1"
+          },
+          {
+            "RegistryNumber": "EC 2.7.10.1",
+            "NameOfSubstance": "Protein-Tyrosine Kinases"
+          },
+          {
+            "RegistryNumber": "EC 3.6.3.14",
+            "NameOfSubstance": "Proton-Translocating ATPases"
+          }
+        ]
+      },
+      "CitationSubset": "IM",
+      "GeneSymbolList": {
+        "GeneSymbol": "E5"
+      },
+      "MeshHeadingList": {
+        "MeshHeading": [
+          {
+            "DescriptorName": "Amino Acid Sequence"
+          },
+          {
+            "DescriptorName": "Base Sequence"
+          },
+          {
+            "DescriptorName": "Cloning, Molecular"
+          },
+          {
+            "DescriptorName": "Genetic Vectors",
+            "QualifierName": "genetics"
+          },
+          {
+            "DescriptorName": "Molecular Sequence Data"
+          },
+          {
+            "DescriptorName": "Oncogene Proteins, Viral",
+            "QualifierName": [
+              "genetics",
+              "metabolism"
+            ]
+          },
+          {
+            "DescriptorName": "Plasmids",
+            "QualifierName": "genetics"
+          },
+          {
+            "DescriptorName": "Protein-Tyrosine Kinases",
+            "QualifierName": [
+              "genetics",
+              "metabolism"
+            ]
+          },
+          {
+            "DescriptorName": "Proton-Translocating ATPases",
+            "QualifierName": "metabolism"
+          },
+          {
+            "DescriptorName": "Restriction Mapping"
+          },
+          {
+            "DescriptorName": "Schizosaccharomyces",
+            "QualifierName": [
+              "genetics",
+              "metabolism"
+            ]
+          }
+        ]
+      }
+    },
+    "PubmedData": {
+      "History": {
+        "PubMedPubDate": [
+          {
+            "Year": 1992,
+            "Month": 10,
+            "Day": 1
+          },
+          {
+            "Year": 1992,
+            "Month": 10,
+            "Day": 1,
+            "Hour": 0,
+            "Minute": 1
+          },
+          {
+            "Year": 1992,
+            "Month": 10,
+            "Day": 1,
+            "Hour": 0,
+            "Minute": 0
+          }
+        ]
+      },
+      "PublicationStatus": "ppublish",
+      "ArticleIdList": {
+        "ArticleId": [
+          1387753,
+          "10.1016/0042-6822(92)90932-f"
+        ]
+      }
+    }
+  }
+}

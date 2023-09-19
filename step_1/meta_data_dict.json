@@ -1663,10 +1663,7 @@
             "SPECTROPHOTOMETRY",
             "SULFATES"
         ],
-        "author": [
-            7004145559,
-            7007006983
-        ]
+        "author": {}
     },
     "7001604": {
         "mesh": [
@@ -4199,7 +4196,7 @@
         "chemical": [],
         "pub_year": "1993",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "1003023": {
         "mesh": [
@@ -7245,10 +7242,7 @@
         "chemical": [],
         "pub_year": "1996",
         "keyword": [],
-        "author": [
-            14634905000,
-            57214111947
-        ]
+        "author": {}
     },
     "2044787": {
         "mesh": [
@@ -7399,7 +7393,7 @@
         ],
         "pub_year": "1997",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "2316721": {
         "mesh": [
@@ -8195,9 +8189,7 @@
         "chemical": [],
         "pub_year": "1996",
         "keyword": [],
-        "author": [
-            13405551500
-        ]
+        "author": {}
     },
     "1762189": {
         "mesh": [
@@ -8614,9 +8606,7 @@
         "chemical": [],
         "pub_year": "1996",
         "keyword": [],
-        "author": [
-            57211165488
-        ]
+        "author": {}
     },
     "1946875": {
         "mesh": [
@@ -8718,7 +8708,7 @@
         "chemical": [],
         "pub_year": "1996",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "2372925": {
         "mesh": [
@@ -10602,7 +10592,7 @@
         "chemical": [],
         "pub_year": "1998",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "3214501": {
         "mesh": [
@@ -11147,11 +11137,7 @@
         "chemical": [],
         "pub_year": "1998",
         "keyword": [],
-        "author": [
-            9335777200,
-            6507150870,
-            55713256600
-        ]
+        "author": {}
     },
     "3041469": {
         "mesh": [
@@ -12047,7 +12033,7 @@
         "chemical": [],
         "pub_year": "1996",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "2581812": {
         "mesh": [
@@ -12186,9 +12172,7 @@
         "chemical": [],
         "pub_year": "1998",
         "keyword": [],
-        "author": [
-            7402267528
-        ]
+        "author": {}
     },
     "2634845": {
         "mesh": [
@@ -13846,11 +13830,7 @@
         "chemical": [],
         "pub_year": "1999",
         "keyword": [],
-        "author": [
-            57203305520,
-            56400288200,
-            56693622000
-        ]
+        "author": {}
     },
     "3727482": {
         "mesh": [
@@ -13966,7 +13946,7 @@
         ],
         "pub_year": "1999",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "3549299": {
         "mesh": [
@@ -14026,7 +14006,7 @@
         "chemical": [],
         "pub_year": "1999",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "3686723": {
         "mesh": [
@@ -14131,14 +14111,7 @@
         "chemical": [],
         "pub_year": "1999",
         "keyword": [],
-        "author": [
-            24334605900,
-            19638584900,
-            55718181800,
-            57313741000,
-            24280102500,
-            35604955000
-        ]
+        "author": {}
     },
     "10682641": {
         "mesh": [
@@ -14157,7 +14130,7 @@
         "chemical": [],
         "pub_year": "1998",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "3382799": {
         "mesh": [
@@ -14383,11 +14356,7 @@
         "chemical": [],
         "pub_year": "1998",
         "keyword": [],
-        "author": [
-            26023472000,
-            55589137100,
-            24477842200
-        ]
+        "author": {}
     },
     "3517519": {
         "mesh": [
@@ -14792,7 +14761,7 @@
         ],
         "pub_year": "1999",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "3775477": {
         "mesh": [
@@ -15066,10 +15035,7 @@
         "chemical": [],
         "pub_year": "1999",
         "keyword": [],
-        "author": [
-            36798881200,
-            24073749500
-        ]
+        "author": {}
     },
     "4130065": {
         "mesh": [
@@ -15579,7 +15545,7 @@
         "chemical": [],
         "pub_year": "2000",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "3867991": {
         "mesh": [
@@ -17132,11 +17098,7 @@
         "chemical": [],
         "pub_year": "2001",
         "keyword": [],
-        "author": [
-            37112701200,
-            7004207221,
-            57211838829
-        ]
+        "author": {}
     },
     "4646772": {
         "mesh": [
@@ -17447,7 +17409,7 @@
         "chemical": [],
         "pub_year": "2001",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "11460150": {
         "mesh": [],
@@ -17458,7 +17420,7 @@
         "chemical": [],
         "pub_year": "",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "4286939": {
         "mesh": [
@@ -17825,7 +17787,7 @@
         "chemical": [],
         "pub_year": "2001",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "4884863": {
         "mesh": [
@@ -17918,7 +17880,7 @@
         "chemical": [],
         "pub_year": "2002",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "4813234": {
         "mesh": [
@@ -18327,12 +18289,7 @@
         "chemical": [],
         "pub_year": "2001",
         "keyword": [],
-        "author": [
-            55222216700,
-            6506371678,
-            34977484800,
-            57190518739
-        ]
+        "author": {}
     },
     "4713751": {
         "mesh": [
@@ -18669,7 +18626,7 @@
         "chemical": [],
         "pub_year": "2001",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "4433937": {
         "mesh": [
@@ -20830,7 +20787,7 @@
         "chemical": [],
         "pub_year": "2002",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "5885146": {
         "mesh": [
@@ -20903,7 +20860,7 @@
         ],
         "pub_year": "2002",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "5414241": {
         "mesh": [
@@ -21507,13 +21464,7 @@
         "chemical": [],
         "pub_year": "",
         "keyword": [],
-        "author": [
-            8976374100,
-            37080674200,
-            54936008500,
-            7006935513,
-            7004623029
-        ]
+        "author": {}
     },
     "5266827": {
         "mesh": [
@@ -21742,10 +21693,7 @@
         "chemical": [],
         "pub_year": "2003",
         "keyword": [],
-        "author": [
-            7402996422,
-            7005371587
-        ]
+        "author": {}
     },
     "5620738": {
         "mesh": [
@@ -24490,10 +24438,7 @@
         "keyword": [
             "BLOOD COAGULATION"
         ],
-        "author": [
-            57196177568,
-            6603739781
-        ]
+        "author": {}
     },
     "5916558": {
         "mesh": [
@@ -24612,16 +24557,7 @@
             "BARIUM SULFATE",
             "COLON"
         ],
-        "author": [
-            57222655949,
-            57222659683,
-            57209369160,
-            57226455921,
-            7003892486,
-            37089307400,
-            35236795400,
-            23492764600
-        ]
+        "author": {}
     },
     "6208041": {
         "mesh": [
@@ -25842,7 +25778,7 @@
             "PROCTOLOGY/apparatus and instruments",
             "PROCTOSCOPY/apparatus and instruments"
         ],
-        "author": []
+        "author": {}
     },
     "6348705": {
         "mesh": [
@@ -30636,7 +30572,7 @@
         ],
         "pub_year": "1993",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "937344": {
         "mesh": [
@@ -31241,12 +31177,7 @@
         "chemical": [],
         "pub_year": "1993",
         "keyword": [],
-        "author": [
-            36604371600,
-            57217606724,
-            57212304794,
-            7402547090
-        ]
+        "author": {}
     },
     "1044128": {
         "mesh": [
@@ -33407,7 +33338,7 @@
         "chemical": [],
         "pub_year": "1996",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "1760167": {
         "mesh": [
@@ -33515,7 +33446,7 @@
         "chemical": [],
         "pub_year": "1997",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "1841490": {
         "mesh": [
@@ -33621,7 +33552,7 @@
         "chemical": [],
         "pub_year": "1997",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "1944142": {
         "mesh": [
@@ -34039,7 +33970,7 @@
         "chemical": [],
         "pub_year": "1996",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "8959473": {
         "mesh": [
@@ -34058,7 +33989,7 @@
         "chemical": [],
         "pub_year": "1996",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "2293502": {
         "mesh": [
@@ -34432,9 +34363,7 @@
         "chemical": [],
         "pub_year": "1996",
         "keyword": [],
-        "author": [
-            57215366053
-        ]
+        "author": {}
     },
     "2112370": {
         "mesh": [
@@ -34908,7 +34837,7 @@
         "chemical": [],
         "pub_year": "1997",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "2016754": {
         "mesh": [
@@ -35089,9 +35018,7 @@
         "chemical": [],
         "pub_year": "1995",
         "keyword": [],
-        "author": [
-            7003413858
-        ]
+        "author": {}
     },
     "1691743": {
         "mesh": [
@@ -36527,10 +36454,7 @@
         "chemical": [],
         "pub_year": "1996",
         "keyword": [],
-        "author": [
-            18634230900,
-            6506818166
-        ]
+        "author": {}
     },
     "2075822": {
         "mesh": [
@@ -36960,7 +36884,7 @@
         "chemical": [],
         "pub_year": "1996",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "2537201": {
         "mesh": [
@@ -37870,10 +37794,7 @@
         "chemical": [],
         "pub_year": "",
         "keyword": [],
-        "author": [
-            58037084100,
-            7402969908
-        ]
+        "author": {}
     },
     "2907463": {
         "mesh": [
@@ -38631,7 +38552,7 @@
         "chemical": [],
         "pub_year": "1998",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "2890069": {
         "mesh": [
@@ -39597,7 +39518,7 @@
         "chemical": [],
         "pub_year": "1964",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "3070863": {
         "mesh": [
@@ -39750,11 +39671,7 @@
         "chemical": [],
         "pub_year": "2000",
         "keyword": [],
-        "author": [
-            7103404927,
-            23100169800,
-            26640548500
-        ]
+        "author": {}
     },
     "3587479": {
         "mesh": [
@@ -39919,10 +39836,7 @@
         "chemical": [],
         "pub_year": "1999",
         "keyword": [],
-        "author": [
-            37040000300,
-            57200779958
-        ]
+        "author": {}
     },
     "3729639": {
         "mesh": [
@@ -40276,10 +40190,7 @@
         "chemical": [],
         "pub_year": "2000",
         "keyword": [],
-        "author": [
-            23477376500,
-            7202867578
-        ]
+        "author": {}
     },
     "3738384": {
         "mesh": [
@@ -40551,9 +40462,7 @@
         "chemical": [],
         "pub_year": "1999",
         "keyword": [],
-        "author": [
-            7003325580
-        ]
+        "author": {}
     },
     "3601067": {
         "mesh": [
@@ -40663,7 +40572,7 @@
         "chemical": [],
         "pub_year": "1999",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "10795163": {
         "mesh": [
@@ -40681,10 +40590,7 @@
         "chemical": [],
         "pub_year": "1999",
         "keyword": [],
-        "author": [
-            7004285779,
-            7004105708
-        ]
+        "author": {}
     },
     "3895720": {
         "mesh": [
@@ -41007,7 +40913,7 @@
         ],
         "pub_year": "1999",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "3825612": {
         "mesh": [
@@ -41184,9 +41090,7 @@
         "chemical": [],
         "pub_year": "1999",
         "keyword": [],
-        "author": [
-            12796078700
-        ]
+        "author": {}
     },
     "3557054": {
         "mesh": [
@@ -42907,11 +42811,7 @@
         "chemical": [],
         "pub_year": "2002",
         "keyword": [],
-        "author": [
-            16641684100,
-            56496293200,
-            7007052314
-        ]
+        "author": {}
     },
     "4694800": {
         "mesh": [
@@ -43192,10 +43092,7 @@
         "chemical": [],
         "pub_year": "2001",
         "keyword": [],
-        "author": [
-            57709414500,
-            8320879700
-        ]
+        "author": {}
     },
     "11509662": {
         "mesh": [
@@ -43223,10 +43120,7 @@
         ],
         "pub_year": "2001",
         "keyword": [],
-        "author": [
-            58096324500,
-            6701632052
-        ]
+        "author": {}
     },
     "4657723": {
         "mesh": [
@@ -43452,7 +43346,7 @@
         "chemical": [],
         "pub_year": "1997",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "5014541": {
         "mesh": [
@@ -43576,10 +43470,7 @@
         ],
         "pub_year": "2002",
         "keyword": [],
-        "author": [
-            8637479000,
-            22979446900
-        ]
+        "author": {}
     },
     "4402777": {
         "mesh": [
@@ -43633,10 +43524,7 @@
         "chemical": [],
         "pub_year": "2001",
         "keyword": [],
-        "author": [
-            57204332648,
-            57203490024
-        ]
+        "author": {}
     },
     "5025152": {
         "mesh": [
@@ -43769,11 +43657,7 @@
         "chemical": [],
         "pub_year": "2001",
         "keyword": [],
-        "author": [
-            6508351402,
-            57218401443,
-            7402483831
-        ]
+        "author": {}
     },
     "4486396": {
         "mesh": [
@@ -44162,7 +44046,7 @@
         "chemical": [],
         "pub_year": "",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "4307213": {
         "mesh": [
@@ -44490,14 +44374,7 @@
         "chemical": [],
         "pub_year": "",
         "keyword": [],
-        "author": [
-            55073306400,
-            56251418700,
-            57192656604,
-            35204888900,
-            57203743688,
-            7402312516
-        ]
+        "author": {}
     },
     "4615903": {
         "mesh": [
@@ -44727,7 +44604,7 @@
         "chemical": [],
         "pub_year": "2001",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "4480074": {
         "mesh": [
@@ -46233,10 +46110,7 @@
         "chemical": [],
         "pub_year": "2003",
         "keyword": [],
-        "author": [
-            35280853400,
-            7203064754
-        ]
+        "author": {}
     },
     "5102608": {
         "mesh": [
@@ -46526,9 +46400,7 @@
             "Social Policy",
             "Western Europe"
         ],
-        "author": [
-            6603739781
-        ]
+        "author": {}
     },
     "5059206": {
         "mesh": [
@@ -47115,10 +46987,7 @@
         "chemical": [],
         "pub_year": "2003",
         "keyword": [],
-        "author": [
-            55574219055,
-            53663454900
-        ]
+        "author": {}
     },
     "5550839": {
         "mesh": [
@@ -47299,10 +47168,7 @@
         "keyword": [
             "LEAD/toxicity"
         ],
-        "author": [
-            57201615620,
-            26221990800
-        ]
+        "author": {}
     },
     "5141533": {
         "mesh": [
@@ -47643,14 +47509,7 @@
         "chemical": [],
         "pub_year": "2002",
         "keyword": [],
-        "author": [
-            39961832000,
-            56693325500,
-            57188708597,
-            16551242600,
-            12040992800,
-            12787317000
-        ]
+        "author": {}
     },
     "5124884": {
         "mesh": [
@@ -47755,7 +47614,7 @@
         "chemical": [],
         "pub_year": "2003",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "5253459": {
         "mesh": [
@@ -48124,7 +47983,7 @@
         "chemical": [],
         "pub_year": "2003",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "5213138": {
         "mesh": [
@@ -48587,7 +48446,7 @@
         "chemical": [],
         "pub_year": "2002",
         "keyword": [],
-        "author": []
+        "author": {}
     },
     "5377235": {
         "mesh": [],
@@ -49212,13 +49071,7 @@
             "MUSCLE TRANSPLANTATION",
             "SHOULDER DISLOCATION"
         ],
-        "author": [
-            57210634093,
-            56883944000,
-            57219354498,
-            55458384300,
-            7004740942
-        ]
+        "author": {}
     },
     "6393696": {
         "mesh": [
@@ -50083,10 +49936,7 @@
             "PENTYLENETETRAZOLE/therapeutic use",
             "SUICIDE"
         ],
-        "author": [
-            7003441827,
-            7007018385
-        ]
+        "author": {}
     },
     "6225877": {
         "mesh": [
@@ -50704,7 +50554,7 @@
         "keyword": [
             "BRONCHITIS"
         ],
-        "author": []
+        "author": {}
     },
     "6584926": {
         "mesh": [
@@ -50764,7 +50614,7 @@
             "LUNGS/diseases",
             "PROCAINE/therapeutic use"
         ],
-        "author": []
+        "author": {}
     },
     "6410069": {
         "mesh": [
@@ -50819,10 +50669,7 @@
             "POISONING/experimental",
             "PROCAINE/toxicity"
         ],
-        "author": [
-            7403431937,
-            38062389400
-        ]
+        "author": {}
     },
     "6174544": {
         "mesh": [
@@ -53841,16 +53688,7 @@
             "GENERALIZATION (PSYCHOLOGY)",
             "RATS"
         ],
-        "author": [
-            58411204800,
-            57206183246,
-            6602580543,
-            6507711321,
-            15062620600,
-            6602260629,
-            7005392183,
-            7003399367
-        ]
+        "author": {}
     },
     "4884892": {
         "mesh": [

@@ -2,6 +2,7 @@ from pyspark.sql import SparkSession
 import re
 import os
 import json
+import time
 
 def clear_files(dir):
     files = os.listdir(dir)
@@ -13,7 +14,8 @@ def clear_files(dir):
 
 
 if __name__ == "__main__":
-    data_dir = 'xml_data/'
+    data_dir = '/shared/hm31/xml_data/'
+    #data_dir = 'test/'
 
 
     spark = SparkSession.builder.appName("XMLSubstringCount").getOrCreate()
@@ -39,12 +41,11 @@ if __name__ == "__main__":
         return filename, substring_counts
 
 
-    # List of XML files to process
-
-    # ]
     strings_of_interest = ['DateCompleted', 'ISSN', 'ArticleTitle', 'ISSN', 'GrantList', 'KeywordList', 'MeshHeadingList',
                            'ChemicalList', 'PubmedArticle', 'Abstract', 'PubDate', 'PubmedArticle']
 
+    strings_of_interest = ['DateCompleted', 'ISSN', 'GrantList', 'MeshHeadingList',
+                           'ChemicalList', 'PubmedArticle', 'PubDate']
     # Process each XML file and print the results
     output_file = "output.txt"
     pattern = r'(\d{4})\.xml$'
@@ -52,25 +53,18 @@ if __name__ == "__main__":
 
     result_dict = {}
 
-    # with open(output_file, "w") as f:
-    #     for xml_file in xml_files:
-    #         xml_file = os.path.join(data_dir, xml_file)
-    #         filename, substring_counts = count_substring_occurrences(xml_file, strings_of_interest)
-    #
-    #         f.write(f"File: {re.search(pattern, filename).group(1)}\n")
-    #         for substring, count in substring_counts.items():
-    #             f.write(f"Occurrences of '{substring}': {count}\n")
-    #         f.write("\n")
-    # # Stop the SparkSession
-    # spark.stop()
+    start = time.time()
 
     for xml_file in xml_files:
+
+
             xml_file = os.path.join(data_dir, xml_file)
             filename, substring_counts = count_substring_occurrences(xml_file, strings_of_interest)
 
             file_id = re.search(pattern, filename).group(1)
             result_dict[file_id] = substring_counts
 
+    result_dict['time'] = time.time() - start
     with open('output.json', "w") as json_file:
         json.dump(result_dict, json_file)
     # Stop the SparkSession

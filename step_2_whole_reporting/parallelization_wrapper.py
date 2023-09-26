@@ -13,10 +13,10 @@ if __name__ == "__main__":
 
     xml_files = os.listdir(data_dir)
     SPLIT = 100
-    indices = np.ceil(len(xml_files)//SPLIT)
+    indices = int(len(xml_files)//SPLIT) + 1
 
     for i in range(indices):
-        command = f"spark-submit main_parallel.py --master=local[{(256)//len(indices)-1}] --driver-memory {95//len(indices)} {SPLIT} {i}"
+        command = f"spark-submit main_parallel.py  {SPLIT} {i}"
 
         # Run the shell command asynchronously
         process = subprocess.Popen(command, shell=True)

@@ -2,6 +2,7 @@ import os
 import psycopg2
 from psycopg2 import sql
 import multiprocessing
+import re
 
 # Set the PGDATABASE environment variable
 os.environ["PGDATABASE"] = "ernieplus"
@@ -16,26 +17,31 @@ def insert_values_into_table(values_list):
         args = ','.join(cur.mogrify("(%s,%s,%s, %s, %s, %s, %s)", i).decode('utf-8')
                         for i in values_list)
 
-        cur.execute("INSERT INTO hm31.pubmed_all_xmls VALUES " + (args))
+        cur.execute("INSERT INTO hm31.pubmed_all_xmls_new VALUES " + (args))
 
         conn.commit()
         print("Inserted values successfully")
+        return "insertion success"
 
     except Exception as e:
         print("Error:", e)
+        return "insertion error"
 
     finally:
         cur.close()
         conn.close()
 
 
+
 import xmltodict
 
 def parse(file_path):
+    xml_dict = ""
     try:
         # Open and read the XML file
         with open(file_path, 'r', encoding='utf-8') as file:
             xml_contents = file.read()
+
         print("red")
         # Parse the XML content using xmltodict
         xml_dict = xmltodict.parse(xml_contents)
@@ -185,28 +191,51 @@ def convert_dict_to_query(dic):
     else:
         pub_year = dic['pub_year']
 
-    query = (int(dic['PMID']), dic['journal_ISSN'], ' '.join(dic['grants']), ' '.join(dic['chemical']),
-             pub_year, year, ' '.join(dic['mesh']))
+    query = (int(dic['PMID']), dic['journal_ISSN'], ','.join(dic['grants']), ','.join(dic['chemical']),
+             pub_year, year, ','.join(dic['mesh']))
 
     return query
 
 
 def parallelize(file_path):
+    start = time.time()
+    stats = ""
     xml_dict = parse(file_path)
 
-    meta_data_array = []
+    if len(xml_dict) == 0:
+        stats = "Failed parse or empty xml_dict"
 
-    for i in range(len(xml_dict['PubmedArticleSet']['PubmedArticle'])):
-        rec = xml_dict['PubmedArticleSet']['PubmedArticle'][i]['MedlineCitation']
-        x = parse_single_record(rec)
-        meta_data_array.append(x)
+    else:
+        meta_data_array = []
 
-    query_array = []
+        for i in range(len(xml_dict['PubmedArticleSet']['PubmedArticle'])):
+            rec = xml_dict['PubmedArticleSet']['PubmedArticle'][i]['MedlineCitation']
+            x = parse_single_record(rec)
+            meta_data_array.append(x)
 
-    for i in meta_data_array:
-        query_array.append(convert_dict_to_query(i))
+        query_array = []
 
-    insert_values_into_table(query_array)
+        for i in meta_data_array:
+            query_array.append(convert_dict_to_query(i))
+
+        insert_stats = insert_values_into_table(query_array)
+
+        if "error" in insert_stats:
+            stats = "failed in insertion"
+
+        else:
+            stats = "success"
+
+    finish = time.time()
+    pattern = r'(\d{4})\.xml$'
+
+    file_id = re.search(pattern, file_path).group(1)
+
+    with open(f'stats/{file_id}.txt', 'w') as file:
+        file.write(f"{stats}\n")
+        file.write(f"{str(finish-start)}\n")
+
+
 
 if __name__ == "__main__":
     import multiprocessing
@@ -222,7 +251,7 @@ if __name__ == "__main__":
     for file in files:
         lst.append((nest_dir + file,))
 
-    with multiprocessing.Pool(processes=120) as pool:
+    with multiprocessing.Pool(processes=60) as pool:
         results = pool.starmap(parallelize, lst)
 
     finish = time.time()

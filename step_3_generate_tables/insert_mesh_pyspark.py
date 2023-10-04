@@ -26,8 +26,8 @@ if __name__ == "__main__":
 
     jdbc_url = "jdbc:postgresql://valhalla.cs.illinois.edu:5432/ernieplus"
     jdbc_properties = {
-        "user": "hm31",
-        "password": "graphs",
+        "user": "",
+        "password": "",
         "driver": "org.postgresql.Driver"
     }
 

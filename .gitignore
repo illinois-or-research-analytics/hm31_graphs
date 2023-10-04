@@ -3,3 +3,4 @@ venv/
 data/
 step_2_whole_reporting/xml_data
 step_2_whole_reporting/xml_data.zip
+test/

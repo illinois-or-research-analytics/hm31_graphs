@@ -14,14 +14,74 @@ from pyspark.sql import functions as func
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, LongType
 import sys
 
+def read_CEN(file_path, spark):
+    schema = StructType([StructField("PMID", IntegerType(), False), StructField("cluster_id", IntegerType(), False)])
+
+    cr = spark.read.schema(schema).option("sep", " ").csv(file_path)
+    return cr
 
 
+def read_df(spark, jdbc_url, table_name, jdbc_properties ):
+    df = spark.read.jdbc(url=jdbc_url, table=table_name, properties=jdbc_properties)
+    return df
 
+
+def write_df(result, jdbc_url, table_name, jdbc_properties):
+    result.repartition(50).write.jdbc(url=jdbc_url, table=table_name, mode="overwrite",
+                                      properties=jdbc_properties)
+
+
+def read_EDGES(file_path, spark):
+    schema = StructType([StructField("first", IntegerType(), False), StructField("second", IntegerType(), False),StructField("weight", FloatType(), True)])
+
+    edges = spark.read.schema(schema).option("sep", "\t").csv(file_path)
+    edges.show()
+    return edges
+
+def filter_edges(edges, xml):
+    print('prior_count', edges.count())
+    edges = edges.repartition(1)
+    xml = xml.repartition(1)
+
+
+    result = edges.alias('edges').join(xml.alias('xml'), (func.col('edges.first') == func.col('xml.pmid')), 'inner').alias('joined_edges').\
+            join(xml.alias('xml'), (func.col('joined_edges.second') == func.col('xml.pmid')), 'inner').alias('final_edges')
+
+    result.persist()
+    selected_columns = [func.col("final_edges." + col_name) for col_name in edges.columns]
+    result = result.select(*selected_columns)
+
+    print('post_count', result.count())
+    result.show()
+
+    write_df(result, jdbc_url, 'hm31.CEN_intersection_edges', jdbc_properties)
+
+
+def create_CEN_intersection_table(spark, jdbc_url, jdbc_properties):
+    cr = read_CEN(nodes_address, spark)
+    cr.show()
+    paxn = read_df(spark, jdbc_url, 'hm31.pubmed_all_xmls_new', jdbc_properties)
+
+    paxn = paxn.repartition(1)  # Repartition 'paxn' into 100 partitions (adjust as needed)
+    cr = cr.repartition(1)  # Repartition 'cr' into 100 partitions (adjust as needed)
+
+    # print("PAXN", paxn.rdd.getNumPartitions())
+    # print("CRIS", cr.rdd.getNumPartitions())
+
+    result = cr.alias('cr').join(paxn.alias('paxn'), (func.col('cr.PMID') == func.col('paxn.pmid')), 'inner')
+
+    result.persist()
+    selected_columns = [func.col("paxn." + col_name) for col_name in paxn.columns]
+    result = result.select(*selected_columns)
+    result.repartition(50).write.jdbc(url=jdbc_url, table='hm31.xml_intersection', mode="overwrite",
+                                      properties=jdbc_properties)
+    result.show()
+    print("Hey", result.count())
 
 if __name__ == "__main__":
     nodes_address = '../data/reformatted.tsv'
+    edges_address = '../data/CEN.tsv'
 
-    schema = StructType([StructField("PMID", IntegerType(), False), StructField("cluster_id", IntegerType(), False)])
     spark = SparkSession \
         .builder \
         .appName("Python Spark SQL basic example") \
@@ -30,45 +90,27 @@ if __name__ == "__main__":
         .config("spark.master", "local[*]")\
         .getOrCreate()
 
-    cr = spark.read.schema(schema).option("sep", " ").csv(nodes_address)
-    cr.show(100)
-
     jdbc_url = "jdbc:postgresql://valhalla.cs.illinois.edu:5432/ernieplus"
     jdbc_properties = {
-        "user": "",
-        "password": "",
+        "user": "hm31",
+        "password": "graphs",
         "driver": "org.postgresql.Driver"
     }
 
+
     start = time.time()
-    #CEN.repartition(50).write.jdbc(url=jdbc_url, table='hm31.CEN_raw', mode="overwrite", properties=jdbc_properties)
+    #create_CEN_intersection_table(spark, jdbc_url, jdbc_properties)
+    #edges = read_EDGES(edges_address, spark)
+    #xml = read_df(spark, jdbc_url, 'hm31.xml_intersection',jdbc_properties)
 
+    #filter_edges(edges, xml)
 
-    table_name = "hm31.pubmed_all_xmls_new"  # Replace with your actual table name
-    # # Write the DataFrame to the PostgreSQL table
-    paxn = spark.read.jdbc(url=jdbc_url, table=table_name, properties=jdbc_properties)
-
-    paxn = paxn.repartition(1)  # Repartition 'paxn' into 100 partitions (adjust as needed)
-    cr = cr.repartition(1)  # Repartition 'cr' into 100 partitions (adjust as needed)
-
-    print("PAXN", paxn.rdd.getNumPartitions())
-    print("CRIS", cr.rdd.getNumPartitions())
-
-    # result = cr.join(paxn, cr["PMID"] == paxn["pmid"], "left")
-    # result.show()
-    #result = paxn.alias('paxn').join(cr.alias('cr'),(func.col('cr.PMID')==func.col('paxn.pmid')))
-    result = cr.alias('cr').join(paxn.alias('paxn'),(func.col('cr.PMID')==func.col('paxn.pmid')), 'left')
-    #result = paxn.alias('paxn').join(cr.alias('cr'), (func.col('paxn.PMID') == func.col('cr.pmid')), 'left')
-
-    result.persist()
-    selected_columns = [func.col("paxn." + col_name) for col_name in paxn.columns]
-    result = result.select(*selected_columns)
-    # result = paxn.alias('paxn').join(cr.alias('cr'), (func.col('cr.PMID') == func.col('paxn.pmid')))
-    result.repartition(50).write.jdbc(url=jdbc_url, table='hm31.xml_intersection', mode="overwrite",
-                                      properties=jdbc_properties)
-
-    result.show()
+    # cr  = read_CEN(nodes_address, spark)
+    # cr.show()
+    # print("size is ",cr.count())
+    create_CEN_intersection_table(spark,jdbc_url,jdbc_properties)
     print(f'elapsed {time.time() - start}')
+    #print("count", edges.count())
 
 
 

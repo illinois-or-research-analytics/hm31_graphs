@@ -14,7 +14,7 @@ if __name__ == "__main__":
     #conf = SparkConf().setMaster("local").setAppName("WordCount")
 
 
-    conf = SparkConf().setMaster("local[200]").setAppName("WordCount")
+    conf = SparkConf().setMaster("local[50]").setAppName("WordCount")
     #conf = SparkConf().setAppName("WordCount")
     #conf.set("spark.driver.memory", "200g")
     #conf.set("spark.executor.memory", "8g")  # Example: Increase executor memory
@@ -23,5 +23,11 @@ if __name__ == "__main__":
     sc = SparkContext(conf = conf)
 
     rdd = sc.wholeTextFiles(data_dir,512)
-    words = rdd.flatMap(lambda x: x.split())
+    contents = rdd.flatMap(lambda x: x[1].split('\n'))
+
+    #print("kkkkk", rdd.count())
+
+    words = contents.flatMap(lambda x: x.split())
+
+    #words = rdd.flatMap(lambda x: x.split())
     print("kkk",words.count())

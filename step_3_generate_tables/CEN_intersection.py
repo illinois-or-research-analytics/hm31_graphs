@@ -36,6 +36,9 @@ def read_EDGES(file_path, spark):
 
     edges = spark.read.schema(schema).option("sep", "\t").csv(file_path)
     edges.show()
+
+    edges.repartition(10).write.jdbc(url=jdbc_url, table='hm31.cen_raw_edges', mode="overwrite",properties=jdbc_properties)
+
     return edges
 
 def filter_edges(edges, xml):
@@ -44,8 +47,8 @@ def filter_edges(edges, xml):
     xml = xml.repartition(1)
 
 
-    result = edges.alias('edges').join(xml.alias('xml'), (func.col('edges.first') == func.col('xml.pmid')), 'inner').alias('joined_edges').\
-            join(xml.alias('xml'), (func.col('joined_edges.second') == func.col('xml.pmid')), 'inner').alias('final_edges')
+    result = edges.alias('edges').join(xml.alias('xml'), (func.col('edges.first') == func.col('xml.node_id')), 'inner').alias('joined_edges').\
+            join(xml.alias('xml'), (func.col('joined_edges.second') == func.col('xml.node_id')), 'inner').alias('final_edges')
 
     result.persist()
     selected_columns = [func.col("final_edges." + col_name) for col_name in edges.columns]
@@ -54,7 +57,7 @@ def filter_edges(edges, xml):
     print('post_count', result.count())
     result.show()
 
-    write_df(result, jdbc_url, 'hm31.CEN_intersection_edges', jdbc_properties)
+    write_df(result, jdbc_url, 'hm31.CEN_intersection_edges_correct', jdbc_properties)
 
 
 def create_CEN_intersection_table(spark, jdbc_url, jdbc_properties):
@@ -100,15 +103,15 @@ if __name__ == "__main__":
 
     start = time.time()
     #create_CEN_intersection_table(spark, jdbc_url, jdbc_properties)
-    #edges = read_EDGES(edges_address, spark)
-    #xml = read_df(spark, jdbc_url, 'hm31.xml_intersection',jdbc_properties)
-
-    #filter_edges(edges, xml)
+    edges = read_EDGES(edges_address, spark)
+    # xml = read_df(spark, jdbc_url, 'hm31.cen_intersection',jdbc_properties)
+    #
+    # filter_edges(edges, xml)
 
     # cr  = read_CEN(nodes_address, spark)
     # cr.show()
     # print("size is ",cr.count())
-    create_CEN_intersection_table(spark,jdbc_url,jdbc_properties)
+    #create_CEN_intersection_table(spark,jdbc_url,jdbc_properties)
     print(f'elapsed {time.time() - start}')
     #print("count", edges.count())
 

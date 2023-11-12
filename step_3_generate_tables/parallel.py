@@ -38,7 +38,7 @@ def clean_abstract(abstract):
 from tqdm import tqdm
 
 
-def parse_single_record(xml_dict, originial_dict):
+def parse_single_record(xml_dict, originial_dict, i=0):
     mesh_headings = []
     grants = []
     year = ""
@@ -50,6 +50,11 @@ def parse_single_record(xml_dict, originial_dict):
     doi = ""
     title = ""
     abstract = ""
+
+    month = ""
+    day = ""
+
+    date_completed = ''
 
     try:
         xml_dict = dict(xml_dict)
@@ -67,6 +72,15 @@ def parse_single_record(xml_dict, originial_dict):
                 new_dic = dict(xml_dict['DateCompleted'])
                 if 'Year' in new_dic:
                     year = new_dic['Year']
+
+                if 'Month' in new_dic:
+                    month = new_dic['Month']
+
+                if 'Day' in new_dic:
+                    day = new_dic['Day']
+
+
+
 
             else:
                 pass
@@ -120,9 +134,33 @@ def parse_single_record(xml_dict, originial_dict):
         try:
             if 'Article' in xml_dict:
                 new_dic = dict(xml_dict['Article'])
+
                 title = new_dic['ArticleTitle']
+
+                #                 if i == 10844:
+                #                     print(title,'AAA \n')
+
                 if '#text' in title:
                     title = title['#text']
+
+                #                     if i == 10844:
+                #                         print(title,'BBB \n')
+
+                elif 'b' in title:
+                    title = title['b']
+                    if '#text' in title:
+                        title = title['#text']
+
+
+                elif 'sup' in title:
+                    title = title['sup']
+
+                if 'i' in title:
+                    title = title['i']
+
+                if type(title) == list:
+                    title = ' '.join(title)
+
 
 
 
@@ -209,12 +247,12 @@ def parse_single_record(xml_dict, originial_dict):
 
     abstract = clean_abstract(abstract)
 
-    meta_data = {'PMID': PMID, 'mesh': mesh_headings, 'grants': grants, 'year': year,
-                 'journal_ISSN': journal_ISSN, 'journal_title': journal_title,
-                 'chemical': chemical_list, 'pub_year': pub_year, 'doi': doi, 'title': title, 'abstract': abstract}
+    meta_data = {'PMID': int(PMID), 'mesh': str(mesh_headings), 'grants': str(grants), 'year': str(year),
+                 'journal_ISSN': str(journal_ISSN), 'journal_title': str(journal_title),
+                 'chemical': str(chemical_list), 'pub_year': str(pub_year), 'doi': doi.lower(),
+                 'title': str(title), 'abstract': str(abstract), 'date_completed': f'{year}-{month}-{day}'}
 
     return meta_data
-
 
 def parallelize(file_path, mode='parquet', dump_address='/shared/hossein_hm31/pubmed_parquet/'):
     xml_dict = parse(file_path)
@@ -290,9 +328,10 @@ def convert_dict_to_query(dic):
 def add_remaining():
     import multiprocessing
     import time
+    import os
 
     obtained_files = os.listdir('/shared/hossein_hm31/pubmed_parquet/')
-    all_files = os.listdir('/shared/hossein_hm31/xml_data//')
+    all_files = os.listdir('/shared/hossein_hm31/xml_data/')
 
     all_xml_files = [file.split('.')[0] for file in all_files if '.xml' in file]
     all_parquet_files = [file.split('.')[0] for file in obtained_files]
@@ -340,5 +379,6 @@ def main():
 
 
 if __name__ == '__main__':
-    #main()
+    # main()
+    add_remaining()
     add_remaining()

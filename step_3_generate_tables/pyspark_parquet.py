@@ -1,19 +1,50 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col
+from pyspark.sql import functions as func
+from pyspark.sql.types import StringType
+import time
 
-spark = SparkSession.builder.appName("parquet_unification").getOrCreate()
+
+def insert_table(result, jdbc_url, jdbc_properties):
+    result.repartition(50).write.jdbc(url=jdbc_url, table='hm31.xml_baseline_full', mode="overwrite",properties=jdbc_properties)
+
+spark = SparkSession.builder \
+    .appName("parquet_unification") \
+    .config("spark.executor.memory", "10g") \
+    .getOrCreate()
+# spark.conf.set("spark.executor.memory", "4g")
+
+
 parquet_path = '/shared/hossein_hm31/pubmed_parquet/'
+# parquet_path = '/shared/hossein_hm31/test/'
+
 df = spark.read.parquet(parquet_path)
+spark.sparkContext.setLogLevel("WARN")
+
 
 df.printSchema()
+start = time.time()
 
-# Show the first few rows of the DataFrame
-print(df.head())
+df = df.repartition(20)
+
+df = df.dropDuplicates(['doi'])
+
 
 init_count = df.count()
-# print(df.count(),'asoon!')
 
-count_condition = (col("doi") != '') & (col("doi").isNotNull())
-count_result = df.filter(count_condition).count()
+print(df.count(),'asoon! drop duplicates', time.time() - start)
+df.show(10)
 
-print(f"Count where len(doi) > 0 or doi != '': {count_result} init count {init_count}")
+jdbc_url = "jdbc:postgresql://valhalla.cs.illinois.edu:5432/ernieplus"
+jdbc_properties = {
+    "user": "hm31",
+    "password": "graphs",
+    "driver": "org.postgresql.Driver"
+}
+mid = time.time()
+insert_table(df,jdbc_url,jdbc_properties)
+end = time.time()
+print(f'elapsed {end - start} partition {df.rdd.getNumPartitions()}')
+
+spark.stop()
+

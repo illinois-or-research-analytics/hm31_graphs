@@ -68,6 +68,12 @@ after_selection = time.time()
 print(f'run query in {after_selection - after_query}')
 
 
+george_df.write.parquet('george.parquet')
+after_parquet = time.time()
+print(f'run query in {after_parquet - after_selection}')
+
+
+
 jdbc_url = "jdbc:postgresql://valhalla.cs.illinois.edu:5432/ernieplus"
 jdbc_properties = {
     "user": "hm31",
@@ -78,7 +84,7 @@ jdbc_properties = {
 insert_table(george_df, jdbc_url, jdbc_properties)
 
 end = time.time()
-print(f'finalllll {end - after_selection} count: {result_df.count()}')
+print(f'finalllll {end - after_parquet} count: {result_df.count()}')
 
 
 spark.stop()

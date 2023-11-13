@@ -2,13 +2,14 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import col
 from pyspark.sql import functions as func
 from pyspark.sql.types import StringType
+from pyspark.sql import functions as F
 import time
 import os
 
 
 def insert_table(result, jdbc_url, jdbc_properties):
-    result.repartition(1).write.jdbc(url=jdbc_url, table='hm31.xml_baseline_full', mode="overwrite",properties=jdbc_properties)
-    #result.repartition(1).write.jdbc(url=jdbc_url, table='hm31.xml_baseline_full', mode="overwrite",properties=jdbc_properties)
+    # result.repartition(1).write.jdbc(url=jdbc_url, table='hm31.xml_baseline_full', mode="overwrite",properties=jdbc_properties)
+    result.repartition(5).write.jdbc(url=jdbc_url, table='hm31.george_pipeline_5', mode="overwrite",properties=jdbc_properties)
 
 
 
@@ -20,8 +21,9 @@ spark = SparkSession.builder \
     # spark.conf.set("spark.executor.memory", "4g")
 
 
-parquet_path = '/shared/hossein_hm31/pubmed_parquet/'
 parquet_path = '/shared/hossein_hm31/test/'
+parquet_path = '/shared/hossein_hm31/pubmed_parquet/'
+
 
 df = spark.read.parquet(parquet_path)
 spark.sparkContext.setLogLevel("WARN")
@@ -55,18 +57,31 @@ sql_query = """
 
 result_df = spark.sql(sql_query)
 result_df = result_df.drop("RowRank")
+after_query = time.time()
+print(f'run query in {after_query - mid}')
 
-    # result_df = result_df.drop("RowRank")
+george_df = result_df.withColumn("has_abstract", F.when(F.length("abstract") > 0, 1).otherwise(0))
+george_df = george_df.withColumn("has_title", F.when(F.length("title") > 0, 1).otherwise(0))
+george_df = george_df.select("PMID", "doi", "has_abstract", "has_title")
+# george_df.show(10)
+after_selection = time.time()
+print(f'run query in {after_selection - after_query}')
+
+
+jdbc_url = "jdbc:postgresql://valhalla.cs.illinois.edu:5432/ernieplus"
+jdbc_properties = {
+    "user": "hm31",
+    "password": "graphs",
+    "driver": "org.postgresql.Driver"
+}
+
+insert_table(george_df, jdbc_url, jdbc_properties)
+
 end = time.time()
-
-print(f'finalllll {end - mid} count: {result_df.count()}')
+print(f'finalllll {end - after_selection} count: {result_df.count()}')
 
 
 spark.stop()
-
-    # Add a delay (adjust the duration as needed)
-
-    # Print a message to indicate the script has completed
 print("Script completed successfully.")
 
 

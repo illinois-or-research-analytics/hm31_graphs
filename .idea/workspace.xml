@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore.swp" afterDir="false" />
-    </list>
+    <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,8 +79,8 @@
       <window_info anchor="bottom" id="Jupyter" weight="0.3273148" />
       <window_info anchor="bottom" id="SparkMonitoringToolWindow" />
       <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info active="true" anchor="bottom" id="Problems View" order="1" visible="true" weight="0.30721748" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.30721748" />
+      <window_info anchor="bottom" id="Problems View" order="1" weight="0.30721748" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.30721748" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3300926" />
       <window_info anchor="bottom" id="Services" order="4" weight="0.30721748" />
       <window_info anchor="right" id="Endpoints" />
@@ -297,7 +294,7 @@
       <workItem from="1699979534354" duration="932000" />
       <workItem from="1699981301415" duration="20000" />
       <workItem from="1699981348222" duration="626000" />
-      <workItem from="1699982268192" duration="1776000" />
+      <workItem from="1699982268192" duration="2170000" />
     </task>
     <servers />
   </component>

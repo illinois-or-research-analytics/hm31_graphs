@@ -35,9 +35,6 @@ def clean_abstract(abstract):
     return abstract
 
 
-from tqdm import tqdm
-
-
 def parse_single_record(xml_dict, originial_dict, i=0):
     mesh_headings = []
     grants = []
@@ -51,10 +48,10 @@ def parse_single_record(xml_dict, originial_dict, i=0):
     title = ""
     abstract = ""
 
-    month = ""
-    day = ""
-
-    date_completed = ''
+    year_revised = ""
+    month_revised = ""
+    day_revised = ""
+    date_revised = ""
 
     try:
         xml_dict = dict(xml_dict)
@@ -68,25 +65,38 @@ def parse_single_record(xml_dict, originial_dict, i=0):
             pass
 
         try:
-            if 'DateCompleted' in xml_dict:
+            if 'DateRevised' in xml_dict:
                 new_dic = dict(xml_dict['DateCompleted'])
+
                 if 'Year' in new_dic:
-                    year = new_dic['Year']
+                    year_revised = new_dic['Year']
 
                 if 'Month' in new_dic:
-                    month = new_dic['Month']
+                    month_revised = new_dic['Month']
 
                 if 'Day' in new_dic:
-                    day = new_dic['Day']
-
-
-
-
-            else:
-                pass
+                    day_revised = new_dic['Day']
 
         except:
             pass
+
+        #         try:
+        #             if 'DateCompleted' in xml_dict:
+        #                 new_dic = dict(xml_dict['DateCompleted'])
+        #                 if 'Year' in new_dic:
+        #                     year = new_dic['Year']
+
+        #                 if 'Month' in new_dic:
+        #                     month = new_dic['Month']
+
+        #                 if 'Day' in new_dic:
+        #                     day = new_dic['Day']
+
+        #             else:
+        #                   pass
+
+        #         except:
+        #             pass
 
         try:
             if 'Article' in xml_dict:
@@ -247,12 +257,21 @@ def parse_single_record(xml_dict, originial_dict, i=0):
 
     abstract = clean_abstract(abstract)
 
+    if year_revised == '':
+        date_revised = '0000-00-00'
+
+    else:
+        date_revised = f'{year_revised}-{month_revised}-{day_revised}'
+        # print(date_revised)
+
     meta_data = {'PMID': int(PMID), 'mesh': str(mesh_headings), 'grants': str(grants), 'year': str(year),
                  'journal_ISSN': str(journal_ISSN), 'journal_title': str(journal_title),
                  'chemical': str(chemical_list), 'pub_year': str(pub_year), 'doi': doi.lower(),
-                 'title': str(title), 'abstract': str(abstract), 'date_completed': f'{year}-{month}-{day}'}
+                 'title': str(title), 'abstract': str(abstract),
+                 'date_revised': date_revised}
 
     return meta_data
+
 
 def parallelize(file_path, mode='parquet', dump_address='/shared/hossein_hm31/pubmed_parquet/'):
     xml_dict = parse(file_path)
@@ -274,8 +293,7 @@ def parallelize(file_path, mode='parquet', dump_address='/shared/hossein_hm31/pu
         insert_values_into_table(query_array)
 
     elif mode == 'parquet':
-        xml_name = file_path.split('/')[-1].split('.')[
-            0]  # Example '/shared/hossein_hm31/xml_data/pubmed23n0933.xml' -> pubmed23n0933.xml
+        xml_name = file_path.split('/')[-1].split('.')[0]  # Example '/shared/hossein_hm31/xml_data/pubmed23n0933.xml' -> pubmed23n0933.xml
         df = pd.DataFrame(meta_data_array)
         df.set_index(['PMID', 'doi'], inplace=True)
         df.to_parquet(f'{dump_address + xml_name}.parquet')
@@ -379,6 +397,7 @@ def main():
 
 
 if __name__ == '__main__':
-    # main()
+    main()
+    add_remaining()
     add_remaining()
     add_remaining()

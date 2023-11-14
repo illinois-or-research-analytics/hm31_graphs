@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="" />
+    <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore.swo" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore.swo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/.ipynb_checkpoints/build_tables_for_all_xmls-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/.ipynb_checkpoints/build_tables_for_all_xmls-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/build_tables_for_all_xmls.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/build_tables_for_all_xmls.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/nohup.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/parallel.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/parallel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/pyspark_parquet.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/pyspark_parquet.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +50,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Merging main",
     "last_opened_file_path": "/home/hm31/step_1/step_1_sample_study",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -294,7 +303,7 @@
       <workItem from="1699979534354" duration="932000" />
       <workItem from="1699981301415" duration="20000" />
       <workItem from="1699981348222" duration="626000" />
-      <workItem from="1699982268192" duration="2170000" />
+      <workItem from="1699982268192" duration="4467000" />
     </task>
     <servers />
   </component>

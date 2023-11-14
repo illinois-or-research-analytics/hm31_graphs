@@ -66,7 +66,9 @@ def parse_single_record(xml_dict, originial_dict, i=0):
 
         try:
             if 'DateRevised' in xml_dict:
+
                 new_dic = dict(xml_dict['DateRevised'])
+
 
                 if 'Year' in new_dic:
                     year_revised = new_dic['Year']
@@ -397,7 +399,7 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    # main()
     add_remaining()
     add_remaining()
     add_remaining()

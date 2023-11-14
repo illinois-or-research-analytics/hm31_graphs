@@ -1,2 +1,9 @@
-step_3_generate_tables/nohup.out
+
 venv/
+.idea/
+data/
+step_2_whole_reporting/xml_data
+step_2_whole_reporting/xml_data.zip
+step_3_generate_tables/nohup.out
+test/
+

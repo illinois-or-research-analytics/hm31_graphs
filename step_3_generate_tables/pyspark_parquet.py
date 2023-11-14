@@ -57,6 +57,9 @@ sql_query = """
 
 result_df = spark.sql(sql_query)
 result_df = result_df.drop("RowRank")
+result_df = result_df.filter(col("doi") != '')
+
+
 after_query = time.time()
 print(f'run query in {after_query - mid}')
 

@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore.swp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jupyter Notebook" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2UP88cb95eiglC9LPCYDQ53cbe2" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/hm31/step_1/step_1_sample_study",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RdControllerToolWindowsLayoutState" isNewUi="true">
+    <layout>
+      <window_info id="Space Code Reviews" />
+      <window_info id="Bookmarks" side_tool="true" />
+      <window_info id="Merge Requests" />
+      <window_info id="Commit_Guest" />
+      <window_info id="Pull Requests" />
+      <window_info id="Learn" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7795454" visible="true" weight="0.19324324" />
+      <window_info id="Commit" order="1" weight="0.25" />
+      <window_info active="true" id="Structure" order="2" sideWeight="0.22045454" side_tool="true" visible="true" weight="0.19324324" />
+      <window_info anchor="bottom" id="DataprocToolWindow" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="TypeScript" />
+      <window_info anchor="bottom" id="hadoop-toolwindow" />
+      <window_info anchor="bottom" id="Python Packages" weight="0.30721748" />
+      <window_info anchor="bottom" id="TODO" />
+      <window_info anchor="bottom" id="File Transfer" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Run" weight="0.3300095" />
+      <window_info anchor="bottom" id="HiveToolWindow" />
+      <window_info anchor="bottom" id="GlueToolWindow" />
+      <window_info anchor="bottom" id="EmrToolWindow" />
+      <window_info anchor="bottom" id="Find" show_stripe_button="false" weight="0.3300095" />
+      <window_info anchor="bottom" id="Jupyter" weight="0.3273148" />
+      <window_info anchor="bottom" id="SparkMonitoringToolWindow" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info active="true" anchor="bottom" id="Problems View" order="1" visible="true" weight="0.30721748" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.30721748" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3300926" />
+      <window_info anchor="bottom" id="Services" order="4" weight="0.30721748" />
+      <window_info anchor="right" id="Endpoints" />
+      <window_info anchor="right" id="BigDataToolWindow" />
+      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="Meet New UI" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Notifications" order="0" weight="0.25" />
+      <window_info anchor="right" id="Database" order="1" weight="0.33017337" />
+    </layout>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/step_1_sample_study" />
+      <recent name="$PROJECT_DIR$/step_2" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/step_1" />
+      <recent name="$PROJECT_DIR$/data" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Unnamed">
+    <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="step_1" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.6" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="step_1" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/step_2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/step_2/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="report_stats" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="step_1" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/step_2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/step_2/report_stats.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.Unnamed" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.report_stats" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.report_stats" />
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-e8b2dc97e1a4-5ac6f1e12630-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.11555.5" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="" />
+      <created>1692829698020</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1692829698020</updated>
+      <workItem from="1692829699866" duration="109000" />
+      <workItem from="1692829884279" duration="98000" />
+      <workItem from="1692830042705" duration="6449000" />
+      <workItem from="1692903679625" duration="14025000" />
+      <workItem from="1692989767933" duration="4100000" />
+      <workItem from="1693018875936" duration="680000" />
+      <workItem from="1693072792681" duration="692000" />
+      <workItem from="1693076479456" duration="1799000" />
+      <workItem from="1693093151058" duration="711000" />
+      <workItem from="1693248454637" duration="4830000" />
+      <workItem from="1693335980945" duration="1297000" />
+      <workItem from="1693415976952" duration="1228000" />
+      <workItem from="1693433392619" duration="635000" />
+      <workItem from="1693444897517" duration="1236000" />
+      <workItem from="1693503326021" duration="1965000" />
+      <workItem from="1693507594729" duration="171000" />
+      <workItem from="1693507784944" duration="2457000" />
+      <workItem from="1693526032182" duration="1244000" />
+      <workItem from="1693681777024" duration="1328000" />
+      <workItem from="1693700641700" duration="1233000" />
+      <workItem from="1693792369474" duration="1697000" />
+      <workItem from="1693922097098" duration="4722000" />
+      <workItem from="1694039953729" duration="1665000" />
+      <workItem from="1694095872064" duration="2069000" />
+      <workItem from="1694119582909" duration="2697000" />
+      <workItem from="1694290591214" duration="1548000" />
+      <workItem from="1694401959207" duration="1018000" />
+      <workItem from="1694459153312" duration="644000" />
+      <workItem from="1694488443623" duration="1369000" />
+      <workItem from="1694529845791" duration="598000" />
+      <workItem from="1694644733539" duration="2565000" />
+      <workItem from="1694747165936" duration="3683000" />
+      <workItem from="1694811360071" duration="621000" />
+      <workItem from="1694962136726" duration="2007000" />
+      <workItem from="1695071209874" duration="2031000" />
+      <workItem from="1695089265674" duration="1381000" />
+      <workItem from="1695096080568" duration="1201000" />
+      <workItem from="1695133909205" duration="1374000" />
+      <workItem from="1695161496673" duration="1210000" />
+      <workItem from="1695234523221" duration="108000" />
+      <workItem from="1695238162968" duration="2053000" />
+      <workItem from="1695248449758" duration="2781000" />
+      <workItem from="1695251633084" duration="3630000" />
+      <workItem from="1695351150058" duration="3861000" />
+      <workItem from="1695483850995" duration="12344000" />
+      <workItem from="1695670636079" duration="5610000" />
+      <workItem from="1695692422814" duration="16000" />
+      <workItem from="1695692480455" duration="3661000" />
+      <workItem from="1695738801619" duration="5200000" />
+      <workItem from="1695838857726" duration="5063000" />
+      <workItem from="1695905599663" duration="659000" />
+      <workItem from="1695906456449" duration="2808000" />
+      <workItem from="1696105040347" duration="7683000" />
+      <workItem from="1696304120286" duration="10436000" />
+      <workItem from="1696377755676" duration="31208000" />
+      <workItem from="1697510143704" duration="695000" />
+      <workItem from="1697586295054" duration="1281000" />
+      <workItem from="1697655183092" duration="1366000" />
+      <workItem from="1697661667985" duration="462000" />
+      <workItem from="1697718366887" duration="764000" />
+      <workItem from="1697719760022" duration="756000" />
+      <workItem from="1697734691422" duration="1928000" />
+      <workItem from="1697745400282" duration="1301000" />
+      <workItem from="1697819322613" duration="674000" />
+      <workItem from="1697821214532" duration="1189000" />
+      <workItem from="1697823964767" duration="1010000" />
+      <workItem from="1697834772716" duration="756000" />
+      <workItem from="1697835659816" duration="1588000" />
+      <workItem from="1698175508086" duration="2154000" />
+      <workItem from="1698272852759" duration="2494000" />
+      <workItem from="1698335802196" duration="1939000" />
+      <workItem from="1698441867491" duration="739000" />
+      <workItem from="1698545873188" duration="2017000" />
+      <workItem from="1698548277259" duration="3674000" />
+      <workItem from="1698795534877" duration="1412000" />
+      <workItem from="1698799285930" duration="621000" />
+      <workItem from="1698799970587" duration="717000" />
+      <workItem from="1698810297312" duration="3723000" />
+      <workItem from="1698854217753" duration="4591000" />
+      <workItem from="1699306324480" duration="1254000" />
+      <workItem from="1699392075636" duration="975000" />
+      <workItem from="1699395552306" duration="991000" />
+      <workItem from="1699410094890" duration="63000" />
+      <workItem from="1699410370653" duration="1652000" />
+      <workItem from="1699468310165" duration="1169000" />
+      <workItem from="1699469645548" duration="2302000" />
+      <workItem from="1699561854350" duration="7132000" />
+      <workItem from="1699637683109" duration="15941000" />
+      <workItem from="1699678555951" duration="5404000" />
+      <workItem from="1699800828116" duration="29618000" />
+      <workItem from="1699908471931" duration="10016000" />
+      <workItem from="1699934098225" duration="11831000" />
+      <workItem from="1699979534354" duration="932000" />
+      <workItem from="1699981301415" duration="20000" />
+      <workItem from="1699981348222" duration="626000" />
+      <workItem from="1699982268192" duration="1776000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/step_2_whole_reporting/main.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/step_3_generate_tables/CEN_intersection.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/step_1$create_metrices.coverage" NAME="create_metrices Coverage Results" MODIFIED="1694459090277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/step_1" />
+    <SUITE FILE_PATH="coverage/step_1$main.coverage" NAME="main Coverage Results" MODIFIED="1695254460995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/step_2" />
+    <SUITE FILE_PATH="coverage/step_1$load_data.coverage" NAME="load_data Coverage Results" MODIFIED="1693093204189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/step_1$report_stats.coverage" NAME="report_stats Coverage Results" MODIFIED="1695487287120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/step_2" />
+    <SUITE FILE_PATH="coverage/step_1$extract_doi.coverage" NAME="extract_doi Coverage Results" MODIFIED="1692991295360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/step_1$itnoG.coverage" NAME="itnoG Coverage Results" MODIFIED="1692904312794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

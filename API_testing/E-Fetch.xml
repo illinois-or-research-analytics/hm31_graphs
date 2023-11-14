@@ -1,0 +1,963 @@
+<PubmedArticleSet>
+<PubmedArticle>
+<MedlineCitation Status="MEDLINE" Owner="NLM" IndexingMethod="Automated">
+<PMID Version="1">33248227</PMID>
+<DateCompleted>
+<Year>2021</Year>
+<Month>02</Month>
+<Day>08</Day>
+</DateCompleted>
+<DateRevised>
+<Year>2022</Year>
+<Month>01</Month>
+<Day>29</Day>
+</DateRevised>
+<Article PubModel="Print-Electronic">
+<Journal>
+<ISSN IssnType="Electronic">1569-8041</ISSN>
+<JournalIssue CitedMedium="Internet">
+<Volume>32</Volume>
+<Issue>2</Issue>
+<PubDate>
+<Year>2021</Year>
+<Month>Feb</Month>
+</PubDate>
+</JournalIssue>
+<Title>Annals of oncology : official journal of the European Society for Medical Oncology</Title>
+<ISOAbbreviation>Ann Oncol</ISOAbbreviation>
+</Journal>
+<ArticleTitle>Reshaping preoperative treatment of pancreatic cancer in the era of precision medicine.</ArticleTitle>
+<Pagination>
+<StartPage>183</StartPage>
+<EndPage>196</EndPage>
+<MedlinePgn>183-196</MedlinePgn>
+</Pagination>
+<ELocationID EIdType="doi" ValidYN="Y">10.1016/j.annonc.2020.11.013</ELocationID>
+<ELocationID EIdType="pii" ValidYN="Y">S0923-7534(20)43168-0</ELocationID>
+<Abstract>
+<AbstractText>This review summarises the recent evidence on preoperative therapeutic strategies in pancreatic cancer and discusses the rationale for an imminent need for a personalised therapeutic approach in non-metastatic disease. The molecular diversity of pancreatic cancer and its influence on prognosis and treatment response, combined with the failure of 'all-comer' treatments to significantly impact on patient outcomes, requires a paradigm shift towards a genomic-driven approach. This is particularly important in the preoperative, potentially curable setting, where a personalised treatment allocation has the substantial potential to reduce pancreatic cancer mortality.</AbstractText>
+<CopyrightInformation>Copyright © 2020 The Authors. Published by Elsevier Ltd.. All rights reserved.</CopyrightInformation>
+</Abstract>
+<AuthorList CompleteYN="Y">
+<Author ValidYN="Y">
+<LastName>Casolino</LastName>
+<ForeName>R</ForeName>
+<Initials>R</Initials>
+<AffiliationInfo>
+<Affiliation>Wolfson Wohl Cancer Research Centre, Institute of Cancer Sciences, University of Glasgow, Bearsden, Glasgow, Scotland, UK; Department of Medicine, University and Hospital Trust of Verona, Verona, Italy.</Affiliation>
+</AffiliationInfo>
+</Author>
+<Author ValidYN="Y">
+<LastName>Braconi</LastName>
+<ForeName>C</ForeName>
+<Initials>C</Initials>
+<AffiliationInfo>
+<Affiliation>Wolfson Wohl Cancer Research Centre, Institute of Cancer Sciences, University of Glasgow, Bearsden, Glasgow, Scotland, UK.</Affiliation>
+</AffiliationInfo>
+</Author>
+<Author ValidYN="Y">
+<LastName>Malleo</LastName>
+<ForeName>G</ForeName>
+<Initials>G</Initials>
+<AffiliationInfo>
+<Affiliation>Department of Surgery, University and Hospital Trust of Verona, Verona, Italy.</Affiliation>
+</AffiliationInfo>
+</Author>
+<Author ValidYN="Y">
+<LastName>Paiella</LastName>
+<ForeName>S</ForeName>
+<Initials>S</Initials>
+<AffiliationInfo>
+<Affiliation>Department of Surgery, University and Hospital Trust of Verona, Verona, Italy.</Affiliation>
+</AffiliationInfo>
+</Author>
+<Author ValidYN="Y">
+<LastName>Bassi</LastName>
+<ForeName>C</ForeName>
+<Initials>C</Initials>
+<AffiliationInfo>
+<Affiliation>Department of Surgery, University and Hospital Trust of Verona, Verona, Italy.</Affiliation>
+</AffiliationInfo>
+</Author>
+<Author ValidYN="Y">
+<LastName>Milella</LastName>
+<ForeName>M</ForeName>
+<Initials>M</Initials>
+<AffiliationInfo>
+<Affiliation>Department of Medicine, Medical Oncology, University and Hospital Trust of Verona, Verona (VR), Italy.</Affiliation>
+</AffiliationInfo>
+</Author>
+<Author ValidYN="Y">
+<LastName>Dreyer</LastName>
+<ForeName>S B</ForeName>
+<Initials>SB</Initials>
+<AffiliationInfo>
+<Affiliation>Wolfson Wohl Cancer Research Centre, Institute of Cancer Sciences, University of Glasgow, Bearsden, Glasgow, Scotland, UK; West of Scotland Pancreatic Unit, Glasgow Royal Infirmary, Glasgow, UK.</Affiliation>
+</AffiliationInfo>
+</Author>
+<Author ValidYN="Y">
+<LastName>Froeling</LastName>
+<ForeName>F E M</ForeName>
+<Initials>FEM</Initials>
+<AffiliationInfo>
+<Affiliation>Edinburgh Cancer Centre, Western General Hospital, NHS Lothian, Edinburgh, UK.</Affiliation>
+</AffiliationInfo>
+</Author>
+<Author ValidYN="Y">
+<LastName>Chang</LastName>
+<ForeName>D K</ForeName>
+<Initials>DK</Initials>
+<AffiliationInfo>
+<Affiliation>Wolfson Wohl Cancer Research Centre, Institute of Cancer Sciences, University of Glasgow, Bearsden, Glasgow, Scotland, UK; West of Scotland Pancreatic Unit, Glasgow Royal Infirmary, Glasgow, UK.</Affiliation>
+</AffiliationInfo>
+</Author>
+<Author ValidYN="Y">
+<LastName>Biankin</LastName>
+<ForeName>A V</ForeName>
+<Initials>AV</Initials>
+<AffiliationInfo>
+<Affiliation>Wolfson Wohl Cancer Research Centre, Institute of Cancer Sciences, University of Glasgow, Bearsden, Glasgow, Scotland, UK; West of Scotland Pancreatic Unit, Glasgow Royal Infirmary, Glasgow, UK; South Western Sydney Clinical School, Faculty of Medicine, University of NSW, Liverpool, NSW, Australia. Electronic address: andrew.biankin@glasgow.ac.uk.</Affiliation>
+</AffiliationInfo>
+</Author>
+<Author ValidYN="Y">
+<LastName>Golan</LastName>
+<ForeName>T</ForeName>
+<Initials>T</Initials>
+<AffiliationInfo>
+<Affiliation>Oncology Institute, Sheba Medical Center, Tel Hashomer, Israel.</Affiliation>
+</AffiliationInfo>
+</Author>
+</AuthorList>
+<Language>eng</Language>
+<GrantList CompleteYN="Y">
+<Grant>
+<GrantID>C29717/A18484</GrantID>
+<Acronym>CRUK_</Acronym>
+<Agency>Cancer Research UK</Agency>
+<Country>United Kingdom</Country>
+</Grant>
+<Grant>
+<GrantID>RIF2014_01_BRACONI</GrantID>
+<Acronym>PANCREATICCANUK_</Acronym>
+<Agency>Pancreatic Cancer UK</Agency>
+<Country>United Kingdom</Country>
+</Grant>
+<Grant>
+<GrantID>C29717/A17263</GrantID>
+<Acronym>CRUK_</Acronym>
+<Agency>Cancer Research UK</Agency>
+<Country>United Kingdom</Country>
+</Grant>
+<Grant>
+<GrantID>C596/A18076</GrantID>
+<Acronym>CRUK_</Acronym>
+<Agency>Cancer Research UK</Agency>
+<Country>United Kingdom</Country>
+</Grant>
+<Grant>
+<GrantID>103721/Z/14/Z</GrantID>
+<Acronym>WT_</Acronym>
+<Agency>Wellcome Trust</Agency>
+<Country>United Kingdom</Country>
+</Grant>
+<Grant>
+<Acronym>WT_</Acronym>
+<Agency>Wellcome Trust</Agency>
+<Country>United Kingdom</Country>
+</Grant>
+<Grant>
+<GrantID>C596/A20921</GrantID>
+<Acronym>CRUK_</Acronym>
+<Agency>Cancer Research UK</Agency>
+<Country>United Kingdom</Country>
+</Grant>
+</GrantList>
+<PublicationTypeList>
+<PublicationType UI="D016428">Journal Article</PublicationType>
+<PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+<PublicationType UI="D016454">Review</PublicationType>
+</PublicationTypeList>
+<ArticleDate DateType="Electronic">
+<Year>2020</Year>
+<Month>11</Month>
+<Day>26</Day>
+</ArticleDate>
+</Article>
+<MedlineJournalInfo>
+<Country>England</Country>
+<MedlineTA>Ann Oncol</MedlineTA>
+<NlmUniqueID>9007735</NlmUniqueID>
+<ISSNLinking>0923-7534</ISSNLinking>
+</MedlineJournalInfo>
+<ChemicalList>
+<Chemical>
+<RegistryNumber>0</RegistryNumber>
+<NameOfSubstance UI="D014408">Biomarkers, Tumor</NameOfSubstance>
+</Chemical>
+</ChemicalList>
+<CitationSubset>IM</CitationSubset>
+<MeshHeadingList>
+<MeshHeading>
+<DescriptorName UI="D014408" MajorTopicYN="N">Biomarkers, Tumor</DescriptorName>
+<QualifierName UI="Q000235" MajorTopicYN="N">genetics</QualifierName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName UI="D020360" MajorTopicYN="N">Neoadjuvant Therapy</DescriptorName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName UI="D010190" MajorTopicYN="Y">Pancreatic Neoplasms</DescriptorName>
+<QualifierName UI="Q000601" MajorTopicYN="N">surgery</QualifierName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName UI="D057285" MajorTopicYN="Y">Precision Medicine</DescriptorName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName UI="D011379" MajorTopicYN="N">Prognosis</DescriptorName>
+</MeshHeading>
+</MeshHeadingList>
+<KeywordList Owner="NOTNLM">
+<Keyword MajorTopicYN="N">Pancreatic cancer</Keyword>
+<Keyword MajorTopicYN="N">neoadjuvant</Keyword>
+<Keyword MajorTopicYN="N">precision medicine</Keyword>
+<Keyword MajorTopicYN="N">predictive biomarkers</Keyword>
+<Keyword MajorTopicYN="N">preoperative</Keyword>
+<Keyword MajorTopicYN="N">prognostic biomarkers</Keyword>
+</KeywordList>
+<CoiStatement>Disclosure The authors have declared no conflicts of interest.</CoiStatement>
+</MedlineCitation>
+<PubmedData>
+<History>
+<PubMedPubDate PubStatus="received">
+<Year>2020</Year>
+<Month>10</Month>
+<Day>9</Day>
+</PubMedPubDate>
+<PubMedPubDate PubStatus="revised">
+<Year>2020</Year>
+<Month>11</Month>
+<Day>16</Day>
+</PubMedPubDate>
+<PubMedPubDate PubStatus="accepted">
+<Year>2020</Year>
+<Month>11</Month>
+<Day>17</Day>
+</PubMedPubDate>
+<PubMedPubDate PubStatus="pubmed">
+<Year>2020</Year>
+<Month>11</Month>
+<Day>29</Day>
+<Hour>6</Hour>
+<Minute>0</Minute>
+</PubMedPubDate>
+<PubMedPubDate PubStatus="medline">
+<Year>2021</Year>
+<Month>2</Month>
+<Day>9</Day>
+<Hour>6</Hour>
+<Minute>0</Minute>
+</PubMedPubDate>
+<PubMedPubDate PubStatus="entrez">
+<Year>2020</Year>
+<Month>11</Month>
+<Day>28</Day>
+<Hour>20</Hour>
+<Minute>7</Minute>
+</PubMedPubDate>
+</History>
+<PublicationStatus>ppublish</PublicationStatus>
+<ArticleIdList>
+<ArticleId IdType="pubmed">33248227</ArticleId>
+<ArticleId IdType="pmc">PMC7840891</ArticleId>
+<ArticleId IdType="doi">10.1016/j.annonc.2020.11.013</ArticleId>
+<ArticleId IdType="pii">S0923-7534(20)43168-0</ArticleId>
+</ArticleIdList>
+<ReferenceList>
+<Reference>
+<Citation>Siegel R.L., Miller K.D., Jemal A. Cancer statistics, 2018. CA Cancer J Clin. 2018;68:7–30.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">29313949</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Bray F., Ferlay J., Soerjomataram I. Global cancer statistics 2018: GLOBOCAN estimates of incidence and mortality worldwide for 36 cancers in 185 countries. CA Cancer J Clin. 2018;68:394–424.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">30207593</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Gillen S., Schuster T., Meyer Zum Buschenfelde C. Preoperative/neoadjuvant therapy in pancreatic cancer: a systematic review and meta-analysis of response and resection percentages. PLoS Med. 2010;7:e1000267.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC2857873</ArticleId>
+<ArticleId IdType="pubmed">20422030</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Oettle H., Neuhaus P., Hochhaus A. Adjuvant chemotherapy with gemcitabine and long-term outcomes among patients with resected pancreatic cancer: the CONKO-001 randomized trial. JAMA. 2013;310:1473–1481.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">24104372</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Groot V.P., Daamen L.A., Hagendoorn J. Use of imaging during symptomatic follow-up after resection of pancreatic ductal adenocarcinoma. J Surg Res. 2018;221:152–160.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">29229122</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Strobel O., Neoptolemos J., Jager D., Buchler M.W. Optimizing the outcomes of pancreatic cancer surgery. Nat Rev Clin Oncol. 2019;16:11–26.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">30341417</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Conroy T., Hammel P., Hebbar M. FOLFIRINOX or Gemcitabine as adjuvant therapy for pancreatic cancer. N Engl J Med. 2018;379:2395–2406.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">30575490</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Liu X., Fu Y., Chen Q. Predictors of distant metastasis on exploration in patients with potentially resectable pancreatic cancer. BMC Gastroenterol. 2018;18:168.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC6220565</ArticleId>
+<ArticleId IdType="pubmed">30400836</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Versteijne E., Suker M., Groothuis K. Preoperative chemoradiotherapy versus immediate surgery for resectable and borderline resectable pancreatic cancer: results of the dutch randomized phase III PREOPANC trial. J Clin Oncol. 2020;38(16):1763–1773.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">32105518</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Mayo S.C., Gilson M.M., Herman J.M. Management of patients with pancreatic adenocarcinoma: national trends in patient selection, operative management, and use of adjuvant therapy. J Am Coll Surg. 2012;214:33–45.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC3578342</ArticleId>
+<ArticleId IdType="pubmed">22055585</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Merkow R.P., Bilimoria K.Y., Tomlinson J.S. Post-operative complications reduce adjuvant chemotherapy use in resectable pancreatic cancer. Ann Surg. 2014;260:372–377.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">24374509</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Valle J.W., Palmer D., Jackson R. Optimal duration and timing of adjuvant chemotherapy after definitive surgery for ductal adenocarcinoma of the pancreas: ongoing lessons from the ESPAC-3 study. J Clin Oncol. 2014;32:504–512.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">24419109</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Jang J.Y., Han Y., Lee H. Oncological benefits of neoadjuvant chemoradiation with gemcitabine versus upfront surgery in patients with borderline resectable pancreatic cancer: a prospective, randomized, open-label, multicenter phase 2/3 trial. Ann Surg. 2018;268:215–222.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">29462005</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Maggino L., Malleo G., Marchegiani G. Outcomes of primary chemotherapy for borderline resectable and locally advanced pancreatic ductal adenocarcinoma. JAMA Surg. 2019;154(10):932–942.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC6659151</ArticleId>
+<ArticleId IdType="pubmed">31339530</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Lee Y.S., Lee J.C., Yang S.Y. Neoadjuvant therapy versus upfront surgery in resectable pancreatic cancer according to intention-to-treat and per-protocol analysis: a systematic review and meta-analysis. Sci Rep. 2019;9:15662.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC6821820</ArticleId>
+<ArticleId IdType="pubmed">31666626</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Bradley A., Van Der Meer R. Upfront Surgery versus neoadjuvant therapy for resectable pancreatic cancer: systematic review and bayesian network meta-analysis. Sci Rep. 2019;9:4354.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC6416273</ArticleId>
+<ArticleId IdType="pubmed">30867522</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Chawla A., Ferrone C.R. Neoadjuvant therapy for resectable pancreatic cancer: an evolving paradigm shift. Front Oncol. 2019;9:1085.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC6811513</ArticleId>
+<ArticleId IdType="pubmed">31681614</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Mokdad A.A., Minter R.M., Zhu H. Neoadjuvant therapy followed by resection versus upfront resection for resectable pancreatic cancer: a propensity score matched analysis. J Clin Oncol. 2017;35:515–522.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">27621388</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Roland C.L., Yang A.D., Katz M.H. Neoadjuvant therapy is associated with a reduced lymph node ratio in patients with potentially resectable pancreatic cancer. Ann Surg Oncol. 2015;22:1168–1175.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC5131370</ArticleId>
+<ArticleId IdType="pubmed">25352267</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Laurence J.M., Tran P.D., Morarji K. A systematic review and meta-analysis of survival and surgical outcomes following neoadjuvant chemoradiotherapy for pancreatic cancer. J Gastrointest Surg. 2011;15:2059–2069.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">21913045</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Ye M., Zhang Q., Chen Y. Neoadjuvant chemotherapy for primary resectable pancreatic cancer: a systematic review and meta-analysis. HPB (Oxford) 2020;22:821–832.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">32001139</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Janssen Q.P., O'Reilly E.M., van Eijck C.H.J., Groot Koerkamp B. Neoadjuvant treatment in patients with resectable and borderline resectable pancreatic cancer. Front Oncol. 2020;10:41.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC7005204</ArticleId>
+<ArticleId IdType="pubmed">32083002</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Kulkarni N.M., Soloff E.V., Tolat P.P. White paper on pancreatic ductal adenocarcinoma from society of abdominal radiology's disease-focused panel for pancreatic ductal adenocarcinoma: part I, AJCC staging system, NCCN guidelines, and borderline resectable disease. Abdom Radiol (NY) 2020;45:716–728.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">31748823</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Oba A., Ho F., Bao Q.R. Neoadjuvant treatment in pancreatic cancer. Front Oncol. 2020;10:245.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC7058791</ArticleId>
+<ArticleId IdType="pubmed">32185128</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Ferrone C.R., Marchegiani G., Hong T.S. Radiological and surgical implications of neoadjuvant treatment with FOLFIRINOX for locally advanced and borderline resectable pancreatic cancer. Ann Surg. 2015;261:12–17.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC4349683</ArticleId>
+<ArticleId IdType="pubmed">25599322</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Varadhachary G.R., Tamm E.P., Abbruzzese J.L. Borderline resectable pancreatic cancer: definitions, management, and role of preoperative therapy. Ann Surg Oncol. 2006;13:1035–1046.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">16865597</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Dixon E., Abdalla E., Schwarz R.E., Vauthey J.N. AHPBA/SSO/SSAT sponsored consensus conference on multidisciplinary treatment of hepatocellular carcinoma. HPB (Oxford) 2010;12:287–288.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC2951813</ArticleId>
+<ArticleId IdType="pubmed">20590900</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Katz M.H., Marsh R., Herman J.M. Borderline resectable pancreatic cancer: need for standardization and methods for optimal clinical trial design. Ann Surg Oncol. 2013;20:2787–2795.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC5600517</ArticleId>
+<ArticleId IdType="pubmed">23435609</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Bockhorn M., Uzunoglu F.G., Adham M. Borderline resectable pancreatic cancer: a consensus statement by the International Study Group of Pancreatic Surgery (ISGPS) Surgery. 2014;155:977–988.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">24856119</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Isaji S., Mizuno S., Windsor J.A. International consensus on definition and criteria of borderline resectable pancreatic ductal adenocarcinoma 2017. Pancreatology. 2018;18:2–11.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">29191513</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Tempero M.A. NCCN guidelines updates: pancreatic cancer. J Natl Compr Canc Netw. 2019;17:603–605.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">31117041</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Tang K., Lu W., Qin W., Wu Y. Neoadjuvant therapy for patients with borderline resectable pancreatic cancer: a systematic review and meta-analysis of response and resection percentages. Pancreatology. 2016;16:28–37.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">26687001</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Janssen Q.P., Buettner S., Suker M. Neoadjuvant FOLFIRINOX in patients with borderline resectable pancreatic cancer: a systematic review and patient-level meta-analysis. J Natl Cancer Inst. 2019;111:782–794.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC6695305</ArticleId>
+<ArticleId IdType="pubmed">31086963</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Versteijne E., Suker M., Groothuis K. Preoperative chemoradiotherapy versus immediate surgery for resectable and borderline resectable pancreatic cancer: results of the dutch randomized phase III PREOPANC trial. J Clin Oncol. 2020;38:1763–1773.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">32105518</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Xu C.P., Xue X.J., Liang N. Effect of chemoradiotherapy and neoadjuvant chemoradiotherapy in resectable pancreatic cancer: a systematic review and meta-analysis. J Cancer Res Clin Oncol. 2014;140:549–559.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">24370686</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Suker M., Beumer B.R., Sadot E. FOLFIRINOX for locally advanced pancreatic cancer: a systematic review and patient-level meta-analysis. Lancet Oncol. 2016;17:801–810.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC5527756</ArticleId>
+<ArticleId IdType="pubmed">27160474</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Kleeff J., Ronellenfitsch U., Michalski C.W. Do we need sequential local therapy following neoadjuvant chemotherapy for locally advanced pancreatic cancer? EClinicalMedicine. 2019;17:100222.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC6933141</ArticleId>
+<ArticleId IdType="pubmed">31891149</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Jung J., Yoon S.M., Park J.H. Stereotactic body radiation therapy for locally advanced pancreatic cancer. PLoS One. 2019;14:e0214970.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC6461258</ArticleId>
+<ArticleId IdType="pubmed">30978229</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Tempero M.A., Malafa M.P., Chiorean E.G. Pancreatic adenocarcinoma, version 1.2019. J Natl Compr Canc Netw. 2019;17:202–210.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">30865919</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Pentheroudakis G., Committee E.G. Recent eupdates to the ESMO Clinical Practice Guidelines on hepatocellular carcinoma, cancer of the pancreas, soft tissue and visceral sarcomas, cancer of the prostate and gastric cancer. Ann Oncol. 2019;30:1395–1397.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">31168599</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Khorana A.A., McKernin S.E., Berlin J. Potentially curable pancreatic adenocarcinoma: ASCO Clinical Practice Guideline update. J Clin Oncol. 2019;37:2082–2088.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">31180816</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Gulhati P., Prakash L., Katz M.H.G. First-line gemcitabine and nab-paclitaxel chemotherapy for localized pancreatic ductal adenocarcinoma. Ann Surg Oncol. 2019;26:619–627.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">30324485</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Paiella S., De Pastena M., Romeo F. Ablation treatments in unresectable pancreatic cancer. Minerva Chir. 2019;74:263–269.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">30600963</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Ducreux M., Cuhna A.S., Caramella C. Cancer of the pancreas: ESMO Clinical Practice Guidelines for diagnosis, treatment and follow-up. Ann Oncol. 2015;26(suppl 5):v56–v68.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">26314780</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Pan L., Fang J., Tong C. Survival benefits of neoadjuvant chemo(radio)therapy versus surgery first in patients with resectable or borderline resectable pancreatic cancer: a systematic review and meta-analysis. World J Surg Oncol. 2019;18:1.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC6937851</ArticleId>
+<ArticleId IdType="pubmed">31892339</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Reni M., Balzano G., Zanon S. Safety and efficacy of preoperative or post-operative chemotherapy for resectable pancreatic adenocarcinoma (PACT-15): a randomised, open-label, phase 2-3 trial. Lancet Gastroenterol Hepatol. 2018;3:413–423.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">29625841</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Ghaneh P., Palmer D.H., Cicconi S. ESPAC-5F: four-arm, prospective, multicenter, international randomized phase II trial of immediate surgery compared with neoadjuvant gemcitabine plus capecitabine (GEMCAP) or FOLFIRINOX or chemoradiotherapy (CRT) in patients with borderline resectable pancreatic cancer. J Clin Oncol. 2020;38:4505.</Citation>
+</Reference>
+<Reference>
+<Citation>Sohal D., Duong M.T., Ahmad S.A. SWOG S1505: results of perioperative chemotherapy (peri-op CTx) with mfolfirinox versus gemcitabine/nab-paclitaxel (Gem/nabP) for resectable pancreatic ductal adenocarcinoma (PDA) J Clin Oncol. 2020;38:4504.</Citation>
+</Reference>
+<Reference>
+<Citation>Gilbert J.W., Wolpin B., Clancy T. Borderline resectable pancreatic cancer: conceptual evolution and current approach to image-based classification. Ann Oncol. 2017;28:2067–2076.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC5834155</ArticleId>
+<ArticleId IdType="pubmed">28407088</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Heinrich S., Besselink M., Moehler M. Opinions and use of neoadjuvant therapy for resectable, borderline resectable, and locally advanced pancreatic cancer: international survey and case-vignette study. BMC Cancer. 2019;19:675.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC6617881</ArticleId>
+<ArticleId IdType="pubmed">31288786</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Dreyer S.B., Chang D.K., Bailey P., Biankin A.V. Pancreatic cancer genomes: implications for clinical management and therapeutic development. Clin Cancer Res. 2017;23:1638–1646.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">28373362</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Biankin A.V., Waddell N., Kassahn K.S. Pancreatic cancer genomes reveal aberrations in axon guidance pathway genes. Nature. 2012;491:399–405.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC3530898</ArticleId>
+<ArticleId IdType="pubmed">23103869</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Waddell N., Pajic M., Patch A.M. Whole genomes redefine the mutational landscape of pancreatic cancer. Nature. 2015;518:495–501.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC4523082</ArticleId>
+<ArticleId IdType="pubmed">25719666</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Bailey P., Chang D.K., Nones K. Genomic analyses identify molecular subtypes of pancreatic cancer. Nature. 2016;531:47–52.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">26909576</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Pishvaian M.J., Blais E.M., Brody J.R. Outcomes in patients with pancreatic adenocarcinoma with genetic mutations in DNA damage response pathways: results from the know your tumour program. JCO Precision Oncology. 2019;3:1–10.</Citation>
+</Reference>
+<Reference>
+<Citation>Aguirre A.J., Nowak J.A., Camarda N.D. Real-time genomic characterization of advanced pancreatic cancer to enable precision medicine. Cancer Discov. 2018;8:1096–1111.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC6192263</ArticleId>
+<ArticleId IdType="pubmed">29903880</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Aung K.L., Fischer S.E., Denroche R.E. Genomics-driven precision medicine for advanced pancreatic cancer: early results from the COMPASS trial. Clin Cancer Res. 2018;24:1344–1354.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC5968824</ArticleId>
+<ArticleId IdType="pubmed">29288237</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Park W., Chen J., Chou J.F. Genomic methods identify homologous recombination deficiency in pancreas adenocarcinoma and optimize treatment selection. Clin Cancer Res. 2020;26:3239–3247.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC7380542</ArticleId>
+<ArticleId IdType="pubmed">32444418</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Golan T., Varadhachary G.R., Sela T. Phase II study of olaparib for BRCAness phenotype in pancreatic cancer. J Clin Oncol. 2018;36:297.</Citation>
+</Reference>
+<Reference>
+<Citation>Zhu H., Wei M., Xu J. PARP inhibitors in pancreatic cancer: molecular mechanisms and clinical applications. Mol Cancer. 2020;19:49.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC7053129</ArticleId>
+<ArticleId IdType="pubmed">32122376</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Golan T., Hammel P., Reni M. Maintenance olaparib for germline BRCA-mutated metastatic pancreatic cancer. N Engl J Med. 2019;381:317–327.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC6810605</ArticleId>
+<ArticleId IdType="pubmed">31157963</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Sahin I.H., Askan G., Hu Z.I., O'Reilly E.M. Immunotherapy in pancreatic ductal adenocarcinoma: an emerging entity? Ann Oncol. 2017;28:2950–2961.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC5834032</ArticleId>
+<ArticleId IdType="pubmed">28945842</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Martens S., Lefesvre P., Nicolle R. Different shades of pancreatic ductal adenocarcinoma, different paths towards precision therapeutic applications. Ann Oncol. 2019;30:1428–1436.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">31161208</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Collisson E.A., Bailey P., Chang D.K., Biankin A.V. Molecular subtypes of pancreatic cancer. Nat Rev Gastroenterol Hepatol. 2019;16:207–220.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">30718832</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Collisson E.A., Sadanandam A., Olson P. Subtypes of pancreatic ductal adenocarcinoma and their differing responses to therapy. Nat Med. 2011;17:500–503.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC3755490</ArticleId>
+<ArticleId IdType="pubmed">21460848</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Nagtegaal I.D., Odze R.D., Klimstra D. The 2019 WHO classification of tumours of the digestive system. Histopathology. 2020;76:182–188.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC7003895</ArticleId>
+<ArticleId IdType="pubmed">31433515</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Moffitt R.A., Marayati R., Flate E.L. Virtual microdissection identifies distinct tumour- and stroma-specific subtypes of pancreatic ductal adenocarcinoma. Nat Genet. 2015;47:1168–1178.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC4912058</ArticleId>
+<ArticleId IdType="pubmed">26343385</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Hoadley K.A., Yau C., Wolf D.M. Multiplatform analysis of 12 cancer types reveals molecular classification within and across tissues of origin. Cell. 2014;158:929–944.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC4152462</ArticleId>
+<ArticleId IdType="pubmed">25109877</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Martinelli P., Carrillo-de Santa Pau E., Cox T. GATA6 regulates EMT and tumour dissemination, and is a marker of response to adjuvant chemotherapy in pancreatic cancer. Gut. 2017;66:1665–1676.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC5070637</ArticleId>
+<ArticleId IdType="pubmed">27325420</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>O'Kane G.M., Grunwald B.T., Jang G.H. GATA6 expression distinguishes classical and basal-like subtypes in advanced pancreatic cancer. Clin Cancer Res. 2020;26(18):4901–4910.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">32156747</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Martinelli P., Carrillo-de Santa Pau E., Cox T. GATA6 regulates EMT and tumour dissemination, and is a marker of response to adjuvant chemotherapy in pancreatic cancer. Gut. 2017;66:1665–1676.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC5070637</ArticleId>
+<ArticleId IdType="pubmed">27325420</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Dreyer S.B., Pinese M., Jamieson N.B. Precision oncology in surgery: patient selection for operable pancreatic cancer. Ann Surg. 2020;272:366–376.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC7373491</ArticleId>
+<ArticleId IdType="pubmed">32675551</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Dreyer S.B., Jamieson N.B., Morton J.P. Pancreatic cancer: from genome discovery to PRECISION-Panc. Clin Oncol (R Coll Radiol) 2020;32:5–8.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">31522943</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Murphy J.E., Wo J.Y., Ryan D.P. Total neoadjuvant therapy with FOLFIRINOX followed by individualized chemoradiotherapy for borderline resectable pancreatic adenocarcinoma: a phase 2 clinical trial. JAMA Oncol. 2018;4:963–969.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC6145728</ArticleId>
+<ArticleId IdType="pubmed">29800971</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>He J., Blair A.B., Groot V.P. Is a pathological complete response following neoadjuvant chemoradiation associated with prolonged survival in patients with pancreatic cancer? Ann Surg. 2018;268:1–8.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC6178802</ArticleId>
+<ArticleId IdType="pubmed">29334562</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Gemenetzis G., Groot V.P., Blair A.B. Survival in locally advanced pancreatic cancer after neoadjuvant therapy and surgical resection. Ann Surg. 2019;270:340–347.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC6985003</ArticleId>
+<ArticleId IdType="pubmed">29596120</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Motoi F., Kosuge T., Ueno H. Randomized phase II/III trial of neoadjuvant chemotherapy with gemcitabine and S-1 versus upfront surgery for resectable pancreatic cancer (Prep-02/JSAP05) Jpn J Clin Oncol. 2019;49:190–194.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">30608598</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Zhao Q., Rashid A., Gong Y. Pathologic complete response to neoadjuvant therapy in patients with pancreatic ductal adenocarcinoma is associated with a better prognosis. Ann Diagn Pathol. 2012;16:29–37.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC3832988</ArticleId>
+<ArticleId IdType="pubmed">22050964</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Khattab A., Patruni S., Abel S. Long-term outcomes by response to neoadjuvant chemotherapy or chemoradiation in patients with resected pancreatic adenocarcinoma. J Gastrointest Oncol. 2019;10:918–927.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC6776797</ArticleId>
+<ArticleId IdType="pubmed">31602330</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Townend P., de Reuver P.R., Chua T.C. Histopathological tumour viability after neoadjuvant chemotherapy influences survival in resected pancreatic cancer: analysis of early outcome data. ANZ J Surg. 2018;88:E167–E172.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">28318082</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Golan T., Barenboim A., Lahat G. Increased rate of complete pathologic response after neoadjuvant FOLFIRINOX for BRCA mutation carriers with borderline resectable pancreatic cancer. Ann Surg Oncol. 2020;27:3963–3970.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">32314163</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>He J., Blair A.B., Groot V.P. Is a pathological complete response following neoadjuvant chemoradiation associated with prolonged survival in patients with pancreatic cancer? Ann Surg. 2018;268(1):1–8.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC6178802</ArticleId>
+<ArticleId IdType="pubmed">29334562</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Patil S., Steuber B., Kopp W. EZH2 regulates pancreatic cancer subtype identity and tumour progression via transcriptional repression of GATA6. Cancer Res. 2020;80(21):4620–4632.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">32907838</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Chang D.K., Grimmond S.M., Evans T.R., Biankin A.V. Mining the genomes of exceptional responders. Nat Rev Cancer. 2014;14:291–292.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">25688402</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Rombouts S.J., Walma M.S., Vogel J.A. Systematic review of resection rates and clinical outcomes after FOLFIRINOX-based treatment in patients with locally advanced pancreatic cancer. Ann Surg Oncol. 2016;23:4352–4360.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC5090009</ArticleId>
+<ArticleId IdType="pubmed">27370653</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Park W., Wong W., Yu K.H. Homologous recombination deficiency (HRD): a biomarker for first-line (1L) platinum in advanced pancreatic ductal adenocarcinoma (PDAC) J Clin Oncol. 2019;37:4132.</Citation>
+</Reference>
+<Reference>
+<Citation>Torgeson A., Lloyd S., Boothe D. Multiagent induction chemotherapy followed by chemoradiation is associated with improved survival in locally advanced pancreatic cancer. Cancer. 2017;123:3816–3824.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">28621885</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Nevala-Plagemann C., Hidalgo M., Garrido-Laguna I. From state-of-the-art treatments to novel therapies for advanced-stage pancreatic cancer. Nat Rev Clin Oncol. 2020;17:108–123.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">31705130</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Berger M.F., Mardis E.R. The emerging clinical relevance of genomics in cancer medicine. Nat Rev Clin Oncol. 2018;15:353–365.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC6658089</ArticleId>
+<ArticleId IdType="pubmed">29599476</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Ersek J.L., Black L.J., Thompson M.A., Kim E.S. Implementing precision medicine programs and clinical trials in the community-based oncology practice: barriers and best practices. Am Soc Clin Oncol Educ Book. 2018;38:188–196.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">30231363</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Kitano M., Yoshida T., Itonaga M. Impact of endoscopic ultrasonography on diagnosis of pancreatic cancer. J Gastroenterol. 2019;54:19–32.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC6314985</ArticleId>
+<ArticleId IdType="pubmed">30406288</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Baek H.W., Park M.J., Rhee Y.Y. Diagnostic accuracy of endoscopic ultrasound-guided fine needle aspiration cytology of pancreatic lesions. J Pathol Transl Med. 2015;49:52–60.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC4357401</ArticleId>
+<ArticleId IdType="pubmed">25812658</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Cros J., Raffenne J., Couvelard A., Pote N. Tumour heterogeneity in pancreatic adenocarcinoma. Pathobiology. 2018;85:64–71.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">28787741</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Vietsch E.E., Graham G.T., McCutcheon J.N. Reprint of: circulating cell-free DNA mutation patterns in early and late stage colon and pancreatic cancer. Cancer Genet. 2018;228-229:131–142.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">30447903</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Ahola R., Sand J., Laukkarinen J. Centralization of pancreatic surgery improves results: review. Scand J Surg. 2020;109:4–10.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">31969066</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Balzano G., Guarneri G., Pecorelli N. Modelling centralization of pancreatic surgery in a nationwide analysis. Br J Surg. 2020;107:1510–1519.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">32592514</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Dreyer S.B., Jamieson N.B., Cooke S.L. PRECISION-Panc: the next generation therapeutic development platform for pancreatic cancer. Clin Oncol (R Coll Radiol) 2020;32:1–4.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">31378449</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Dreyer S.B., Jamieson N.B., Evers L. Feasibility and clinical utility of endoscopic ultrasound guided biopsy of pancreatic cancer for next-generation molecular profiling. Chin Clin Oncol. 2019;8:16.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">31070037</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Lowery M.A., Jordan E.J., Basturk O. Real-time genomic profiling of pancreatic ductal adenocarcinoma: potential actionability and correlation with clinical phenotype. Clin Cancer Res. 2017;23:6094–6100.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">28754816</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Chantrill L.A., Nagrial A.M., Watson C. Precision medicine for advanced pancreas cancer: the individualized molecular pancreatic cancer therapy (IMPaCT) trial. Clin Cancer Res. 2015;21:2029–2037.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">25896973</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Lee M., Jones M.R., Williamson L. Comprehensive genomic analysis of metastatic pancreatic ductal adenocarcinoma (mPDAC) reveals a significant proportion of clinical actionable aberrations. J Clin Oncol. 2019;37:e15753.</Citation>
+</Reference>
+<Reference>
+<Citation>Marchegiani G., Andrianello S., Perri G. Does the surgical waiting list affect pathological and survival outcome in resectable pancreatic ductal adenocarcinoma? HPB (Oxford) 2018;20:411–417.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">29191689</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Kirkegard J., Mortensen F.V., Hansen C.P. Waiting time to surgery and pancreatic cancer survival: a nationwide population-based cohort study. Eur J Surg Oncol. 2019;45:1901–1905.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">31160135</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Mirkin K.A., Hollenbeak C.S., Wong J. Time to surgery: a misguided quality metric in early stage pancreatic cancer. J Gastrointest Surg. 2018;22:1365–1375.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pubmed">29520648</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Yu S., Agarwal P., Mamtani R. Retrospective survival analysis of patients with resected pancreatic ductal adenocarcinoma and a germline BRCA or PALB2 mutation. JCO Precision Oncology. 2019;3:1–11.</Citation>
+</Reference>
+<Reference>
+<Citation>Dreyer S.B., Upstill-Goddard R., Paulus-Hock V. Targeting DNA damage response and replication stress in pancreatic cancer. Gastroenterology. 2021;160(1):362–377.e13.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC8167930</ArticleId>
+<ArticleId IdType="pubmed">33039466</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Kocher H.M., Basu B., Froeling F.E.M. Phase I clinical trial repurposing all-trans retinoic acid as a stromal targeting agent for pancreatic cancer. Nat Commun. 2020;11:4841.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC7518421</ArticleId>
+<ArticleId IdType="pubmed">32973176</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Tuli R., Surmak A.J., Reyes J. Radiosensitization of pancreatic cancer cells in vitro and in vivo through poly (ADP-ribose) polymerase inhibition with ABT-888. Transl Oncol. 2014;7(3):439–445.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC4145354</ArticleId>
+<ArticleId IdType="pubmed">24836647</ArticleId>
+</ArticleIdList>
+</Reference>
+<Reference>
+<Citation>Tuli R., Shiao S.L., Nissen N. A phase 1 study of veliparib, a PARP-1/2 inhibitor, with gemcitabine and radiotherapy in locally advanced pancreatic cancer. EBioMedicine. 2019;40:375–381.</Citation>
+<ArticleIdList>
+<ArticleId IdType="pmc">PMC6412162</ArticleId>
+<ArticleId IdType="pubmed">30635165</ArticleId>
+</ArticleIdList>
+</Reference>
+</ReferenceList>
+</PubmedData>
+</PubmedArticle>
+</PubmedArticleSet>

@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore.swo" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore.swo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/.ipynb_checkpoints/build_tables_for_all_xmls-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/.ipynb_checkpoints/build_tables_for_all_xmls-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/build_tables_for_all_xmls.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/build_tables_for_all_xmls.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/nohup.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/parallel.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/parallel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/pyspark_parquet.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/pyspark_parquet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/yasamin_cen.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/yasamin_cen.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,23 +38,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging main",
-    "last_opened_file_path": "/home/hm31/step_1/step_1_sample_study",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/hm31/step_1/step_1_sample_study&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RdControllerToolWindowsLayoutState" isNewUi="true">
     <layout>
       <window_info id="Space Code Reviews" />
@@ -304,6 +298,8 @@
       <workItem from="1699981301415" duration="20000" />
       <workItem from="1699981348222" duration="626000" />
       <workItem from="1699982268192" duration="4467000" />
+      <workItem from="1699993474728" duration="10528000" />
+      <workItem from="1700007009135" duration="2394000" />
     </task>
     <servers />
   </component>
@@ -319,11 +315,6 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/step_2_whole_reporting/main.py</url>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/step_3_generate_tables/CEN_intersection.py</url>
-          <line>1</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

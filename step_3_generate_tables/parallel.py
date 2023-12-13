@@ -369,6 +369,7 @@ def add_remaining():
 
     end = time.time()
     print(f'elapsed {end - start}')
+    return len(all_xml_files) - len(all_parquet_files)
 
 def main():
     import multiprocessing
@@ -399,7 +400,32 @@ def main():
 
 
 if __name__ == '__main__':
-    # main()
-    add_remaining()
-    add_remaining()
-    add_remaining()
+    main()
+
+    remained_files = []
+    rem = add_remaining()
+    remained_files.append(rem)
+
+    #When to break if we could parse no more parquet file?
+    fruitless_attempts_limit = 4
+    step_counter = 0
+
+    while rem > 0 and step_counter < 50:
+        step_counter += 1
+        rem = add_remaining()
+        remained_files.append(rem)
+
+        #break in case of fruitless_attempts_limit fruitless attempts
+        break_flag = True
+        if len(remained_files) >= fruitless_attempts_limit:
+            for i in range(fruitless_attempts_limit-1):
+                if remained_files[-(i+1)] != remained_files[-1]:
+                    break_flag = False
+                    break
+
+        if break_flag:
+            break
+
+    
+
+

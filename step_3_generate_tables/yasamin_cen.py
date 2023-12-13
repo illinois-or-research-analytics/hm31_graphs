@@ -62,6 +62,10 @@ def calculate_node_id_to_pmid_mapping(cen_nodes, george_df, full = False):
 
     return result_df
 
+def save_table_into_parquet(table_name, saving_directory):
+    df = spark.read.jdbc(url=jdbc_url, table=table_name, properties=jdbc_properties)
+    df.write.parquet(f'{saving_directory}{table_name.split(".")[-1]}.parquet')
+
 
 
 #Write a df into the db
@@ -146,8 +150,8 @@ def read_and_dump_cen_nodes(spark, jdbc_url, jdbc_properties):
 
 
 if __name__ == "__main__":
-    nodes_address = '../data/reformatted.tsv'
-    edges_address = '../data/CEN.tsv'
+    # nodes_address = '../data/reformatted.tsv'
+    # edges_address = '../data/CEN.tsv'
 
     spark = SparkSession \
         .builder \
@@ -165,11 +169,11 @@ if __name__ == "__main__":
     }
 
     #read_and_dump_cen_nodes(spark, jdbc_url, jdbc_properties)
-    cen = read_CEN(nodes_address, spark)
-    george_df = read_df(spark, jdbc_url, 'hm31.george_pipeline', jdbc_properties )
+    # cen = read_CEN(nodes_address, spark)
+    # george_df = read_df(spark, jdbc_url, 'hm31.george_pipeline', jdbc_properties )
 
 
-    filter_nodes()
+    # filter_nodes()
     #calculate_node_id_to_pmid_mapping(cen, george_df, full = False) #10484769
     #calculate_node_id_to_pmid_mapping(cen, george_df, full = True) #9304726
 
@@ -180,6 +184,9 @@ if __name__ == "__main__":
     # edges = read_EDGES(edges_address,spark)
     #
     # filter_edges(edges,node_id_to_pmid_mapping)
+
+    save_table_into_parquet('hm31.cen_raw_nodes', '/shared/pubmed/')
+
 
 
 

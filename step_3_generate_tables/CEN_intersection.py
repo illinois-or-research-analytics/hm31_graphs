@@ -60,6 +60,7 @@ def filter_edges(edges, xml):
     write_df(result, jdbc_url, 'hm31.CEN_intersection_edges_correct', jdbc_properties)
 
 
+
 def create_CEN_intersection_table(spark, jdbc_url, jdbc_properties):
     cr = read_CEN(nodes_address, spark)
     cr.show()

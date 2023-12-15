@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/step_3_generate_tables/elapsed_time.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_3_generate_tables/modularized_spark_parquet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_3_generate_tables/pubmed_etl.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/CEN_intersection.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/CEN_intersection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/.ipynb_checkpoints/build_tables_for_all_xmls-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/.ipynb_checkpoints/build_tables_for_all_xmls-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/step_3_generate_tables/build_tables_for_all_xmls.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/build_tables_for_all_xmls.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/step_3_generate_tables/parallel.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/parallel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/yasamin_cen.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/yasamin_cen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/pyspark_parquet.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/pyspark_parquet.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,9 +69,9 @@
       <window_info id="Commit_Guest" />
       <window_info id="Pull Requests" />
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77884614" visible="true" weight="0.14621621" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7763158" visible="true" weight="0.14081082" />
       <window_info id="Commit" order="1" weight="0.25" />
-      <window_info active="true" id="Structure" order="2" sideWeight="0.22115386" side_tool="true" visible="true" weight="0.14621621" />
+      <window_info active="true" id="Structure" order="2" sideWeight="0.22368422" side_tool="true" visible="true" weight="0.14081082" />
       <window_info anchor="bottom" id="DataprocToolWindow" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="TypeScript" />
@@ -85,10 +88,10 @@
       <window_info anchor="bottom" id="Jupyter" weight="0.3273148" />
       <window_info anchor="bottom" id="SparkMonitoringToolWindow" />
       <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info active="true" anchor="bottom" id="Problems View" order="1" visible="true" weight="0.2920228" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.2920228" />
+      <window_info anchor="bottom" id="Problems View" order="1" weight="0.2920228" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.39268756" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3300926" />
-      <window_info anchor="bottom" id="Services" order="4" weight="0.30721748" />
+      <window_info anchor="bottom" id="Services" order="4" weight="0.2920228" />
       <window_info anchor="right" id="Endpoints" />
       <window_info anchor="right" id="BigDataToolWindow" />
       <window_info anchor="right" id="SciView" />
@@ -302,7 +305,12 @@
       <workItem from="1700007009135" duration="9499000" />
       <workItem from="1701656257817" duration="1246000" />
       <workItem from="1701725756012" duration="3313000" />
-      <workItem from="1702484081428" duration="1012000" />
+      <workItem from="1702484081428" duration="14842000" />
+      <workItem from="1702566675666" duration="2827000" />
+      <workItem from="1702571196747" duration="2391000" />
+      <workItem from="1702581568164" duration="7468000" />
+      <workItem from="1702602404423" duration="4488000" />
+      <workItem from="1702662512919" duration="2735000" />
     </task>
     <servers />
   </component>

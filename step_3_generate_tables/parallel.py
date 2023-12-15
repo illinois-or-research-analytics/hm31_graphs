@@ -1,5 +1,4 @@
-import xmltodict
-import pandas as pd
+
 
 
 def parse(file_path):
@@ -7,10 +6,10 @@ def parse(file_path):
         # Open and read the XML file
         with open(file_path, 'r', encoding='utf-8') as file:
             xml_contents = file.read()
-        print("read")
+        #print("read")
         # Parse the XML content using xmltodict
         xml_dict = xmltodict.parse(xml_contents)
-        print("parsed")
+        #print("parsed")
         # Print the parsed XML as a Python dictionary
     except Exception as e:
         print("Error:", e)
@@ -42,7 +41,6 @@ def parse_single_record(xml_dict, originial_dict, i=0):
     journal_ISSN = ""
     chemical_list = []
     meta_data = {}
-    pub_year = ""
     PMID = ""
     doi = ""
     title = ""
@@ -52,6 +50,8 @@ def parse_single_record(xml_dict, originial_dict, i=0):
     month_revised = ""
     day_revised = ""
     date_revised = ""
+
+    journal_puddate = ""
 
     try:
         xml_dict = dict(xml_dict)
@@ -82,23 +82,6 @@ def parse_single_record(xml_dict, originial_dict, i=0):
         except:
             pass
 
-        #         try:
-        #             if 'DateCompleted' in xml_dict:
-        #                 new_dic = dict(xml_dict['DateCompleted'])
-        #                 if 'Year' in new_dic:
-        #                     year = new_dic['Year']
-
-        #                 if 'Month' in new_dic:
-        #                     month = new_dic['Month']
-
-        #                 if 'Day' in new_dic:
-        #                     day = new_dic['Day']
-
-        #             else:
-        #                   pass
-
-        #         except:
-        #             pass
 
         try:
             if 'Article' in xml_dict:
@@ -111,7 +94,12 @@ def parse_single_record(xml_dict, originial_dict, i=0):
         try:
             if 'Article' in xml_dict:
                 new_dic = dict(xml_dict['Article'])
-                pub_year = new_dic['Journal']['JournalIssue']['PubDate']['Year']
+                new_dic = str(new_dic['Journal']['JournalIssue']['PubDate'])
+
+                pattern = re.compile(r'\d{4}')
+                year = pattern.findall(new_dic)[0]
+
+
 
         except:
             pass
@@ -189,6 +177,7 @@ def parse_single_record(xml_dict, originial_dict, i=0):
                     abstract = abstract['#text']
 
 
+
         except:
             pass
 
@@ -248,8 +237,6 @@ def parse_single_record(xml_dict, originial_dict, i=0):
     except:
         pass
 
-    if len(year) == 0:
-        year = pub_year
 
     if title == None:
         title = ''
@@ -268,14 +255,13 @@ def parse_single_record(xml_dict, originial_dict, i=0):
 
     meta_data = {'PMID': int(PMID), 'mesh': str(mesh_headings), 'grants': str(grants), 'year': str(year),
                  'journal_ISSN': str(journal_ISSN), 'journal_title': str(journal_title),
-                 'chemical': str(chemical_list), 'pub_year': str(pub_year), 'doi': doi.lower(),
+                 'chemical': str(chemical_list), 'doi': doi.lower(),
                  'title': str(title), 'abstract': str(abstract),
                  'date_revised': date_revised}
 
     return meta_data
 
-
-def parallelize(file_path, mode='parquet', dump_address='/shared/hossein_hm31/pubmed_parquet/'):
+def parallelize(file_path, dump_address, mode='parquet'):
     xml_dict = parse(file_path)
 
     meta_data_array = []
@@ -299,7 +285,7 @@ def parallelize(file_path, mode='parquet', dump_address='/shared/hossein_hm31/pu
         df = pd.DataFrame(meta_data_array)
         df.set_index(['PMID', 'doi'], inplace=True)
         df.to_parquet(f'{dump_address + xml_name}.parquet')
-        print('saved')
+        #print('saved')
 
 
 def insert_values_into_table(values_list):
@@ -345,13 +331,10 @@ def convert_dict_to_query(dic):
     return query
 
 
-def add_remaining():
-    import multiprocessing
-    import time
-    import os
+def add_remaining(xml_data_dir, parquet_dir, cores):
 
-    obtained_files = os.listdir('/shared/hossein_hm31/pubmed_parquet/')
-    all_files = os.listdir('/shared/hossein_hm31/xml_data/')
+    obtained_files = os.listdir(parquet_dir)
+    all_files = os.listdir(xml_data_dir)
 
     all_xml_files = [file.split('.')[0] for file in all_files if '.xml' in file]
     all_parquet_files = [file.split('.')[0] for file in obtained_files]
@@ -359,73 +342,104 @@ def add_remaining():
     files_left = [file for file in all_xml_files if not file in all_parquet_files]
 
     lst = []
-    start = time.time()
 
     for file in files_left:
-        lst.append((f'/shared/hossein_hm31/xml_data/{file}.xml',))
+        #lst.append((f'/shared/hossein_hm31/xml_data/{file}.xml',))
+        lst.append((f'/{xml_data_dir}{file}.xml', parquet_dir))
 
-    with multiprocessing.Pool(processes=60) as pool:
+    with multiprocessing.Pool(processes=cores) as pool:
         results = pool.starmap(parallelize, lst)
 
-    end = time.time()
-    print(f'elapsed {end - start}')
     return len(all_xml_files) - len(all_parquet_files)
 
-def main():
-    import multiprocessing
-    import time
-    import os
-
-    start = time.time()
-
-    nest_dir = '/shared/hossein_hm31/xml_data/'
+def main(xml_data_dir, parquet_dir, cores):
+    nest_dir = xml_data_dir
     files = os.listdir(nest_dir)
 
     lst = []
 
     for file in files:
-        lst.append((nest_dir + file,))
+        lst.append((nest_dir + file, parquet_dir))
 
-    with multiprocessing.Pool(processes=60) as pool:
+    with multiprocessing.Pool(processes=cores) as pool:
         results = pool.starmap(parallelize, lst)
 
-    end = time.time()
-    print(f'elapsed {end - start}')
-    file_name = "elapsed_time.txt"
 
-    # Open the file for writing
-    with open(file_name, "w") as file:
-        # Write the elapsed time to the file
-        file.write(f'elapsed {end - start}')
 
 
 if __name__ == '__main__':
-    main()
+    import time
+    import multiprocessing
+    import os
+    import xmltodict
+    import pandas as pd
+    import argparse
+    import re
 
-    remained_files = []
-    rem = add_remaining()
-    remained_files.append(rem)
+    start = time.time()
 
-    #When to break if we could parse no more parquet file?
-    fruitless_attempts_limit = 4
-    step_counter = 0
+    parser = argparse.ArgumentParser(description='Parser')
+    parser.add_argument('-xml', dest='xml', type=str, help='Path to XML data directory. Each XML must be in PubMed standard format')
+    parser.add_argument('-parquet', dest='parquet', type=str, help='Path to parquet files directory')
+    parser.add_argument('-wrap', dest='wrap', type=str, help='Number of cores. 60 - 80 is suggested for whole baseline on otherwise free Valhalla')
+    parser.add_argument('-cores', dest='cores', type=str, help='int 0 or 1. It checks whether to make the number of parquet files equal to xml files')
 
-    while rem > 0 and step_counter < 50:
-        step_counter += 1
-        rem = add_remaining()
+
+
+
+    args = parser.parse_args()
+    xml_data_dir = args.xml
+    parquet_data_dir = args.parquet
+    num_cores = int(args.cores)
+    wrap = int(args.cores)
+
+
+    if xml_data_dir[-1] != '/':
+        xml_data_dir += '/'
+
+
+    if parquet_data_dir[-1] != '/':
+        parquet_data_dir += '/'
+
+
+    #A whole new attempt
+    if wrap == 0:
+
+        main(xml_data_dir, parquet_data_dir, num_cores)
+
+        remained_files = []
+        rem = add_remaining(xml_data_dir, parquet_data_dir, num_cores)
         remained_files.append(rem)
 
-        #break in case of fruitless_attempts_limit fruitless attempts
-        break_flag = True
-        if len(remained_files) >= fruitless_attempts_limit:
-            for i in range(fruitless_attempts_limit-1):
-                if remained_files[-(i+1)] != remained_files[-1]:
-                    break_flag = False
-                    break
+        #When to break if we could parse no more parquet file?
+        fruitless_attempts_limit = 4
+        step_counter = 0
 
-        if break_flag:
-            break
+        while rem > 0 and step_counter < 50:
+            step_counter += 1
+            rem = add_remaining(xml_data_dir, parquet_data_dir, num_cores)
+            remained_files.append(rem)
 
-    
+            #break in case of fruitless_attempts_limit fruitless attempts
+            break_flag = True
+            if len(remained_files) >= fruitless_attempts_limit:
+                for i in range(fruitless_attempts_limit-1):
+                    if remained_files[-(i+1)] != remained_files[-1]:
+                        break_flag = False
+                        break
+
+            if break_flag:
+                break
+
+    else:
+        add_remaining(xml_data_dir, parquet_data_dir, num_cores)
+        add_remaining(xml_data_dir, parquet_data_dir, num_cores)
+        add_remaining(xml_data_dir, parquet_data_dir, num_cores)
+        add_remaining(xml_data_dir, parquet_data_dir, num_cores)
+
+
+
+
+
 
 

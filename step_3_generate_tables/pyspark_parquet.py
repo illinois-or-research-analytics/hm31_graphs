@@ -42,6 +42,8 @@ spark = SparkSession.builder \
 
 
 df = spark.read.parquet(parquet_path)
+df.persist()
+
 spark.sparkContext.setLogLevel("WARN")
 
 # df.printSchema()

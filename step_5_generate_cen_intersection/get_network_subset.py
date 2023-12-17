@@ -28,6 +28,9 @@ def calculate_node_id_to_pmid_mapping(cen_nodes, george_df, full = False):
     george_df.createOrReplaceTempView("george_pipeline")
     dimensions_df.createOrReplaceTempView("exosome_dimensions")
 
+
+    dimensions_df = dimensions_df.repartition(10)
+
     print("george partition", george_df.rdd.getNumPartitions())
     print("dimensions_df partition", dimensions_df.rdd.getNumPartitions())
 
@@ -42,7 +45,7 @@ def calculate_node_id_to_pmid_mapping(cen_nodes, george_df, full = False):
         """)
         write_df(result_df, jdbc_url, 'hm31.node_id_to_pmid_partial', jdbc_properties)
 
-        # result_df.show(10)
+        return result_df
 
 
 
@@ -88,12 +91,12 @@ def read_EDGES(file_path, spark, read = True):
 
     return edges
 
-#Filter edges of CEN to a list of node_id1 node_id to but to those within dimensions and full metadata
+#Filter edges of CEN to a list of node_id1 node_id2 to but to those within dimensions and full metadata
 def filter_edges(edge, map):
     print('prior_count', edge.count())
 
-    edges = edge.repartition(1)
-    mapping = map.repartition(1)
+    edges = edge.repartition(5)
+    mapping = map.repartition(5)
     # Register DataFrames as temporary tables to be used in SQL queries
     edges.createOrReplaceTempView("edges_table")
     mapping.createOrReplaceTempView("mapping_table")
@@ -117,7 +120,7 @@ def filter_edges(edge, map):
 
     return filtered_edges
 
-#Fitler nodes of cen to those with metadata
+#Fitler nodes of cen to those with metadata. We decided we don't need this as we will only work with edge list
 def filter_nodes():
     cen_raw = read_df(spark, jdbc_url, 'hm31.cen_raw', jdbc_properties)
     map = read_df(spark, jdbc_url, 'hm31.node_id_to_pmid_full', jdbc_properties)
@@ -146,12 +149,35 @@ def read_and_dump_cen_nodes(spark, jdbc_url, jdbc_properties):
     cen_raw.write.option("sep", "\t").csv('/home/hm31/step_1/data/reformatted.tsv', header=True, sep='\t', mode='overwrite')
 
 
+#Given the edge data frame, calculate the unique nodes and save it as a df
+def calculate_unique_nodes(edge_df, spark):
+    edge_df.createOrReplaceTempView("edges_table")
+    # Perform the Spark SQL query
+    query = """
+        SELECT *
+        FROM (
+            SELECT first AS merged_column FROM edges_table
+            UNION
+            SELECT second AS merged_column FROM edges_table
+        ) AS subquery_alias
+        ORDER BY merged_column
+    """
+
+    result_df = spark.sql(query)
+
+    write_df(result_df, jdbc_url, 'hm31.unique_node_ids', jdbc_properties)
+
+    return result_df
+
+
+
+
 
 
 
 if __name__ == "__main__":
-    # nodes_address = '../data/reformatted.tsv'
-    # edges_address = '../data/CEN.tsv'
+    nodes_address = '../data/reformatted.tsv'
+    edges_address = '../data/CEN.tsv'
 
     spark = SparkSession \
         .builder \
@@ -168,24 +194,48 @@ if __name__ == "__main__":
         "driver": "org.postgresql.Driver"
     }
 
+
+
+
+
+
     #read_and_dump_cen_nodes(spark, jdbc_url, jdbc_properties)
-    # cen = read_CEN(nodes_address, spark)
-    # george_df = read_df(spark, jdbc_url, 'hm31.george_pipeline', jdbc_properties )
 
 
-    # filter_nodes()
-    #calculate_node_id_to_pmid_mapping(cen, george_df, full = False) #10484769
-    #calculate_node_id_to_pmid_mapping(cen, george_df, full = True) #9304726
+    #Step 1: Calculate the intersection of dimensions and public.pubmed_etl to get a mapping from pmid to node_id
 
-    #Obtain mapping
-    # node_id_to_pmid_mapping = read_df(spark,jdbc_url,'hm31.node_id_to_pmid_full',jdbc_properties)
-    #
-    # #Obtain edges
-    # edges = read_EDGES(edges_address,spark)
-    #
-    # filter_edges(edges,node_id_to_pmid_mapping)
+    """
+    cen = read_CEN(nodes_address, spark)
+    george_df = read_df(spark, jdbc_url, 'public.pubmed_etl', jdbc_properties )
 
-    save_table_into_parquet('hm31.cen_raw_nodes', '/shared/pubmed/')
+    george_df = george_df.repartition(10)
+    cen = cen.repartition(10)
+
+    george_df.persist()
+    node_id_to_pmid_mapping = calculate_node_id_to_pmid_mapping(cen, george_df, full = True) 
+    """
+
+    #Obtain mapping from pre-saved mode
+    node_id_to_pmid_mapping = read_df(spark,jdbc_url,'hm31.node_id_to_pmid_full',jdbc_properties)
+    node_id_to_pmid_mapping.persist()
+
+
+    """
+    edges = read_EDGES(edges_address,spark)
+    filtered_edges = filter_edges(edges,node_id_to_pmid_mapping)
+    """
+
+
+    filtered_edges = read_df(spark, jdbc_url, 'hm31.cen_intersection_edges', jdbc_properties)
+    filtered_edges = filtered_edges.repartition(20)
+    filtered_edges.persist()
+
+    unique_nodes = calculate_unique_nodes(filtered_edges, spark)
+
+
+
+
+
 
 
 

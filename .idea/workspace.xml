@@ -5,14 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/step_3_generate_tables/elapsed_time.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_3_generate_tables/modularized_spark_parquet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_3_generate_tables/pubmed_etl.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_3_generate_tables/extractor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_5_generate_cen_intersection/postgresql-42.5.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_6_obtain_tabular_features/obtain_features.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_6_obtain_tabular_features/postgresql-42.5.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_7_calculate_similarities/calculate_similarities.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_7_calculate_similarities/postgresql-42.5.2.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/.ipynb_checkpoints/build_tables_for_all_xmls-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/.ipynb_checkpoints/build_tables_for_all_xmls-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/build_tables_for_all_xmls.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/build_tables_for_all_xmls.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/parallel.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/parallel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/CEN_intersection.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/pubmed_etl.sh" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/pubmed_etl.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/step_3_generate_tables/pyspark_parquet.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/pyspark_parquet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/yasamin_cen.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_5_generate_cen_intersection/get_network_subset.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +54,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/hm31/step_1/step_1_sample_study&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/hm31/step_1/step_5_generate_cen_intersection&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -69,9 +72,9 @@
       <window_info id="Commit_Guest" />
       <window_info id="Pull Requests" />
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7763158" visible="true" weight="0.14081082" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7763158" visible="true" weight="0.16837838" />
       <window_info id="Commit" order="1" weight="0.25" />
-      <window_info active="true" id="Structure" order="2" sideWeight="0.22368422" side_tool="true" visible="true" weight="0.14081082" />
+      <window_info active="true" id="Structure" order="2" sideWeight="0.22368422" side_tool="true" visible="true" weight="0.16837838" />
       <window_info anchor="bottom" id="DataprocToolWindow" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="TypeScript" />
@@ -106,6 +109,7 @@
       <recent name="$PROJECT_DIR$/step_2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/step_5_generate_cen_intersection" />
       <recent name="$PROJECT_DIR$/step_1" />
       <recent name="$PROJECT_DIR$/data" />
     </key>
@@ -310,7 +314,9 @@
       <workItem from="1702571196747" duration="2391000" />
       <workItem from="1702581568164" duration="7468000" />
       <workItem from="1702602404423" duration="4488000" />
-      <workItem from="1702662512919" duration="2735000" />
+      <workItem from="1702662512919" duration="11026000" />
+      <workItem from="1702683230134" duration="4611000" />
+      <workItem from="1702739526764" duration="19100000" />
     </task>
     <servers />
   </component>
@@ -326,6 +332,11 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/step_2_whole_reporting/main.py</url>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/step_5_generate_cen_intersection/get_network_subset.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -16,11 +16,43 @@ def write_df(result, jdbc_url, table_name, jdbc_properties):
                                       properties=jdbc_properties)
 
 
+#Clean the distributed baseline parquets to have unique PMIDs
+def clean_baseline(parquets):
+    parquets = parquets.dropDuplicates(['doi'])
+    parquets.createOrReplaceTempView("temp_table")
+
+    sql_query = """
+           WITH RankedRows AS (
+               SELECT
+                   *,
+                   ROW_NUMBER() OVER (PARTITION BY PMID ORDER BY date_revised DESC) AS RowRank
+               FROM
+                   temp_table
+           )
+           SELECT
+               *
+           FROM
+               RankedRows
+           WHERE
+               RowRank = 1
+    """
+
+    parquets = spark.sql(sql_query)
+    parquets = parquets.drop("RowRank")
+    parquets = parquets.filter(col("doi") != '')
+
+    return parquets
+
+
+
 #Obtain year and Mesh of our subset of nodes into a df
+#Turns out that parquet files need to get cleaned, since they contain multiple PMIDs
 def obtain_year_mesh(parquet_path, node_id_to_pmid_table_name, unique_nodes_table_name,  spark):
     parquets = spark.read.parquet(parquet_path)
     parquets = parquets.repartition(10)
     parquets.persist()
+
+    parquets = clean_baseline(parquets)
 
 
     node_id_to_pmid = read_df(spark, jdbc_url, node_id_to_pmid_table_name, jdbc_properties)
@@ -52,7 +84,7 @@ def obtain_year_mesh(parquet_path, node_id_to_pmid_table_name, unique_nodes_tabl
 
 
     # write_df(Nid_year_mesh_df, jdbc_url, jdbc_properties)
-    write_df(Nid_year_mesh_df, jdbc_url, 'hm31.year_mesh', jdbc_properties)
+    write_df(Nid_year_mesh_df, jdbc_url, 'hm31.year_mesh_cleaned', jdbc_properties)
 
 
 

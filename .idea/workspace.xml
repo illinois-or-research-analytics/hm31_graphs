@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/step_7_calculate_similarities/mesh.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/step_1_sample_study/obtain_features.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/step_1_sample_study/obtain_features.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/build_mesh_tree.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/build_mesh_tree.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_6_obtain_tabular_features/obtain_features.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_6_obtain_tabular_features/obtain_features.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/step_7_calculate_similarities/calculate_similarities.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_7_calculate_similarities/calculate_similarities.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -314,7 +313,7 @@
       <workItem from="1702662512919" duration="11026000" />
       <workItem from="1702683230134" duration="4611000" />
       <workItem from="1702739526764" duration="19751000" />
-      <workItem from="1702831903128" duration="16175000" />
+      <workItem from="1702831903128" duration="21835000" />
     </task>
     <servers />
   </component>

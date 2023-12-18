@@ -143,9 +143,11 @@ def calculate_mesh_similarity_mean(row, mesh_lookup = mesh_dict):
             # counter += 1
 
 
+    if len(similarities) == 0:
+        return -1.0
 
-    median = statistics.mean(similarities)
-    return float(median)
+    avg = statistics.mean(similarities)
+    return float(avg)
 
 
 def calculate_mesh_similarity_median(row, mesh_lookup = mesh_dict):
@@ -176,6 +178,8 @@ def calculate_mesh_similarity_median(row, mesh_lookup = mesh_dict):
     # if len(similarities) == 0:
     #     return -1
 
+    if len(similarities) == 0:
+            return -1.0
 
     median = statistics.median(similarities)
     return float(median)

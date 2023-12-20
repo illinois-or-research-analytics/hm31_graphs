@@ -16,9 +16,22 @@ def read_df(spark, jdbc_url, table_name, jdbc_properties ):
     return df
 
 #Write a df into the db
-def write_df(result, jdbc_url, table_name, jdbc_properties):
-    result.repartition(50).write.jdbc(url=jdbc_url, table=table_name, mode="overwrite",
+def write_df2(result, jdbc_url, table_name, jdbc_properties):
+    result.repartition(100).write.jdbc(url=jdbc_url, table=table_name, mode="overwrite",
                                       properties=jdbc_properties)
+
+
+def write_df(result, jdbc_url, table_name):
+    result.repartition(3).write.format('jdbc').mode('overwrite').option("truncate", False).option("url", jdbc_url).option('driver', "org.postgresql.Driver").option("user", 'hm31') .option("password", 'graphs').option("dbtable", table_name) .option("isolationLevel", "NONE").option("batchsize", 100000) .save();
+# 
+# def write_df(result, jdbc_url, table_name, jdbc_properties):
+#     result.repartition(100).write.format('jdbc').options(url=jdbc_url,table = table_name, mode="overwrite", properties=jdbc_properties )
+#
+
+
+    
+
+
 
 
 def calculate_year_feature(row):
@@ -44,51 +57,28 @@ def calculate_year_feature(row):
 
 
 
-def handle_year(edges, year_mesh, spark):
+def handle_year(year_mesh_edge_duplicate_features):
 
 
-    # Register DataFrames as temporary tables to be used in SQL queries
-    edges.createOrReplaceTempView("edges_table")
-    year_mesh.createOrReplaceTempView("year_mesh")
-
-    #Uncomment this to actually calculate year_difference
-
-    # edge_years = spark.sql("""
-    # SELECT
-    #     e.first,
-    #     e.second,
-    #     ym_first.year AS first_year,
-    #     ym_second.year AS second_year
-    # FROM
-    #     edges_table e
-    # inner JOIN
-    #     year_mesh ym_first ON e.first = ym_first.node_id
-    # inner JOIN
-    #     year_mesh ym_second ON e.second = ym_second.node_id;
-    #     """)
-    #
-
-    #Or just read from db
-    edge_years = read_df(spark, jdbc_url, 'hm31.year_edges', jdbc_properties)
-    edge_years = edge_years.repartition(100)
-    edge_years.persist()
-
-    # calculate_year_difference_udf = F.udf(lambda row: calculate_year_difference(row), IntegerType())
     calculate_year_difference_udf = F.udf(lambda row: calculate_year_feature(row), FloatType())
     #edge_years = edge_years.withColumn('year_feature', calculate_year_difference_udf(F.struct(edge_years['first_year'], edge_years['second_year'])))
 
-    # edge_years = edge_years.withColumn(
-    #     'year_feature',
-    #     F.when(F.abs(edge_years['first_year'] - edge_years['second_year']) <= 5, 1.0)
-    #     .when((5 < F.abs(edge_years['first_year'] - edge_years['second_year'])) & (F.abs(edge_years['first_year'] - edge_years['second_year']) <= 10), 0.5)
-    #     .otherwise(0.25)
-    # )
+    year_mesh_edge_duplicate_features = year_mesh_edge_duplicate_features.withColumn(
+        'year_similarity',
+        F.when(F.abs(year_mesh_edge_duplicate_features['first_year'] - year_mesh_edge_duplicate_features['second_year']) <= 5, 1.0)
+        .when((5 < F.abs(year_mesh_edge_duplicate_features['first_year'] - year_mesh_edge_duplicate_features['second_year'])) & (F.abs(year_mesh_edge_duplicate_features['first_year'] - year_mesh_edge_duplicate_features['second_year']) <= 10), 0.5)
+        .otherwise(0.25)
+    )
 
+    columns_to_drop = ['first_year', 'second_year']
+    year_mesh_edge_duplicate_features = year_mesh_edge_duplicate_features.drop(*columns_to_drop)
 
-    edge_years.persist()
+    # year_mesh_edge_duplicate_features.show()
+    year_mesh_edge_duplicate_features = year_mesh_edge_duplicate_features.repartition(100)
+    year_mesh_edge_duplicate_features.persist()
+    print('year completed')
 
-    write_df(edge_years, jdbc_url, 'hm31.year_feature', jdbc_properties)
-    edge_years.show()
+    return year_mesh_edge_duplicate_features
 
 #Calculate mesh_pair_similarity by counting common terms between two mesh strings
 #Here we assume meshes are of the form D23.300.820', 'D23.550.291.125
@@ -144,7 +134,7 @@ def calculate_mesh_similarity_mean(row, mesh_lookup = mesh_dict):
 
 
     if len(similarities) == 0:
-        return -1.0
+        return 0.0
 
     avg = statistics.mean(similarities)
     return float(avg)
@@ -179,7 +169,7 @@ def calculate_mesh_similarity_median(row, mesh_lookup = mesh_dict):
     #     return -1
 
     if len(similarities) == 0:
-            return -1.0
+            return 0.0
 
     median = statistics.median(similarities)
     return float(median)
@@ -191,60 +181,23 @@ def calculate_mesh_similarity_median(row, mesh_lookup = mesh_dict):
 
 
 
-def handle_mesh(edges, year_mesh, spark):
-    # Register DataFrames as temporary tables to be used in SQL queries
-    global mesh_dict
-    edges.createOrReplaceTempView("edges_table")
-    year_mesh.createOrReplaceTempView("year_mesh")
-
-    #Uncomment this to actually calculate mesh_difference
-
-    # edge_meshes = spark.sql("""
-    # SELECT
-    #     e.first,
-    #     e.second,
-    #     ym_first.mesh AS first_mesh,
-    #     ym_second.mesh AS second_mesh
-    # FROM
-    #     edges_table e
-    # inner JOIN
-    #     year_mesh ym_first ON e.first = ym_first.node_id
-    # inner JOIN
-    #     year_mesh ym_second ON e.second = ym_second.node_id;
-    #     """)
-    # write_df(edge_meshes, jdbc_url, 'hm31.year_edges', jdbc_properties)
-
-
-    #Or just read from db
-    edge_meshes = read_df(spark, jdbc_url, 'hm31.mesh_edges', jdbc_properties)
-
-    # edge_meshes = edge_meshes.limit(10)
-
-    edge_meshes = edge_meshes.repartition(150)
-    edge_meshes.persist()
-
-    # #Read mesh_dictionary
-    # mesh_dict = read_df(spark, jdbc_url, 'hm31.mesh', jdbc_properties)
-    # mesh_dict = mesh_dict.toPandas().set_index('mesh_term').T.to_dict('list')
-    #
-    # with open('mesh.json', 'w') as json_file:
-    #     json.dump(mesh_dict, json_file)
-
-
-    #print(type(mesh_dict), len(mesh_dict))
-
+def handle_mesh(edges_annotated_with_year_features):
 
     calculate_mesh_similarity_udf = F.udf(lambda row: calculate_mesh_similarity_mean(row), FloatType())
-    edge_meshes = edge_meshes.withColumn('mesh_similarity_mean', calculate_mesh_similarity_udf(F.struct(edge_meshes['first_mesh'], edge_meshes['second_mesh'])))
+    edges_annotated_with_year_features = edges_annotated_with_year_features.withColumn('mesh_similarity_mean', calculate_mesh_similarity_udf(F.struct(edges_annotated_with_year_features['first_mesh'], edges_annotated_with_year_features['second_mesh'])))
 
 
     calculate_mesh_similarity_udf = F.udf(lambda row: calculate_mesh_similarity_median(row), FloatType())
-    edge_meshes = edge_meshes.withColumn('mesh_similarity_median', calculate_mesh_similarity_udf(F.struct(edge_meshes['first_mesh'], edge_meshes['second_mesh'])))
+    edges_annotated_with_year_features = edges_annotated_with_year_features.withColumn('mesh_similarity_median', calculate_mesh_similarity_udf(F.struct(edges_annotated_with_year_features['first_mesh'], edges_annotated_with_year_features['second_mesh'])))
 
-    edge_meshes.persist()
+    columns_to_drop = ['first_mesh', 'second_mesh']
+    edges_annotated_with_year_features = edges_annotated_with_year_features.drop(*columns_to_drop)
 
-    write_df(edge_meshes, jdbc_url, 'hm31.mesh_feature', jdbc_properties)
-    edge_meshes.show()
+    # edges_annotated_with_year_features.show()
+
+    print('mesh completed')
+
+    return edges_annotated_with_year_features
 
 
 
@@ -253,36 +206,36 @@ def handle_mesh(edges, year_mesh, spark):
 
 
 #Read edges, and for each features, calculate the similarities for that feature
-def calculate_raw_similarities(spark):
-
-    edges = read_df(spark, jdbc_url, 'hm31.cen_intersection_edges', jdbc_properties)
-
-    # for feature in features:
-    #     df = df.withColumn(feature, None)
-
-    edges = edges.repartition(100)
-    edges.persist()
-
-    node_id_year_mesh = read_df(spark, jdbc_url, 'hm31.year_mesh', jdbc_properties)
-    node_id_year_mesh = node_id_year_mesh.repartition(100)
-    node_id_year_mesh.persist()
+def calculate_raw_node_similarities(spark):
+    import time
+    year_mesh_node_duplicated_edges = read_df(spark, jdbc_url, 'hm31.year_mesh_node_duplicated_edges_cert', jdbc_properties)
+    # year_mesh_node_duplicated_edges = read_df(spark, jdbc_url, 'hm31.test_features', jdbc_properties)
+    year_mesh_node_duplicated_edges = year_mesh_node_duplicated_edges.repartition(100)
+    year_mesh_node_duplicated_edges.persist()
 
 
-    #handle_year(edges, node_id_year_mesh, spark)
-    handle_mesh(edges, node_id_year_mesh, spark)
+    edges_annotated_with_year_features = handle_year(year_mesh_node_duplicated_edges)
+    edges_annotated_with_year_and_mesh_features = handle_mesh(edges_annotated_with_year_features)
+
+    print('pre persist')
+    edges_annotated_with_year_and_mesh_features.persist()
+
+    print('post persist')
+    start = time.time()
+    write_df(edges_annotated_with_year_and_mesh_features, jdbc_url, 'hm31.year_mesh_edge_weights_cert')
+    end = time.time()
+
+    print(f'elapsed insertion {end-start}')
+    # def write_df(result, jdbc_url, table_name):
 
 
+def handle_bib_coupling():
+    references_duplicated_edges = read_df(spark, jdbc_url, 'hm31.out_edges_features_cert', jdbc_properties)
 
 
-    # calculate_year_difference_udf = F.udf(lambda row: calculate_year_difference(row, node_id_year_mesh), IntegerType())
-    # calculate_year_difference_udf = F.udf(calculate_year_difference, IntegerType())
-
-
-
-
-
-
-
+#Read edges, and for each features, calculate the similarities for that feature
+def calculate_raw_edge_similarities(spark):
+    handle_bib_coupling()
 
 
 
@@ -306,13 +259,10 @@ if __name__ == "__main__":
         "driver": "org.postgresql.Driver"
     }
 
-    mesh_dict = {'123', '123'}
 
     spark.sparkContext.setLogLevel("WARN")
 
-    parquet_path = '/shared/hossein_hm31/pubmed_parquet'
-    calculate_raw_similarities(spark)
-    # obtain_year_mesh(parquet_path, 'hm31.node_id_to_pmid_full', 'hm31.unique_node_ids', spark)
+    calculate_raw_node_similarities(spark)
 
 
 

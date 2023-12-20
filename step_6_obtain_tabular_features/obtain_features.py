@@ -12,7 +12,7 @@ def read_df(spark, jdbc_url, table_name, jdbc_properties ):
 
 #Write a df into the db
 def write_df(result, jdbc_url, table_name, jdbc_properties):
-    result.repartition(50).write.jdbc(url=jdbc_url, table=table_name, mode="overwrite",
+    result.repartition(5).write.jdbc(url=jdbc_url, table=table_name, mode="overwrite",
                                       properties=jdbc_properties)
 
 
@@ -47,44 +47,42 @@ def clean_baseline(parquets):
 
 #Obtain year and Mesh of our subset of nodes into a df
 #Turns out that parquet files need to get cleaned, since they contain multiple PMIDs
-def obtain_year_mesh(parquet_path, node_id_to_pmid_table_name, unique_nodes_table_name,  spark):
+def obtain_year_mesh(parquet_path, unique_nodes_table_name,  spark):
     parquets = spark.read.parquet(parquet_path)
     parquets = parquets.repartition(10)
     parquets.persist()
 
-    parquets = clean_baseline(parquets)
-
-
-    node_id_to_pmid = read_df(spark, jdbc_url, node_id_to_pmid_table_name, jdbc_properties)
-    node_id_to_pmid = node_id_to_pmid.repartition(10)
-    node_id_to_pmid.persist()
+    parquets = parquets.drop('title')
+    parquets = parquets.drop('abstract')
 
 
     unique_nodes = read_df(spark, jdbc_url, unique_nodes_table_name, jdbc_properties)
     unique_nodes = unique_nodes.repartition(10)
     unique_nodes.persist()
 
-
-
-    node_id_to_pmid.createOrReplaceTempView("n2p")
     parquets.createOrReplaceTempView("metadata")
     unique_nodes.createOrReplaceTempView("unique_nodes")
 
-
-    Nid_year_mesh_df = spark.sql("""
-        SELECT u.merged_column as node_id, m.year, m.mesh
-        FROM unique_nodes u
-        INNER JOIN n2p n
-        ON u.merged_column = n.integer_id
-        INNER JOIN metadata m
-        ON n.pmid = m.pmid
+    parquets2 =  spark.sql("""
+    SELECT m.* from metadata m inner join  unique_nodes u on m.pmid = u.pmid
     """)
 
-    Nid_year_mesh_df.show()
+    print("first joined")
+
+    parquets2.persist()
+    # write_df(parquets2, jdbc_url, 'hm31.year_mesh_uncleaned', jdbc_properties)
 
 
-    # write_df(Nid_year_mesh_df, jdbc_url, jdbc_properties)
-    write_df(Nid_year_mesh_df, jdbc_url, 'hm31.year_mesh_cleaned', jdbc_properties)
+    # print('after first join', parquets2.count())
+    #
+    #
+    parquets2 = clean_baseline(parquets2)
+
+    print('after cleaning')
+    print(parquets2.count())
+    parquets2.show()
+
+    write_df(parquets2, jdbc_url, 'hm31.year_mesh_cleaned', jdbc_properties)
 
 
 
@@ -118,7 +116,7 @@ if __name__ == "__main__":
 
     parquet_path = '/shared/hossein_hm31/pubmed_parquet'
 
-    obtain_year_mesh(parquet_path, 'hm31.node_id_to_pmid_full', 'hm31.unique_node_ids', spark)
+    obtain_year_mesh(parquet_path, 'hm31.unique_node_ids', spark)
 
 
 

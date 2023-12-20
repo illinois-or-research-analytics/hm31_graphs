@@ -86,7 +86,7 @@ george_df = george_df.withColumn("has_title", F.when(F.length("title") > 0, 1).o
 george_df = george_df.withColumn("has_mesh", F.when(F.length("mesh") > 2, 1).otherwise(0))
 george_df = george_df.withColumn("has_year", F.when(F.length("year") > 0, 1).otherwise(0))
 
-george_df = george_df.select("PMID", "doi", "has_abstract", "has_title", "has_mesh", "has_year")
+george_df = george_df.select("PMID", "doi", "has_abstract", "has_title", "has_mesh", "has_year", 'mesh', 'year')
 george_df = george_df.withColumnRenamed("PMID", "pmid")
 
 

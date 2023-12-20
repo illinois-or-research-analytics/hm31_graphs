@@ -24,7 +24,6 @@ def read_df(spark, jdbc_url, table_name, jdbc_properties ):
 #Using George_pipeline that maps dois and PMIDS, we use the dimensions_complete_nodelist to get the subset
 #intersection of dimensions and baseline that have full metadata
 def calculate_node_id_to_pmid_mapping(cen_nodes, george_df, full = False):
-    dimensions_df =  read_df(spark, jdbc_url, 'dimensions.exosome_dimensions_complete_nodelist', jdbc_properties)
     george_df.createOrReplaceTempView("george_pipeline")
     dimensions_df.createOrReplaceTempView("exosome_dimensions")
 
@@ -216,14 +215,14 @@ if __name__ == "__main__":
     """
 
     #Obtain mapping from pre-saved mode
-    node_id_to_pmid_mapping = read_df(spark,jdbc_url,'hm31.node_id_to_pmid_full',jdbc_properties)
+    node_id_to_pmid_mapping = read_df(spark,jdbc_url,'hm31.dimensions_joined',jdbc_properties)
     node_id_to_pmid_mapping.persist()
 
 
-    """
+
     edges = read_EDGES(edges_address,spark)
     filtered_edges = filter_edges(edges,node_id_to_pmid_mapping)
-    """
+
 
 
     filtered_edges = read_df(spark, jdbc_url, 'hm31.cen_intersection_edges', jdbc_properties)

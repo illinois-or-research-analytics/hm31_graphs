@@ -315,8 +315,8 @@ def calculate_cocitation_raw_similarity(row):
 def handle_cocitation(spark):
     citations_duplicated_edges = read_df(spark, jdbc_url, 'hm31.in_edges_features_cert', jdbc_properties)
     print("read from db")
-    # references_duplicated_edges = read_df(spark, jdbc_url, 'hm31.limited', jdbc_properties)
-    # references_duplicated_edges = references_duplicated_edges.limit(40)
+    # citations_duplicated_edges = read_df(spark, jdbc_url, 'hm31.limited', jdbc_properties)
+    # # references_duplicated_edges = references_duplicated_edges.limit(40)
 
 
     calculate_cocitation_jaccard_similarity_udf = F.udf(lambda row: calculate_cocitation_jaccard_similarity(row), FloatType())
@@ -326,14 +326,14 @@ def handle_cocitation(spark):
 
     calculate_cocitation_raw_frequency_udf = F.udf(lambda row: calculate_cocitation_raw_similarity(row), IntegerType())
     citations_duplicated_edges_plus_jaccard_and_frequency = citations_duplicated_edges_plus_jaccard.withColumn('cocitation_frequency_similarity', calculate_cocitation_raw_frequency_udf(F.struct(citations_duplicated_edges_plus_jaccard['first_in'], citations_duplicated_edges_plus_jaccard['second_in'])))
-    print('bib_coupling_frequency_similarity completed')
+    print('co_citation_jaccard_similarity completed')
 
 
-    columns_to_drop = ['first_in', 'second_in']
-    citations_duplicated_edges_plus_jaccard_and_frequency = citations_duplicated_edges_plus_jaccard_and_frequency.drop(*columns_to_drop)
+    # columns_to_drop = ['first_in', 'second_in']
+    # citations_duplicated_edges_plus_jaccard_and_frequency = citations_duplicated_edges_plus_jaccard_and_frequency.drop(*columns_to_drop)
 
     # edges_annotated_with_year_features.show()
-    # references_duplicated_edges_plus_jaccard_and_frequency.show()
+    # citations_duplicated_edges_plus_jaccard_and_frequency.show()
     print('count', citations_duplicated_edges_plus_jaccard_and_frequency.count())
 
 
@@ -375,9 +375,9 @@ def handle_bib_coupling(spark):
 
 #Read edges, and for each features, calculate the similarities for that feature
 def calculate_raw_edge_similarities(spark):
-    references_duplicated_edges_plus_jaccard_and_frequency = handle_bib_coupling(spark)
-    references_duplicated_edges_plus_jaccard_and_frequency.persist()
-    write_df(references_duplicated_edges_plus_jaccard_and_frequency, jdbc_url, 'hm31.bib_coupling_edge_weights_cert')
+    # references_duplicated_edges_plus_jaccard_and_frequency = handle_bib_coupling(spark)
+    # references_duplicated_edges_plus_jaccard_and_frequency.persist()
+    # write_df(references_duplicated_edges_plus_jaccard_and_frequency, jdbc_url, 'hm31.bib_coupling_edge_weights_cert')
 
 
     cocitations_duplicated_edges_plus_jaccard_and_frequency = handle_cocitation(spark)

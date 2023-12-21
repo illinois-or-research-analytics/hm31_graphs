@@ -7,7 +7,6 @@
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/step_7_calculate_similarities/calculate_similarities.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_7_calculate_similarities/calculate_similarities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_7_calculate_similarities/nohup.out" beforeDir="false" afterPath="$PROJECT_DIR$/step_7_calculate_similarities/nohup.out" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,7 +313,7 @@
       <workItem from="1702739526764" duration="19751000" />
       <workItem from="1702831903128" duration="46514000" />
       <workItem from="1703100096161" duration="8878000" />
-      <workItem from="1703124077474" duration="4081000" />
+      <workItem from="1703124077474" duration="5554000" />
     </task>
     <servers />
   </component>

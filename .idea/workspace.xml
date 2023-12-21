@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/step_7_calculate_similarities/nohup.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/pubmed_etl.sh" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/pubmed_etl.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/pyspark_parquet.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/pyspark_parquet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_5_generate_cen_intersection/get_network_subset.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_5_generate_cen_intersection/get_network_subset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_6_obtain_tabular_features/obtain_features.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_6_obtain_tabular_features/obtain_features.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/step_7_calculate_similarities/calculate_similarities.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_7_calculate_similarities/calculate_similarities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_7_calculate_similarities/nohup.out" beforeDir="false" afterPath="$PROJECT_DIR$/step_7_calculate_similarities/nohup.out" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,9 +67,9 @@
       <window_info id="Commit_Guest" />
       <window_info id="Pull Requests" />
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7763158" visible="true" weight="0.16837838" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77518797" visible="true" weight="0.13108107" />
       <window_info id="Commit" order="1" weight="0.25" />
-      <window_info active="true" id="Structure" order="2" sideWeight="0.22368422" side_tool="true" visible="true" weight="0.16837838" />
+      <window_info active="true" id="Structure" order="2" sideWeight="0.22481203" side_tool="true" visible="true" weight="0.13108107" />
       <window_info anchor="bottom" id="DataprocToolWindow" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="TypeScript" />
@@ -90,8 +86,8 @@
       <window_info anchor="bottom" id="Jupyter" weight="0.3273148" />
       <window_info anchor="bottom" id="SparkMonitoringToolWindow" />
       <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Problems View" order="1" weight="0.38287038" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.39268756" />
+      <window_info anchor="bottom" id="Problems View" order="1" weight="0.30246913" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.30246913" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3300926" />
       <window_info anchor="bottom" id="Services" order="4" weight="0.2920228" />
       <window_info anchor="right" id="Endpoints" />
@@ -317,7 +313,8 @@
       <workItem from="1702683230134" duration="4611000" />
       <workItem from="1702739526764" duration="19751000" />
       <workItem from="1702831903128" duration="46514000" />
-      <workItem from="1703100096161" duration="6041000" />
+      <workItem from="1703100096161" duration="8878000" />
+      <workItem from="1703124077474" duration="4081000" />
     </task>
     <servers />
   </component>
@@ -338,6 +335,10 @@
           <url>file://$PROJECT_DIR$/step_5_generate_cen_intersection/get_network_subset.py</url>
           <line>1</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/step_7_calculate_similarities/calculate_similarities.py</url>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -15,14 +15,9 @@ def read_df(spark, jdbc_url, table_name, jdbc_properties ):
     df = spark.read.jdbc(url=jdbc_url, table=table_name, properties=jdbc_properties)
     return df
 
-#Write a df into the db
-def write_df2(result, jdbc_url, table_name, jdbc_properties):
-    result.repartition(100).write.jdbc(url=jdbc_url, table=table_name, mode="overwrite",
-                                      properties=jdbc_properties)
 
-
-def write_df(result, jdbc_url, table_name):
-    result.repartition(3).write.format('jdbc').mode('overwrite').option("truncate", False).option("url", jdbc_url).option('driver', "org.postgresql.Driver").option("user", 'hm31') .option("password", 'graphs').option("dbtable", table_name) .option("isolationLevel", "NONE").option("batchsize", 100000) .save();
+def write_df(result, jdbc_url, table_name): #182953
+    result.repartition(5).write.format('jdbc').mode('overwrite').option("truncate", False).option("url", jdbc_url).option('driver', "org.postgresql.Driver").option("user", 'hm31') .option("password", 'graphs').option("dbtable", table_name) .option("isolationLevel", "NONE").option("batchsize", 10000) .save();
 # 
 # def write_df(result, jdbc_url, table_name, jdbc_properties):
 #     result.repartition(100).write.format('jdbc').options(url=jdbc_url,table = table_name, mode="overwrite", properties=jdbc_properties )
@@ -228,14 +223,170 @@ def calculate_raw_node_similarities(spark):
     print(f'elapsed insertion {end-start}')
     # def write_df(result, jdbc_url, table_name):
 
+#If two arrays a1 and a2 are sorted, what is the size of their intersection?
+def find_common_count(arr1, arr2):
+    size1, size2 = len(arr1), len(arr2)
+    i, j, count = 0, 0, 0
 
-def handle_bib_coupling():
+    while i < size1 and j < size2:
+        if arr1[i] == arr2[j]:
+            # Found an element in the intersection
+            count += 1
+            i += 1
+            j += 1
+        elif arr1[i] < arr2[j]:
+            # Move the pointer in the first array
+            i += 1
+        else:
+            # Move the pointer in the second array
+            j += 1
+
+    return count
+
+#Calculate jaccard of bib_coupling of a row
+def calculate_bib_coupling_jaccard_similarity(row):
+    first_out = row['first_out']
+    second_out = row['second_out']
+
+    first_out_nodes = first_out.split(',')
+    second_out_nodes = second_out.split(',')
+
+    first_out_nodes.sort()
+    second_out_nodes.sort()
+
+    intersection_count = find_common_count(first_out_nodes, second_out_nodes)
+
+    if len(first_out_nodes) + len(second_out_nodes) == 0:
+        return 0.0
+
+    return float(intersection_count/(len(first_out_nodes) + len(second_out_nodes) - intersection_count))
+
+#Calculate jaccard of bib_coupling of a row
+def calculate_bib_coupling_raw_frequency(row):
+    first_out = row['first_out']
+    second_out = row['second_out']
+
+    first_out_nodes = first_out.split(',')
+    second_out_nodes = second_out.split(',')
+
+    first_out_nodes.sort()
+    second_out_nodes.sort()
+
+    intersection_count = find_common_count(first_out_nodes, second_out_nodes)
+
+    return intersection_count
+
+#####################################################################################3
+
+#Calculate jaccard of bib_coupling of a row
+def calculate_cocitation_jaccard_similarity(row):
+    first_in = row['first_in']
+    second_in = row['second_in']
+
+    first_in_nodes = first_in.split(',')
+    second_in_nodes = second_in.split(',')
+
+    first_in_nodes.sort()
+    second_in_nodes.sort()
+
+    intersection_count = find_common_count(first_in_nodes, second_in_nodes)
+
+    if len(first_in_nodes) + len(second_in_nodes) == 0:
+        return 0.0
+
+    return float(intersection_count/(len(first_in_nodes) + len(second_in_nodes) - intersection_count))
+
+#Calculate jaccard of bib_coupling of a row
+def calculate_cocitation_raw_similarity(row):
+    first_in = row['first_in']
+    second_in = row['second_in']
+
+    first_in_nodes = first_in.split(',')
+    second_in_nodes = second_in.split(',')
+
+    first_in_nodes.sort()
+    second_in_nodes.sort()
+
+    intersection_count = find_common_count(first_in_nodes, second_in_nodes)
+
+    return intersection_count
+
+
+def handle_cocitation(spark):
+    citations_duplicated_edges = read_df(spark, jdbc_url, 'hm31.in_edges_features_cert', jdbc_properties)
+    print("read from db")
+    # references_duplicated_edges = read_df(spark, jdbc_url, 'hm31.limited', jdbc_properties)
+    # references_duplicated_edges = references_duplicated_edges.limit(40)
+
+
+    calculate_cocitation_jaccard_similarity_udf = F.udf(lambda row: calculate_cocitation_jaccard_similarity(row), FloatType())
+    citations_duplicated_edges_plus_jaccard = citations_duplicated_edges.withColumn('cocitation_jaccard_similarity', calculate_cocitation_jaccard_similarity_udf(F.struct(citations_duplicated_edges['first_in'], citations_duplicated_edges['second_in'])))
+    print('co_citation_jaccard_similarity completed')
+
+
+    calculate_cocitation_raw_frequency_udf = F.udf(lambda row: calculate_cocitation_raw_similarity(row), IntegerType())
+    citations_duplicated_edges_plus_jaccard_and_frequency = citations_duplicated_edges_plus_jaccard.withColumn('cocitation_frequency_similarity', calculate_cocitation_raw_frequency_udf(F.struct(citations_duplicated_edges_plus_jaccard['first_in'], citations_duplicated_edges_plus_jaccard['second_in'])))
+    print('bib_coupling_frequency_similarity completed')
+
+
+    columns_to_drop = ['first_in', 'second_in']
+    citations_duplicated_edges_plus_jaccard_and_frequency = citations_duplicated_edges_plus_jaccard_and_frequency.drop(*columns_to_drop)
+
+    # edges_annotated_with_year_features.show()
+    # references_duplicated_edges_plus_jaccard_and_frequency.show()
+    print('count', citations_duplicated_edges_plus_jaccard_and_frequency.count())
+
+
+    print('cocitations completed')
+    return citations_duplicated_edges_plus_jaccard_and_frequency
+
+
+
+
+def handle_bib_coupling(spark):
     references_duplicated_edges = read_df(spark, jdbc_url, 'hm31.out_edges_features_cert', jdbc_properties)
+    print("read from db")
+    # references_duplicated_edges = read_df(spark, jdbc_url, 'hm31.limited', jdbc_properties)
+    # references_duplicated_edges = references_duplicated_edges.limit(40)
 
+
+    calculate_bib_coupling_jaccard_similarity_udf = F.udf(lambda row: calculate_bib_coupling_jaccard_similarity(row), FloatType())
+    references_duplicated_edges_plus_jaccard = references_duplicated_edges.withColumn('bib_coupling_jaccard_similarity', calculate_bib_coupling_jaccard_similarity_udf(F.struct(references_duplicated_edges['first_out'], references_duplicated_edges['second_out'])))
+    print('bib_coupling_jaccard_similarity completed')
+
+
+    calculate_bib_coupling_raw_frequency_udf = F.udf(lambda row: calculate_bib_coupling_raw_frequency(row), IntegerType())
+    references_duplicated_edges_plus_jaccard_and_frequency = references_duplicated_edges_plus_jaccard.withColumn('bib_coupling_frequency_similarity', calculate_bib_coupling_raw_frequency_udf(F.struct(references_duplicated_edges_plus_jaccard['first_out'], references_duplicated_edges_plus_jaccard['second_out'])))
+    print('bib_coupling_frequency_similarity completed')
+
+
+    columns_to_drop = ['first_out', 'second_out']
+    references_duplicated_edges_plus_jaccard_and_frequency = references_duplicated_edges_plus_jaccard_and_frequency.drop(*columns_to_drop)
+
+    # edges_annotated_with_year_features.show()
+    # references_duplicated_edges_plus_jaccard_and_frequency.show()
+    print('count', references_duplicated_edges_plus_jaccard_and_frequency.count())
+
+
+    print('bib-coupling completed')
+    return references_duplicated_edges_plus_jaccard_and_frequency
+
+    #169940
 
 #Read edges, and for each features, calculate the similarities for that feature
 def calculate_raw_edge_similarities(spark):
-    handle_bib_coupling()
+    references_duplicated_edges_plus_jaccard_and_frequency = handle_bib_coupling(spark)
+    references_duplicated_edges_plus_jaccard_and_frequency.persist()
+    write_df(references_duplicated_edges_plus_jaccard_and_frequency, jdbc_url, 'hm31.bib_coupling_edge_weights_cert')
+
+
+    cocitations_duplicated_edges_plus_jaccard_and_frequency = handle_cocitation(spark)
+    cocitations_duplicated_edges_plus_jaccard_and_frequency.persist()
+    write_df(cocitations_duplicated_edges_plus_jaccard_and_frequency, jdbc_url, 'hm31.cocitations_edge_weights_cert')
+
+
+
+
 
 
 
@@ -262,7 +413,8 @@ if __name__ == "__main__":
 
     spark.sparkContext.setLogLevel("WARN")
 
-    calculate_raw_node_similarities(spark)
+    # calculate_raw_node_similarities(spark)
+    calculate_raw_edge_similarities(spark)
 
 
 

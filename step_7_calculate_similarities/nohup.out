@@ -3,48 +3,49 @@ WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/ho
 WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
-23/12/20 20:55:52 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+23/12/22 22:38:08 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
-23/12/20 20:55:53 INFO SparkContext: Running Spark version 3.2.4
-23/12/20 20:55:53 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in mesos/standalone/kubernetes and LOCAL_DIRS in YARN).
-23/12/20 20:55:53 INFO ResourceUtils: ==============================================================
-23/12/20 20:55:53 INFO ResourceUtils: No custom resources configured for spark.driver.
-23/12/20 20:55:53 INFO ResourceUtils: ==============================================================
-23/12/20 20:55:53 INFO SparkContext: Submitted application: Python Spark SQL basic example
-23/12/20 20:55:53 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
-23/12/20 20:55:53 INFO ResourceProfile: Limiting resource is cpu
-23/12/20 20:55:53 INFO ResourceProfileManager: Added ResourceProfile id: 0
-23/12/20 20:55:53 INFO SecurityManager: Changing view acls to: hm31
-23/12/20 20:55:53 INFO SecurityManager: Changing modify acls to: hm31
-23/12/20 20:55:53 INFO SecurityManager: Changing view acls groups to: 
-23/12/20 20:55:53 INFO SecurityManager: Changing modify acls groups to: 
-23/12/20 20:55:53 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(hm31); groups with view permissions: Set(); users  with modify permissions: Set(hm31); groups with modify permissions: Set()
-23/12/20 20:55:53 INFO Utils: Successfully started service 'sparkDriver' on port 41848.
-23/12/20 20:55:53 INFO SparkEnv: Registering MapOutputTracker
-23/12/20 20:55:53 INFO SparkEnv: Registering BlockManagerMaster
-23/12/20 20:55:53 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
-23/12/20 20:55:53 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
-23/12/20 20:55:53 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
-23/12/20 20:55:53 INFO DiskBlockManager: Created local directory at /shared/hm31/blockmgr-1fcec523-2efc-4716-b5e1-45f5106af6b2
-23/12/20 20:55:53 INFO MemoryStore: MemoryStore started with capacity 131.8 GiB
-23/12/20 20:55:53 INFO SparkEnv: Registering OutputCommitCoordinator
-23/12/20 20:55:53 INFO Utils: Successfully started service 'SparkUI' on port 4040.
-23/12/20 20:55:54 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://chackoge-serv01.cs.illinois.edu:4040
-23/12/20 20:55:54 INFO SparkContext: Added JAR file:///home/hm31/step_1/step_7_calculate_similarities/postgresql-42.5.2.jar at spark://chackoge-serv01.cs.illinois.edu:41848/jars/postgresql-42.5.2.jar with timestamp 1703127353163
-23/12/20 20:55:54 INFO Executor: Starting executor ID driver on host chackoge-serv01.cs.illinois.edu
-23/12/20 20:55:54 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 46075.
-23/12/20 20:55:54 INFO NettyBlockTransferService: Server created on chackoge-serv01.cs.illinois.edu:46075
-23/12/20 20:55:54 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
-23/12/20 20:55:54 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, chackoge-serv01.cs.illinois.edu, 46075, None)
-23/12/20 20:55:54 INFO BlockManagerMasterEndpoint: Registering block manager chackoge-serv01.cs.illinois.edu:46075 with 131.8 GiB RAM, BlockManagerId(driver, chackoge-serv01.cs.illinois.edu, 46075, None)
-23/12/20 20:55:54 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, chackoge-serv01.cs.illinois.edu, 46075, None)
-23/12/20 20:55:54 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, chackoge-serv01.cs.illinois.edu, 46075, None)
+23/12/22 22:38:09 INFO SparkContext: Running Spark version 3.2.4
+23/12/22 22:38:09 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in mesos/standalone/kubernetes and LOCAL_DIRS in YARN).
+23/12/22 22:38:09 INFO ResourceUtils: ==============================================================
+23/12/22 22:38:09 INFO ResourceUtils: No custom resources configured for spark.driver.
+23/12/22 22:38:09 INFO ResourceUtils: ==============================================================
+23/12/22 22:38:09 INFO SparkContext: Submitted application: Python Spark SQL basic example
+23/12/22 22:38:09 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+23/12/22 22:38:09 INFO ResourceProfile: Limiting resource is cpu
+23/12/22 22:38:09 INFO ResourceProfileManager: Added ResourceProfile id: 0
+23/12/22 22:38:09 INFO SecurityManager: Changing view acls to: hm31
+23/12/22 22:38:09 INFO SecurityManager: Changing modify acls to: hm31
+23/12/22 22:38:09 INFO SecurityManager: Changing view acls groups to: 
+23/12/22 22:38:09 INFO SecurityManager: Changing modify acls groups to: 
+23/12/22 22:38:09 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(hm31); groups with view permissions: Set(); users  with modify permissions: Set(hm31); groups with modify permissions: Set()
+23/12/22 22:38:10 INFO Utils: Successfully started service 'sparkDriver' on port 32915.
+23/12/22 22:38:10 INFO SparkEnv: Registering MapOutputTracker
+23/12/22 22:38:10 INFO SparkEnv: Registering BlockManagerMaster
+23/12/22 22:38:10 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/12/22 22:38:10 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/12/22 22:38:10 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+23/12/22 22:38:10 INFO DiskBlockManager: Created local directory at /shared/hm31/blockmgr-af04039b-62a2-41c5-b5bd-b42c6e74c9c0
+23/12/22 22:38:10 INFO MemoryStore: MemoryStore started with capacity 119.8 GiB
+23/12/22 22:38:10 INFO SparkEnv: Registering OutputCommitCoordinator
+23/12/22 22:38:10 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/12/22 22:38:10 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://chackoge-serv01.cs.illinois.edu:4040
+23/12/22 22:38:10 INFO SparkContext: Added JAR file:///home/hm31/step_1/step_7_calculate_similarities/postgresql-42.5.2.jar at spark://chackoge-serv01.cs.illinois.edu:32915/jars/postgresql-42.5.2.jar with timestamp 1703306289746
+23/12/22 22:38:10 INFO Executor: Starting executor ID driver on host chackoge-serv01.cs.illinois.edu
+23/12/22 22:38:10 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 40798.
+23/12/22 22:38:10 INFO NettyBlockTransferService: Server created on chackoge-serv01.cs.illinois.edu:40798
+23/12/22 22:38:10 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/12/22 22:38:10 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, chackoge-serv01.cs.illinois.edu, 40798, None)
+23/12/22 22:38:10 INFO BlockManagerMasterEndpoint: Registering block manager chackoge-serv01.cs.illinois.edu:40798 with 119.8 GiB RAM, BlockManagerId(driver, chackoge-serv01.cs.illinois.edu, 40798, None)
+23/12/22 22:38:10 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, chackoge-serv01.cs.illinois.edu, 40798, None)
+23/12/22 22:38:10 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, chackoge-serv01.cs.illinois.edu, 40798, None)
 /home/hm31/step_1/venv/lib/python3.6/site-packages/pyspark/python/lib/pyspark.zip/pyspark/context.py:238: FutureWarning: Python 3.6 support is deprecated in Spark 3.2.
   FutureWarning
-23/12/20 20:55:54 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
-23/12/20 20:55:54 INFO SharedState: Warehouse path is 'file:/home/hm31/step_1/step_7_calculate_similarities/spark-warehouse'.
+23/12/22 22:38:11 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+23/12/22 22:38:11 INFO SharedState: Warehouse path is 'file:/home/hm31/step_1/step_7_calculate_similarities/spark-warehouse'.
 read from db
 bib_coupling_jaccard_similarity completed
 bib_coupling_frequency_similarity completed
-count 53244539
+count 53200439
 bib-coupling completed
+elapsed time 211.11218667030334

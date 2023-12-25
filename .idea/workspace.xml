@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/step_8_add_embeddings/create_parquets.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_8_add_embeddings/download_embeddings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_8_add_embeddings/obtain_sub_network_embeddings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_8_add_embeddings/postgresql-42.5.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_7_calculate_similarities/.ipynb_checkpoints/planB-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_7_calculate_similarities/.nohup.out.swp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_7_calculate_similarities/planB.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_7_calculate_similarities/planB.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_8_add_embeddings/gc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/step_3_generate_tables/build_tables_for_all_xmls.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/build_tables_for_all_xmls.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/step_7_calculate_similarities/calculate_similarities.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_7_calculate_similarities/calculate_similarities.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/step_7_calculate_similarities/nohup.out" beforeDir="false" afterPath="$PROJECT_DIR$/step_7_calculate_similarities/nohup.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_8_add_embeddings/obtain_sub_network_embeddings.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_8_add_embeddings/obtain_sub_network_embeddings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,6 +325,11 @@
       <workItem from="1703225201849" duration="1016000" />
       <workItem from="1703255692325" duration="6722000" />
       <workItem from="1703279700387" duration="18350000" />
+      <workItem from="1703351175515" duration="9283000" />
+      <workItem from="1703369601149" duration="1276000" />
+      <workItem from="1703383466251" duration="7015000" />
+      <workItem from="1703397636570" duration="180000" />
+      <workItem from="1703431222392" duration="1314000" />
     </task>
     <servers />
   </component>

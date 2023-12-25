@@ -15,22 +15,9 @@ def read_df(spark, jdbc_url, table_name, jdbc_properties ):
     df = spark.read.jdbc(url=jdbc_url, table=table_name, properties=jdbc_properties)
     return df
 
-
-def write_df2(result, jdbc_url, table_name): # kill 67748
-    #result.repartition(3).write.format('jdbc').mode('overwrite').option("truncate", False).option("url", jdbc_url).option('driver', "org.postgresql.Driver").option("user", 'hm31') .option("password", 'graphs').option("dbtable", table_name) .option("isolationLevel", "NONE").option("batchsize", 1000000) .save();
-    result.repartition(10).write.format('jdbc').mode('overwrite').option("truncate", False).option("url", jdbc_url).option('driver', "org.postgresql.Driver").option("user", 'hm31') .option("password", 'graphs').option("dbtable", table_name) .option("isolationLevel", "NONE").option("batchsize", 100000) .save();
-
-def write_df(result, jdbc_url, table_name, jdbc_properties):
-    result.write.format('jdbc').options(url=jdbc_url,table = table_name, mode="overwrite", properties=jdbc_properties )
-
-def read_write_parquet(read_dir, table_name, jdbc_properties):
-    df = spark.read.parquet(read_dir)
-    df = df.repartition(1)
-    # df.write.format('jdbc').options(url=jdbc_url, table=table_name, mode="overwrite", properties=jdbc_properties).save()
-    # df.write.format('jdbc').options(url=jdbc_url, dbtable=table_name, mode="overwrite", properties=jdbc_properties).save()
-
-
-    df.write.format('jdbc').options(
+def write_df(result, table_name, jdbc_properties):
+    result = result.repartition(10)
+    result.write.format('jdbc').options(
         url=jdbc_properties['jdbc_url'],
         driver="org.postgresql.Driver",
         user=jdbc_properties["user"],
@@ -39,9 +26,10 @@ def read_write_parquet(read_dir, table_name, jdbc_properties):
         mode="overwrite"
     ).save()
 
-    print(df.count())
-    #df.show()
-
+def read_write_parquet(read_dir, table_name, jdbc_properties):
+    df = spark.read.parquet(read_dir)
+    df = df.repartition(50)
+    write_df(df, table_name, jdbc_properties)
 
 
 
@@ -76,6 +64,8 @@ def handle_year(year_mesh_edge_duplicate_features):
     calculate_year_difference_udf = F.udf(lambda row: calculate_year_feature(row), FloatType())
     #edge_years = edge_years.withColumn('year_feature', calculate_year_difference_udf(F.struct(edge_years['first_year'], edge_years['second_year'])))
 
+    year_mesh_edge_duplicate_features = year_mesh_edge_duplicate_features.repartition(200)
+
     year_mesh_edge_duplicate_features = year_mesh_edge_duplicate_features.withColumn(
         'year_similarity',
         F.when(F.abs(year_mesh_edge_duplicate_features['first_year'] - year_mesh_edge_duplicate_features['second_year']) <= 5, 1.0)
@@ -86,10 +76,11 @@ def handle_year(year_mesh_edge_duplicate_features):
     columns_to_drop = ['first_year', 'second_year']
     year_mesh_edge_duplicate_features = year_mesh_edge_duplicate_features.drop(*columns_to_drop)
 
-    # year_mesh_edge_duplicate_features.show()
-    year_mesh_edge_duplicate_features = year_mesh_edge_duplicate_features.repartition(100)
-    year_mesh_edge_duplicate_features.persist()
-    print('year completed')
+    year_mesh_edge_duplicate_features = year_mesh_edge_duplicate_features.repartition(1)
+    year_mesh_edge_duplicate_features.cache()
+
+
+    print(f'year completed count {year_mesh_edge_duplicate_features.count()}')
 
     return year_mesh_edge_duplicate_features
 
@@ -196,9 +187,10 @@ def calculate_mesh_similarity_median(row, mesh_lookup = mesh_dict):
 
 def handle_mesh(edges_annotated_with_year_features):
 
+    edges_annotated_with_year_features = edges_annotated_with_year_features.repartition(200)
+
     calculate_mesh_similarity_udf = F.udf(lambda row: calculate_mesh_similarity_mean(row), FloatType())
     edges_annotated_with_year_features = edges_annotated_with_year_features.withColumn('mesh_similarity_mean', calculate_mesh_similarity_udf(F.struct(edges_annotated_with_year_features['first_mesh'], edges_annotated_with_year_features['second_mesh'])))
-
 
     calculate_mesh_similarity_udf = F.udf(lambda row: calculate_mesh_similarity_median(row), FloatType())
     edges_annotated_with_year_features = edges_annotated_with_year_features.withColumn('mesh_similarity_median', calculate_mesh_similarity_udf(F.struct(edges_annotated_with_year_features['first_mesh'], edges_annotated_with_year_features['second_mesh'])))
@@ -206,9 +198,11 @@ def handle_mesh(edges_annotated_with_year_features):
     columns_to_drop = ['first_mesh', 'second_mesh']
     edges_annotated_with_year_features = edges_annotated_with_year_features.drop(*columns_to_drop)
 
-    # edges_annotated_with_year_features.show()
+    edges_annotated_with_year_features.repartition(1)
+    edges_annotated_with_year_features.cache()
 
-    print('mesh completed')
+
+    print(f'mesh completed count {edges_annotated_with_year_features.count()}')
 
     return edges_annotated_with_year_features
 
@@ -222,23 +216,16 @@ def handle_mesh(edges_annotated_with_year_features):
 def calculate_raw_node_similarities(spark):
     import time
     year_mesh_node_duplicated_edges = read_df(spark, jdbc_url, 'hm31.year_mesh_node_duplicated_edges_cert', jdbc_properties)
-    # year_mesh_node_duplicated_edges = read_df(spark, jdbc_url, 'hm31.test_features', jdbc_properties)
-    year_mesh_node_duplicated_edges = year_mesh_node_duplicated_edges.repartition(100)
     year_mesh_node_duplicated_edges.persist()
 
 
     edges_annotated_with_year_features = handle_year(year_mesh_node_duplicated_edges)
     edges_annotated_with_year_and_mesh_features = handle_mesh(edges_annotated_with_year_features)
 
-    print('pre persist')
-    edges_annotated_with_year_and_mesh_features.persist()
 
-    print('post persist')
-    start = time.time()
-    write_df2(edges_annotated_with_year_and_mesh_features, jdbc_url, 'hm31.year_mesh_edge_weights_cert')
-    end = time.time()
+    edges_annotated_with_year_and_mesh_features.repartition(10).write.parquet('/shared/hossein_hm31/parquets_year_and_mesh')
+    write_df(edges_annotated_with_year_and_mesh_features, 'hm31.year_mesh_edge_weights_cert', jdbc_properties)
 
-    print(f'elapsed insertion {end-start}')
     # def write_df(result, jdbc_url, table_name):
 
 #If two arrays a1 and a2 are sorted, what is the size of their intersection?
@@ -336,6 +323,7 @@ def handle_cocitation(spark):
     # citations_duplicated_edges = read_df(spark, jdbc_url, 'hm31.limited', jdbc_properties)
     # # references_duplicated_edges = references_duplicated_edges.limit(40)
 
+    citations_duplicated_edges = citations_duplicated_edges.repartition(400)
 
     calculate_cocitation_jaccard_similarity_udf = F.udf(lambda row: calculate_cocitation_jaccard_similarity(row), FloatType())
     citations_duplicated_edges_plus_jaccard = citations_duplicated_edges.withColumn('cocitation_jaccard_similarity', calculate_cocitation_jaccard_similarity_udf(F.struct(citations_duplicated_edges['first_in'], citations_duplicated_edges['second_in'])))
@@ -351,14 +339,9 @@ def handle_cocitation(spark):
     citations_duplicated_edges_plus_jaccard_and_frequency = citations_duplicated_edges_plus_jaccard_and_frequency.drop(*columns_to_drop)
 
     print('dropped')
-    citations_duplicated_edges_plus_jaccard_and_frequency.persist()
-
-    citations_duplicated_edges_plus_jaccard_and_frequency.printSchema()
-    citations_duplicated_edges_plus_jaccard_and_frequency.explain()
-
-    # citations_duplicated_edges_plus_jaccard_and_frequency.show()
+    citations_duplicated_edges_plus_jaccard_and_frequency = citations_duplicated_edges_plus_jaccard_and_frequency.repartition(1)
+    citations_duplicated_edges_plus_jaccard_and_frequency.cache()
     print('count', citations_duplicated_edges_plus_jaccard_and_frequency.count())
-
 
     print('cocitations completed')
     return citations_duplicated_edges_plus_jaccard_and_frequency
@@ -396,38 +379,42 @@ def handle_bib_coupling(spark):
     return references_duplicated_edges_plus_jaccard_and_frequency
 
 
-#Read edges, and for each features, calculate the similarities for that feature
-def calculate_raw_edge_similarities(spark):
-    import time
+def wrap_bib_coupling(spark):
     references_duplicated_edges_plus_jaccard_and_frequency = handle_bib_coupling(spark)
     start = time.time()
 
     #cocitations_duplicated_edges_plus_jaccard_and_frequency.explain()
     references_duplicated_edges_plus_jaccard_and_frequency = references_duplicated_edges_plus_jaccard_and_frequency.repartition(1)
-    write_df(references_duplicated_edges_plus_jaccard_and_frequency, jdbc_url, 'hm31.please_work_cert', jdbc_properties)
-    references_duplicated_edges_plus_jaccard_and_frequency.repartition(100).write.parquet('/shared/parquets_bib/')
+    references_duplicated_edges_plus_jaccard_and_frequency.repartition(10).write.parquet('/shared/parquets_bib/')
+    write_df(references_duplicated_edges_plus_jaccard_and_frequency, 'hm31.bib_coupling_edge_weights_cert', jdbc_properties)
+
 
     end = time.time()
     print(f'elapsed time {end - start}')
 
-
-    return
-
+def wrap_cocitation(spark): #156164
     cocitations_duplicated_edges_plus_jaccard_and_frequency = handle_cocitation(spark)
-    cocitations_duplicated_edges_plus_jaccard_and_frequency.persist()
+    start = time.time()
+    cocitations_duplicated_edges_plus_jaccard_and_frequency.repartition(10).write.parquet('/shared/hossein_hm31/parquets_cocitation/')
 
-    output_path = '/shared/hossein_hm31/in_edges_features/'
-    #cocitations_duplicated_edges_plus_jaccard_and_frequency.explain()
-    cocitations_duplicated_edges_plus_jaccard_and_frequency.repartition(50).write.parquet(output_path)
+    # write_df(cocitations_duplicated_edges_plus_jaccard_and_frequency, 'hm31_cocitation_edge_weights_cert', jdbc_properties)
+    write_df(cocitations_duplicated_edges_plus_jaccard_and_frequency, 'hm31.cocitation_edge_weights_cert', jdbc_properties)
+
     mid = time.time()
     print(f"parquet wrote elapsed {mid - start}")
 
-    # write_df(cocitations_duplicated_edges_plus_jaccard_and_frequency, jdbc_url, 'hm31.cocitations_edge_weights_cert')
-    write_df(cocitations_duplicated_edges_plus_jaccard_and_frequency, jdbc_url, 'hm31.cocitations_edge_weights_cert', jdbc_properties)
-    # def write_df(result, jdbc_url, table_name, jdbc_properties):
 
 
-    print(f'elapsed time {end - mid}')
+
+
+
+#Read edges, and for each features, calculate the similarities for that feature
+def calculate_raw_edge_similarities(spark):
+
+    # wrap_bib_coupling(spark)
+    wrap_cocitation(spark)
+
+
 
 
 
@@ -438,7 +425,9 @@ def calculate_raw_edge_similarities(spark):
 
 
 #This file obtains a table
-if __name__ == "__main__": #106702
+if __name__ == "__main__":
+    import time
+
     spark = SparkSession \
         .builder \
         .appName("Python Spark SQL basic example") \
@@ -447,7 +436,6 @@ if __name__ == "__main__": #106702
         .config("spark.master", "local[*]") \
         .getOrCreate()
 
-    jdbc_url = "jdbc:postgresql://valhalla.cs.illinois.edu:5432/ernieplus"
     jdbc_properties = {
         "user": "hm31",
         "password": "graphs",
@@ -459,13 +447,21 @@ if __name__ == "__main__": #106702
     spark.sparkContext.setLogLevel("WARN")
 
     # calculate_raw_node_similarities(spark)
-    #calculate_raw_edge_similarities(spark)
-
-    read_write_parquet('/shared/parquets_bib/','hm31.aaaaaa', jdbc_properties)
-
+    calculate_raw_edge_similarities(spark)
+    # read_write_parquet('/shared/parquets_cocitation','hm31.coooocccc', jdbc_properties)
 
 
 
+
+
+"""
+comments:
+1st: repartition 200 for calculations
+2nd: do calculations
+3rd: cache
+4th: count
+5th: Write
+"""
 
 
 

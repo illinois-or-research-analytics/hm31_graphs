@@ -11,6 +11,18 @@ def read_df(spark, jdbc_url, table_name, jdbc_properties ):
     return df
 
 
+def write_df(result, table_name, jdbc_properties):
+    result = result.repartition(50)
+    result.write.format('jdbc').options(
+        url=jdbc_properties['jdbc_url'],
+        driver="org.postgresql.Driver",
+        user=jdbc_properties["user"],
+        password=jdbc_properties["password"],
+        dbtable=table_name,
+        mode="overwrite"
+    ).save()
+
+
 if __name__ == '__main__':
     spark = SparkSession \
         .builder \
@@ -27,22 +39,66 @@ if __name__ == '__main__':
         "driver": "org.postgresql.Driver"
     }
 
+    jdbc_properties = {
+        "user": "hm31",
+        "password": "graphs",
+        "driver": "org.postgresql.Driver",
+        'jdbc_url' : "jdbc:postgresql://valhalla.cs.illinois.edu:5432/ernieplus"
+    }
+
+
+
     spark.sparkContext.setLogLevel("WARN")
 
     parquet_path = '/shared/hossein_hm31/embeddings_parquets'
 
-    unique_nodes = read_df(spark, jdbc_url, 'hm31.unique_nodes_cert', jdbc_properties)
-    df = spark.read.parquet(parquet_path)
+    try:
+
+        unique_nodes = read_df(spark, jdbc_url, 'hm31.unique_nodes_cert', jdbc_properties)
+        df = spark.read.parquet(parquet_path)
 
 
-    unique_nodes.createOrReplaceTempView("unique_nodes")
-    df.createOrReplaceTempView("all_embeddings")
+        unique_nodes.createOrReplaceTempView("unique_nodes")
+        df.createOrReplaceTempView("all_embeddings")
 
-    sql_query = """
-        select u.node_id, a.embedding from unique_nodes u inner join all_embeddings a on u.pmid = a.pmid
-    """
-    result =  spark.sql(sql_query)
+        sql_query = """
+            select u.node_id, a.embedding from unique_nodes u inner join all_embeddings a on u.pmid = a.pmid
+        """
+        result =  spark.sql(sql_query)
 
 
 
-    print("num", result.count())
+        print("num", result.count())
+        result.repartition(10).write.parquet('/shared/parquets_embeddings/')
+
+        write_df(result, 'hm31.uncleaned_embeddings_cert', jdbc_properties)
+
+
+
+
+        spark.catalog.clearCache()
+        unique_nodes.unpersist()
+        df.unpersist()
+        result.unpersist()
+
+        spark.stop()
+        exit(0)
+
+
+
+
+    except:
+        print('Error')
+        spark.catalog.clearCache()
+        unique_nodes.unpersist()
+        df.unpersist()
+        spark.stop()
+        exit(0)
+
+
+    print('Error')
+    spark.catalog.clearCache()
+    unique_nodes.unpersist()
+    df.unpersist()
+    spark.stop()
+    exit(0)

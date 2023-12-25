@@ -10,16 +10,20 @@ def read_df(spark, jdbc_url, table_name, jdbc_properties ):
     df = spark.read.jdbc(url=jdbc_url, table=table_name, properties=jdbc_properties)
     return df
 
+def read_write_parquet(read_dir, table_name, jdbc_properties):
+    df = spark.read.parquet(read_dir)
+    df = df.repartition(50)
+    write_df(df, table_name, jdbc_properties)
 
 def write_df(result, table_name, jdbc_properties):
-    result = result.repartition(50)
+    result = result.repartition(10)
     result.write.format('jdbc').options(
         url=jdbc_properties['jdbc_url'],
         driver="org.postgresql.Driver",
         user=jdbc_properties["user"],
         password=jdbc_properties["password"],
         dbtable=table_name,
-        mode="overwrite"
+        mode="append"
     ).save()
 
 
@@ -50,7 +54,7 @@ if __name__ == '__main__':
 
     spark.sparkContext.setLogLevel("WARN")
 
-    parquet_path = '/shared/hossein_hm31/embeddings_parquets'
+    parquet_path = '/shared/hossein_hm31/embeddings_test/'
 
     try:
 
@@ -69,36 +73,24 @@ if __name__ == '__main__':
 
 
         print("num", result.count())
-        result.repartition(10).write.parquet('/shared/parquets_embeddings/')
+        #result.repartition(10).write.parquet('/shared/parquets_embeddings/')
+        # result.repartition(10).write.parquet('/shared/parquets_embeddings_2/')
 
-        write_df(result, 'hm31.uncleaned_embeddings_cert', jdbc_properties)
-
-
-
-
-        spark.catalog.clearCache()
-        unique_nodes.unpersist()
-        df.unpersist()
-        result.unpersist()
-
+        write_df(result, 'hm31.uncleaned_embeddings_cert_4', jdbc_properties)
         spark.stop()
         exit(0)
 
 
 
 
-    except:
-        print('Error')
-        spark.catalog.clearCache()
-        unique_nodes.unpersist()
-        df.unpersist()
+
+    except Exception as e:
+
+        print(f'Error: {e}')
         spark.stop()
         exit(0)
 
 
-    print('Error')
-    spark.catalog.clearCache()
-    unique_nodes.unpersist()
-    df.unpersist()
+
     spark.stop()
     exit(0)

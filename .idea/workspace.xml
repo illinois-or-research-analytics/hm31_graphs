@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/step_7_calculate_similarities/.ipynb_checkpoints/planB-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_7_calculate_similarities/.nohup.out.swp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_7_calculate_similarities/planB.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_7_calculate_similarities/planB.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_8_add_embeddings/gc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/build_tables_for_all_xmls.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/build_tables_for_all_xmls.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_7_calculate_similarities/calculate_similarities.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_7_calculate_similarities/calculate_similarities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_7_calculate_similarities/nohup.out" beforeDir="false" afterPath="$PROJECT_DIR$/step_7_calculate_similarities/nohup.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_8_add_embeddings/obtain_sub_network_embeddings.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_8_add_embeddings/obtain_sub_network_embeddings.py" afterDir="false" />
-    </list>
+    <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,6 +108,7 @@
   <component name="RunManager" selected="Python.Unnamed">
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="step_1" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -142,6 +132,7 @@
     </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="step_1" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -164,6 +155,7 @@
     </configuration>
     <configuration name="report_stats" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="step_1" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -199,7 +191,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-e8b2dc97e1a4-5ac6f1e12630-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.11555.5" />
+        <option value="bundled-python-sdk-50da183f06c8-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13135.95" />
       </set>
     </attachedChunks>
   </component>
@@ -330,6 +322,8 @@
       <workItem from="1703383466251" duration="7015000" />
       <workItem from="1703397636570" duration="180000" />
       <workItem from="1703431222392" duration="1314000" />
+      <workItem from="1703518421380" duration="33000" />
+      <workItem from="1703545860151" duration="299000" />
     </task>
     <servers />
   </component>

@@ -11,9 +11,21 @@ import json
 
 
 #Read a df from db
-def read_df(spark, jdbc_url, table_name, jdbc_properties ):
-    df = spark.read.jdbc(url=jdbc_url, table=table_name, properties=jdbc_properties)
+def read_df(spark, table_name, jdbc_properties ):
+    # df = spark.read.jdbc(url=jdbc_url, table=table_name, properties=jdbc_properties)
+    # df = spark.read.jdbc(url=jdbc_url, table=table_name, properties=jdbc_properties, numPartitions=20, fetchsize=10000)
+
+    df = spark.read.format('jdbc').options(
+        url=jdbc_properties['jdbc_url'],
+        #driver="org.postgresql.Driver",
+        user=jdbc_properties["user"],
+        password=jdbc_properties["password"],
+        dbtable=table_name,
+        fetchsize= 10000,
+        numPartitions = 20
+    ).load()
     return df
+
 
 def write_df(result, table_name, jdbc_properties):
     result = result.repartition(10)
@@ -318,12 +330,14 @@ def calculate_cocitation_raw_similarity(row):
 
 
 def handle_cocitation(spark):
-    citations_duplicated_edges = read_df(spark, jdbc_url, 'hm31.in_edges_features_cert', jdbc_properties)
+    # citations_duplicated_edges = read_df(spark, jdbc_url, 'hm31.cocitation_limited', jdbc_properties)
+    citations_duplicated_edges = read_df(spark, 'hm31.cocitation_limited', jdbc_properties)
+
     print("read from db")
     # citations_duplicated_edges = read_df(spark, jdbc_url, 'hm31.limited', jdbc_properties)
     # # references_duplicated_edges = references_duplicated_edges.limit(40)
 
-    citations_duplicated_edges = citations_duplicated_edges.repartition(400)
+    citations_duplicated_edges = citations_duplicated_edges.repartition(50)
 
     calculate_cocitation_jaccard_similarity_udf = F.udf(lambda row: calculate_cocitation_jaccard_similarity(row), FloatType())
     citations_duplicated_edges_plus_jaccard = citations_duplicated_edges.withColumn('cocitation_jaccard_similarity', calculate_cocitation_jaccard_similarity_udf(F.struct(citations_duplicated_edges['first_in'], citations_duplicated_edges['second_in'])))
@@ -340,7 +354,7 @@ def handle_cocitation(spark):
 
     print('dropped')
     citations_duplicated_edges_plus_jaccard_and_frequency = citations_duplicated_edges_plus_jaccard_and_frequency.repartition(1)
-    citations_duplicated_edges_plus_jaccard_and_frequency.cache()
+    # citations_duplicated_edges_plus_jaccard_and_frequency.cache()
     print('count', citations_duplicated_edges_plus_jaccard_and_frequency.count())
 
     print('cocitations completed')
@@ -395,10 +409,10 @@ def wrap_bib_coupling(spark):
 def wrap_cocitation(spark): #156164
     cocitations_duplicated_edges_plus_jaccard_and_frequency = handle_cocitation(spark)
     start = time.time()
-    cocitations_duplicated_edges_plus_jaccard_and_frequency.repartition(10).write.parquet('/shared/hossein_hm31/parquets_cocitation/')
+    cocitations_duplicated_edges_plus_jaccard_and_frequency.repartition(1).write.parquet('/shared/hossein_hm31/parquets_cocitation/')
 
     # write_df(cocitations_duplicated_edges_plus_jaccard_and_frequency, 'hm31_cocitation_edge_weights_cert', jdbc_properties)
-    write_df(cocitations_duplicated_edges_plus_jaccard_and_frequency, 'hm31.cocitation_edge_weights_cert', jdbc_properties)
+    #write_df(cocitations_duplicated_edges_plus_jaccard_and_frequency, 'hm31.cocitation_edge_weights_cert', jdbc_properties)
 
     mid = time.time()
     print(f"parquet wrote elapsed {mid - start}")
@@ -436,6 +450,8 @@ if __name__ == "__main__":
         .config("spark.master", "local[*]") \
         .getOrCreate()
 
+    jdbc_url = "jdbc:postgresql://valhalla.cs.illinois.edu:5432/ernieplus"
+
     jdbc_properties = {
         "user": "hm31",
         "password": "graphs",
@@ -446,9 +462,19 @@ if __name__ == "__main__":
 
     spark.sparkContext.setLogLevel("WARN")
 
-    # calculate_raw_node_similarities(spark)
-    calculate_raw_edge_similarities(spark)
-    # read_write_parquet('/shared/parquets_cocitation','hm31.coooocccc', jdbc_properties)
+    try:
+        # calculate_raw_node_similarities(spark)
+        calculate_raw_edge_similarities(spark)
+        # read_write_parquet('/shared/parquets_cocitation','hm31.coooocccc', jdbc_properties)
+        spark.stop()
+        exit(0)
+
+    except Exception as e:
+
+        print(f'Error: {e}')
+        spark.stop()
+        exit(0)
+
 
 
 

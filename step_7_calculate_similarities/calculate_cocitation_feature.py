@@ -30,9 +30,10 @@ def select_rows_with_range(start_index, end_index):
         cur = conn.cursor()
 
         # Execute the SELECT query to obtain rows within the specified range
-        cur.execute("SELECT * FROM hm31.in_edges_features_cert OFFSET %s LIMIT %s", (start_index, end_index - start_index))
+        # cur.execute("SELECT * FROM hm31.in_edges_features_cert  ORDER BY id OFFSET %s LIMIT %s", (start_index, end_index - start_index))
+        cur.execute("SELECT * FROM hm31.in_edges_features_cert WHERE id >= %s AND id < %s", (start_index, end_index))
 
-        # Fetch the results
+    # Fetch the results
         results = cur.fetchall()
 
         # Print the results
@@ -43,6 +44,7 @@ def select_rows_with_range(start_index, end_index):
 
     except Exception as e:
         print("Error:", e)
+        print(f"start {start_index} end {end_index}")
 
     finally:
         cur.close()
@@ -156,14 +158,39 @@ if __name__ == '__main__': #81958
     count = int(get_table_count())
     lst = []
 
-    SPLIT_LENGTH = 100
+    # count = 10005
+    print(count)
+    SPLIT_LENGTH = 10000
+    # SPLIT_LENGTH = 100
+
     CHUNCKS = count // SPLIT_LENGTH + 1
 
     for i in range(CHUNCKS):
-        lst.append((i*SPLIT_LENGTH,(i+1)* SPLIT_LENGTH))
+        lst.append((i*SPLIT_LENGTH,min((i+1)* SPLIT_LENGTH, count + 1)))
 
-    lst.append((44509700, 44509707))
+    print(lst[0])
+    print(lst[-1])
 
-    with multiprocessing.Pool(processes=50) as pool:
+    # print(lst)
+
+    with multiprocessing.Pool(processes=40) as pool:
         results = pool.starmap(insert_wrapper, lst)
+
+    # from tqdm import tqdm
+    #
+    # SPLIT_LENGTH = 10000
+    # CHUNCKS = count // SPLIT_LENGTH
+    #
+    # for i in tqdm(range(CHUNCKS)):
+    #     print('a')
+    #     rows = select_rows_with_range(i*SPLIT_LENGTH, min((i+1)* SPLIT_LENGTH, count))
+    #     print('b')
+    #     results = process_batch(rows)
+    #     print('c')
+    #     insert_values_into_table(results)
+    #     print('d')
+    #     print()
+    #
+    #     if i == 10:
+    #         break
 

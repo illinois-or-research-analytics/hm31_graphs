@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/step_7_calculate_similarities/.nohup.out.swo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_7_calculate_similarities/nohup_2.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_7_calculate_similarities/.ipynb_checkpoints/planB-Copy1-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_7_calculate_similarities/calculate_embedding_feature.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_7_calculate_similarities/nohup.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_7_calculate_similarities/planB-Copy1.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_8_add_embeddings/nohup.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_8_add_embeddings/obtain_title_abstracts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_7_calculate_similarities/.ipynb_checkpoints/planB-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/step_7_calculate_similarities/.ipynb_checkpoints/planB-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_7_calculate_similarities/calculate_similarities.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_7_calculate_similarities/calculate_similarities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_7_calculate_similarities/nohup.out" beforeDir="false" afterPath="$PROJECT_DIR$/step_7_calculate_similarities/nohup.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_7_calculate_similarities/planB.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_7_calculate_similarities/planB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_7_calculate_similarities/planB.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/step_7_calculate_similarities/planB.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Jupyter Notebook" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -54,7 +55,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/hm31/step_1/step_5_generate_cen_intersection&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/hm31/step_1/step_7_calculate_similarities&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -72,9 +73,9 @@
       <window_info id="Commit_Guest" />
       <window_info id="Pull Requests" />
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77518797" visible="true" weight="0.13108107" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77518797" visible="true" weight="0.18405405" />
       <window_info id="Commit" order="1" weight="0.25" />
-      <window_info active="true" id="Structure" order="2" sideWeight="0.22481203" side_tool="true" visible="true" weight="0.13108107" />
+      <window_info active="true" id="Structure" order="2" sideWeight="0.22481203" side_tool="true" visible="true" weight="0.18405405" />
       <window_info anchor="bottom" id="DataprocToolWindow" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="TypeScript" />
@@ -87,7 +88,7 @@
       <window_info anchor="bottom" id="HiveToolWindow" />
       <window_info anchor="bottom" id="GlueToolWindow" />
       <window_info anchor="bottom" id="EmrToolWindow" />
-      <window_info anchor="bottom" id="Find" show_stripe_button="false" weight="0.3300095" />
+      <window_info anchor="bottom" id="Find" weight="0.3300095" />
       <window_info anchor="bottom" id="Jupyter" weight="0.3273148" />
       <window_info anchor="bottom" id="SparkMonitoringToolWindow" />
       <window_info anchor="bottom" id="Version Control" order="0" />
@@ -107,6 +108,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/step_7_calculate_similarities" />
       <recent name="$PROJECT_DIR$/step_1_sample_study" />
       <recent name="$PROJECT_DIR$/step_2" />
     </key>
@@ -339,7 +341,9 @@
       <workItem from="1703561165389" duration="599000" />
       <workItem from="1703569782858" duration="599000" />
       <workItem from="1703602824532" duration="599000" />
-      <workItem from="1703604250125" duration="598000" />
+      <workItem from="1703604250125" duration="2041000" />
+      <workItem from="1703630029184" duration="1206000" />
+      <workItem from="1703647582546" duration="598000" />
     </task>
     <servers />
   </component>

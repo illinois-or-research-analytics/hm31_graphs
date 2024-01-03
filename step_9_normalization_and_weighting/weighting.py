@@ -34,11 +34,11 @@ if __name__ == '__main__':
     spark.sparkContext.setLogLevel("WARN")
 
 
-    normalized = spark.read.parquet('normalized_features.parquet')
+    normalized = spark.read.parquet('normalized/')
 
 
-    coefficients = [1, 2, 3, 4, 5, 6]
-    scale = 100
+    coefficients = [1, 2, 3, 4, 5, 6, 7]
+    scale = 1
 
     linear_coefficients = []
     sum_all = sum(coefficients)
@@ -46,12 +46,16 @@ if __name__ == '__main__':
     for coefficient in coefficients:
         linear_coefficients.append(coefficient/sum_all)
 
-    columns_to_aggregate = ['mesh_median', 'cocitation_jaccard', 'cocitation_frequence', 'bib_jaccard', 'bib_frequency', 'cosine_similarity']
+    columns_to_aggregate = ['year_similarity', 'mesh_median', 'cocitation_jaccard', 'cocitation_frequency', 'bib_jaccard', 'bib_frequency', 'cosine_similarity']
     normalized = normalized.withColumn("weight", sum(col(col_name) * coeff * scale for col_name, coeff in zip(columns_to_aggregate, linear_coefficients)))
 
     normalized = normalized.drop(*columns_to_aggregate)
     normalized.show()
 
     coefficients.append(scale)
-    normalized.write.parquet(f'/shared/hossein_hm31/edge_features_parquet_{"-".join(coefficients)}/')
+    coefficients = list(map(str, coefficients))
+
+
+    # file_str = f'./parquets/edge_features_parquet_{"-".join(coefficients)}/'
+    # normalized.coalesce(1).write.parquet(file_str)
 

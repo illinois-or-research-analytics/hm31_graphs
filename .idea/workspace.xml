@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore.swp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_9_normalization_and_weighting/normalization_and_dumping.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_9_normalization_and_weighting/normalized/._SUCCESS.crc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_9_normalization_and_weighting/normalized/.part-00000-b56bbade-3d96-4b11-8e6e-0389e09335e3-c000.snappy.parquet.crc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_9_normalization_and_weighting/normalized/_SUCCESS" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_9_normalization_and_weighting/normalized/part-00000-b56bbade-3d96-4b11-8e6e-0389e09335e3-c000.snappy.parquet" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_9_normalization_and_weighting/postgresql-42.5.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_9_normalization_and_weighting/weighting.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_9_normalization_and_weighting/weighting.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_9_normalization_and_weighting/weighting.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -346,7 +339,7 @@
       <workItem from="1703630029184" duration="1206000" />
       <workItem from="1703647582546" duration="598000" />
       <workItem from="1703713651804" duration="598000" />
-      <workItem from="1704220265635" duration="3283000" />
+      <workItem from="1704220265635" duration="3909000" />
     </task>
     <servers />
   </component>

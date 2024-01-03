@@ -7,3 +7,4 @@ step_2_whole_reporting/xml_data.zip
 step_3_generate_tables/nohup.out
 test/
 step_9_normalization_and_weighting/normalized/
+step_9_normalization_and_weighting/parquets/

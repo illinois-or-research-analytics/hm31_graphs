@@ -5,6 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore.swp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_9_normalization_and_weighting/normalization_and_dumping.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_9_normalization_and_weighting/normalized/._SUCCESS.crc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_9_normalization_and_weighting/normalized/.part-00000-b56bbade-3d96-4b11-8e6e-0389e09335e3-c000.snappy.parquet.crc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_9_normalization_and_weighting/normalized/_SUCCESS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_9_normalization_and_weighting/normalized/part-00000-b56bbade-3d96-4b11-8e6e-0389e09335e3-c000.snappy.parquet" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_9_normalization_and_weighting/postgresql-42.5.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_9_normalization_and_weighting/weighting.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,9 +74,9 @@
       <window_info id="Commit_Guest" />
       <window_info id="Pull Requests" />
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7746114" visible="true" weight="0.198311" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7754947" visible="true" weight="0.37432432" />
       <window_info id="Commit" order="1" weight="0.25" />
-      <window_info active="true" id="Structure" order="2" sideWeight="0.2253886" side_tool="true" visible="true" weight="0.198311" />
+      <window_info active="true" id="Structure" order="2" sideWeight="0.22450534" side_tool="true" visible="true" weight="0.37432432" />
       <window_info anchor="bottom" id="DataprocToolWindow" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="TypeScript" />
@@ -85,8 +93,8 @@
       <window_info anchor="bottom" id="Jupyter" weight="0.3273148" />
       <window_info anchor="bottom" id="SparkMonitoringToolWindow" />
       <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Problems View" order="1" weight="0.30246913" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.3341863" />
+      <window_info anchor="bottom" id="Problems View" order="1" weight="0.31006646" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.31006646" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3300926" />
       <window_info anchor="bottom" id="Services" order="4" weight="0.2920228" />
       <window_info anchor="right" id="Plots" show_stripe_button="false" />
@@ -338,7 +346,7 @@
       <workItem from="1703630029184" duration="1206000" />
       <workItem from="1703647582546" duration="598000" />
       <workItem from="1703713651804" duration="598000" />
-      <workItem from="1704220265635" duration="424000" />
+      <workItem from="1704220265635" duration="3283000" />
     </task>
     <servers />
   </component>

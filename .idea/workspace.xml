@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_9_normalization_and_weighting/weighting.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_9_normalization_and_weighting/weighting.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,9 +67,9 @@
       <window_info id="Commit_Guest" />
       <window_info id="Pull Requests" />
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7754947" visible="true" weight="0.37432432" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.774371" visible="true" weight="0.37432432" />
       <window_info id="Commit" order="1" weight="0.25" />
-      <window_info active="true" id="Structure" order="2" sideWeight="0.22450534" side_tool="true" visible="true" weight="0.37432432" />
+      <window_info active="true" id="Structure" order="2" sideWeight="0.22562894" side_tool="true" visible="true" weight="0.37432432" />
       <window_info anchor="bottom" id="DataprocToolWindow" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="TypeScript" />
@@ -86,10 +86,10 @@
       <window_info anchor="bottom" id="Jupyter" weight="0.3273148" />
       <window_info anchor="bottom" id="SparkMonitoringToolWindow" />
       <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Problems View" order="1" weight="0.31006646" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.31006646" />
+      <window_info anchor="bottom" id="Problems View" order="1" weight="0.3300095" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.3300095" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3300926" />
-      <window_info anchor="bottom" id="Services" order="4" weight="0.2920228" />
+      <window_info anchor="bottom" id="Services" order="4" weight="0.3300095" />
       <window_info anchor="right" id="Plots" show_stripe_button="false" />
       <window_info anchor="right" id="Endpoints" />
       <window_info anchor="right" id="BigDataToolWindow" />
@@ -339,7 +339,8 @@
       <workItem from="1703630029184" duration="1206000" />
       <workItem from="1703647582546" duration="598000" />
       <workItem from="1703713651804" duration="598000" />
-      <workItem from="1704220265635" duration="3909000" />
+      <workItem from="1704220265635" duration="4454000" />
+      <workItem from="1704298189166" duration="5923000" />
     </task>
     <servers />
   </component>

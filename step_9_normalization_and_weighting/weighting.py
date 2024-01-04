@@ -1,15 +1,8 @@
 #Switch from sql to local as a parquet file
-from pyspark.ml.feature import MinMaxScaler, VectorAssembler
+from pyspark.sql.functions import monotonically_increasing_id
 from pyspark.sql import SparkSession
-from pyspark.sql import SparkSession
-from pyspark.ml import Pipeline
 from pyspark.sql.functions import col
-from pyspark.sql import functions as F
-from pyspark.sql.types import IntegerType, FloatType
-import statistics
-import pandas
-import ast
-import json
+
 
 if __name__ == '__main__':
 
@@ -17,7 +10,7 @@ if __name__ == '__main__':
         .builder \
         .appName("Python Spark SQL basic example") \
         .config("spark.driver.extraClassPath", "postgresql-42.5.2.jar").config("spark.executor.extraClassPath","postgresql-42.5.2.jar") \
-        .config("spark.local.dir", "/shared/hm31") \
+        .config("spark.local.dir", "./logs/") \
         .config("spark.master", "local[*]") \
         .getOrCreate()
 
@@ -35,7 +28,22 @@ if __name__ == '__main__':
 
 
     normalized = spark.read.parquet('normalized/')
+    normalized.cache()
+    normalized.count()
+    # normalized = normalized.limit(200)
+    normalized = normalized.orderBy("id")
 
+
+    #I did this to add index for reproducibility
+    # normalized_with_id = normalized.withColumn("id", monotonically_increasing_id())
+    #
+    # # Order the DataFrame based on the columns 'first' and 'second'
+    # normalized_with_id = normalized_with_id.orderBy("id")
+    # normalized_with_id.show()
+    #
+    # normalized_with_id.coalesce(1).write.parquet('normalized/')
+    #
+    #
 
     coefficients = [1, 2, 3, 4, 5, 6, 7]
     scale = 1
@@ -56,6 +64,11 @@ if __name__ == '__main__':
     coefficients = list(map(str, coefficients))
 
 
-    # file_str = f'./parquets/edge_features_parquet_{"-".join(coefficients)}/'
-    # normalized.coalesce(1).write.parquet(file_str)
+
+
+
+
+    file_str = f'./parquets/edge_features_parquet_{"-".join(coefficients)}/'
+    normalized.coalesce(1).write.parquet(file_str)
+    print(normalized.count())
 

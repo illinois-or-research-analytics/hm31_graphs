@@ -7,11 +7,9 @@ import igraph as ig
 import  leidenalg as la
 import numpy as np
 import networkx as nx
-
 #Convert and save
 def convert_to_pandas(spark, name ):
     df = spark.read.parquet('files/edges/')
-    df = df.limit(1000000)
 
     print(df.count())
 
@@ -24,14 +22,18 @@ def convert_to_pandas(spark, name ):
     print(f'pyspark to pandas {t2-t1} pandas saved {t3-t2}')
     # pandas_df = pd.read_hdf('edges.h5', key='data')
 
+
 def construct_graph(pandas_df):
     t1 = time.time()
-    G = nx.from_pandas_edgelist(pandas_df,'first','second', edge_attr='weight')
+    G = nx.from_pandas_edgelist(pandas_df,'first','second')
     t2 = time.time()
+    # print(G.edges)
+
     G, mapping_df = relabel_networkx_nodes(G)
     t3= time.time()
     H = ig.Graph.from_networkx(G)
     t4=time.time()
+
 
 
     print(f'nx from pd {t2-t1} relabling {t3-t2} ig from nx {t4-t3}')
@@ -60,7 +62,7 @@ def relabel_networkx_nodes(G_networkx):
 
 
 
-def leiden(graph, leiden_partition, pandas_df, originian_ids= False ):
+def leiden(graph, leiden_partition, pandas_df):
 
     t1 = time.time()
     if leiden_partition=="Modularity":
@@ -70,33 +72,13 @@ def leiden(graph, leiden_partition, pandas_df, originian_ids= False ):
 
     # part = la.find_partition(graph, partition, weights=weights["weight"])
     # part = la.find_partition(graph, partition)
+    print(pandas_df)
     part = la.find_partition(graph, partition, weights=pandas_df['weight'])
 
     t2 = time.time()
     print(f'clustering {t2-t1}')
     return part
 
-    if originian_ids:
-
-        cluster_memberships = part.membership
-
-        index_to_id = {index: node_id for index, node_id in enumerate(graph.vs['name'], start=1)}
-
-        all_clusters = []
-        # Iterate over clusters and print node IDs
-        for cluster_id in set(cluster_memberships):
-            nodes_in_cluster_indices = [index for index, membership in enumerate(cluster_memberships, start=1) if membership == cluster_id]
-            nodes_in_cluster_ids = [index_to_id[index] for index in nodes_in_cluster_indices]
-
-        # Print cluster ID and corresponding node IDs
-        #     print(f"Cluster {cluster_id}: {nodes_in_cluster_ids}")
-            all_clusters.append(nodes_in_cluster_ids)
-
-
-        return all_clusters
-
-    else:
-        pass
 
 
 
@@ -139,36 +121,65 @@ if __name__ == '__main__':
 
     print(f'read pandas from hdfs {t2-t1}')
 
-    # print(pandas)
 
     H_igraph, G_networkx, mapping_df = construct_graph(pandas)
 
 
-
-    num_nodes = H_igraph.vcount()
-    num_edges = H_igraph.ecount()
-
-    print("Number of Nodes:", num_nodes)
-    print("Number of Edges:", num_edges)
-
-
-    #Verify that edge weights are in correct range
-    # for i in range(num_edges):
-    #     assert  G.es[i]["weight"] <= 1
-    #     assert  G.es[i]["weight"] >= 0
-
-    x = leiden(H_igraph, 'Modularity', pandas)
-    # x = convert(x)
+    csv_file_path = f'files/graphs/mapping.csv'
+    mapping_df.to_csv(csv_file_path, index=False)
 
     t1 = time.time()
-    mod = nx.community.modularity(G_networkx, x)
+
+    nx_path = f"files/graphs/base_nx.gpickle"
+    ig_path = f"files/graphs/base_ig.pickle"
+    #Save graph
+    nx.write_gpickle(G_networkx, nx_path)
+    ig.write(H_igraph, ig_path)
+
     t2 = time.time()
 
-    print(f'modularity calculation {t2-t1}')
-    print(mod)
+    print(f'saved elapsed {t2-t1}')
+    #
+    # for edge in G_networkx.edges():
+    #     u, v = edge
+    #     edge_data = G_networkx.get_edge_data(u, v)
+    #     print(f"Edge {u} - {v}: {edge_data}")
+
+
+    # print(H_igraph.get_edgelist())
+
+
+    G_networkx = nx.read_gpickle(nx_path)
+    H_igraph = ig.read(ig_path)
+    t1 = time.time()
+
+    print(f'load elapsed {t1-t2}')
+
+    # print(H_igraph.get_edgelist())
+
+    # num_nodes = H_igraph.vcount()
+    # num_edges = H_igraph.ecount()
+    #
+    # print("Number of Nodes:", num_nodes)
+    # print("Number of Edges:", num_edges)
+
+
+
+    # x = leiden(H_igraph, 'Modularity', pandas)
+
+
+    # t1 = time.time()
+    # mod = nx.community.modularity(G_networkx, x)
+    # t2 = time.time()
+    #
+    # print(f'modularity calculation {t2-t1}')
+    # print(mod)
 
     #0.7242505159731305 w/o weights
     #0.0.7288022212244317 with weights
+
+    #nx from pd 39.37786674499512 relabling 53.00694012641907 ig from nx 19.65127396583557  5000000
+
 
 
 

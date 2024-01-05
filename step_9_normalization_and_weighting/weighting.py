@@ -33,7 +33,13 @@ if __name__ == '__main__':
     # normalized = normalized.limit(200)
     normalized = normalized.orderBy("id")
 
-
+    # last_20_rows = normalized.tail(20)
+    #
+    # # Display the result
+    # for row in last_20_rows:
+    #     print(row)
+    #
+    # exit(0)
     #I did this to add index for reproducibility
     # normalized_with_id = normalized.withColumn("id", monotonically_increasing_id())
     #

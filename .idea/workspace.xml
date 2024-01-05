@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/step_10_cluster/weighting_clustering_pipeline.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_10_cluster/cluster.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_10_cluster/construct_base_graph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/construct_base_graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_10_cluster/construct_base_graph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/weighting_clustering_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_10_cluster/weighting_clustering_pipeline.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/step_9_normalization_and_weighting/weighting.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_9_normalization_and_weighting/weighting.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -345,7 +345,7 @@
       <workItem from="1703647582546" duration="598000" />
       <workItem from="1703713651804" duration="598000" />
       <workItem from="1704220265635" duration="4454000" />
-      <workItem from="1704298189166" duration="11161000" />
+      <workItem from="1704298189166" duration="11942000" />
     </task>
     <servers />
   </component>

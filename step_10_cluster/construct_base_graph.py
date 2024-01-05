@@ -59,30 +59,6 @@ def relabel_networkx_nodes(G_networkx):
     return G_networkx_relabled, mapping_df
 
 
-
-
-
-def leiden(graph, leiden_partition, pandas_df):
-
-    t1 = time.time()
-    if leiden_partition=="Modularity":
-        partition = la.ModularityVertexPartition
-    elif leiden_partition=="CPM":
-        partition = la.CPMVertexPartition
-
-    # part = la.find_partition(graph, partition, weights=weights["weight"])
-    # part = la.find_partition(graph, partition)
-    print(pandas_df)
-    part = la.find_partition(graph, partition, weights=pandas_df['weight'])
-
-    t2 = time.time()
-    print(f'clustering {t2-t1}')
-    return part
-
-
-
-
-
 def convert(array_mapping):
     modularity_format = {}
     for i in range(len(array_mapping)):

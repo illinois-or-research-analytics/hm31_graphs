@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/nohup.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/part.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/part.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/step_10_cluster/weighting_clustering_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_10_cluster/weighting_clustering_pipeline.py" afterDir="false" />
     </list>
@@ -23,6 +26,10 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/venv/lib64/python3.6/site-packages/leidenalg/VertexPartition.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/venv/lib64/python3.6/site-packages/pandas/io/pytables.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -67,7 +74,7 @@
       <window_info id="Commit_Guest" />
       <window_info id="Pull Requests" />
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77446485" visible="true" weight="0.2731771" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77446485" visible="true" weight="0.20459458" />
       <window_info id="Commit" order="1" weight="0.25" />
       <window_info id="Structure" order="2" sideWeight="0.22553515" side_tool="true" weight="0.37421876" />
       <window_info anchor="bottom" id="DataprocToolWindow" />
@@ -87,7 +94,7 @@
       <window_info anchor="bottom" id="SparkMonitoringToolWindow" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems View" order="1" weight="0.3300926" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.3300926" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.3300095" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3300926" />
       <window_info anchor="bottom" id="Services" order="4" weight="0.3300095" />
       <window_info anchor="right" id="Plots" show_stripe_button="false" />
@@ -345,7 +352,8 @@
       <workItem from="1704220265635" duration="4454000" />
       <workItem from="1704298189166" duration="12553000" />
       <workItem from="1704484553905" duration="595000" />
-      <workItem from="1704583628924" duration="1200000" />
+      <workItem from="1704583628924" duration="2968000" />
+      <workItem from="1704669576484" duration="1197000" />
     </task>
     <servers />
   </component>

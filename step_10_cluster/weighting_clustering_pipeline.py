@@ -98,7 +98,8 @@ def record_clusterin_statistics(clustering_dict, load = False, file_name = None)
         third_quant = np.quantile(cluster_statistics, .75)
 
         results_dict = {'min': min_size, 'max': max_size, 'mean': mean_size, 'median': median_size,
-                        'q1': first_quant, 'q3': third_quant, 'coverage': coverage, 'modularity': clustering_dict['Modularity']}
+                        'q1': first_quant, 'q3': third_quant, 'coverage': coverage,
+                        'modularity': clustering_dict['Modularity'], '#clusters': n_clusters, 'singletons': singleton}
 
         log_clusters = np.zeros_like(cluster_statistics)
         for i in range(cluster_statistics.shape[0]):
@@ -194,11 +195,13 @@ def leiden(graph, leiden_partition, pandas_df, resolution_parameter = None):
 
     t1 = time.time()
     if leiden_partition=="Modularity":
-        part = la.find_partition(graph, la.ModularityVertexPartition, weights=pandas_df['weight'])
+        # part = la.find_partition(graph, la.ModularityVertexPartition, weights=pandas_df['weight'])
+        part = la.find_partition(graph, la.ModularityVertexPartition, weights = None)
 
     elif leiden_partition=="CPM":
         kwargs = {'resolution_parameter': resolution_parameter}
-        part = la.find_partition(graph, la.CPMVertexPartition, weights=pandas_df['weight'], **kwargs)
+        # part = la.find_partition(graph, la.CPMVertexPartition, weights=pandas_df['weight'], **kwargs)
+        part = la.find_partition(graph, la.CPMVertexPartition, weights = None, **kwargs)
 
 
 
@@ -223,7 +226,9 @@ def summarize(address = 'files/clusterings/' ):
 
 
 
-if __name__ == '__main__':
+if __name__ == '__main__': # 248213
+    summarize('files/clusterings/')
+    exit(0)
     # record_clusterin_statistics(None, True, f'files/clusterings/Modularity.json') 194233
     # exit(0)
 
@@ -251,7 +256,7 @@ if __name__ == '__main__':
     weights = []
 
     for i in nw:
-            weights.append(i/sum(nw))
+        weights.append(i/sum(nw))
 
 
     result_df = []
@@ -272,7 +277,6 @@ if __name__ == '__main__':
     resolution_values = [0.95, 0.75, 0.50, 0.25, 0.05, 0.01, 0.001, 0.0001]
 
     for resolution_value in resolution_values:
-        break
         x = leiden(H_ig, 'CPM', result_df, resolution_value)
         # t2 = time.time()
 
@@ -290,7 +294,7 @@ if __name__ == '__main__':
 
         clsutering_dict['Modularity'] = mod
 
-        with open(f'files/clusterings/CPM_{resolution_value}.json', 'w') as json_file:
+        with open(f'files/clusterings/CPM_UW_{resolution_value}.json', 'w') as json_file:
             json.dump(clsutering_dict, json_file)
 
         # t2 = time.time()
@@ -298,7 +302,8 @@ if __name__ == '__main__':
         # print(f'saving {t2-t1}')
 
 
-    x = leiden(H_ig, 'Modularity', result_df, resolution_value)
+
+    x = leiden(H_ig, 'Modularity', result_df)
     mod = nx.community.modularity(G_nx, x, weight = None)
 
 
@@ -310,23 +315,7 @@ if __name__ == '__main__':
 
     clsutering_dict['Modularity'] = mod
 
-    with open(f'files/clusterings/Unweighted.json', 'w') as json_file:
-        json.dump(clsutering_dict, json_file)
-
-
-    x = leiden(H_ig, 'Modularity', result_df, resolution_value)
-    mod = nx.community.modularity(G_nx, x, weight = None)
-
-
-    clsutering_dict = {}
-
-    for idx, cluster in enumerate(x):
-        clsutering_dict[idx] = cluster
-
-
-    clsutering_dict['Modularity'] = mod
-
-    with open(f'files/clusterings/Modularity.json', 'w') as json_file:
+    with open(f'files/clusterings/Modularity_UW.json', 'w') as json_file:
         json.dump(clsutering_dict, json_file)
 
 

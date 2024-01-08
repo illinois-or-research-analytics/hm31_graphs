@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/step_10_cluster/nohup.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_10_cluster/part.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_10_cluster/part.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/step_10_cluster/weighting_clustering_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_10_cluster/weighting_clustering_pipeline.py" afterDir="false" />
     </list>
@@ -74,7 +72,7 @@
       <window_info id="Commit_Guest" />
       <window_info id="Pull Requests" />
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77446485" visible="true" weight="0.20459458" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77446485" visible="true" weight="0.40918916" />
       <window_info id="Commit" order="1" weight="0.25" />
       <window_info id="Structure" order="2" sideWeight="0.22553515" side_tool="true" weight="0.37421876" />
       <window_info anchor="bottom" id="DataprocToolWindow" />
@@ -353,7 +351,8 @@
       <workItem from="1704298189166" duration="12553000" />
       <workItem from="1704484553905" duration="595000" />
       <workItem from="1704583628924" duration="2968000" />
-      <workItem from="1704669576484" duration="1197000" />
+      <workItem from="1704669576484" duration="1829000" />
+      <workItem from="1704726675048" duration="599000" />
     </task>
     <servers />
   </component>

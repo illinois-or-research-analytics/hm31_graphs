@@ -9,12 +9,54 @@ import tables
 import igraph as ig
 import  leidenalg as la
 import numpy as np
+import multiprocessing
+from multiprocessing import Process, Manager
 import json
 import networkx as nx
 import matplotlib.pyplot as plt
 import numpy as np
 from pandarallel import pandarallel #error in   File "/home/hm31/step_1/venv/lib/python3.6/site-packages/pandarallel/progress_bars.py", line 8, in <module>
 #Made this change: https://github.com/qilingframework/qiling/commit/902e01beb94e2e27e50d1456e51e0ef99937aff1
+
+
+def calculate_CPM_single_community(nx_graph, community_nodes, resolution, manager_dict):
+    induced_community = nx.induced_subgraph(nx_graph, community_nodes)
+    e_c = induced_community.number_of_edges()
+    n = induced_community.number_of_nodes()
+
+    CPM_score = e_c - resolution * (n)*(n-1)/2
+
+    manager_dict[community_nodes[0]] = CPM_score
+
+
+
+
+def calculate_CPM_wrapper(nx_graph, communities, resolution):
+    lst = []
+    manager_dict = Manager().dict()
+
+    for community in communities:
+        if len(community) > 1:
+            lst.append((nx_graph, community, resolution, manager_dict))
+
+
+
+    pool = multiprocessing.Pool(processes=2)
+    pool.starmap(calculate_CPM_single_community, lst)
+
+
+    cpm_value = 0
+
+    for key, value in manager_dict.items():
+        cpm_value += value
+
+    return cpm_value
+
+#31627
+
+
+
+
 
 def convert_pyspark_features_to_pandas(spark, name):
     df = spark.read.parquet('../step_9_normalization_and_weighting/normalized/')
@@ -65,11 +107,15 @@ def handle_arguments():
 
     return weights, scale
 
-def record_clusterin_statistics(clustering_dict, load = False, file_name = None):
+def record_clustering_statistics(clustering_dict, nx_Graph, discard_singletons = True, load = False, file_name = None):
 
     if load == False:
+        singleton_degrees = []
 
-        n_clusters = len(clustering_dict) - 1
+        modularity = clustering_dict['Modularity']
+        clustering_dict.pop('Modularity', None)
+
+        n_clusters = len(clustering_dict)
         cluster_statistics = np.zeros(n_clusters)
         singleton = 0
         total = 0
@@ -83,23 +129,63 @@ def record_clusterin_statistics(clustering_dict, load = False, file_name = None)
             cluster_statistics[int(key)] = len(value)
             if len(value) == 1:
                 singleton += 1
+                singleton_degrees.append(G_nx.degree(value[0]))
 
             total += len(value)
 
+        if discard_singletons == True:
+            cluster_statistics = cluster_statistics[cluster_statistics> 1]
+
+
+        if cluster_statistics.shape[0] == 0:
+            cluster_statistics = np.asarray([1])
+
+        if singleton == 0:
+            singleton_degrees = [0]
+
+        singleton_degrees = np.asarray(singleton_degrees)
+
+        t1 = time.time()
+
+        if 'cpm' in file_name.lower():
+            resolution = float(file_name.split('_')[-1][:-5]) #CPM_resolution.json format assumption
+
+
+            cpm_score = calculate_CPM_wrapper(nx_Graph, clustering_dict.values(), resolution)
+
+        else:
+            cpm_score = 0
+
+        t2 = time.time()
+
+        print(f'elapsed CPM {t2 - t1} seconds cpm {cpm_score}')
+        # def calculate_CPM_wrapper(nx_graph, communities, resolution):
 
 
         min_size = np.amin(cluster_statistics)
         max_size = np.amax(cluster_statistics)
         mean_size = np.mean(cluster_statistics)
         median_size = np.median(cluster_statistics)
-        coverage = 1.0* (total - singleton)/total * 100
+        coverage = 1.0 * (total - singleton)/total * 100
 
         first_quant = np.quantile(cluster_statistics, .25)
         third_quant = np.quantile(cluster_statistics, .75)
 
-        results_dict = {'min': min_size, 'max': max_size, 'mean': mean_size, 'median': median_size,
+        cluster_statistics_dict = {'min': min_size, 'max': max_size, 'mean': mean_size, 'median': median_size,
                         'q1': first_quant, 'q3': third_quant, 'coverage': coverage,
-                        'modularity': clustering_dict['Modularity'], '#clusters': n_clusters, 'singletons': singleton}
+                        'modularity': modularity, '#clusters': n_clusters, 'singletons': singleton, 'CPM_score': cpm_score}
+
+        min_size = np.amin(singleton_degrees)
+        max_size = np.amax(singleton_degrees)
+        mean_size = np.mean(singleton_degrees)
+        median_size = np.median(singleton_degrees)
+
+
+        first_quant = np.quantile(singleton_degrees, .25)
+        third_quant = np.quantile(singleton_degrees, .75)
+
+        singleton_statistics_dict = {'min': min_size, 'max': max_size, 'mean': mean_size, 'median': median_size,
+                                   'q1': first_quant, 'q3': third_quant}
 
         log_clusters = np.zeros_like(cluster_statistics)
         for i in range(cluster_statistics.shape[0]):
@@ -108,6 +194,7 @@ def record_clusterin_statistics(clustering_dict, load = False, file_name = None)
         json_idx = file_name.index('json')
         base_file_name = file_name[:json_idx-1].split('/')[-1]
 
+        results_dict= {'cluster_statistics' : cluster_statistics_dict, 'singleton_statistics': singleton_statistics_dict}
 
         plt.hist(log_clusters, bins=20, color='blue', alpha=0.7)
         plt.title(f'Histogram of log cluster sizes {base_file_name}')
@@ -120,7 +207,7 @@ def record_clusterin_statistics(clustering_dict, load = False, file_name = None)
 
 
         with open(f'files/results/{base_file_name}.json', 'w') as json_file:
-            json.dump(results_dict, json_file)
+            json.dump(results_dict, json_file, cls= NpEncoder)
 
 
 
@@ -131,12 +218,21 @@ def record_clusterin_statistics(clustering_dict, load = False, file_name = None)
         with open(file_name, 'r') as file:
            clustering_dict_loaded = json.load(file)
 
-        record_clusterin_statistics(clustering_dict_loaded, False, file_name)
+        record_clustering_statistics(clustering_dict_loaded, nx_Graph, True, False, file_name)
 
 
 
 
 
+class NpEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, np.integer):
+            return int(obj)
+        if isinstance(obj, np.floating):
+            return float(obj)
+        if isinstance(obj, np.ndarray):
+            return obj.tolist()
+        return super(NpEncoder, self).default(obj)
 
 
 
@@ -191,17 +287,17 @@ def test():
 
 
 
-def leiden(graph, leiden_partition, pandas_df, resolution_parameter = None):
+def leiden(graph, leiden_partition, pandas_df, seed=4311, resolution_parameter = None):
 
     t1 = time.time()
     if leiden_partition=="Modularity":
-        # part = la.find_partition(graph, la.ModularityVertexPartition, weights=pandas_df['weight'])
-        part = la.find_partition(graph, la.ModularityVertexPartition, weights = None)
+        # part = la.find_partition(graph, la.ModularityVertexPartition, seed= seed, weights=pandas_df['weight'])
+        part = la.find_partition(graph, la.ModularityVertexPartition, seed= seed, weights = None)
 
     elif leiden_partition=="CPM":
         kwargs = {'resolution_parameter': resolution_parameter}
-        # part = la.find_partition(graph, la.CPMVertexPartition, weights=pandas_df['weight'], **kwargs)
-        part = la.find_partition(graph, la.CPMVertexPartition, weights = None, **kwargs)
+        # part = la.find_partition(graph, la.CPMVertexPartition, seed= seed, weights=pandas_df['weight'], **kwargs)
+        part = la.find_partition(graph, la.CPMVertexPartition, seed= seed, weights = None, **kwargs)
 
 
 
@@ -214,23 +310,59 @@ def leiden(graph, leiden_partition, pandas_df, resolution_parameter = None):
     return part
 
 #Summarize clustering statustics
-def summarize(address = 'files/clusterings/' ):
+def summarize(nx_Graph, address):
     files = os.listdir(address)
 
     for file in files:
         if '.json' in file:
-            record_clusterin_statistics(None, True, f'{address}{file}')
+            record_clustering_statistics(None, nx_Graph, True, True, f'{address}{file}')
 
+
+
+def calculate_weighted_modularity(nx_graph, weights):
+    file_name = 'files/clusterings/Modularity.json'
+    with open(file_name, 'r') as file:
+        weighted = json.load(file)
+
+    clusters = []
+
+    for key, value in weighted.items():
+        if 'm' in key.lower():
+            continue
+        clusters.append(value)
+
+
+    w = nx.community.modularity(nx_graph, clusters, weight = weights['weight'])
+    uw = nx.community.modularity(nx_graph, clusters, weight = None)
+
+    print(f'weighted: w {w} uw {uw}')
+
+
+
+    file_name = 'files/clusterings/Modularity_UW.json'
+    with open(file_name, 'r') as file:
+        unweighted = json.load(file)
+
+
+    clusters = []
+
+    for key, value in unweighted.items():
+        if 'm' in key.lower():
+            continue
+        clusters.append(value)
+
+
+    w = nx.community.modularity(nx_graph, clusters, weight = weights['weight'])
+    uw = nx.community.modularity(nx_graph, clusters, weight = None)
+
+    print(f'unweighted: w {w} uw {uw}')
 
 
 
 
 
 if __name__ == '__main__': # 248213
-    summarize('files/clusterings/')
-    exit(0)
-    # record_clusterin_statistics(None, True, f'files/clusterings/Modularity.json') 194233
-    # exit(0)
+
 
     # test()
     # spark = SparkSession.builder \
@@ -259,7 +391,6 @@ if __name__ == '__main__': # 248213
         weights.append(i/sum(nw))
 
 
-    result_df = []
     t1 = time.time()
     result_df = apply_row_transformation(df, weights, scale_factor)
     t2 = time.time()
@@ -272,11 +403,16 @@ if __name__ == '__main__': # 248213
     t1 = time.time()
     print(f'Load graphs: {t1 - t2}')
 
+    # summarize(G_nx, 'files/clusterings/')
+
+    calculate_weighted_modularity(G_nx, result_df)
+    exit(0)
 
     #def leiden(graph, leiden_partition, pandas_df, resolution_parameter = None):
     resolution_values = [0.95, 0.75, 0.50, 0.25, 0.05, 0.01, 0.001, 0.0001]
 
     for resolution_value in resolution_values:
+        # break
         x = leiden(H_ig, 'CPM', result_df, resolution_value)
         # t2 = time.time()
 
@@ -320,6 +456,7 @@ if __name__ == '__main__': # 248213
 
 
     summarize('files/clusterings/')
+
 
 
 

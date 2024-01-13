@@ -33,11 +33,11 @@ def select_rows_with_range(start_index, end_index):
         # cur.execute("SELECT * FROM hm31.in_edges_features_cert  ORDER BY id OFFSET %s LIMIT %s", (start_index, end_index - start_index))
         cur.execute("SELECT * FROM hm31.in_edges_features_cert WHERE id >= %s AND id < %s", (start_index, end_index))
 
-    # Fetch the results
+    # Fetch the results_temp
         results = cur.fetchall()
 
-        # Print the results
-        #         for row in results:
+        # Print the results_temp
+        #         for row in results_temp:
         #             print("Row:", type(row))
 
         return results
@@ -185,9 +185,9 @@ if __name__ == '__main__': #81958
     #     print('a')
     #     rows = select_rows_with_range(i*SPLIT_LENGTH, min((i+1)* SPLIT_LENGTH, count))
     #     print('b')
-    #     results = process_batch(rows)
+    #     results_temp = process_batch(rows)
     #     print('c')
-    #     insert_values_into_table(results)
+    #     insert_values_into_table(results_temp)
     #     print('d')
     #     print()
     #

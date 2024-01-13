@@ -35,7 +35,7 @@ def main(split, share):
 
     strings_of_interest = ['DateCompleted', 'ISSN', 'GrantList', 'MeshHeadingList',
                            'ChemicalList', 'PubmedArticle', 'PubDate']
-    # Process each XML file and print the results
+    # Process each XML file and print the results_temp
     output_file = "output.txt"
     pattern = r'(\d{4})\.xml$'
     xml_files = os.listdir(data_dir + '/').sort()

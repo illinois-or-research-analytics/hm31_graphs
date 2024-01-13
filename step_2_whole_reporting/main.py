@@ -50,7 +50,7 @@ if __name__ == "__main__":
     strings_of_interest = ['ArticleTitle', 'Abstract']
 
     
-    # Process each XML file and print the results
+    # Process each XML file and print the results_temp
     output_file = "output.txt"
     pattern = r'(\d{4})\.xml$'
     xml_files = os.listdir(data_dir+'/')

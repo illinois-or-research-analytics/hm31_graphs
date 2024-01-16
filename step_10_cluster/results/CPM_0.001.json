@@ -1,0 +1,1 @@
+{"cluster_statistics": {"min": 2.0, "max": 4359.0, "mean": 65.6073638191151, "median": 44.0, "q1": 29.0, "q3": 68.0, "coverage": 90.29198358613024, "modularity": 0.32366109048068387, "#clusters": 825323, "singletons": 722849, "CPM_score": 17889869.474997}, "singleton_statistics": {"min": 1, "max": 28, "mean": 1.596132802286508, "median": 1.0, "q1": 1.0, "q3": 2.0}}

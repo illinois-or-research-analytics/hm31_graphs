@@ -3,6 +3,7 @@ import argparse
 import os
 import time
 from tqdm import tqdm
+import copy
 from pyspark.sql import SparkSession
 import pandas as pd
 import tables
@@ -41,7 +42,7 @@ def calculate_CPM_wrapper(nx_graph, communities, resolution):
 
 
 
-    pool = multiprocessing.Pool(processes=2)
+    pool = multiprocessing.Pool(processes=3)
     pool.starmap(calculate_CPM_single_community, lst)
 
 
@@ -314,26 +315,48 @@ def summarize(nx_Graph, address):
     files = os.listdir(address)
 
     for file in files:
+        if (not 'CPM_UW_0.0001' in file) and (not 'Mod' in file):
+            continue
+            #FIX
+
         if '.json' in file:
             record_clustering_statistics(None, nx_Graph, True, True, f'{address}{file}')
 
 
 
-def calculate_weighted_modularity(nx_graph, weights):
+def calculate_weighted_modularity(nx_graph_unweighted, weights):
+    nx_graph_weighted = copy.deepcopy(nx_graph_unweighted)
+
+    if len(nx_graph_weighted.edges) == len(weights):
+        print('inside if')
+        # Iterate through edges and assign 'weight' attribute from the DataFrame
+        for edge, weight in tqdm(zip(nx_graph_weighted.edges, weights['weight'])):
+            nx_graph_weighted[edge[0]][edge[1]]['weight'] = weight
+
+        print('added weights')
+
+    # Print the graph to verify
+
+
+
     file_name = 'files/clusterings/Modularity.json'
     with open(file_name, 'r') as file:
         weighted = json.load(file)
 
     clusters = []
+    print('b')
 
     for key, value in weighted.items():
         if 'm' in key.lower():
             continue
         clusters.append(value)
 
+    print('c')
 
-    w = nx.community.modularity(nx_graph, clusters, weight = weights['weight'])
-    uw = nx.community.modularity(nx_graph, clusters, weight = None)
+    w = nx.community.modularity(nx_graph_weighted, clusters, weight = 'weight' )
+    print('d')
+
+    uw = nx.community.modularity(nx_graph_unweighted, clusters, weight = None)
 
     print(f'weighted: w {w} uw {uw}')
 
@@ -352,8 +375,8 @@ def calculate_weighted_modularity(nx_graph, weights):
         clusters.append(value)
 
 
-    w = nx.community.modularity(nx_graph, clusters, weight = weights['weight'])
-    uw = nx.community.modularity(nx_graph, clusters, weight = None)
+    w = nx.community.modularity(nx_graph_weighted, clusters, weight = 'weight')
+    uw = nx.community.modularity(nx_graph_unweighted, clusters, weight = None)
 
     print(f'unweighted: w {w} uw {uw}')
 
@@ -392,7 +415,7 @@ if __name__ == '__main__': # 248213
 
 
     t1 = time.time()
-    result_df = apply_row_transformation(df, weights, scale_factor)
+    # result_df = apply_row_transformation(df, weights, scale_factor)
     t2 = time.time()
 
     # print(result_df.head())
@@ -403,9 +426,8 @@ if __name__ == '__main__': # 248213
     t1 = time.time()
     print(f'Load graphs: {t1 - t2}')
 
-    # summarize(G_nx, 'files/clusterings/')
+    summarize(G_nx, 'files/clusterings/')
 
-    calculate_weighted_modularity(G_nx, result_df)
     exit(0)
 
     #def leiden(graph, leiden_partition, pandas_df, resolution_parameter = None):

@@ -32,12 +32,13 @@ def calculate_CPM_single_community(nx_graph, community_nodes, resolution, manage
 
 
 
-def calculate_CPM_wrapper(nx_graph, communities, resolution):
+def calculate_CPM_wrapper(nx_graph, communities, resolution, min_prune = 1):
     lst = []
     manager_dict = Manager().dict()
 
+    #Prune communities that do not reach minimum
     for community in communities:
-        if len(community) > 1:
+        if len(community) > min_prune:
             lst.append((nx_graph, community, resolution, manager_dict))
 
 
@@ -288,17 +289,25 @@ def test():
 
 
 
-def leiden(graph, leiden_partition, pandas_df, seed=4311, resolution_parameter = None):
+def leiden(iGraph, leiden_partition, pandas_df, resolution_parameter, seed=4311):
 
     t1 = time.time()
     if leiden_partition=="Modularity":
-        # part = la.find_partition(graph, la.ModularityVertexPartition, seed= seed, weights=pandas_df['weight'])
-        part = la.find_partition(graph, la.ModularityVertexPartition, seed= seed, weights = None)
+        if pandas_df != None:
+            part = la.find_partition(iGraph, la.ModularityVertexPartition, seed= seed, weights=pandas_df['weight'])
+
+        else:
+            part = la.find_partition(iGraph, la.ModularityVertexPartition, seed= seed, weights = None)
 
     elif leiden_partition=="CPM":
         kwargs = {'resolution_parameter': resolution_parameter}
-        # part = la.find_partition(graph, la.CPMVertexPartition, seed= seed, weights=pandas_df['weight'], **kwargs)
-        part = la.find_partition(graph, la.CPMVertexPartition, seed= seed, weights = None, **kwargs)
+
+        if pandas_df != None:
+            part = la.find_partition(iGraph, la.CPMVertexPartition, seed= seed, weights=pandas_df['weight'], **kwargs)
+        else:
+            part = la.find_partition(iGraph, la.CPMVertexPartition, seed= seed, weights=None, **kwargs)
+
+        # part = la.find_partition(graph, la.CPMVertexPartition, seed= seed, weights = None, **kwargs)
 
 
 
@@ -429,7 +438,75 @@ def CPM_gt10_plotter(files_dir):
     plt.show()
 
 
+def sweep_bi_feature(nx_Graph, iGraph, raw_df, best_found_res = 0.05):
+    #Guideline for weighting
+    # weight = scale*(row['year_similarity']* weights[0] + row['mesh_median']* weights[1]+
+    #                 row['cocitation_jaccard']* weights[2] + row['cocitation_frequency']* weights[3] + row['bib_jaccard']* weights[4]
+    #                 +  row['bib_frequency']* weights[5] + row['cosine_similarity']* weights[6] )
 
+    #What indices of weights are topological and what are metadata?
+    topological_indices = [2, 3, 4, 5]
+    semantic_indices = [0, 1, 6]
+
+    topological_importance_ratios = np.arange(0, 1.05, 0.05)
+
+    for topo_importance_ratio in topological_importance_ratios:
+        print(f'topo importance ratio {topo_importance_ratio}')
+
+        feature_wise_topological_importance = topo_importance_ratio/(len(topological_indices))
+        feature_wise_semantic_importance = (1-topo_importance_ratio)/(len(semantic_indices))
+
+        current_weighting = []
+
+        for i in range(len(topological_indices) + len(semantic_indices)):
+            if i in topological_indices:
+                current_weighting.append(feature_wise_topological_importance)
+            else:
+                current_weighting.append(feature_wise_semantic_importance)
+
+        result_df = apply_row_transformation(raw_df, current_weighting, 1)
+
+        t1 = time.time()
+
+        part = leiden(iGraph, 'CPM', result_df, best_found_res)
+
+        t2 = time.time()
+
+        print(f'clustered {t2-t1}')
+
+        clsutering_dict = {"stats": {}, "clusters": {}}
+
+        for idx, cluster in enumerate(part):
+            clsutering_dict["clusters"][idx] = cluster
+
+        cpm_val_1_prune = calculate_CPM_wrapper(nx_Graph, list(clsutering_dict.values()), best_found_res, 1)
+        cpm_val_10_prune = calculate_CPM_wrapper(nx_Graph, list(clsutering_dict.values()), best_found_res, 10)
+
+        t1 = time.time()
+        print(f'calculated both CPMs {t1-t2}')
+
+        clsutering_dict['stats']['cpm1'] = cpm_val_1_prune
+        clsutering_dict['stats']['cpm10'] = cpm_val_10_prune
+
+        with open(f'files/sweep_bi_feature/CPM_topo_ratio_{topo_importance_ratio}.json', 'w') as json_file:
+            json.dump(clsutering_dict, json_file)
+
+
+    part = leiden(iGraph, 'CPM', None, best_found_res)
+
+    clsutering_dict = {}
+
+    for idx, cluster in enumerate(part):
+        clsutering_dict["clusters"][idx] = cluster
+
+    cpm_val_1_prune = calculate_CPM_wrapper(nx_Graph, list(clsutering_dict.values()), best_found_res, 1)
+    cpm_val_10_prune = calculate_CPM_wrapper(nx_Graph, list(clsutering_dict.values()), best_found_res, 10)
+
+    clsutering_dict['stats']['cpm1'] = cpm_val_1_prune
+    clsutering_dict['stats']['cpm10'] = cpm_val_10_prune
+
+    with open(f'files/sweep_bi_feature/CPM_UW.json', 'w') as json_file:
+        json.dump(clsutering_dict, json_file)  #240138
 
 
 
@@ -438,9 +515,8 @@ def CPM_gt10_plotter(files_dir):
 
 if __name__ == '__main__': # 248213
 
-    clustering_dir = 'files/clusterings/'
-    CPM_gt10_plotter(clustering_dir)
-    exit(0)
+    # clustering_dir = 'files/clusterings/'
+    # CPM_gt10_plotter(clustering_dir)
 
     # test()
     # spark = SparkSession.builder \
@@ -459,6 +535,11 @@ if __name__ == '__main__': # 248213
     ig_path = f"files/graphs/base_ig.pickle"
 
     df = pd.read_hdf(name, key='data')
+    G_nx, H_ig = load_graphs( nx_path, ig_path)
+
+    sweep_bi_feature(G_nx, H_ig, df, best_found_res = 0.05)
+
+    exit(0)
 
 
     nw = [1,2,3,4,5,6,7]
@@ -470,14 +551,13 @@ if __name__ == '__main__': # 248213
 
 
     t1 = time.time()
-    # result_df = apply_row_transformation(df, weights, scale_factor)
+    result_df = apply_row_transformation(df, weights, scale_factor)
     t2 = time.time()
 
     # print(result_df.head())
     print(f'Calculate weights: {t2-t1}')
 
 
-    G_nx, H_ig = load_graphs( nx_path, ig_path)
     t1 = time.time()
     print(f'Load graphs: {t1 - t2}')
 
@@ -485,7 +565,6 @@ if __name__ == '__main__': # 248213
 
     exit(0)
 
-    #def leiden(graph, leiden_partition, pandas_df, resolution_parameter = None):
     resolution_values = [0.95, 0.75, 0.50, 0.25, 0.05, 0.01, 0.001, 0.0001]
 
     for resolution_value in resolution_values:

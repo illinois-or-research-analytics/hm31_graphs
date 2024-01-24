@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/cpm_gt_10.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_10_cluster/nohup.out" beforeDir="false" afterPath="$PROJECT_DIR$/step_10_cluster/nohup.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/step_10_cluster/weighting_clustering_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_10_cluster/weighting_clustering_pipeline.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +75,7 @@
       <window_info id="Commit_Guest" />
       <window_info id="Pull Requests" />
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77446485" visible="true" weight="0.15108109" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77446485" visible="true" weight="0.20135134" />
       <window_info id="Commit" order="1" weight="0.25" />
       <window_info id="Structure" order="2" sideWeight="0.22553515" side_tool="true" weight="0.37421876" />
       <window_info anchor="bottom" id="DataprocToolWindow" />
@@ -86,7 +86,7 @@
       <window_info anchor="bottom" id="TODO" />
       <window_info anchor="bottom" id="File Transfer" />
       <window_info anchor="bottom" id="Python Console" weight="0.3300926" />
-      <window_info anchor="bottom" id="Run" weight="0.44017094" />
+      <window_info active="true" anchor="bottom" id="Run" visible="true" weight="0.3594492" />
       <window_info anchor="bottom" id="HiveToolWindow" />
       <window_info anchor="bottom" id="GlueToolWindow" />
       <window_info anchor="bottom" id="EmrToolWindow" />
@@ -95,10 +95,10 @@
       <window_info anchor="bottom" id="SparkMonitoringToolWindow" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems View" order="1" weight="0.44017094" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.44017094" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.3594492" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.44017094" />
       <window_info anchor="bottom" id="Services" order="4" weight="0.3300095" />
-      <window_info anchor="right" id="Plots" show_stripe_button="false" />
+      <window_info anchor="right" id="Plots" weight="0.32999998" />
       <window_info anchor="right" id="Endpoints" />
       <window_info anchor="right" id="BigDataToolWindow" />
       <window_info anchor="right" id="SciView" />
@@ -384,7 +384,8 @@
       <workItem from="1704726675048" duration="599000" />
       <workItem from="1705089724473" duration="5408000" />
       <workItem from="1705165486438" duration="1813000" />
-      <workItem from="1705374184276" duration="599000" />
+      <workItem from="1705374184276" duration="1251000" />
+      <workItem from="1706110532385" duration="614000" />
     </task>
     <servers />
   </component>
@@ -410,7 +411,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/step_1$weighting_clustering_pipeline.coverage" NAME="weighting_clustering_pipeline Coverage Results" MODIFIED="1705122357966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/step_10_cluster" />
+    <SUITE FILE_PATH="coverage/step_1$weighting_clustering_pipeline.coverage" NAME="weighting_clustering_pipeline Coverage Results" MODIFIED="1706113181941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/step_10_cluster" />
     <SUITE FILE_PATH="coverage/step_1$create_metrices.coverage" NAME="create_metrices Coverage Results" MODIFIED="1694459090277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/step_1" />
     <SUITE FILE_PATH="coverage/step_1$main.coverage" NAME="main Coverage Results" MODIFIED="1695254460995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/step_2" />
     <SUITE FILE_PATH="coverage/step_1$load_data.coverage" NAME="load_data Coverage Results" MODIFIED="1693093204189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

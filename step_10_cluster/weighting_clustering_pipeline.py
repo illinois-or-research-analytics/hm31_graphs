@@ -381,11 +381,66 @@ def calculate_weighted_modularity(nx_graph_unweighted, weights):
     print(f'unweighted: w {w} uw {uw}')
 
 
+def CPM_gt10_plotter(files_dir):
+    files = os.listdir(files_dir)
+
+    selected_files = [f for f in files if 'CPM' in f and 'json' in f and 'UW' in f]
+    selected_files.sort()
+
+    #cluster types{ key:[nodes]}
+
+    gt10 = []
+    x_label = []
+
+    for file in selected_files:
+        file_url = files_dir + file
+
+        gt10_counter = 0
+
+        with open(file_url, 'r') as json_file:
+            clustering_dict = json.load(json_file)
+
+
+        for key, value in clustering_dict.items():
+            if type(value) == list and len(value) > 10:
+                gt10_counter += 1
+
+        gt10.append(np.log10(gt10_counter))
+        res = float(file.split('_')[-1][:-5])
+        x_label.append(res)
+
+
+    print(gt10)
+    print(x_label)
+
+    plt.figure(figsize=(20, 10))  # Adjust the width and height as needed
+
+    plt.plot(x_label, gt10, 'o-', linewidth=0.5, markersize=8)
+
+    # Set labels and title
+    plt.xlabel('Resolution value')
+    plt.ylabel('Log10 number of clusters of size > 10')
+    plt.title('Log10 Clusters greater than 10 with respect to CPM resolution value')
+    plt.xticks(x_label)
+    # Save the plot as an image file (e.g., PNG)
+    plt.savefig('cpm_gt_10.png')
+
+    # Show the plot
+    plt.show()
+
+
+
+
+
+
 
 
 
 if __name__ == '__main__': # 248213
 
+    clustering_dir = 'files/clusterings/'
+    CPM_gt10_plotter(clustering_dir)
+    exit(0)
 
     # test()
     # spark = SparkSession.builder \

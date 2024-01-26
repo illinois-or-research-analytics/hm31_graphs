@@ -488,7 +488,7 @@ def CPM_gt10_plotter(files_dir = 'files/clusterings/'):
     plt.plot(x_label, gt10, 'o-', linewidth=0.5, markersize=8)
 
     # Set labels and title
-    plt.xlabel('Resolution value')
+    plt.xlabel('Log10 resolution value')
     plt.ylabel('Log10 number of clusters of size > 10')
     plt.title('Log10 Clusters greater than 10 with respect to CPM resolution value')
     plt.xticks(x_label)

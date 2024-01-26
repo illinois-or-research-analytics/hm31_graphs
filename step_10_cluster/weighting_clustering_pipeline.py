@@ -477,7 +477,7 @@ def CPM_gt10_plotter(files_dir = 'files/clusterings/'):
         gt10.append(np.log10(gt10_counter))
         res = float(file.split('_')[-1][:-5])
         # x_label.append(res)
-        x_label.append(-np.log10(res))
+        x_label.append(np.log10(res))
 
 
     print(gt10)

@@ -428,8 +428,8 @@ def CPM_weighting_plotter():
 
     # Set labels and title
     plt.xlabel('Topological importance')
-    plt.ylabel('Ratio of CPM10 weighted to CPM10 unweighted for topological importance ratio uniform divided')
-    plt.title('Topological Importance Ratio')
+    plt.title('Ratio of CPM10 weighted to CPM10 unweighted for topological importance ratio uniform divide. Res = 0.05')
+    plt.ylabel('Topological Importance Ratio')
 
     # Set x ticks
     plt.xticks(res_list)
@@ -450,7 +450,7 @@ def CPM_weighting_plotter():
 
 
 
-def CPM_gt10_plotter(files_dir):
+def CPM_gt10_plotter(files_dir = 'files/clusterings/'):
     files = os.listdir(files_dir)
 
     selected_files = [f for f in files if 'CPM' in f and 'json' in f and 'UW' in f]
@@ -476,7 +476,8 @@ def CPM_gt10_plotter(files_dir):
 
         gt10.append(np.log10(gt10_counter))
         res = float(file.split('_')[-1][:-5])
-        x_label.append(res)
+        # x_label.append(res)
+        x_label.append(-np.log10(res))
 
 
     print(gt10)
@@ -508,7 +509,7 @@ def sweep_bi_feature(nx_Graph, iGraph, raw_df, best_found_res = 0.05):
     topological_indices = [2, 3, 4, 5]
     semantic_indices = [0, 1, 6]
 
-    topological_importance_ratios = np.arange(0.95, 1.05, 0.05)
+    topological_importance_ratios = np.arange(0.0, 1.0, 0.05)
 
     for topo_importance_ratio in topological_importance_ratios:
         print(f'topo importance ratio {topo_importance_ratio}')
@@ -596,7 +597,8 @@ if __name__ == '__main__': # 248213
     # spark.sparkContext.setLogLevel("WARN")
 
 
-    CPM_weighting_plotter()
+    # CPM_weighting_plotter()
+    CPM_gt10_plotter()
     exit(0)
     name = 'files/raw_features.h5'
     #Lets switch to pandas from now on

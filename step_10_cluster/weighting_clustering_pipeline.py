@@ -29,10 +29,11 @@ def calculate_CPM_single_community(nx_graph, community_nodes, resolution, manage
 
     manager_dict[community_nodes[0]] = CPM_score
 
+# NW "stats": {"cpm1": 6058436.700006721, "cpm10": 5823119.450006348}
+# 0.0 {"stats": {"cpm1": 4768031.250018665, "cpm10": 3303690.100015588},
+# 0.05 {"stats": {"cpm1": 4670639.600033565, "cpm10": 3174907.0500167413}
 
-
-
-def calculate_CPM_wrapper(nx_graph, communities, resolution, min_prune = 1):
+def calculate_CPM_wrapper(nx_graph, communities, resolution, min_prune):
     lst = []
     manager_dict = Manager().dict()
 
@@ -54,9 +55,7 @@ def calculate_CPM_wrapper(nx_graph, communities, resolution, min_prune = 1):
 
     return cpm_value
 
-#31627
-
-
+#241730
 
 
 
@@ -238,8 +237,9 @@ class NpEncoder(json.JSONEncoder):
 
 
 
-def apply_row_transformation(df, weights, scale):
-    pandarallel.initialize(progress_bar=False) # initialize(36) or initialize(os.cpu_count()-1)
+def apply_row_transformation(df, weights, scale, cores):
+    #pandarallel.initialize(progress_bar=False) # initialize(36) or initialize(os.cpu_count()-1)
+    pandarallel.initialize(nb_workers=cores, progress_bar=False) # initialize(36) or initialize(os.cpu_count()-1)
     new_df = df[['id']].copy()
     new_df['weight'] = df.parallel_apply(calculate_weight, axis=1, weights=weights, scale=scale)
 
@@ -293,21 +293,24 @@ def leiden(iGraph, leiden_partition, pandas_df, resolution_parameter, seed=4311)
 
     t1 = time.time()
     if leiden_partition=="Modularity":
-        if pandas_df != None:
-            part = la.find_partition(iGraph, la.ModularityVertexPartition, seed= seed, weights=pandas_df['weight'])
+        if pandas_df is None:
+            part = la.find_partition(iGraph, la.ModularityVertexPartition, seed= seed, weights = None)
 
         else:
-            part = la.find_partition(iGraph, la.ModularityVertexPartition, seed= seed, weights = None)
+            part = la.find_partition(iGraph, la.ModularityVertexPartition, seed= seed, weights=pandas_df['weight'])
+
 
     elif leiden_partition=="CPM":
         kwargs = {'resolution_parameter': resolution_parameter}
 
-        if pandas_df != None:
-            part = la.find_partition(iGraph, la.CPMVertexPartition, seed= seed, weights=pandas_df['weight'], **kwargs)
-        else:
+        if pandas_df is None:
             part = la.find_partition(iGraph, la.CPMVertexPartition, seed= seed, weights=None, **kwargs)
 
-        # part = la.find_partition(graph, la.CPMVertexPartition, seed= seed, weights = None, **kwargs)
+        else:
+            part = la.find_partition(iGraph, la.CPMVertexPartition, seed= seed, weights=pandas_df['weight'], **kwargs)
+
+
+    # part = la.find_partition(graph, la.CPMVertexPartition, seed= seed, weights = None, **kwargs)
 
 
 
@@ -389,6 +392,63 @@ def calculate_weighted_modularity(nx_graph_unweighted, weights):
 
     print(f'unweighted: w {w} uw {uw}')
 
+def CPM_weighting_plotter():
+    base_dir = 'files/sweep_bi_feature/'
+    files = os.listdir(base_dir)
+
+    w_cpm_10_list = []
+    w_cpm_1_list = []
+
+    res_list = []
+
+    for file_str in files:
+        with open(base_dir + file_str, 'r') as file:
+            data_dict = json.load(file)
+
+        if 'unweighted' in file_str:
+            uw_cpm_10 = data_dict['stats']['cpm10']
+            uw_cpm_1 = data_dict['stats']['cpm1']
+
+        else:
+            cpm_10 = data_dict['stats']['cpm10']
+            cpm_1 = data_dict['stats']['cpm1']
+
+            w_cpm_1_list.append(cpm_1)
+            w_cpm_10_list.append(cpm_10)
+            res_val = np.round(float(file_str.split('_')[-1][:-5]),2)
+            res_list.append(res_val)
+
+    cpm_10_ratio = [f/uw_cpm_10 for f in w_cpm_10_list]
+    cpm_1_ratio = [f/uw_cpm_1 for f in w_cpm_1_list]
+
+    plt.figure(figsize=(20, 10))  # Adjust the width and height as needed
+
+    plt.plot(res_list, cpm_10_ratio, 'o-', color='orange', linewidth=0.5, markersize=8, label='CPM10 Ratio')
+    plt.plot(res_list, cpm_1_ratio, 'o-', color='blue', linewidth=0.5, markersize=8, label='CPM1 Ratio')
+
+    # Set labels and title
+    plt.xlabel('Topological importance')
+    plt.ylabel('Ratio of CPM10 weighted to CPM10 unweighted for topological importance ratio uniform divided')
+    plt.title('Topological Importance Ratio')
+
+    # Set x ticks
+    plt.xticks(res_list)
+
+    # Show legend
+    plt.legend()
+
+    # Save the plot as an image file (e.g., PNG)
+    plt.savefig('combined_topological_ratios.png')
+
+    # Show the plot
+    plt.show()
+
+
+
+
+
+
+
 
 def CPM_gt10_plotter(files_dir):
     files = os.listdir(files_dir)
@@ -448,7 +508,7 @@ def sweep_bi_feature(nx_Graph, iGraph, raw_df, best_found_res = 0.05):
     topological_indices = [2, 3, 4, 5]
     semantic_indices = [0, 1, 6]
 
-    topological_importance_ratios = np.arange(0, 1.05, 0.05)
+    topological_importance_ratios = np.arange(0.95, 1.05, 0.05)
 
     for topo_importance_ratio in topological_importance_ratios:
         print(f'topo importance ratio {topo_importance_ratio}')
@@ -464,9 +524,13 @@ def sweep_bi_feature(nx_Graph, iGraph, raw_df, best_found_res = 0.05):
             else:
                 current_weighting.append(feature_wise_semantic_importance)
 
-        result_df = apply_row_transformation(raw_df, current_weighting, 1)
+        t0 = time.time()
+        print(current_weighting)
+
+        result_df = apply_row_transformation(raw_df, current_weighting, 1, 48)
 
         t1 = time.time()
+        print(f'weights calculated {t1-t0}')
 
         part = leiden(iGraph, 'CPM', result_df, best_found_res)
 
@@ -479,17 +543,23 @@ def sweep_bi_feature(nx_Graph, iGraph, raw_df, best_found_res = 0.05):
         for idx, cluster in enumerate(part):
             clsutering_dict["clusters"][idx] = cluster
 
-        cpm_val_1_prune = calculate_CPM_wrapper(nx_Graph, list(clsutering_dict.values()), best_found_res, 1)
-        cpm_val_10_prune = calculate_CPM_wrapper(nx_Graph, list(clsutering_dict.values()), best_found_res, 10)
-
+        t0 = time.time()
+        cpm_val_1_prune = calculate_CPM_wrapper(nx_Graph, list(clsutering_dict['clusters'].values()), best_found_res, 1)
         t1 = time.time()
-        print(f'calculated both CPMs {t1-t2}')
+        print(f'cpm1 {t1-t0}')
+
+        cpm_val_10_prune = calculate_CPM_wrapper(nx_Graph, list(clsutering_dict['clusters'].values()), best_found_res, 10)
+        t2 = time.time()
+
+        print(f'cpm10 {t2-t1}')
 
         clsutering_dict['stats']['cpm1'] = cpm_val_1_prune
         clsutering_dict['stats']['cpm10'] = cpm_val_10_prune
 
         with open(f'files/sweep_bi_feature/CPM_topo_ratio_{topo_importance_ratio}.json', 'w') as json_file:
             json.dump(clsutering_dict, json_file)
+
+        print("\n")
 
 
     part = leiden(iGraph, 'CPM', None, best_found_res)
@@ -499,15 +569,14 @@ def sweep_bi_feature(nx_Graph, iGraph, raw_df, best_found_res = 0.05):
     for idx, cluster in enumerate(part):
         clsutering_dict["clusters"][idx] = cluster
 
-    cpm_val_1_prune = calculate_CPM_wrapper(nx_Graph, list(clsutering_dict.values()), best_found_res, 1)
-    cpm_val_10_prune = calculate_CPM_wrapper(nx_Graph, list(clsutering_dict.values()), best_found_res, 10)
+    cpm_val_1_prune = calculate_CPM_wrapper(nx_Graph, clsutering_dict.values(), best_found_res, 1)
+    cpm_val_10_prune = calculate_CPM_wrapper(nx_Graph, clsutering_dict.values(), best_found_res, 10)
 
     clsutering_dict['stats']['cpm1'] = cpm_val_1_prune
     clsutering_dict['stats']['cpm10'] = cpm_val_10_prune
 
     with open(f'files/sweep_bi_feature/CPM_UW.json', 'w') as json_file:
-        json.dump(clsutering_dict, json_file)  #240138
-
+        json.dump(clsutering_dict, json_file)
 
 
 
@@ -526,6 +595,9 @@ if __name__ == '__main__': # 248213
     #
     # spark.sparkContext.setLogLevel("WARN")
 
+
+    CPM_weighting_plotter()
+    exit(0)
     name = 'files/raw_features.h5'
     #Lets switch to pandas from now on
     # convert_pyspark_features_to_pandas(spark, name)
@@ -535,11 +607,13 @@ if __name__ == '__main__': # 248213
     ig_path = f"files/graphs/base_ig.pickle"
 
     df = pd.read_hdf(name, key='data')
+    print('loaded df')
     G_nx, H_ig = load_graphs( nx_path, ig_path)
+    print('loaded graphs')
 
     sweep_bi_feature(G_nx, H_ig, df, best_found_res = 0.05)
 
-    exit(0)
+
 
 
     nw = [1,2,3,4,5,6,7]
@@ -616,3 +690,4 @@ if __name__ == '__main__': # 248213
 
 
 
+#https://www.linkedin.com/in/hani-khassaf/

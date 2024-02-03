@@ -396,9 +396,12 @@ def calculate_node_coverage(clustering_dict, min_acceptable_cluster_size):
     total_nodes = 0
     elligible_covered_nodes = 0
 
-    clustering_array = clustering_dict.values()
+    clustering_array = clustering_dict.values() #Shall be list of clusters
 
     for cluster in clustering_array:
+        if type(cluster) != list:
+            continue
+
         total_nodes += len(cluster)
         if len(cluster) >=  min_acceptable_cluster_size:
             elligible_covered_nodes += len(cluster)
@@ -450,8 +453,7 @@ def CPM_weighting_plotter():
     cpm_10_ratio = [f/uw_cpm_10 for f in w_cpm_10_list]
     cpm_1_ratio = [f/uw_cpm_1 for f in w_cpm_1_list]
 
-    print(coverage1_list)
-    print(coverage10_list)
+    plt.rcParams.update({'font.size': 18})  # Adjust the font size as needed
 
     base_dir = 'figures/sweep_bi_feature/'
 
@@ -517,6 +519,9 @@ def CPM_gt10_plotter(files_dir = 'files/results/sweeping_res_constant_weight/clu
     gt10 = []
     x_label = []
 
+    coverage10_list = []
+    coverage1_list = []
+
     for file in selected_files:
         file_url = files_dir + file
 
@@ -533,15 +538,24 @@ def CPM_gt10_plotter(files_dir = 'files/results/sweeping_res_constant_weight/clu
         gt10.append(np.log10(gt10_counter))
         res = float(file.split('_')[-1][:-5])
         # x_label.append(res)
-        x_label.append(np.log10(res))
+        x_label.append(np.round(np.log10(res),2))
+
+        cov1 = calculate_node_coverage(clustering_dict, 2)
+        cov10 = calculate_node_coverage(clustering_dict, 11)
+
+        coverage1_list.append(cov1)
+        coverage10_list.append(cov10)
+
+
+    plt.rcParams.update({'font.size': 16})  # Adjust the font size as needed
 
 
     print(gt10)
     print(x_label)
 
-    base_dir = 'figures/sweep_bi_feature/'
+    base_dir = 'figures/res_sweep_constant_weights/'
 
-    plt.figure(figsize=(20, 10))  # Adjust the width and height as needed
+    plt.figure(figsize=(40, 10))  # Adjust the width and height as needed
 
     plt.plot(x_label, gt10, 'o-', linewidth=0.5, markersize=8)
 
@@ -552,6 +566,27 @@ def CPM_gt10_plotter(files_dir = 'files/results/sweeping_res_constant_weight/clu
     plt.xticks(x_label)
     # Save the plot as an image file (e.g., PNG)
     plt.savefig(f'{base_dir}cpm_gt_10.png')
+
+    # Show the plot
+    plt.show()
+
+
+
+
+    plt.figure(figsize=(40, 10))  # Adjust the width and height as needed
+
+    plt.plot(x_label, coverage10_list, 'o-', color='orange', linewidth=0.5, markersize=8, label='Coverage10 %')
+    plt.plot(x_label, coverage1_list, 'o-', color='blue', linewidth=0.5, markersize=8, label='Coverage1 %')
+
+    plt.xlabel('Log10 resolution value')
+    plt.ylabel('Coverage %')
+    plt.title('Coverage % for different resolution values and constant weights')
+    plt.xticks(x_label)
+    # Show legend
+    plt.legend()
+
+    # Save the plot as an image file (e.g., PNG)
+    plt.savefig(f'{base_dir}res_sweep_node_coverage.png')
 
     # Show the plot
     plt.show()
@@ -655,8 +690,8 @@ if __name__ == '__main__': # 248213
     # spark.sparkContext.setLogLevel("WARN")
 
 
-    CPM_weighting_plotter()
-    # CPM_gt10_plotter()
+    # CPM_weighting_plotter()
+    CPM_gt10_plotter()
     exit(0)
     name = 'files/raw_features.h5'
     #Lets switch to pandas from now on

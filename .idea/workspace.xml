@@ -5,7 +5,120 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/figures/sweep_bi_feature/combined_topological_ratios.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/figures/sweep_bi_feature/cpm_gt_10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/figures/sweep_bi_feature/node_coverages.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_0.0001.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_0.0001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_0.001.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_0.001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_0.01.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_0.01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_0.05.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_0.05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_0.25.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_0.25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_0.5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_0.5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_0.75.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_0.75.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_0.95.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_0.95.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_UW_0.0001.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_UW_0.0001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_UW_0.001.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_UW_0.001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_UW_0.01.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_UW_0.01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_UW_0.05.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_UW_0.05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_UW_0.25.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_UW_0.25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_UW_0.5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_UW_0.5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_UW_0.75.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_UW_0.75.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_UW_0.95.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/CPM_UW_0.95.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/Modularity.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/Modularity.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/Modularity_UW.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/results/sweeping_res_constant_weight/Modularity_UW.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/combined_topological_ratios.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/cpm_gt_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_0.0001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_0.0001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_0.001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_0.001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_0.01.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_0.01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_0.05.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_0.05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_0.25.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_0.25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_0.5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_0.5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_0.75.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_0.75.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_0.95.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_0.95.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_UW_0.0001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_UW_0.0001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_UW_0.001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_UW_0.001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_UW_0.01.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_UW_0.01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_UW_0.05.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_UW_0.05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_UW_0.25.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_UW_0.25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_UW_0.5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_UW_0.5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_UW_0.75.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_UW_0.75.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_UW_0.95.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/CPM_UW_0.95.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/Modularity.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/Modularity.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/Modularity_UW.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/first_experiment_results/Modularity_UW.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_0.0001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_0.0001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_0.001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_0.001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_0.01.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_0.01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_0.05.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_0.05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_0.25.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_0.25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_0.5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_0.5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_0.75.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_0.75.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_0.95.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_0.95.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_UW_0.0001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_UW_0.0001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_UW_0.001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_UW_0.001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_UW_0.01.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_UW_0.01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_UW_0.05.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_UW_0.05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_UW_0.25.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_UW_0.25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_UW_0.5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_UW_0.5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_UW_0.75.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_UW_0.75.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_UW_0.95.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/CPM_UW_0.95.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/Modularity.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/Modularity.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/Modularity_UW.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/results/Modularity_UW.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/step_10_cluster/weighting_clustering_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_10_cluster/weighting_clustering_pipeline.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +198,7 @@
       <window_info anchor="bottom" id="TODO" />
       <window_info anchor="bottom" id="File Transfer" />
       <window_info anchor="bottom" id="Python Console" weight="0.3300926" />
-      <window_info active="true" anchor="bottom" id="Run" visible="true" weight="0.4154796" />
+      <window_info active="true" anchor="bottom" id="Run" visible="true" weight="0.30721748" />
       <window_info anchor="bottom" id="HiveToolWindow" />
       <window_info anchor="bottom" id="GlueToolWindow" />
       <window_info anchor="bottom" id="EmrToolWindow" />
@@ -94,10 +207,10 @@
       <window_info anchor="bottom" id="SparkMonitoringToolWindow" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems View" order="1" weight="0.44017094" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.4154796" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.30721748" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.44017094" />
       <window_info anchor="bottom" id="Services" order="4" weight="0.3300095" />
-      <window_info anchor="right" id="Plots" weight="0.48675674" />
+      <window_info anchor="right" id="Plots" visible="true" weight="0.1981081" />
       <window_info anchor="right" id="Endpoints" />
       <window_info anchor="right" id="BigDataToolWindow" />
       <window_info anchor="right" id="SciView" />
@@ -392,7 +505,8 @@
       <workItem from="1706206087121" duration="742000" />
       <workItem from="1706224217820" duration="599000" />
       <workItem from="1706245387657" duration="599000" />
-      <workItem from="1706286312355" duration="2824000" />
+      <workItem from="1706286312355" duration="3429000" />
+      <workItem from="1706716058260" duration="3167000" />
     </task>
     <servers />
   </component>
@@ -418,7 +532,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/step_1$weighting_clustering_pipeline.coverage" NAME="weighting_clustering_pipeline Coverage Results" MODIFIED="1706299947855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/step_10_cluster" />
+    <SUITE FILE_PATH="coverage/step_1$weighting_clustering_pipeline.coverage" NAME="weighting_clustering_pipeline Coverage Results" MODIFIED="1706986412903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/step_10_cluster" />
     <SUITE FILE_PATH="coverage/step_1$create_metrices.coverage" NAME="create_metrices Coverage Results" MODIFIED="1694459090277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/step_1" />
     <SUITE FILE_PATH="coverage/step_1$main.coverage" NAME="main Coverage Results" MODIFIED="1695254460995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/step_2" />
     <SUITE FILE_PATH="coverage/step_1$load_data.coverage" NAME="load_data Coverage Results" MODIFIED="1693093204189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

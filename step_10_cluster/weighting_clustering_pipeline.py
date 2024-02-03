@@ -392,18 +392,41 @@ def calculate_weighted_modularity(nx_graph_unweighted, weights):
 
     print(f'unweighted: w {w} uw {uw}')
 
+def calculate_node_coverage(clustering_dict, min_acceptable_cluster_size):
+    total_nodes = 0
+    elligible_covered_nodes = 0
+
+    clustering_array = clustering_dict.values()
+
+    for cluster in clustering_array:
+        total_nodes += len(cluster)
+        if len(cluster) >=  min_acceptable_cluster_size:
+            elligible_covered_nodes += len(cluster)
+
+    return (elligible_covered_nodes/total_nodes) * 100
+
 def CPM_weighting_plotter():
-    base_dir = 'files/sweep_bi_feature/'
+    base_dir = 'files/results/sweep_bi_feature/'
     files = os.listdir(base_dir)
+
 
     w_cpm_10_list = []
     w_cpm_1_list = []
 
+    coverage1_list = []
+    coverage10_list = []
+
+
     res_list = []
 
     for file_str in files:
+        if not 'json' in file_str:
+            continue
+
         with open(base_dir + file_str, 'r') as file:
             data_dict = json.load(file)
+
+
 
         if 'unweighted' in file_str:
             uw_cpm_10 = data_dict['stats']['cpm10']
@@ -413,6 +436,12 @@ def CPM_weighting_plotter():
             cpm_10 = data_dict['stats']['cpm10']
             cpm_1 = data_dict['stats']['cpm1']
 
+            coverage1 = calculate_node_coverage(data_dict['clusters'], 2)
+            coverage10 = calculate_node_coverage(data_dict['clusters'], 11)
+
+            coverage1_list.append(coverage1)
+            coverage10_list.append(coverage10)
+
             w_cpm_1_list.append(cpm_1)
             w_cpm_10_list.append(cpm_10)
             res_val = np.round(float(file_str.split('_')[-1][:-5]),2)
@@ -420,6 +449,11 @@ def CPM_weighting_plotter():
 
     cpm_10_ratio = [f/uw_cpm_10 for f in w_cpm_10_list]
     cpm_1_ratio = [f/uw_cpm_1 for f in w_cpm_1_list]
+
+    print(coverage1_list)
+    print(coverage10_list)
+
+    base_dir = 'figures/sweep_bi_feature/'
 
     plt.figure(figsize=(20, 10))  # Adjust the width and height as needed
 
@@ -438,7 +472,30 @@ def CPM_weighting_plotter():
     plt.legend()
 
     # Save the plot as an image file (e.g., PNG)
-    plt.savefig('combined_topological_ratios.png')
+    plt.savefig(f'{base_dir}combined_topological_ratios.png')
+
+    # Show the plot
+    plt.show()
+
+
+    plt.figure(figsize=(20, 10))  # Adjust the width and height as needed
+
+    plt.plot(res_list, coverage10_list, 'o-', color='orange', linewidth=0.5, markersize=8, label='coverage10 %')
+    plt.plot(res_list, coverage1_list, 'o-', color='blue', linewidth=0.5, markersize=8, label='coverage1 %')
+
+    # Set labels and title
+    plt.xlabel('Topological importance')
+    plt.title('Node coverage for min_cluster > 1 and min_cluster > 10. Res = 0.05')
+    plt.ylabel('Topological Importance Ratio')
+
+    # Set x ticks
+    plt.xticks(res_list)
+
+    # Show legend
+    plt.legend()
+
+    # Save the plot as an image file (e.g., PNG)
+    plt.savefig(f'{base_dir}node_coverages.png')
 
     # Show the plot
     plt.show()
@@ -450,9 +507,8 @@ def CPM_weighting_plotter():
 
 
 
-def CPM_gt10_plotter(files_dir = 'files/clusterings/'):
+def CPM_gt10_plotter(files_dir = 'files/results/sweeping_res_constant_weight/clusterings/'):
     files = os.listdir(files_dir)
-
     selected_files = [f for f in files if 'CPM' in f and 'json' in f and 'UW' in f]
     selected_files.sort()
 
@@ -483,6 +539,8 @@ def CPM_gt10_plotter(files_dir = 'files/clusterings/'):
     print(gt10)
     print(x_label)
 
+    base_dir = 'figures/sweep_bi_feature/'
+
     plt.figure(figsize=(20, 10))  # Adjust the width and height as needed
 
     plt.plot(x_label, gt10, 'o-', linewidth=0.5, markersize=8)
@@ -493,7 +551,7 @@ def CPM_gt10_plotter(files_dir = 'files/clusterings/'):
     plt.title('Log10 Clusters greater than 10 with respect to CPM resolution value')
     plt.xticks(x_label)
     # Save the plot as an image file (e.g., PNG)
-    plt.savefig('cpm_gt_10.png')
+    plt.savefig(f'{base_dir}cpm_gt_10.png')
 
     # Show the plot
     plt.show()
@@ -597,8 +655,8 @@ if __name__ == '__main__': # 248213
     # spark.sparkContext.setLogLevel("WARN")
 
 
-    # CPM_weighting_plotter()
-    CPM_gt10_plotter()
+    CPM_weighting_plotter()
+    # CPM_gt10_plotter()
     exit(0)
     name = 'files/raw_features.h5'
     #Lets switch to pandas from now on

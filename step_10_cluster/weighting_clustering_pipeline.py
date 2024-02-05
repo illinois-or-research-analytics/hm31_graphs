@@ -44,7 +44,7 @@ def calculate_CPM_wrapper(nx_graph, communities, resolution, min_prune):
 
 
 
-    pool = multiprocessing.Pool(processes=3)
+    pool = multiprocessing.Pool(processes=1)
     pool.starmap(calculate_CPM_single_community, lst)
 
 
@@ -453,7 +453,7 @@ def CPM_weighting_plotter():
     cpm_10_ratio = [f/uw_cpm_10 for f in w_cpm_10_list]
     cpm_1_ratio = [f/uw_cpm_1 for f in w_cpm_1_list]
 
-    plt.rcParams.update({'font.size': 18})  # Adjust the font size as needed
+    plt.rcParams.update({'font.size': 18})  # Adjust the font slsize as needed
 
     base_dir = 'figures/sweep_bi_feature/'
 
@@ -462,7 +462,7 @@ def CPM_weighting_plotter():
     plt.plot(res_list, cpm_10_ratio, 'o-', color='orange', linewidth=0.5, markersize=8, label='CPM10 Ratio')
     plt.plot(res_list, cpm_1_ratio, 'o-', color='blue', linewidth=0.5, markersize=8, label='CPM1 Ratio')
 
-    # Set labels and title
+    # Set labelskis and title
     plt.xlabel('Topological importance')
     plt.title('Ratio of CPM10 weighted to CPM10 unweighted for topological importance ratio uniform divide. Res = 0.05')
     plt.ylabel('Topological Importance Ratio')
@@ -676,6 +676,94 @@ def sweep_bi_feature(nx_Graph, iGraph, raw_df, best_found_res = 0.05):
 
 
 
+def sweep_topological_features_only(iGraph, nx_Graph, raw_df, best_found_res, points = 8):
+    segment_width = 1.0 / points
+
+    segments = np.linspace(0, 1, points + 1)
+
+
+    # weight = scale*(row['year_similarity']* weights[0] + row['mesh_median']* weights[1]+
+    #                 row['cocitation_jaccard']* weights[2] + row['cocitation_frequency']* weights[3] + row['bib_jaccard']* weights[4]
+    #                 +  row['bib_frequency']* weights[5] + row['cosine_similarity']* weights[6] )
+
+    #What indices of weights are topological and what are metadata?
+
+    topo_features = {2: 'cocitation_jaccard', 3: 'cocitation_frequency', 4: 'bib_jaccard', 5: 'bib_frequency'}
+
+
+    topological_indices = [2, 3, 4, 5]
+    semantic_indices = [0, 1, 6]
+
+    for specific_topo_feature_index in topological_indices:
+
+        for current_topo_feature_value in segments:
+            current_weights = []
+
+            for all_feature_index in range(len(topological_indices) + len(semantic_indices)):
+                if all_feature_index in semantic_indices:
+                    current_weights.append(0)
+
+                else:
+                    if all_feature_index == specific_topo_feature_index:
+                        current_weights.append(current_topo_feature_value)
+
+                    else:
+                        current_weights.append( (1-current_topo_feature_value)/3 )
+
+            print(f"{len(current_weights)} {topo_features[specific_topo_feature_index]}{specific_topo_feature_index} {current_weights}")
+            save_dir = f'files/results/topo_only_individual_sweep/{topo_features[specific_topo_feature_index]}_{current_topo_feature_value}.json'
+            addenum = f'{topo_features[specific_topo_feature_index]}_{current_topo_feature_value}.json'
+
+            current_files = os.listdir('files/results/topo_only_individual_sweep/')
+            if addenum in current_files:
+                print('skipped')
+                continue
+            standardize_clustering(iGraph, nx_Graph, raw_df, current_weights, best_found_res, save_dir)
+
+
+
+
+def standardize_clustering(iGraph, nx_Graph, raw_df, current_weighting, best_found_res, save_dir):
+    t0 = time.time()
+    result_df = apply_row_transformation(raw_df, current_weighting, 1, 32)
+    t1 = time.time()
+    print(f'weights calculated {t1-t0}')
+
+    part = leiden(iGraph, 'CPM', result_df, best_found_res)
+
+    t2 = time.time()
+
+    print(f'clustered {t2-t1}')
+
+    clsutering_dict = {"stats": {}, "clusters": {}}
+
+    for idx, cluster in enumerate(part):
+        clsutering_dict["clusters"][idx] = cluster
+
+    t0 = time.time()
+    cpm_val_1_prune = calculate_CPM_wrapper(nx_Graph, list(clsutering_dict['clusters'].values()), best_found_res, 1)
+    t1 = time.time()
+    print(f'cpm1 {t1-t0}')
+
+    cpm_val_10_prune = calculate_CPM_wrapper(nx_Graph, list(clsutering_dict['clusters'].values()), best_found_res, 10)
+    t2 = time.time()
+
+    print(f'cpm10 {t2-t1}')
+
+    clsutering_dict['stats']['cpm1'] = cpm_val_1_prune
+    clsutering_dict['stats']['cpm10'] = cpm_val_10_prune
+
+    with open(save_dir, 'w') as json_file:
+        json.dump(clsutering_dict, json_file)
+
+    print()
+
+
+
+
+
+
+
 if __name__ == '__main__': # 248213
 
     # clustering_dir = 'files/clusterings/'
@@ -691,8 +779,7 @@ if __name__ == '__main__': # 248213
 
 
     # CPM_weighting_plotter()
-    CPM_gt10_plotter()
-    exit(0)
+    # CPM_gt10_plotter()
     name = 'files/raw_features.h5'
     #Lets switch to pandas from now on
     # convert_pyspark_features_to_pandas(spark, name)
@@ -706,7 +793,10 @@ if __name__ == '__main__': # 248213
     G_nx, H_ig = load_graphs( nx_path, ig_path)
     print('loaded graphs')
 
-    sweep_bi_feature(G_nx, H_ig, df, best_found_res = 0.05)
+    sweep_topological_features_only(iGraph=H_ig, nx_Graph=G_nx, raw_df=df, best_found_res=0.05, points=8)
+    exit(0)
+
+    # sweep_bi_feature(G_nx, H_ig, df, best_found_res = 0.05)
 
 
 

@@ -722,12 +722,28 @@ def plot_sweep_topological_features_only():
             cov1 = calculate_node_coverage(clustering_dict_loaded['clusters'], 2)
             cov10 = calculate_node_coverage(clustering_dict_loaded['clusters'], 11)
 
+            cpm_1_array.append(cpm1)
+            cpm_10_array.append(cpm10)
+
+
+            coverage_1_array.append(cov1)
+            coverage_10_array.append(cov10)
+
+        plt.rcParams.update({'font.size': 18})
+        with open('files/results/sweep_bi_feature/unweighted.json', 'r') as file:
+            clustering_dict_loaded_unweighted = json.load(file)
+
+        uw_cpm_10 = clustering_dict_loaded_unweighted['stats']['cpm10']
+        uw_cpm_1 = clustering_dict_loaded_unweighted['stats']['cpm1']
+
+
         figure_save_dir_base = 'figures/topo_only_individual_sweep/'
 
         plt.figure(figsize=(20, 10))  # Adjust the width and height as needed
 
         plt.plot(feature_values, coverage_10_array, 'o-', color='orange', linewidth=0.5, markersize=8, label='Coverage10 %')
         plt.plot(feature_values, coverage_1_array, 'o-', color='blue', linewidth=0.5, markersize=8, label='Coverage1 %')
+
 
         plt.xlabel(f'{feature} values')
         plt.ylabel('Coverage %')
@@ -746,8 +762,9 @@ def plot_sweep_topological_features_only():
 
         plt.figure(figsize=(30, 15))  # Adjust the width and height as needed
 
-        plt.plot(feature_values, cpm_10_array, 'o-', color='orange', linewidth=0.5, markersize=8, label='cpm10 %')
-        plt.plot(feature_values, cpm_1_array, 'o-', color='blue', linewidth=0.5, markersize=8, label='cpm1 %')
+        plt.plot(feature_values, cpm_10_array, 'o-', color='orange', linewidth=0.5, markersize=8, label='cpm10')
+        plt.plot(feature_values, cpm_1_array, 'o-', color='blue', linewidth=0.5, markersize=8, label='cpm1')
+
 
         plt.xlabel(f'{feature} values')
         plt.ylabel('cpm')
@@ -758,6 +775,24 @@ def plot_sweep_topological_features_only():
         plt.savefig(f'{figure_save_dir_base}_{feature}_cpm.png')
 
         plt.show()
+
+
+
+    plt.figure(figsize=(30, 15))  # Adjust the width and height as needed
+
+    plt.plot(feature_values, [uw_cpm_10] * len(feature_values), 'o-', color='brown', linewidth=0.5, markersize=8, label='uw cpm10')
+    plt.plot(feature_values, [uw_cpm_1] * len(feature_values), 'o-', color='green', linewidth=0.5, markersize=8, label='uw cpm1')
+
+
+
+    plt.xlabel(f'{feature} values')
+    plt.ylabel('UW cpm')
+    plt.title(f' unweighted cpm')
+    plt.xticks(feature_values)
+    plt.legend()
+
+    plt.savefig(f'{figure_save_dir_base}_unweighted_cpm.png')
+    plt.show()
 
 
 
@@ -804,7 +839,7 @@ def sweep_topological_features_only(iGraph, nx_Graph, raw_df, best_found_res, po
             addenum = f'{topo_features[specific_topo_feature_index]}_{current_topo_feature_value}.json'
 
             current_files = os.listdir('files/results/topo_only_individual_sweep/')
-            if addenum in current_files:
+            if addenum in current_files:# and not ('bib_frequency_0.75' in addenum):
                 print('skipped')
                 continue
             standardize_clustering(iGraph, nx_Graph, raw_df, current_weights, best_found_res, save_dir)

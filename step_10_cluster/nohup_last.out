@@ -61,21 +61,87 @@ skipped
 7 bib_frequency5 [0, 0, 0.25, 0.25, 0.25, 0.25, 0]
 skipped
 7 bib_frequency5 [0, 0, 0.20833333333333334, 0.20833333333333334, 0.20833333333333334, 0.375, 0]
-skipped
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 222.9606740474701
+clustering 498.1594440937042
+clustered 498.15958070755005
+cpm1 862.8896026611328
+cpm10 2.527740478515625
+
 7 bib_frequency5 [0, 0, 0.16666666666666666, 0.16666666666666666, 0.16666666666666666, 0.5, 0]
-skipped
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 208.923810005188
+clustering 563.0432319641113
+clustered 563.0434374809265
+cpm1 930.1566860675812
+cpm10 3.4058704376220703
+
 7 bib_frequency5 [0, 0, 0.125, 0.125, 0.125, 0.625, 0]
-skipped
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 178.57766819000244
+clustering 521.2163953781128
+clustered 521.2166440486908
+cpm1 938.3697671890259
+cpm10 3.190131425857544
+
 7 bib_frequency5 [0, 0, 0.08333333333333333, 0.08333333333333333, 0.08333333333333333, 0.75, 0]
 INFO: Pandarallel will run on 32 workers.
 INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
-weights calculated 171.64856719970703
-clustering 570.6568019390106
-clustered 570.6569766998291
-cpm1 959.3915963172913
-cpm10 2.7200000286102295
+weights calculated 156.84304690361023
+clustering 576.7977862358093
+clustered 576.798006772995
+Exception in thread Thread-22:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception ignored in: <Finalize object, dead>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/multiprocessing/util.py", line 186, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 589, in _terminate_pool
+    p.terminate()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 116, in terminate
+    self._popen.terminate()
+AttributeError: 'NoneType' object has no attribute 'terminate'
+cpm1 969.560623884201
+cpm10 3.3623571395874023
 
 7 bib_frequency5 [0, 0, 0.041666666666666664, 0.041666666666666664, 0.041666666666666664, 0.875, 0]
-skipped
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 96.7713770866394
+clustering 491.76663064956665
+clustered 491.7668151855469
+cpm1 992.0451107025146
+cpm10 3.4194982051849365
+
 7 bib_frequency5 [0, 0, 0.0, 0.0, 0.0, 1.0, 0]
-skipped
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 99.17686057090759
+clustering 592.7303013801575
+clustered 592.7304363250732
+cpm1 960.5136506557465
+cpm10 3.285830497741699
+

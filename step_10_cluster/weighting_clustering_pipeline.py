@@ -69,7 +69,7 @@ def convert_pyspark_features_to_pandas(spark, name):
 def handle_arguments():
     parser = argparse.ArgumentParser(description='Example script to get a string argument.')
 
-        # Add the argument for the string
+    # Add the argument for the string
     parser.add_argument('input_string', type=str, help='Input of weights in a comma separated format.\
         like 1,2,3,4,5,6,7. From L to R: Year, MeSH median, Coc-Jaccard, Coc-Freq, Bib-Jaccard, Bib-Freq, Embedding')
 
@@ -173,8 +173,8 @@ def record_clustering_statistics(clustering_dict, nx_Graph, discard_singletons =
         third_quant = np.quantile(cluster_statistics, .75)
 
         cluster_statistics_dict = {'min': min_size, 'max': max_size, 'mean': mean_size, 'median': median_size,
-                        'q1': first_quant, 'q3': third_quant, 'coverage': coverage,
-                        'modularity': modularity, '#clusters': n_clusters, 'singletons': singleton, 'CPM_score': cpm_score}
+                                   'q1': first_quant, 'q3': third_quant, 'coverage': coverage,
+                                   'modularity': modularity, '#clusters': n_clusters, 'singletons': singleton, 'CPM_score': cpm_score}
 
         min_size = np.amin(singleton_degrees)
         max_size = np.amax(singleton_degrees)
@@ -186,7 +186,7 @@ def record_clustering_statistics(clustering_dict, nx_Graph, discard_singletons =
         third_quant = np.quantile(singleton_degrees, .75)
 
         singleton_statistics_dict = {'min': min_size, 'max': max_size, 'mean': mean_size, 'median': median_size,
-                                   'q1': first_quant, 'q3': third_quant}
+                                     'q1': first_quant, 'q3': third_quant}
 
         log_clusters = np.zeros_like(cluster_statistics)
         for i in range(cluster_statistics.shape[0]):
@@ -217,7 +217,7 @@ def record_clustering_statistics(clustering_dict, nx_Graph, discard_singletons =
 
     else:
         with open(file_name, 'r') as file:
-           clustering_dict_loaded = json.load(file)
+            clustering_dict_loaded = json.load(file)
 
         record_clustering_statistics(clustering_dict_loaded, nx_Graph, True, False, file_name)
 
@@ -673,6 +673,95 @@ def sweep_bi_feature(nx_Graph, iGraph, raw_df, best_found_res = 0.05):
         json.dump(clsutering_dict, json_file)
 
 
+def plot_sweep_topological_features_only():
+    result_dir = 'files/results/topo_only_individual_sweep/'
+
+    class_of_features = {}
+
+    all_results = os.listdir(result_dir)
+
+
+    for file_str in all_results:
+        if not '.json' in file_str:
+            continue
+
+        feature_array = file_str.split('_')
+        feature_name = feature_array[0] + '_' + feature_array[1]
+
+        if not feature_name in class_of_features:
+            class_of_features[feature_name] = {}
+
+        feature_value = float(feature_array[2][:-5])
+
+        class_of_features[feature_name][feature_value] = result_dir + file_str
+
+
+    for feature in class_of_features:
+        class_of_features[feature] = dict(sorted(class_of_features[feature].items()))
+
+    print(class_of_features)
+
+    for feature, results_dict in class_of_features.items():
+        cpm_1_array = []
+        cpm_10_array = []
+
+        coverage_1_array = []
+        coverage_10_array = []
+
+        feature_values = []
+
+        for point_value, json_file in results_dict.items():
+            with open(json_file, 'r') as file:
+                clustering_dict_loaded = json.load(file)
+
+            feature_values.append(point_value)
+
+            cpm1 = clustering_dict_loaded['stats']['cpm1']
+            cpm10 = clustering_dict_loaded['stats']['cpm10']
+
+            cov1 = calculate_node_coverage(clustering_dict_loaded['clusters'], 2)
+            cov10 = calculate_node_coverage(clustering_dict_loaded['clusters'], 11)
+
+        figure_save_dir_base = 'figures/topo_only_individual_sweep/'
+
+        plt.figure(figsize=(20, 10))  # Adjust the width and height as needed
+
+        plt.plot(feature_values, coverage_10_array, 'o-', color='orange', linewidth=0.5, markersize=8, label='Coverage10 %')
+        plt.plot(feature_values, coverage_1_array, 'o-', color='blue', linewidth=0.5, markersize=8, label='Coverage1 %')
+
+        plt.xlabel(f'{feature} values')
+        plt.ylabel('Coverage %')
+        plt.title(f'Coverage % for sweeping {feature} and zero semantic')
+        plt.xticks(feature_values)
+        # Show legend
+        plt.legend()
+
+        # Save the plot as an image file (e.g., PNG)
+        plt.savefig(f'{figure_save_dir_base}_{feature}_coverage.png')
+
+        # Show the plot
+        plt.show()
+
+
+
+        plt.figure(figsize=(30, 15))  # Adjust the width and height as needed
+
+        plt.plot(feature_values, cpm_10_array, 'o-', color='orange', linewidth=0.5, markersize=8, label='cpm10 %')
+        plt.plot(feature_values, cpm_1_array, 'o-', color='blue', linewidth=0.5, markersize=8, label='cpm1 %')
+
+        plt.xlabel(f'{feature} values')
+        plt.ylabel('cpm')
+        plt.title(f'cpm for sweeping {feature} and zero semantic')
+        plt.xticks(feature_values)
+        plt.legend()
+
+        plt.savefig(f'{figure_save_dir_base}_{feature}_cpm.png')
+
+        plt.show()
+
+
+
+
 
 
 
@@ -776,7 +865,8 @@ if __name__ == '__main__': # 248213
     #     .config("spark.driver.maxResultSize", "4g").getOrCreate()
     #
     # spark.sparkContext.setLogLevel("WARN")
-
+    plot_sweep_topological_features_only()
+    exit()
 
     # CPM_weighting_plotter()
     # CPM_gt10_plotter()

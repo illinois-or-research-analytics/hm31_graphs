@@ -6,9 +6,9 @@
 
 
 #gz_input='/shared/pcopy'
-parquet_output='/shared/hossein_hm31/pubmed_parquet'
+parquet_output='/shared/pubmed2024/'
 cores=70
-table_name='hm31.pubmed_etl_mesh_year_2'
+table_name='public.pubmed_etl_2024'
 user='hm31'
 pas='graphs'
 
@@ -25,16 +25,16 @@ start_time=$(date +"%s")
 #python parallel.py -xml "$gz_input" -parquet "$parquet_output" -cores "$cores" -wrap 1
 
 
-mid_time2=$(date +"%s")
+#mid_time2=$(date +"%s")
 #elapsed_time_parse=$((mid_time2 - mid_time1))
 
 
 
-spark-submit --master local[50] --jars './postgresql-42.5.2.jar' --driver-memory 220g  --conf "spark.local.dir=./logs" pyspark_parquet.py --tname "$table_name" --user "$user" --pas "$pas" --path "$parquet_output"
+spark-submit --master local[18] --jars './postgresql-42.5.2.jar' --driver-memory 180g  --conf "spark.local.dir=./logs" pyspark_parquet.py --tname "$table_name" --user "$user" --pas "$pas" --path "$parquet_output"
 
 end_time=$(date +"%s")
 
-elapsed_time_data=$((end_time - mid_time2))
+elapsed_time_data=$((end_time - start_time))
 
 #echo "Elapsed time for unzipping: elapsed_time_unzip seconds"
 #echo "Elapsed time for parsing: $elapsed_time_parse seconds"

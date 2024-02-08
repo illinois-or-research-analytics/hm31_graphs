@@ -5,20 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/step_10_cluster/figures/topo_only_individual_sweep/_bib_frequency_coverage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_10_cluster/figures/topo_only_individual_sweep/_bib_frequency_cpm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_10_cluster/figures/topo_only_individual_sweep/_bib_jaccard_coverage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_10_cluster/figures/topo_only_individual_sweep/_bib_jaccard_cpm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_10_cluster/figures/topo_only_individual_sweep/_cocitation_frequency_coverage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_10_cluster/figures/topo_only_individual_sweep/_cocitation_frequency_cpm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_10_cluster/figures/topo_only_individual_sweep/_cocitation_jaccard_coverage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_10_cluster/figures/topo_only_individual_sweep/_cocitation_jaccard_cpm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_10_cluster/figures/topo_only_individual_sweep/_unweighted_cpm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_10_cluster/nohup_last.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_3_generate_tables/.nohup.out.swp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_10_cluster/.nohup.out.swn" beforeDir="false" afterPath="$PROJECT_DIR$/step_10_cluster/.nohup.out.swn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_10_cluster/nohup.out" beforeDir="false" afterPath="$PROJECT_DIR$/step_10_cluster/nohup.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_10_cluster/weighting_clustering_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_10_cluster/weighting_clustering_pipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/ ./.uuid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/ ./spark_log/.uuid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/.uuid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/extractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/pubmed_etl.sh" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/pubmed_etl.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/pyspark_parquet.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/pyspark_parquet.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +91,7 @@
       <window_info anchor="bottom" id="TODO" />
       <window_info anchor="bottom" id="File Transfer" />
       <window_info anchor="bottom" id="Python Console" weight="0.3300926" />
-      <window_info active="true" anchor="bottom" id="Run" visible="true" weight="0.2568851" />
+      <window_info anchor="bottom" id="Run" weight="0.2568851" />
       <window_info anchor="bottom" id="HiveToolWindow" />
       <window_info anchor="bottom" id="GlueToolWindow" />
       <window_info anchor="bottom" id="EmrToolWindow" />
@@ -106,10 +100,10 @@
       <window_info anchor="bottom" id="SparkMonitoringToolWindow" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems View" order="1" weight="0.31956315" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.2568851" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.2568851" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.44017094" />
-      <window_info anchor="bottom" id="Services" order="4" weight="0.3300095" />
-      <window_info anchor="right" id="Plots" visible="true" weight="0.32405406" />
+      <window_info anchor="bottom" id="Services" order="4" weight="0.2568851" />
+      <window_info anchor="right" id="Plots" weight="0.20027027" />
       <window_info anchor="right" id="Endpoints" />
       <window_info anchor="right" id="BigDataToolWindow" />
       <window_info anchor="right" id="SciView" />
@@ -408,7 +402,7 @@
       <workItem from="1706716058260" duration="5321000" />
       <workItem from="1707029710035" duration="596000" />
       <workItem from="1707072147078" duration="1649000" />
-      <workItem from="1707148329176" duration="3815000" />
+      <workItem from="1707148329176" duration="6935000" />
     </task>
     <servers />
   </component>

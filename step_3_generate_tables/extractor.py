@@ -25,6 +25,7 @@ def main(gz, cores):
 
 def extractor(filename, base_dir):
     os.system(f'cd {base_dir} && gunzip {filename}')
+    print('extracted')
 
 
 if __name__ == '__main__':

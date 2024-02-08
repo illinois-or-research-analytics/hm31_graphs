@@ -29,7 +29,25 @@ if parquet_path[-1] != '/':
 def insert_table(result, jdbc_url, jdbc_properties, tname):
     result.repartition(10).write.jdbc(url=jdbc_url, table=tname, mode="overwrite",properties=jdbc_properties)
 
+def write_df(result, table_name, jdbc_properties):
+    result = result.repartition(10)
+    result.write.format('jdbc').options(
+        url=jdbc_properties['jdbc_url'],
+        driver="org.postgresql.Driver",
+        user=jdbc_properties["user"],
+        password=jdbc_properties["password"],
+        dbtable=table_name,
+        mode="overwrite"
+    ).save()
 
+
+
+# jdbc_properties = {
+#     "user": user,
+#     "password": pas,
+#     "driver": "org.postgresql.Driver"
+# }
+# jdbc_url = "jdbc:postgresql://valhalla.cs.illinois.edu:5432/ernieplus"
 
 
 spark = SparkSession.builder \
@@ -44,6 +62,8 @@ spark = SparkSession.builder \
 df = spark.read.parquet(parquet_path)
 df.persist()
 
+print("loaded parquet files")
+
 spark.sparkContext.setLogLevel("WARN")
 
 # df.printSchema()
@@ -52,6 +72,7 @@ start = time.time()
 df = df.repartition(1)
 df = df.dropDuplicates(['doi'])
 init_count = df.count()
+print(f"dropped duplicate doi total {init_count}")
 mid = time.time()
 
 # print(df.count(),'asoon! drop duplicates', mid - start)
@@ -76,6 +97,8 @@ sql_query = """
 result_df = spark.sql(sql_query)
 result_df = result_df.drop("RowRank")
 result_df = result_df.filter(col("doi") != '')
+init_count = df.count()
+print(f"ran queries {init_count}")
 
 
 after_query = time.time()
@@ -88,8 +111,13 @@ george_df = george_df.withColumn("has_year", F.when(F.length("year") > 0, 1).oth
 
 george_df = george_df.select("PMID", "doi", "has_abstract", "has_title", "has_mesh", "has_year", 'mesh', 'year')
 george_df = george_df.withColumnRenamed("PMID", "pmid")
+george_df = george_df.drop("mesh")
+george_df = george_df.drop("year")
 
 
+
+init_count = df.count()
+print(f" converted statistics {init_count}")
 
 
 
@@ -101,6 +129,18 @@ jdbc_properties = {
     "password": pas,
     "driver": "org.postgresql.Driver"
 }
+
+#New insertion stuff
+# jdbc_url = "jdbc:postgresql://valhalla.cs.illinois.edu:5432/ernieplus"
+#
+# jdbc_properties = {
+#     "user": "hm31",
+#     "password": "graphs",
+#     "driver": "org.postgresql.Driver",
+#     'jdbc_url' : "jdbc:postgresql://valhalla.cs.illinois.edu:5432/ernieplus"
+# }
+# write_df(george_df, tname, jdbc_properties)
+
 
 insert_table(george_df, jdbc_url, jdbc_properties, tname)
 

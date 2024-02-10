@@ -237,19 +237,19 @@ class NpEncoder(json.JSONEncoder):
 
 
 
-def apply_row_transformation(df, weights, scale, cores):
+def apply_row_transformation(df, weights, scale, shift, cores):
     #pandarallel.initialize(progress_bar=False) # initialize(36) or initialize(os.cpu_count()-1)
     pandarallel.initialize(nb_workers=cores, progress_bar=False) # initialize(36) or initialize(os.cpu_count()-1)
     new_df = df[['id']].copy()
-    new_df['weight'] = df.parallel_apply(calculate_weight, axis=1, weights=weights, scale=scale)
+    new_df['weight'] = df.parallel_apply(calculate_weight, axis=1, weights=weights, scale=scale, shift=shift)
 
     return new_df
 
-def calculate_weight(row, weights, scale):
+def calculate_weight(row, weights, scale, shift):
     # Assuming weights is a list or array containing the coefficients for linear combination
     weight = scale*(row['year_similarity']* weights[0] + row['mesh_median']* weights[1]+
                     row['cocitation_jaccard']* weights[2] + row['cocitation_frequency']* weights[3] + row['bib_jaccard']* weights[4]
-                    +  row['bib_frequency']* weights[5] + row['cosine_similarity']* weights[6] )
+                    +  row['bib_frequency']* weights[5] + row['cosine_similarity']* weights[6] ) + shift
 
 
     return weight
@@ -800,9 +800,7 @@ def plot_sweep_topological_features_only():
 
 
 
-def sweep_topological_features_only(iGraph, nx_Graph, raw_df, best_found_res, points = 8):
-    segment_width = 1.0 / points
-
+def sweep_topological_features_only(iGraph, nx_Graph, raw_df, best_found_res, bias, points = 8):
     segments = np.linspace(0, 1, points + 1)
 
 
@@ -838,18 +836,63 @@ def sweep_topological_features_only(iGraph, nx_Graph, raw_df, best_found_res, po
             save_dir = f'files/results/topo_only_individual_sweep/{topo_features[specific_topo_feature_index]}_{current_topo_feature_value}.json'
             addenum = f'{topo_features[specific_topo_feature_index]}_{current_topo_feature_value}.json'
 
-            current_files = os.listdir('files/results/topo_only_individual_sweep/')
-            if addenum in current_files:# and not ('bib_frequency_0.75' in addenum):
-                print('skipped')
+            # current_files = os.listdir('files/results/topo_only_individual_sweep/')
+            # if addenum in current_files:# and not ('bib_frequency_0.75' in addenum):
+            #     print('skipped')
+            #     continue
+
+            ###TOBE REMOVED
+            skip = False
+            for idx in range(len(current_weights)):
+                if idx in topological_indices and current_weights[idx] != 0.25:
+                    skip = True
+                    break
+
+            if skip:
                 continue
-            standardize_clustering(iGraph, nx_Graph, raw_df, current_weights, best_found_res, save_dir)
+            standardize_clustering(iGraph, nx_Graph, raw_df, current_weights, best_found_res, bias, save_dir)
 
 
 
 
-def standardize_clustering(iGraph, nx_Graph, raw_df, current_weighting, best_found_res, save_dir):
+def standardize_clustering(iGraph, nx_Graph, raw_df, current_weighting, best_found_res, bias, save_dir):
     t0 = time.time()
-    result_df = apply_row_transformation(raw_df, current_weighting, 1, 32)
+    result_df = apply_row_transformation(raw_df, current_weighting, 1, bias, 64)
+    print(result_df.head())
+
+    import  numpy as np
+    weight_array = result_df['weight'].values
+    prev_shape = weight_array.shape[0]
+    weight_array = weight_array[weight_array != 0]
+    new_shape = weight_array.shape[0]
+
+
+    mean = np.mean(weight_array)
+    median = np.median(weight_array)
+    max = np.amax(weight_array)
+    min = np.amin(weight_array)
+    q1 = np.percentile(weight_array, 25)
+    q3 = np.percentile(weight_array, 75)
+
+
+    print(f'prev shape {prev_shape} new shape {new_shape}')
+    print(f'min {min} max {max} median {median} mean {mean} q1 {q1} q3 {q3}')
+    print(current_weighting)
+
+    plt.hist(weight_array, bins=20)  # Adjust the number of bins as needed
+    plt.xlabel('Weight')
+    plt.ylabel('Frequency')
+    plt.title('Histogram of Weight')
+    plt.grid(True)
+
+    save_adr = 'figures/weights_histogram.png'
+    # Save the plot as an image file (e.g., PNG)
+    plt.savefig(save_adr)
+
+    # Show the plot (optional)
+    plt.show()
+
+    exit(0)
     t1 = time.time()
     print(f'weights calculated {t1-t0}')
 
@@ -900,25 +943,28 @@ if __name__ == '__main__': # 248213
     #     .config("spark.driver.maxResultSize", "4g").getOrCreate()
     #
     # spark.sparkContext.setLogLevel("WARN")
-    plot_sweep_topological_features_only()
-    exit()
+    # plot_sweep_topological_features_only()
+    # exit()
 
     # CPM_weighting_plotter()
     # CPM_gt10_plotter()
-    name = 'files/raw_features.h5'
     #Lets switch to pandas from now on
     # convert_pyspark_features_to_pandas(spark, name)
 
+    ######################################## danger zone
     #weights, scale = handle_arguments()
+    name = 'files/raw_features.h5'
     nx_path = f"files/graphs/base_nx.gpickle"
     ig_path = f"files/graphs/base_ig.pickle"
 
     df = pd.read_hdf(name, key='data')
     print('loaded df')
-    G_nx, H_ig = load_graphs( nx_path, ig_path)
+    # G_nx, H_ig = load_graphs( nx_path, ig_path)
+    G_nx = None
+    H_ig = None
     print('loaded graphs')
 
-    sweep_topological_features_only(iGraph=H_ig, nx_Graph=G_nx, raw_df=df, best_found_res=0.05, points=8)
+    sweep_topological_features_only(iGraph=H_ig, nx_Graph=G_nx, raw_df=df, best_found_res=0.05, bias=0, points=8)
     exit(0)
 
     # sweep_bi_feature(G_nx, H_ig, df, best_found_res = 0.05)

@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/step_3_generate_tables/.nohup.out.swp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/ ./.uuid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/ ./spark_log/.uuid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/.uuid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/extractor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/pubmed_etl.sh" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/pubmed_etl.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_3_generate_tables/pyspark_parquet.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_3_generate_tables/pyspark_parquet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/weighting_clustering_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_10_cluster/weighting_clustering_pipeline.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,25 +47,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;Python.weighting_clustering_pipeline.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/hm31/step_1/step_10_cluster/files/results/sweeping_res_constant_weight&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.Unnamed.executor": "Run",
+    "Python.weighting_clustering_pipeline.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/hm31/step_1/step_10_cluster/figures/sweeping_res_constant_weights",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RdControllerToolWindowsLayoutState" isNewUi="true">
     <layout>
       <window_info id="Space Code Reviews" />
@@ -80,7 +74,7 @@
       <window_info id="Commit_Guest" />
       <window_info id="Pull Requests" />
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77446485" visible="true" weight="0.20567566" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77446485" visible="true" weight="0.1861979" />
       <window_info id="Commit" order="1" weight="0.25" />
       <window_info id="Structure" order="2" sideWeight="0.22553515" side_tool="true" weight="0.37421876" />
       <window_info anchor="bottom" id="DataprocToolWindow" />
@@ -100,7 +94,7 @@
       <window_info anchor="bottom" id="SparkMonitoringToolWindow" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems View" order="1" weight="0.31956315" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.2568851" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.24738842" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.44017094" />
       <window_info anchor="bottom" id="Services" order="4" weight="0.2568851" />
       <window_info anchor="right" id="Plots" weight="0.20027027" />
@@ -115,11 +109,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/step_10_cluster/figures/sweeping_res_constant_weights" />
       <recent name="$PROJECT_DIR$/step_10_cluster/files" />
       <recent name="$PROJECT_DIR$/step_10_cluster/files/edges" />
       <recent name="$PROJECT_DIR$/step_7_calculate_similarities" />
       <recent name="$PROJECT_DIR$/step_1_sample_study" />
-      <recent name="$PROJECT_DIR$/step_2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/step_10_cluster/files/results/sweeping_res_constant_weight" />

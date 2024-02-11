@@ -800,7 +800,7 @@ def plot_sweep_topological_features_only():
 
 
 
-def sweep_topological_features_only(iGraph, nx_Graph, raw_df, best_found_res, bias, points = 8):
+def sweep_topological_features_only(iGraph, nx_Graph, raw_df, best_found_res, bias, directory_to_save_results, points = 8):
     segments = np.linspace(0, 1, points + 1)
 
 
@@ -833,66 +833,24 @@ def sweep_topological_features_only(iGraph, nx_Graph, raw_df, best_found_res, bi
                         current_weights.append( (1-current_topo_feature_value)/3 )
 
             print(f"{len(current_weights)} {topo_features[specific_topo_feature_index]}{specific_topo_feature_index} {current_weights}")
-            save_dir = f'files/results/topo_only_individual_sweep/{topo_features[specific_topo_feature_index]}_{current_topo_feature_value}.json'
-            addenum = f'{topo_features[specific_topo_feature_index]}_{current_topo_feature_value}.json'
+            addenum = f'{topo_features[specific_topo_feature_index]}_{current_topo_feature_value}_bias_{bias}.json'
+            save_dir = f'{directory_to_save_results}{addenum}'
 
-            # current_files = os.listdir('files/results/topo_only_individual_sweep/')
-            # if addenum in current_files:# and not ('bib_frequency_0.75' in addenum):
-            #     print('skipped')
-            #     continue
 
-            ###TOBE REMOVED
-            skip = False
-            for idx in range(len(current_weights)):
-                if idx in topological_indices and current_weights[idx] != 0.25:
-                    skip = True
-                    break
-
-            if skip:
+            current_files = os.listdir(directory_to_save_results)
+            if addenum in current_files:
+                print('skipped')
                 continue
+
             standardize_clustering(iGraph, nx_Graph, raw_df, current_weights, best_found_res, bias, save_dir)
 
 
-
+# 118827
 
 def standardize_clustering(iGraph, nx_Graph, raw_df, current_weighting, best_found_res, bias, save_dir):
     t0 = time.time()
-    result_df = apply_row_transformation(raw_df, current_weighting, 1, bias, 64)
-    print(result_df.head())
+    result_df = apply_row_transformation(raw_df, current_weighting, 1, bias, 32)
 
-    import  numpy as np
-    weight_array = result_df['weight'].values
-    prev_shape = weight_array.shape[0]
-    weight_array = weight_array[weight_array != 0]
-    new_shape = weight_array.shape[0]
-
-
-    mean = np.mean(weight_array)
-    median = np.median(weight_array)
-    max = np.amax(weight_array)
-    min = np.amin(weight_array)
-    q1 = np.percentile(weight_array, 25)
-    q3 = np.percentile(weight_array, 75)
-
-
-    print(f'prev shape {prev_shape} new shape {new_shape}')
-    print(f'min {min} max {max} median {median} mean {mean} q1 {q1} q3 {q3}')
-    print(current_weighting)
-
-    plt.hist(weight_array, bins=20)  # Adjust the number of bins as needed
-    plt.xlabel('Weight')
-    plt.ylabel('Frequency')
-    plt.title('Histogram of Weight')
-    plt.grid(True)
-
-    save_adr = 'figures/weights_histogram.png'
-    # Save the plot as an image file (e.g., PNG)
-    plt.savefig(save_adr)
-
-    # Show the plot (optional)
-    plt.show()
-
-    exit(0)
     t1 = time.time()
     print(f'weights calculated {t1-t0}')
 
@@ -919,6 +877,13 @@ def standardize_clustering(iGraph, nx_Graph, raw_df, current_weighting, best_fou
 
     clsutering_dict['stats']['cpm1'] = cpm_val_1_prune
     clsutering_dict['stats']['cpm10'] = cpm_val_10_prune
+
+    cov1 = calculate_node_coverage(clsutering_dict['clusters'], 2)
+    cov10 = calculate_node_coverage(clsutering_dict['clusters'], 11)
+
+    clsutering_dict['stats']['cov1'] = cov1
+    clsutering_dict['stats']['cov10'] = cov10
+
 
     with open(save_dir, 'w') as json_file:
         json.dump(clsutering_dict, json_file)
@@ -959,12 +924,11 @@ if __name__ == '__main__': # 248213
 
     df = pd.read_hdf(name, key='data')
     print('loaded df')
-    # G_nx, H_ig = load_graphs( nx_path, ig_path)
-    G_nx = None
-    H_ig = None
+    G_nx, H_ig = load_graphs( nx_path, ig_path)
     print('loaded graphs')
 
-    sweep_topological_features_only(iGraph=H_ig, nx_Graph=G_nx, raw_df=df, best_found_res=0.05, bias=0, points=8)
+    saving_dir = f"files/results/topo_only_individual_sweep_with_bias/"
+    sweep_topological_features_only(iGraph=H_ig, nx_Graph=G_nx, raw_df=df, best_found_res=0.05, bias=0.005, points=8, directory_to_save_results=saving_dir)
     exit(0)
 
     # sweep_bi_feature(G_nx, H_ig, df, best_found_res = 0.05)

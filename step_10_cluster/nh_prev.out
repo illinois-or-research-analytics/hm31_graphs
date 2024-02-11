@@ -1,0 +1,1340 @@
+loaded df
+loaded graphs
+7 cocitation_jaccard2 [0, 0, 0.0, 0.3333333333333333, 0.3333333333333333, 0.3333333333333333, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 184.7905662059784
+clustering 782.5480453968048
+clustered 782.548196554184
+cpm1 982.0568518638611
+cpm10 3.412182331085205
+
+7 cocitation_jaccard2 [0, 0, 0.125, 0.2916666666666667, 0.2916666666666667, 0.2916666666666667, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 174.8381896018982
+clustering 605.8112599849701
+clustered 605.8117790222168
+cpm1 950.6992559432983
+cpm10 3.0501441955566406
+
+7 cocitation_jaccard2 [0, 0, 0.25, 0.25, 0.25, 0.25, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 156.4619264602661
+clustering 541.0571320056915
+clustered 541.0577013492584
+cpm1 972.8341352939606
+cpm10 2.9208431243896484
+
+7 cocitation_jaccard2 [0, 0, 0.375, 0.20833333333333334, 0.20833333333333334, 0.20833333333333334, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 171.28999876976013
+clustering 548.1387703418732
+clustered 548.1389491558075
+cpm1 940.0514783859253
+cpm10 3.0193519592285156
+
+7 cocitation_jaccard2 [0, 0, 0.5, 0.16666666666666666, 0.16666666666666666, 0.16666666666666666, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 95.18952560424805
+clustering 616.9940030574799
+clustered 616.9941651821136
+cpm1 955.2140970230103
+cpm10 3.052847385406494
+
+7 cocitation_jaccard2 [0, 0, 0.625, 0.125, 0.125, 0.125, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 95.46507358551025
+clustering 783.6408762931824
+clustered 783.6410887241364
+cpm1 968.9889152050018
+cpm10 3.0854697227478027
+
+7 cocitation_jaccard2 [0, 0, 0.75, 0.08333333333333333, 0.08333333333333333, 0.08333333333333333, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 397.0631892681122
+clustering 651.7423851490021
+clustered 651.7426240444183
+cpm1 931.6616218090057
+cpm10 3.2879724502563477
+
+7 cocitation_jaccard2 [0, 0, 0.875, 0.041666666666666664, 0.041666666666666664, 0.041666666666666664, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 99.05789875984192
+clustering 720.1926171779633
+clustered 720.1928231716156
+cpm1 881.962925195694
+cpm10 156.8663992881775
+
+7 cocitation_jaccard2 [0, 0, 1.0, 0.0, 0.0, 0.0, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 312.46736693382263
+clustering 621.907502412796
+clustered 621.9077739715576
+cpm1 893.0494935512543
+cpm10 145.24420189857483
+
+7 cocitation_frequency3 [0, 0, 0.3333333333333333, 0.0, 0.3333333333333333, 0.3333333333333333, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 97.61697697639465
+clustering 615.8922626972198
+clustered 615.8924424648285
+cpm1 954.3470575809479
+cpm10 3.289592981338501
+
+7 cocitation_frequency3 [0, 0, 0.2916666666666667, 0.125, 0.2916666666666667, 0.2916666666666667, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 95.93424582481384
+clustering 539.5900826454163
+clustered 539.5903596878052
+cpm1 1040.4661626815796
+cpm10 3.3394527435302734
+
+7 cocitation_frequency3 [0, 0, 0.25, 0.25, 0.25, 0.25, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+Exception in thread Thread-4:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-94:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception ignored in: <Finalize object, dead>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/multiprocessing/util.py", line 186, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 589, in _terminate_pool
+    p.terminate()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 116, in terminate
+    self._popen.terminate()
+AttributeError: 'NoneType' object has no attribute 'terminate'
+Exception in thread Thread-79:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-70:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+weights calculated 240.7100555896759
+clustering 540.0726301670074
+clustered 540.0729620456696
+Exception in thread Thread-85:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+cpm1 968.4009919166565
+cpm10 3.3847103118896484
+
+7 cocitation_frequency3 [0, 0, 0.20833333333333334, 0.375, 0.20833333333333334, 0.20833333333333334, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+Exception in thread Thread-76:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+weights calculated 194.410658121109
+clustering 532.6977212429047
+clustered 532.6978847980499
+cpm1 994.6281352043152
+cpm10 3.362516403198242
+
+7 cocitation_frequency3 [0, 0, 0.16666666666666666, 0.5, 0.16666666666666666, 0.16666666666666666, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 98.54290008544922
+clustering 530.0221724510193
+clustered 530.0224742889404
+cpm1 979.627120256424
+cpm10 3.4491453170776367
+
+7 cocitation_frequency3 [0, 0, 0.125, 0.625, 0.125, 0.125, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+Exception in thread Thread-121:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-112:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-58:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception ignored in: <Finalize object, dead>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/multiprocessing/util.py", line 186, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 589, in _terminate_pool
+Exception in thread Thread-40:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+    p.terminate()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 116, in terminate
+    self._popen.terminate()
+AttributeError: 'NoneType' object has no attribute 'terminate'
+weights calculated 193.47210955619812
+clustering 536.7260675430298
+clustered 536.7264502048492
+cpm1 1001.6753833293915
+cpm10 3.231088876724243
+
+7 cocitation_frequency3 [0, 0, 0.08333333333333333, 0.75, 0.08333333333333333, 0.08333333333333333, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 99.29136395454407
+clustering 522.2901787757874
+clustered 522.2904088497162
+cpm1 971.6194524765015
+cpm10 3.39540958404541
+
+7 cocitation_frequency3 [0, 0, 0.041666666666666664, 0.875, 0.041666666666666664, 0.041666666666666664, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+Exception in thread Thread-130:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-139:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception ignored in: <Finalize object, dead>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/multiprocessing/util.py", line 186, in __call__
+Exception in thread Thread-133:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-22:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-142:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-13:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-124:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+    res = self._callback(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 589, in _terminate_pool
+    p.terminate()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 116, in terminate
+    self._popen.terminate()
+AttributeError: 'NoneType' object has no attribute 'terminate'
+weights calculated 257.62487530708313
+clustering 520.2315092086792
+clustered 520.2318952083588
+cpm1 885.5478971004486
+cpm10 3.310366153717041
+
+7 cocitation_frequency3 [0, 0, 0.0, 1.0, 0.0, 0.0, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+Exception in thread Thread-148:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception ignored in: <Finalize object, dead>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/multiprocessing/util.py", line 186, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 589, in _terminate_pool
+    p.terminate()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 116, in terminate
+    self._popen.terminate()
+AttributeError: 'NoneType' object has no attribute 'terminate'
+Exception in thread Thread-151:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-106:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+weights calculated 165.78864932060242
+clustering 550.374712228775
+clustered 550.3749058246613
+cpm1 1000.7127366065979
+cpm10 3.2457449436187744
+
+7 bib_jaccard4 [0, 0, 0.3333333333333333, 0.3333333333333333, 0.0, 0.3333333333333333, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+Exception in thread Thread-157:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception ignored in: <Finalize object, dead>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/multiprocessing/util.py", line 186, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 589, in _terminate_pool
+    p.terminate()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 116, in terminate
+    self._popen.terminate()
+AttributeError: 'NoneType' object has no attribute 'terminate'
+Exception in thread Thread-160:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+weights calculated 236.49595141410828
+clustering 573.3964629173279
+clustered 573.3967196941376
+cpm1 925.3248989582062
+cpm10 3.124711751937866
+
+7 bib_jaccard4 [0, 0, 0.2916666666666667, 0.2916666666666667, 0.125, 0.2916666666666667, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+Exception in thread Thread-166:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception ignored in: <Finalize object, dead>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/multiprocessing/util.py", line 186, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 589, in _terminate_pool
+    p.terminate()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 116, in terminate
+    self._popen.terminate()
+AttributeError: 'NoneType' object has no attribute 'terminate'
+Exception in thread Thread-169:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+weights calculated 154.81219339370728
+clustering 663.1035053730011
+clustered 663.1039755344391
+cpm1 1035.5244817733765
+cpm10 3.6185672283172607
+
+7 bib_jaccard4 [0, 0, 0.25, 0.25, 0.25, 0.25, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 100.2395236492157
+clustering 541.6924211978912
+clustered 541.692599773407
+cpm1 982.0599608421326
+cpm10 3.118086814880371
+
+7 bib_jaccard4 [0, 0, 0.20833333333333334, 0.20833333333333334, 0.375, 0.20833333333333334, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+Exception in thread Thread-184:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-175:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception ignored in: <Finalize object, dead>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/multiprocessing/util.py", line 186, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 589, in _terminate_pool
+    p.terminate()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 116, in terminate
+    self._popen.terminate()
+AttributeError: 'NoneType' object has no attribute 'terminate'
+Exception in thread Thread-187:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-178:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+weights calculated 215.72853422164917
+clustering 630.5609538555145
+clustered 630.5611822605133
+cpm1 947.0247659683228
+cpm10 3.3980891704559326
+
+7 bib_jaccard4 [0, 0, 0.16666666666666666, 0.16666666666666666, 0.5, 0.16666666666666666, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+Exception in thread Thread-193:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception ignored in: <Finalize object, dead>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/multiprocessing/util.py", line 186, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 589, in _terminate_pool
+    p.terminate()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 116, in terminate
+weights calculated 191.20451092720032
+clustering 632.3738491535187
+clustered 632.3741269111633
+    self._popen.terminate()
+AttributeError: 'NoneType' object has no attribute 'terminate'
+cpm1 931.0222654342651
+cpm10 3.3999085426330566
+
+7 bib_jaccard4 [0, 0, 0.125, 0.125, 0.625, 0.125, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 102.39601421356201
+clustering 633.3605496883392
+clustered 633.3607947826385
+cpm1 978.920167684555
+cpm10 3.0408403873443604
+
+7 bib_jaccard4 [0, 0, 0.08333333333333333, 0.08333333333333333, 0.75, 0.08333333333333333, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+Exception in thread Thread-211:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception ignored in: <Finalize object, dead>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/multiprocessing/util.py", line 186, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 589, in _terminate_pool
+    p.terminate()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 116, in terminate
+    self._popen.terminate()
+AttributeError: 'NoneType' object has no attribute 'terminate'
+Exception in thread Thread-202:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-214:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-205:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+weights calculated 177.40950632095337
+clustering 714.5733399391174
+clustered 714.5735473632812
+cpm1 1037.7468404769897
+cpm10 3.3057546615600586
+
+7 bib_jaccard4 [0, 0, 0.041666666666666664, 0.041666666666666664, 0.875, 0.041666666666666664, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 210.56693935394287
+clustering 740.872077703476
+clustered 740.872309923172
+Exception in thread Thread-220:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+cpm1 1003.5073101520538
+cpm10 3.1369895935058594
+
+7 bib_jaccard4 [0, 0, 0.0, 0.0, 1.0, 0.0, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 99.3632230758667
+clustering 746.9833986759186
+clustered 746.9836800098419
+cpm1 994.9138722419739
+cpm10 3.00874400138855
+
+7 bib_frequency5 [0, 0, 0.3333333333333333, 0.3333333333333333, 0.3333333333333333, 0.0, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+Exception in thread Thread-238:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception ignored in: <Finalize object, dead>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/multiprocessing/util.py", line 186, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 589, in _terminate_pool
+    p.terminate()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 116, in terminate
+Exception in thread Thread-229:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+    self._popen.terminate()
+AttributeError: 'NoneType' object has no attribute 'terminate'
+weights calculated 200.66944241523743
+clustering 648.4019587039948
+clustered 648.4022243022919
+cpm1 987.9564692974091
+cpm10 3.2793054580688477
+
+7 bib_frequency5 [0, 0, 0.2916666666666667, 0.2916666666666667, 0.2916666666666667, 0.125, 0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+weights calculated 100.105703830719
+clustering 669.5132138729095
+clustered 669.5135405063629
+Exception in thread Thread-247:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-256:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-250:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-232:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-7:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-16:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-241:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-25:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+
+Exception in thread Thread-223:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 405, in _handle_workers
+    pool._maintain_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 246, in _maintain_pool
+    self._repopulate_pool()
+  File "/usr/lib64/python3.6/multiprocessing/pool.py", line 239, in _repopulate_pool
+    w.start()
+  File "/usr/lib64/python3.6/multiprocessing/process.py", line 105, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib64/python3.6/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/lib64/python3.6/multiprocessing/popen_fork.py", line 66, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+

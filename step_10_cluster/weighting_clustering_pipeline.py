@@ -673,25 +673,41 @@ def sweep_bi_feature(nx_Graph, iGraph, raw_df, best_found_res = 0.05):
         json.dump(clsutering_dict, json_file)
 
 
-def plot_sweep_topological_features_only():
-    result_dir = 'files/results/topo_only_individual_sweep/'
+def plot_sweep_topological_features_only(result_dir, figure_save_dir_base):
+    # result_dir = 'files/results/topo_only_individual_sweep/'
 
     class_of_features = {}
 
     all_results = os.listdir(result_dir)
+    contains_bias = False
 
 
     for file_str in all_results:
         if not '.json' in file_str:
             continue
 
+
         feature_array = file_str.split('_')
         feature_name = feature_array[0] + '_' + feature_array[1]
+
+        #To see if bias word is in the file name
+        if 'bias' in file_str:
+            contains_bias = True
+            bias = float(feature_array[4][:-5])
+
+
 
         if not feature_name in class_of_features:
             class_of_features[feature_name] = {}
 
-        feature_value = float(feature_array[2][:-5])
+        if contains_bias == False:
+            feature_value = float(feature_array[2][:-5])
+
+        else:
+            feature_value = float(feature_array[2])
+
+
+
 
         class_of_features[feature_name][feature_value] = result_dir + file_str
 
@@ -699,7 +715,7 @@ def plot_sweep_topological_features_only():
     for feature in class_of_features:
         class_of_features[feature] = dict(sorted(class_of_features[feature].items()))
 
-    print(class_of_features)
+    # print(class_of_features)
 
     for feature, results_dict in class_of_features.items():
         cpm_1_array = []
@@ -719,8 +735,14 @@ def plot_sweep_topological_features_only():
             cpm1 = clustering_dict_loaded['stats']['cpm1']
             cpm10 = clustering_dict_loaded['stats']['cpm10']
 
-            cov1 = calculate_node_coverage(clustering_dict_loaded['clusters'], 2)
-            cov10 = calculate_node_coverage(clustering_dict_loaded['clusters'], 11)
+            if not 'cov1' in clustering_dict_loaded['stats']:
+                cov1 = calculate_node_coverage(clustering_dict_loaded['clusters'], 2)
+                cov10 = calculate_node_coverage(clustering_dict_loaded['clusters'], 11)
+
+            else:
+                cov1 = clustering_dict_loaded['stats']['cov1']
+                cov10 = clustering_dict_loaded['stats']['cov10']
+
 
             cpm_1_array.append(cpm1)
             cpm_10_array.append(cpm10)
@@ -736,10 +758,9 @@ def plot_sweep_topological_features_only():
         uw_cpm_10 = clustering_dict_loaded_unweighted['stats']['cpm10']
         uw_cpm_1 = clustering_dict_loaded_unweighted['stats']['cpm1']
 
+        # figure_save_dir_base = 'figures/topo_only_individual_sweep/'
+        plt.figure(figsize=(14, 10))  # Adjust the width and height as needed
 
-        figure_save_dir_base = 'figures/topo_only_individual_sweep/'
-
-        plt.figure(figsize=(20, 10))  # Adjust the width and height as needed
 
         plt.plot(feature_values, coverage_10_array, 'o-', color='orange', linewidth=0.5, markersize=8, label='Coverage10 %')
         plt.plot(feature_values, coverage_1_array, 'o-', color='blue', linewidth=0.5, markersize=8, label='Coverage1 %')
@@ -747,7 +768,13 @@ def plot_sweep_topological_features_only():
 
         plt.xlabel(f'{feature} values')
         plt.ylabel('Coverage %')
-        plt.title(f'Coverage % for sweeping {feature} and zero semantic')
+
+        if contains_bias == False:
+            plt.title(f'Coverage % for sweeping {feature} and zero semantic')
+
+        else:
+            plt.title(f'Coverage % for sweeping {feature} and zero semantic and bias {bias}')
+
         plt.xticks(feature_values)
         # Show legend
         plt.legend()
@@ -908,8 +935,11 @@ if __name__ == '__main__': # 248213
     #     .config("spark.driver.maxResultSize", "4g").getOrCreate()
     #
     # spark.sparkContext.setLogLevel("WARN")
-    # plot_sweep_topological_features_only()
-    # exit()
+
+    result_dir = f"files/results/topo_only_individual_sweep_with_bias/"
+    fig_dir = f"figures/topo_only_individual_sweep_with_bias/"
+    plot_sweep_topological_features_only(result_dir, fig_dir)
+    exit()
 
     # CPM_weighting_plotter()
     # CPM_gt10_plotter()
@@ -929,7 +959,7 @@ if __name__ == '__main__': # 248213
 
     saving_dir = f"files/results/topo_only_individual_sweep_with_bias/"
     sweep_topological_features_only(iGraph=H_ig, nx_Graph=G_nx, raw_df=df, best_found_res=0.05, bias=0.005, points=8, directory_to_save_results=saving_dir)
-    exit(0)
+    # exit(0)
 
     # sweep_bi_feature(G_nx, H_ig, df, best_found_res = 0.05)
 

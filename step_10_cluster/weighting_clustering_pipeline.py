@@ -751,7 +751,7 @@ def plot_sweep_topological_features_only(result_dir, figure_save_dir_base):
             coverage_1_array.append(cov1)
             coverage_10_array.append(cov10)
 
-        plt.rcParams.update({'font.size': 18})
+        plt.rcParams.update({'font.size': 24})
         with open('files/results/sweep_bi_feature/unweighted.json', 'r') as file:
             clustering_dict_loaded_unweighted = json.load(file)
 

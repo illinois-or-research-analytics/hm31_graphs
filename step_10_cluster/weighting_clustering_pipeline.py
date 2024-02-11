@@ -759,7 +759,7 @@ def plot_sweep_topological_features_only(result_dir, figure_save_dir_base):
         uw_cpm_1 = clustering_dict_loaded_unweighted['stats']['cpm1']
 
         # figure_save_dir_base = 'figures/topo_only_individual_sweep/'
-        plt.figure(figsize=(14, 10))  # Adjust the width and height as needed
+        plt.figure(figsize=(18, 10))  # Adjust the width and height as needed
 
 
         plt.plot(feature_values, coverage_10_array, 'o-', color='orange', linewidth=0.5, markersize=8, label='Coverage10 %')
@@ -770,10 +770,10 @@ def plot_sweep_topological_features_only(result_dir, figure_save_dir_base):
         plt.ylabel('Coverage %')
 
         if contains_bias == False:
-            plt.title(f'Coverage % for sweeping {feature} and zero semantic')
+            plt.title(f'Coverage for sweeping {feature}, zero semantic')
 
         else:
-            plt.title(f'Coverage % for sweeping {feature} and zero semantic and bias {bias}')
+            plt.title(f'Coverage for sweeping {feature}, zero semantic and bias {bias}')
 
         plt.xticks(feature_values)
         # Show legend
@@ -787,7 +787,7 @@ def plot_sweep_topological_features_only(result_dir, figure_save_dir_base):
 
 
 
-        plt.figure(figsize=(30, 15))  # Adjust the width and height as needed
+        plt.figure(figsize=(14, 10))  # Adjust the width and height as needed
 
         plt.plot(feature_values, cpm_10_array, 'o-', color='orange', linewidth=0.5, markersize=8, label='cpm10')
         plt.plot(feature_values, cpm_1_array, 'o-', color='blue', linewidth=0.5, markersize=8, label='cpm1')
@@ -805,7 +805,7 @@ def plot_sweep_topological_features_only(result_dir, figure_save_dir_base):
 
 
 
-    plt.figure(figsize=(30, 15))  # Adjust the width and height as needed
+    plt.figure(figsize=(14, 10))  # Adjust the width and height as needed
 
     plt.plot(feature_values, [uw_cpm_10] * len(feature_values), 'o-', color='brown', linewidth=0.5, markersize=8, label='uw cpm10')
     plt.plot(feature_values, [uw_cpm_1] * len(feature_values), 'o-', color='green', linewidth=0.5, markersize=8, label='uw cpm1')

@@ -876,7 +876,7 @@ def sweep_topological_features_only(iGraph, nx_Graph, raw_df, best_found_res, bi
 
 def standardize_clustering(iGraph, nx_Graph, raw_df, current_weighting, best_found_res, bias, save_dir):
     t0 = time.time()
-    result_df = apply_row_transformation(raw_df, current_weighting, 1, bias, 32)
+    result_df = apply_row_transformation(raw_df, current_weighting, 1, bias, 24)
 
     t1 = time.time()
     print(f'weights calculated {t1-t0}')
@@ -935,7 +935,7 @@ if __name__ == '__main__': # 248213
     #     .config("spark.driver.maxResultSize", "4g").getOrCreate()
     #
     # spark.sparkContext.setLogLevel("WARN")
-
+    #
     result_dir = f"files/results/topo_only_individual_sweep_with_bias/"
     fig_dir = f"figures/topo_only_individual_sweep_with_bias/"
     plot_sweep_topological_features_only(result_dir, fig_dir)
@@ -959,7 +959,7 @@ if __name__ == '__main__': # 248213
 
     saving_dir = f"files/results/topo_only_individual_sweep_with_bias/"
     sweep_topological_features_only(iGraph=H_ig, nx_Graph=G_nx, raw_df=df, best_found_res=0.05, bias=0.005, points=8, directory_to_save_results=saving_dir)
-    # exit(0)
+    exit(0)
 
     # sweep_bi_feature(G_nx, H_ig, df, best_found_res = 0.05)
 

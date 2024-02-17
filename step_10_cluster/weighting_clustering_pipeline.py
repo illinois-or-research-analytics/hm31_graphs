@@ -237,11 +237,29 @@ class NpEncoder(json.JSONEncoder):
 
 
 
-def apply_row_transformation(df, weights, scale, shift, cores):
+def apply_row_transformation(df, weights, scale, shift, cores, map = False):
+    t1 = time.time()
     #pandarallel.initialize(progress_bar=False) # initialize(36) or initialize(os.cpu_count()-1)
     pandarallel.initialize(nb_workers=cores, progress_bar=False) # initialize(36) or initialize(os.cpu_count()-1)
     new_df = df[['id']].copy()
     new_df['weight'] = df.parallel_apply(calculate_weight, axis=1, weights=weights, scale=scale, shift=shift)
+
+    t2 = time.time()
+    print(f'init weights {t2-t1}')
+
+    if map == True:
+        new_df, second_min, current_max = map_to_range_in_dataframe(new_df, 'weight')
+        new_df['weight'] = df.parallel_apply(apply_linear_transformation, axis=1, second_min=second_min, current_max= current_max)
+
+        c_max = df['weight'].max()
+        c_min = df['weight'].min()
+
+        t3 = time.time()
+        print(f'second weights {t3-t2}')
+
+        print(c_min, c_max)
+        exit(0)
+
 
     return new_df
 
@@ -253,6 +271,32 @@ def calculate_weight(row, weights, scale, shift):
 
 
     return weight
+
+def apply_linear_transformation(row, second_min, current_max):
+    new_max = 10
+    new_min = 1
+
+    weight = row['weight']
+    new_weight = ((weight- second_min) * (new_max - new_min) / (current_max - second_min)) + new_min
+    return new_weight
+def map_to_range_in_dataframe(df, column_name):
+    # Filter out zeros
+
+    # Find the minimum and second minimum values
+    current_min = df[column_name].min()
+    second_min = df[df[column_name] > current_min][column_name].min()
+    current_max = df[column_name].max()
+
+
+    df.loc[df[column_name] == 0, column_name] = second_min
+    #     print(df)
+
+    return df, second_min, current_max
+    # # Apply the transformation to non-zero values
+    # df[column_name] = ((df[column_name] - second_min) * (new_max - new_min) / (current_max - second_min)) + new_min
+    # return df
+
+
 
 #Load igraph and nxgraph
 def load_graphs( nx_path, ig_path):
@@ -876,7 +920,7 @@ def sweep_topological_features_only(iGraph, nx_Graph, raw_df, best_found_res, bi
 
 def standardize_clustering(iGraph, nx_Graph, raw_df, current_weighting, best_found_res, bias, save_dir):
     t0 = time.time()
-    result_df = apply_row_transformation(raw_df, current_weighting, 1, bias, 24)
+    result_df = apply_row_transformation(raw_df, current_weighting, 1, bias, 24, map=True)
 
     t1 = time.time()
     print(f'weights calculated {t1-t0}')
@@ -936,10 +980,11 @@ if __name__ == '__main__': # 248213
     #
     # spark.sparkContext.setLogLevel("WARN")
     #
-    result_dir = f"files/results/topo_only_individual_sweep_with_bias/"
-    fig_dir = f"figures/topo_only_individual_sweep_with_bias/"
-    plot_sweep_topological_features_only(result_dir, fig_dir)
-    exit()
+
+    # result_dir = f"files/results/topo_only_individual_sweep_with_bias/"
+    # fig_dir = f"figures/topo_only_individual_sweep_with_bias/"
+    # plot_sweep_topological_features_only(result_dir, fig_dir)
+    # exit()
 
     # CPM_weighting_plotter()
     # CPM_gt10_plotter()

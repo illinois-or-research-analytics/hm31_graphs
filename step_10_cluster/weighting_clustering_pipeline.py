@@ -1,6 +1,7 @@
 #Lets switch to pandas world from Pyspark
 import argparse
 import os
+import subprocess
 import time
 from tqdm import tqdm
 import copy
@@ -237,7 +238,7 @@ class NpEncoder(json.JSONEncoder):
 
 
 
-def apply_row_transformation(df, weights, scale, shift, cores, map = False):
+def apply_feature_aggregation(df, weights, scale, shift, cores):
     t1 = time.time()
     #pandarallel.initialize(progress_bar=False) # initialize(36) or initialize(os.cpu_count()-1)
     pandarallel.initialize(nb_workers=cores, progress_bar=False) # initialize(36) or initialize(os.cpu_count()-1)
@@ -247,21 +248,12 @@ def apply_row_transformation(df, weights, scale, shift, cores, map = False):
     t2 = time.time()
     print(f'init weights {t2-t1}')
 
-    if map == True:
-        new_df, second_min, current_max = map_to_range_in_dataframe(new_df, 'weight')
-        new_df['weight'] = df.parallel_apply(apply_linear_transformation, axis=1, second_min=second_min, current_max= current_max)
-
-        c_max = df['weight'].max()
-        c_min = df['weight'].min()
-
-        t3 = time.time()
-        print(f'second weights {t3-t2}')
-
-        print(c_min, c_max)
-        exit(0)
-
-
     return new_df
+
+
+
+
+
 
 def calculate_weight(row, weights, scale, shift):
     # Assuming weights is a list or array containing the coefficients for linear combination
@@ -271,31 +263,6 @@ def calculate_weight(row, weights, scale, shift):
 
 
     return weight
-
-def apply_linear_transformation(row, second_min, current_max):
-    new_max = 10
-    new_min = 1
-
-    weight = row['weight']
-    new_weight = ((weight- second_min) * (new_max - new_min) / (current_max - second_min)) + new_min
-    return new_weight
-def map_to_range_in_dataframe(df, column_name):
-    # Filter out zeros
-
-    # Find the minimum and second minimum values
-    current_min = df[column_name].min()
-    second_min = df[df[column_name] > current_min][column_name].min()
-    current_max = df[column_name].max()
-
-
-    df.loc[df[column_name] == 0, column_name] = second_min
-    #     print(df)
-
-    return df, second_min, current_max
-    # # Apply the transformation to non-zero values
-    # df[column_name] = ((df[column_name] - second_min) * (new_max - new_min) / (current_max - second_min)) + new_min
-    # return df
-
 
 
 #Load igraph and nxgraph
@@ -665,7 +632,7 @@ def sweep_bi_feature(nx_Graph, iGraph, raw_df, best_found_res = 0.05):
         t0 = time.time()
         print(current_weighting)
 
-        result_df = apply_row_transformation(raw_df, current_weighting, 1, 48)
+        result_df = apply_feature_aggregation(raw_df, current_weighting, 1, 48)
 
         t1 = time.time()
         print(f'weights calculated {t1-t0}')
@@ -904,7 +871,11 @@ def sweep_topological_features_only(iGraph, nx_Graph, raw_df, best_found_res, bi
                         current_weights.append( (1-current_topo_feature_value)/3 )
 
             print(f"{len(current_weights)} {topo_features[specific_topo_feature_index]}{specific_topo_feature_index} {current_weights}")
-            addenum = f'{topo_features[specific_topo_feature_index]}_{current_topo_feature_value}_bias_{bias}.json'
+
+            # addenum = f'{topo_features[specific_topo_feature_index]}_{current_topo_feature_value}_bias_{bias}.json' for bias
+            addenum = f'{topo_features[specific_topo_feature_index]}_{current_topo_feature_value}.json'
+
+
             save_dir = f'{directory_to_save_results}{addenum}'
 
 
@@ -915,12 +886,103 @@ def sweep_topological_features_only(iGraph, nx_Graph, raw_df, best_found_res, bi
 
             standardize_clustering(iGraph, nx_Graph, raw_df, current_weights, best_found_res, bias, save_dir)
 
+def apply_weight_scaling(df, cores):
 
-# 118827
+    pandarallel.initialize(nb_workers=cores, progress_bar=False) # initialize(36) or initialize(os.cpu_count()-1)
+    t2 = time.time()
+    new_df, second_min, current_max = interval_mapping_preprocessing(df, 'weight')
+    t3 = time.time()
+
+    print(f'initial mapping preprocessing finished {t3-t2}')
+
+    new_df['weight'] = new_df.parallel_apply(apply_linear_transformation, axis=1, second_min=second_min, current_max= current_max) #ERRRRRR
+
+    c_max = new_df['weight'].max()
+    c_min = new_df['weight'].min()
+
+    t4 = time.time()
+
+    print(f'I calculated second weights {t4-t3}')
+
+    print(new_df.head(3))
+
+    print(c_min, c_max)
+    print()
+
+    return new_df
+
+def apply_linear_transformation(row, second_min, current_max):
+    new_max = 10
+    new_min = 1
+
+    weight = row['weight']
+    new_weight = ((weight- second_min) * (new_max - new_min) / (current_max - second_min)) + new_min
+    return new_weight
+
+def interval_mapping_preprocessing(df, column_name):
+    # Filter out zeros
+
+    # Find the minimum and second minimum values
+    current_min = df[column_name].min()
+    second_min = df[df[column_name] > current_min][column_name].min()
+    current_max = df[column_name].max()
+
+
+    df.loc[df[column_name] == 0, column_name] = second_min
+    #     print(df)
+
+    return df, second_min, current_max
+    # # Apply the transformation to non-zero values
+    # df[column_name] = ((df[column_name] - second_min) * (new_max - new_min) / (current_max - second_min)) + new_min
+    # return df
+
+
+
+def save_list_to_txt(lst, filename):
+    with open(filename, 'w') as file:
+        for item in lst:
+            file.write(f'{item}\n')
 
 def standardize_clustering(iGraph, nx_Graph, raw_df, current_weighting, best_found_res, bias, save_dir):
     t0 = time.time()
-    result_df = apply_row_transformation(raw_df, current_weighting, 1, bias, 24, map=True)
+
+    # df1 = apply_feature_aggregation(raw_df, current_weighting, 1, bias, 32)
+    # result_df = apply_weight_scaling(df1, 32)
+
+    weights_save_dir = 'files/temp/weights.txt'
+    save_list_to_txt(current_weighting, weights_save_dir)
+
+    # run_command = f'python transformation.py files/raw_features.h5 weight {",".join(weights_list_string)}'
+
+    cmd = ['python', 'transformation.py', 'files/raw_features.h5', f'weight']
+
+    subprocess.Popen(cmd).wait()
+
+
+    # run_command = f'python transformation.py files/temp/temp_storage.h5 scale'
+
+    cmd = ['python', 'transformation.py', 'files/temp/temp_storage.h5', f'scale']
+
+    subprocess.Popen(cmd).wait()
+
+    file_to_be_loaded = 'files/temp/temp_storage.h5'
+    result_df = pd.read_hdf(file_to_be_loaded, key='data')
+
+    print('now loaded df')
+    print(result_df.head(10))
+    c_max = result_df['weight'].max()
+    c_min = result_df['weight'].min()
+
+    print(f'extracted {c_min} {c_max}')
+    print(f'extracted len {len(result_df)}')
+
+
+
+
+
+
+#    kiiiir
+
 
     t1 = time.time()
     print(f'weights calculated {t1-t0}')
@@ -999,10 +1061,14 @@ if __name__ == '__main__': # 248213
 
     df = pd.read_hdf(name, key='data')
     print('loaded df')
-    G_nx, H_ig = load_graphs( nx_path, ig_path)
+    # G_nx, H_ig = load_graphs( nx_path, ig_path)
+    G_nx = None
+    H_ig = None
+    #WARNING
     print('loaded graphs')
 
-    saving_dir = f"files/results/topo_only_individual_sweep_with_bias/"
+    # saving_dir = f"files/results/topo_only_individual_sweep_with_bias/"
+    saving_dir = f"files/results/topo_only_scale_1_10/"
     sweep_topological_features_only(iGraph=H_ig, nx_Graph=G_nx, raw_df=df, best_found_res=0.05, bias=0.005, points=8, directory_to_save_results=saving_dir)
     exit(0)
 
@@ -1023,7 +1089,6 @@ if __name__ == '__main__': # 248213
     result_df = apply_row_transformation(df, weights, scale_factor)
     t2 = time.time()
 
-    # print(result_df.head())
     print(f'Calculate weights: {t2-t1}')
 
 

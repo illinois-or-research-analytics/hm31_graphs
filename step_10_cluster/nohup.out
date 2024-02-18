@@ -1,0 +1,9 @@
+loaded df
+loaded graphs
+7 cocitation_jaccard2 [0, 0, 0.0, 0.3333333333333333, 0.3333333333333333, 0.3333333333333333, 0]
+INFO: Pandarallel will run on 12 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+init weights 316.81116127967834
+INFO: Pandarallel will run on 12 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+initial mapping preprocessing finished 2.7591567039489746

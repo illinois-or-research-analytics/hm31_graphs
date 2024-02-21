@@ -5,15 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/step_10_cluster/CENM_dir/._SUCCESS.crc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_10_cluster/CENM_dir/.part-00000-9a7ba0f7-02be-4cc3-9005-7fa2e816adbb-c000.csv.crc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_10_cluster/CENM_dir/_SUCCESS" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_10_cluster/CENM_dir/part-00000-9a7ba0f7-02be-4cc3-9005-7fa2e816adbb-c000.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/step_10_cluster/transformation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/.nohup.out.swm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/.nohup.out.swn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/figures/topo_only_scale_1_10/_bib_frequency_coverage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/figures/topo_only_scale_1_10/_bib_frequency_cpm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/figures/topo_only_scale_1_10/_cocitation_frequency_coverage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/figures/topo_only_scale_1_10/_cocitation_frequency_cpm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/figures/topo_only_scale_1_10/_cocitation_jaccard_coverage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/figures/topo_only_scale_1_10/_cocitation_jaccard_cpm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/figures/topo_only_scale_1_10/_unweighted_cpm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/step_10_cluster/nohup_bib_freq.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/step_10_cluster/nohup.out" beforeDir="false" afterPath="$PROJECT_DIR$/step_10_cluster/nohup.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_10_cluster/transformation.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_10_cluster/transformation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/step_10_cluster/weighting_clustering_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_10_cluster/weighting_clustering_pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/step_10_cluster/yasi.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_10_cluster/yasi.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +43,7 @@
     <setting file="file://$PROJECT_DIR$/venv/lib64/python3.6/site-packages/leidenalg/functions.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/venv/lib64/python3.6/site-packages/pandas/io/pytables.py" root0="SKIP_INSPECTION" />
     <setting file="file:///usr/lib64/python3.6/multiprocessing/pool.py" root0="SKIP_INSPECTION" />
+    <setting file="file:///usr/lib64/python3.6/subprocess.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -83,7 +89,7 @@
       <window_info id="Commit_Guest" />
       <window_info id="Pull Requests" />
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77446485" visible="true" weight="0.14675677" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77446485" visible="true" weight="0.22405407" />
       <window_info id="Commit" order="1" weight="0.26513514" />
       <window_info id="Structure" order="2" sideWeight="0.22553515" side_tool="true" weight="0.37421876" />
       <window_info anchor="bottom" id="DataprocToolWindow" />
@@ -94,19 +100,19 @@
       <window_info anchor="bottom" id="TODO" />
       <window_info anchor="bottom" id="File Transfer" />
       <window_info anchor="bottom" id="Python Console" weight="0.3300926" />
-      <window_info active="true" anchor="bottom" id="Run" visible="true" weight="0.33665717" />
+      <window_info active="true" anchor="bottom" id="Run" visible="true" weight="0.3471035" />
       <window_info anchor="bottom" id="HiveToolWindow" />
       <window_info anchor="bottom" id="GlueToolWindow" />
       <window_info anchor="bottom" id="EmrToolWindow" />
       <window_info anchor="bottom" id="Find" weight="0.3300095" />
       <window_info anchor="bottom" id="Jupyter" weight="0.3273148" />
       <window_info anchor="bottom" id="SparkMonitoringToolWindow" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Problems View" order="1" weight="0.33665717" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.25593543" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.44017094" />
-      <window_info anchor="bottom" id="Services" order="4" weight="0.2568851" />
-      <window_info anchor="right" id="Plots" weight="0.4564865" />
+      <window_info anchor="bottom" id="Version Control" order="0" weight="0.34520417" />
+      <window_info anchor="bottom" id="Problems View" order="1" weight="0.34520417" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.3471035" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3300095" />
+      <window_info anchor="bottom" id="Services" order="4" weight="0.34520417" />
+      <window_info anchor="right" id="Plots" visible="true" weight="0.35594594" />
       <window_info anchor="right" id="Endpoints" />
       <window_info anchor="right" id="BigDataToolWindow" />
       <window_info anchor="right" id="SciView" />
@@ -416,11 +422,27 @@
       <workItem from="1708144256208" duration="598000" />
       <workItem from="1708145932912" duration="598000" />
       <workItem from="1708180598796" duration="1209000" />
+      <workItem from="1708300896519" duration="772000" />
+      <workItem from="1708350338656" duration="1209000" />
+      <workItem from="1708369829163" duration="598000" />
+      <workItem from="1708377162476" duration="762000" />
+      <workItem from="1708389205393" duration="2304000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -445,7 +467,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/step_1$weighting_clustering_pipeline.coverage" NAME="weighting_clustering_pipeline Coverage Results" MODIFIED="1708291832430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/step_10_cluster" />
+    <SUITE FILE_PATH="coverage/step_1$weighting_clustering_pipeline.coverage" NAME="weighting_clustering_pipeline Coverage Results" MODIFIED="1708540778616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/step_10_cluster" />
     <SUITE FILE_PATH="coverage/step_1$create_metrices.coverage" NAME="create_metrices Coverage Results" MODIFIED="1694459090277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/step_1" />
     <SUITE FILE_PATH="coverage/step_1$main.coverage" NAME="main Coverage Results" MODIFIED="1695254460995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/step_2" />
     <SUITE FILE_PATH="coverage/step_1$load_data.coverage" NAME="load_data Coverage Results" MODIFIED="1693093204189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

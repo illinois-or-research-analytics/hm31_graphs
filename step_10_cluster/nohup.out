@@ -1,9 +1,18 @@
+File name: files/raw_features.h5
+Function name: weight
 loaded df
-loaded graphs
-7 cocitation_jaccard2 [0, 0, 0.0, 0.3333333333333333, 0.3333333333333333, 0.3333333333333333, 0]
-INFO: Pandarallel will run on 12 workers.
+inside weights
+retrieved weights [0.0, 0.0, 0.3333333333333333, 0.3333333333333333, 0.0, 0.3333333333333333, 0.0]
+INFO: Pandarallel will run on 32 workers.
 INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
-init weights 316.81116127967834
-INFO: Pandarallel will run on 12 workers.
+init weights 81.18587064743042
+
+File name: files/temp/temp_storage.h5
+Function name: scale
+loaded df
+scale
+INFO: Pandarallel will run on 32 workers.
 INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
-initial mapping preprocessing finished 2.7591567039489746
+initial mapping preprocessing finished 2.936934471130371
+I calculated second weights 28.018954515457153
+

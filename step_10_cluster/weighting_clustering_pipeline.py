@@ -301,7 +301,7 @@ def test():
 
 
 def leiden(iGraph, leiden_partition, pandas_df, resolution_parameter, seed=4311):
-
+    print('I am inside clustering')
     t1 = time.time()
     if leiden_partition=="Modularity":
         if pandas_df is None:
@@ -318,6 +318,7 @@ def leiden(iGraph, leiden_partition, pandas_df, resolution_parameter, seed=4311)
             part = la.find_partition(iGraph, la.CPMVertexPartition, seed= seed, weights=None, **kwargs)
 
         else:
+            print('I am doing weighted clustering ... :)')
             part = la.find_partition(iGraph, la.CPMVertexPartition, seed= seed, weights=pandas_df['weight'], **kwargs)
 
 
@@ -798,7 +799,7 @@ def plot_sweep_topological_features_only(result_dir, figure_save_dir_base):
 
 
 
-        plt.figure(figsize=(14, 10))  # Adjust the width and height as needed
+        plt.figure(figsize=(20, 10))  # Adjust the width and height as needed
 
         plt.plot(feature_values, cpm_10_array, 'o-', color='orange', linewidth=0.5, markersize=8, label='cpm10')
         plt.plot(feature_values, cpm_1_array, 'o-', color='blue', linewidth=0.5, markersize=8, label='cpm1')
@@ -838,8 +839,9 @@ def plot_sweep_topological_features_only(result_dir, figure_save_dir_base):
 
 
 
-def sweep_topological_features_only(iGraph, nx_Graph, raw_df, best_found_res, bias, directory_to_save_results, points = 8):
-    segments = np.linspace(0, 1, points + 1)
+def sweep_topological_features_only(iGraph, nx_Graph, best_found_res, bias, directory_to_save_results, points = 8):
+    segments = np.linspace(0, 1, points + 1) #WARNING: CHANGE THAT TO ACCOMPANY 1
+    segments = np.linspace(0, 0.875, points)
 
 
     # weight = scale*(row['year_similarity']* weights[0] + row['mesh_median']* weights[1]+
@@ -855,6 +857,10 @@ def sweep_topological_features_only(iGraph, nx_Graph, raw_df, best_found_res, bi
     semantic_indices = [0, 1, 6]
 
     for specific_topo_feature_index in topological_indices:
+
+        #WARNING
+        # if specific_topo_feature_index == 4:
+        #     continue
 
         for current_topo_feature_value in segments:
             current_weights = []
@@ -880,11 +886,16 @@ def sweep_topological_features_only(iGraph, nx_Graph, raw_df, best_found_res, bi
 
 
             current_files = os.listdir(directory_to_save_results)
+
+            # print(f'curremt files {current_files}')
+            # print(f'addenum  {addenum}')
+            # print(f'exist  {addenum in current_files}')
+
             if addenum in current_files:
-                print('skipped')
+                print('skipped \n')
                 continue
 
-            standardize_clustering(iGraph, nx_Graph, raw_df, current_weights, best_found_res, bias, save_dir)
+            standardize_clustering(iGraph, nx_Graph, current_weights, best_found_res, save_dir)
 
 def apply_weight_scaling(df, cores):
 
@@ -943,7 +954,7 @@ def save_list_to_txt(lst, filename):
         for item in lst:
             file.write(f'{item}\n')
 
-def standardize_clustering(iGraph, nx_Graph, raw_df, current_weighting, best_found_res, bias, save_dir):
+def standardize_clustering(iGraph, nx_Graph, current_weighting, best_found_res, save_dir):
     t0 = time.time()
 
     # df1 = apply_feature_aggregation(raw_df, current_weighting, 1, bias, 32)
@@ -952,14 +963,12 @@ def standardize_clustering(iGraph, nx_Graph, raw_df, current_weighting, best_fou
     weights_save_dir = 'files/temp/weights.txt'
     save_list_to_txt(current_weighting, weights_save_dir)
 
-    # run_command = f'python transformation.py files/raw_features.h5 weight {",".join(weights_list_string)}'
 
     cmd = ['python', 'transformation.py', 'files/raw_features.h5', f'weight']
 
     subprocess.Popen(cmd).wait()
 
 
-    # run_command = f'python transformation.py files/temp/temp_storage.h5 scale'
 
     cmd = ['python', 'transformation.py', 'files/temp/temp_storage.h5', f'scale']
 
@@ -967,21 +976,6 @@ def standardize_clustering(iGraph, nx_Graph, raw_df, current_weighting, best_fou
 
     file_to_be_loaded = 'files/temp/temp_storage.h5'
     result_df = pd.read_hdf(file_to_be_loaded, key='data')
-
-    print('now loaded df')
-    print(result_df.head(10))
-    c_max = result_df['weight'].max()
-    c_min = result_df['weight'].min()
-
-    print(f'extracted {c_min} {c_max}')
-    print(f'extracted len {len(result_df)}')
-
-
-
-
-
-
-#    kiiiir
 
 
     t1 = time.time()
@@ -1043,15 +1037,15 @@ if __name__ == '__main__': # 248213
     # spark.sparkContext.setLogLevel("WARN")
     #
 
-    # result_dir = f"files/results/topo_only_individual_sweep_with_bias/"
-    # fig_dir = f"figures/topo_only_individual_sweep_with_bias/"
-    # plot_sweep_topological_features_only(result_dir, fig_dir)
-    # exit()
+    result_dir = f"files/results/topo_only_scale_1_10/"
+    fig_dir = f"figures/topo_only_scale_1_10/"
+    plot_sweep_topological_features_only(result_dir, fig_dir)
+    exit(0)
 
     # CPM_weighting_plotter()
     # CPM_gt10_plotter()
     #Lets switch to pandas from now on
-    # convert_pyspark_features_to_pandas(spark, name)
+    # convert_pyspark_features_to_pandas(spark, name) ASM
 
     ######################################## danger zone
     #weights, scale = handle_arguments()
@@ -1059,17 +1053,18 @@ if __name__ == '__main__': # 248213
     nx_path = f"files/graphs/base_nx.gpickle"
     ig_path = f"files/graphs/base_ig.pickle"
 
-    df = pd.read_hdf(name, key='data')
-    print('loaded df')
-    # G_nx, H_ig = load_graphs( nx_path, ig_path)
-    G_nx = None
-    H_ig = None
+    # df = pd.read_hdf(name, key='data')
+    # print('loaded df')
+    print('I am loading graphs')
+    G_nx, H_ig = load_graphs( nx_path, ig_path)
+    # G_nx = None
+    # H_ig = None
     #WARNING
     print('loaded graphs')
 
     # saving_dir = f"files/results/topo_only_individual_sweep_with_bias/"
     saving_dir = f"files/results/topo_only_scale_1_10/"
-    sweep_topological_features_only(iGraph=H_ig, nx_Graph=G_nx, raw_df=df, best_found_res=0.05, bias=0.005, points=8, directory_to_save_results=saving_dir)
+    sweep_topological_features_only(iGraph=H_ig, nx_Graph=G_nx, best_found_res=0.05, bias=0, points=8, directory_to_save_results=saving_dir)
     exit(0)
 
     # sweep_bi_feature(G_nx, H_ig, df, best_found_res = 0.05)

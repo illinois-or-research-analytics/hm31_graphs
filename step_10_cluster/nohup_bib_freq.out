@@ -1,0 +1,242 @@
+File name: files/raw_features.h5
+Function name: weight
+loaded df
+inside weights
+retrieved weights [0.0, 0.0, 0.2916666666666667, 0.2916666666666667, 0.2916666666666667, 0.125, 0.0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+init weights 82.22555351257324
+
+File name: files/temp/temp_storage.h5
+Function name: scale
+loaded df
+scale
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+initial mapping preprocessing finished 3.3201587200164795
+I calculated second weights 28.91743278503418
+
+I am loading graphs
+loaded graphs
+7 cocitation_jaccard2 [0, 0, 0.0, 0.3333333333333333, 0.3333333333333333, 0.3333333333333333, 0]
+skipped 
+
+7 cocitation_jaccard2 [0, 0, 0.125, 0.2916666666666667, 0.2916666666666667, 0.2916666666666667, 0]
+skipped 
+
+7 cocitation_jaccard2 [0, 0, 0.25, 0.25, 0.25, 0.25, 0]
+skipped 
+
+7 cocitation_jaccard2 [0, 0, 0.375, 0.20833333333333334, 0.20833333333333334, 0.20833333333333334, 0]
+skipped 
+
+7 cocitation_jaccard2 [0, 0, 0.5, 0.16666666666666666, 0.16666666666666666, 0.16666666666666666, 0]
+skipped 
+
+7 cocitation_jaccard2 [0, 0, 0.625, 0.125, 0.125, 0.125, 0]
+skipped 
+
+7 cocitation_jaccard2 [0, 0, 0.75, 0.08333333333333333, 0.08333333333333333, 0.08333333333333333, 0]
+skipped 
+
+7 cocitation_jaccard2 [0, 0, 0.875, 0.041666666666666664, 0.041666666666666664, 0.041666666666666664, 0]
+skipped 
+
+7 cocitation_frequency3 [0, 0, 0.3333333333333333, 0.0, 0.3333333333333333, 0.3333333333333333, 0]
+skipped 
+
+7 cocitation_frequency3 [0, 0, 0.2916666666666667, 0.125, 0.2916666666666667, 0.2916666666666667, 0]
+skipped 
+
+7 cocitation_frequency3 [0, 0, 0.25, 0.25, 0.25, 0.25, 0]
+skipped 
+
+7 cocitation_frequency3 [0, 0, 0.20833333333333334, 0.375, 0.20833333333333334, 0.20833333333333334, 0]
+skipped 
+
+7 cocitation_frequency3 [0, 0, 0.16666666666666666, 0.5, 0.16666666666666666, 0.16666666666666666, 0]
+skipped 
+
+7 cocitation_frequency3 [0, 0, 0.125, 0.625, 0.125, 0.125, 0]
+skipped 
+
+7 cocitation_frequency3 [0, 0, 0.08333333333333333, 0.75, 0.08333333333333333, 0.08333333333333333, 0]
+skipped 
+
+7 cocitation_frequency3 [0, 0, 0.041666666666666664, 0.875, 0.041666666666666664, 0.041666666666666664, 0]
+skipped 
+
+7 bib_frequency5 [0, 0, 0.3333333333333333, 0.3333333333333333, 0.3333333333333333, 0.0, 0]
+skipped 
+
+7 bib_frequency5 [0, 0, 0.2916666666666667, 0.2916666666666667, 0.2916666666666667, 0.125, 0]
+weights calculated 127.83671498298645
+I am inside clustering
+I am doing weighted clustering ... :)
+clustering 604.9913563728333
+clustered 604.991471529007
+cpm1 1005.3020579814911
+File name: files/raw_features.h5
+Function name: weight
+loaded df
+inside weights
+retrieved weights [0.0, 0.0, 0.25, 0.25, 0.25, 0.25, 0.0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+init weights 84.31177473068237
+
+File name: files/temp/temp_storage.h5
+Function name: scale
+loaded df
+scale
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+initial mapping preprocessing finished 3.033097982406616
+I calculated second weights 29.21527600288391
+
+cpm10 1035.6640405654907
+
+7 bib_frequency5 [0, 0, 0.25, 0.25, 0.25, 0.25, 0]
+weights calculated 130.8800084590912
+I am inside clustering
+I am doing weighted clustering ... :)
+clustering 611.0764372348785
+clustered 611.0765650272369
+cpm1 1038.7611284255981
+File name: files/raw_features.h5
+Function name: weight
+loaded df
+inside weights
+retrieved weights [0.0, 0.0, 0.20833333333333334, 0.20833333333333334, 0.20833333333333334, 0.375, 0.0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+init weights 83.736403465271
+
+File name: files/temp/temp_storage.h5
+Function name: scale
+loaded df
+scale
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+initial mapping preprocessing finished 2.940807819366455
+I calculated second weights 28.518574714660645
+
+cpm10 1090.9384202957153
+
+7 bib_frequency5 [0, 0, 0.20833333333333334, 0.20833333333333334, 0.20833333333333334, 0.375, 0]
+weights calculated 128.42979407310486
+I am inside clustering
+I am doing weighted clustering ... :)
+clustering 595.2148089408875
+clustered 595.2150285243988
+cpm1 1101.6060893535614
+File name: files/raw_features.h5
+Function name: weight
+loaded df
+inside weights
+retrieved weights [0.0, 0.0, 0.16666666666666666, 0.16666666666666666, 0.16666666666666666, 0.5, 0.0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+init weights 81.33832621574402
+
+File name: files/temp/temp_storage.h5
+Function name: scale
+loaded df
+scale
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+initial mapping preprocessing finished 2.934859037399292
+I calculated second weights 29.159394025802612
+
+cpm10 1210.6530513763428
+
+7 bib_frequency5 [0, 0, 0.16666666666666666, 0.16666666666666666, 0.16666666666666666, 0.5, 0]
+weights calculated 127.73784685134888
+I am inside clustering
+I am doing weighted clustering ... :)
+clustering 618.4652199745178
+clustered 618.4653632640839
+cpm1 1112.1527094841003
+File name: files/raw_features.h5
+Function name: weight
+loaded df
+inside weights
+retrieved weights [0.0, 0.0, 0.125, 0.125, 0.125, 0.625, 0.0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+init weights 81.03122758865356
+
+File name: files/temp/temp_storage.h5
+Function name: scale
+loaded df
+scale
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+initial mapping preprocessing finished 3.211024761199951
+I calculated second weights 28.608595848083496
+
+cpm10 1098.965215921402
+
+7 bib_frequency5 [0, 0, 0.125, 0.125, 0.125, 0.625, 0]
+weights calculated 126.06569266319275
+I am inside clustering
+I am doing weighted clustering ... :)
+clustering 670.1752047538757
+clustered 670.1753985881805
+cpm1 1116.988687992096
+File name: files/raw_features.h5
+Function name: weight
+loaded df
+inside weights
+retrieved weights [0.0, 0.0, 0.08333333333333333, 0.08333333333333333, 0.08333333333333333, 0.75, 0.0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+init weights 81.02159929275513
+
+File name: files/temp/temp_storage.h5
+Function name: scale
+loaded df
+scale
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+initial mapping preprocessing finished 3.159248113632202
+I calculated second weights 29.649139642715454
+
+cpm10 1087.998498916626
+
+7 bib_frequency5 [0, 0, 0.08333333333333333, 0.08333333333333333, 0.08333333333333333, 0.75, 0]
+weights calculated 129.64267349243164
+I am inside clustering
+I am doing weighted clustering ... :)
+clustering 629.1316387653351
+clustered 629.1318702697754
+cpm1 1178.3102281093597
+File name: files/raw_features.h5
+Function name: weight
+loaded df
+inside weights
+retrieved weights [0.0, 0.0, 0.041666666666666664, 0.041666666666666664, 0.041666666666666664, 0.875, 0.0]
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+init weights 85.1400363445282
+
+File name: files/temp/temp_storage.h5
+Function name: scale
+loaded df
+scale
+INFO: Pandarallel will run on 32 workers.
+INFO: Pandarallel will use Memory file system to transfer data between the main process and workers.
+initial mapping preprocessing finished 3.111513614654541
+I calculated second weights 29.049741506576538
+
+cpm10 1113.9104733467102
+
+7 bib_frequency5 [0, 0, 0.041666666666666664, 0.041666666666666664, 0.041666666666666664, 0.875, 0]
+weights calculated 137.4298861026764
+I am inside clustering
+I am doing weighted clustering ... :)
+clustering 616.993236541748
+clustered 616.9934980869293
+cpm1 1188.0950238704681
+cpm10 1127.0048942565918
+

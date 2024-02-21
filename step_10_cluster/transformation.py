@@ -58,16 +58,16 @@ def apply_weight_scaling(df, cores):
 
     new_df['weight'] = new_df.parallel_apply(apply_linear_transformation, axis=1, second_min=second_min, current_max= current_max) #ERRRRRR
 
-    c_max = new_df['weight'].max()
-    c_min = new_df['weight'].min()
+    # c_max = new_df['weight'].max()
+    # c_min = new_df['weight'].min()
 
     t4 = time.time()
 
     print(f'I calculated second weights {t4-t3}')
 
-    print(new_df.head(3))
-
-    print(c_min, c_max)
+    # print(new_df.head(3))
+    #
+    # print(c_min, c_max)
     print()
 
     return new_df
@@ -126,7 +126,7 @@ if __name__ == "__main__":
         print(f'retrieved weights {weights}')
 
         new_df = apply_feature_aggregation(df=loaded_df, weights=weights, scale=1, shift=0,cores=32)
-        print(new_df.head(10))
+        # print(new_df.head(10))
         print()
 
     elif 'scale' in function_name:

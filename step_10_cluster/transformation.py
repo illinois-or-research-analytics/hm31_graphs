@@ -125,13 +125,13 @@ if __name__ == "__main__":
 
         print(f'retrieved weights {weights}')
 
-        new_df = apply_feature_aggregation(df=loaded_df, weights=weights, scale=1, shift=0,cores=32)
+        new_df = apply_feature_aggregation(df=loaded_df, weights=weights, scale=1, shift=0,cores=24)
         # print(new_df.head(10))
         print()
 
     elif 'scale' in function_name:
         print('scale')
-        new_df= apply_weight_scaling(df=loaded_df, cores=32)
+        new_df= apply_weight_scaling(df=loaded_df, cores=24)
 
     save_dir = 'files/temp/temp_storage.h5'
     new_df.to_hdf(save_dir, key='data', mode='w')

@@ -859,8 +859,8 @@ def sweep_topological_features_only(iGraph, nx_Graph, best_found_res, bias, dire
     for specific_topo_feature_index in topological_indices:
 
         #WARNING
-        # if specific_topo_feature_index == 4:
-        #     continue
+        if specific_topo_feature_index != 4:
+            continue
 
         for current_topo_feature_value in segments:
             current_weights = []
@@ -875,6 +875,10 @@ def sweep_topological_features_only(iGraph, nx_Graph, best_found_res, bias, dire
 
                     else:
                         current_weights.append( (1-current_topo_feature_value)/3 )
+
+            #WARNING
+            if current_weights[4] < 0.629:
+                continue
 
             print(f"{len(current_weights)} {topo_features[specific_topo_feature_index]}{specific_topo_feature_index} {current_weights}")
 
@@ -1037,10 +1041,10 @@ if __name__ == '__main__': # 248213
     # spark.sparkContext.setLogLevel("WARN")
     #
 
-    result_dir = f"files/results/topo_only_scale_1_10/"
-    fig_dir = f"figures/topo_only_scale_1_10/"
-    plot_sweep_topological_features_only(result_dir, fig_dir)
-    exit(0)
+    # result_dir = f"files/results/topo_only_scale_1_10/"
+    # fig_dir = f"figures/topo_only_scale_1_10/"
+    # plot_sweep_topological_features_only(result_dir, fig_dir)
+    # exit(0)
 
     # CPM_weighting_plotter()
     # CPM_gt10_plotter()

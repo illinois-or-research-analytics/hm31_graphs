@@ -1041,10 +1041,10 @@ if __name__ == '__main__': # 248213
     # spark.sparkContext.setLogLevel("WARN")
     #
 
-    # result_dir = f"files/results/topo_only_scale_1_10/"
-    # fig_dir = f"figures/topo_only_scale_1_10/"
-    # plot_sweep_topological_features_only(result_dir, fig_dir)
-    # exit(0)
+    result_dir = f"files/results/topo_only_scale_1_10/"
+    fig_dir = f"figures/topo_only_scale_1_10/"
+    plot_sweep_topological_features_only(result_dir, fig_dir)
+    exit(0)
 
     # CPM_weighting_plotter()
     # CPM_gt10_plotter()

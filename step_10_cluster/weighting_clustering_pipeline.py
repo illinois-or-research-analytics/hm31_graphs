@@ -1135,6 +1135,15 @@ if __name__ == '__main__': # 248213
 
     result_dir = f"files/results/topo_only_scale_1_10/"
     fig_dir = f"figures/topo_only_scale_1_10/"
+
+    result_dir = f"files/results/topo_only_individual_sweep/"
+    fig_dir = f"figures/topo_only_individual_sweep/"
+
+
+    # result_dir = f"files/results/topo_only_individual_sweep_with_bias/"
+    # fig_dir = f"figures/topo_only_individual_sweep_with_bias/"
+    #
+
     plot_sweep_topological_features_only(result_dir, fig_dir)
     exit(0)
 

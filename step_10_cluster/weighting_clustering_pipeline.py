@@ -634,9 +634,8 @@ def CPM_gt10_plotter(files_dir = 'files/results/sweeping_res_constant_weight/clu
         coverage10_list.append(cov10)
 
 
-    plt.rcParams.update({'font.size': 16})  # Adjust the font size as needed
+    plt.rcParams.update({'font.size': 18})  # Adjust the font size as needed
 
-    #kiiiiiir
     print(gt10)
     print(x_label)
 
@@ -856,21 +855,26 @@ def plot_sweep_topological_features_only(result_dir, figure_save_dir_base):
         uw_cpm_1 = clustering_dict_loaded_unweighted['stats']['cpm1']
 
         # figure_save_dir_base = 'figures/topo_only_individual_sweep/'
-        plt.figure(figsize=(18, 10))  # Adjust the width and height as needed
+        plt.figure(figsize=(14, 10))  # Adjust the width and height as needed
 
 
         plt.plot(feature_values, coverage_10_array, 'o-', color='orange', linewidth=0.5, markersize=8, label='Coverage10 %')
         plt.plot(feature_values, coverage_1_array, 'o-', color='blue', linewidth=0.5, markersize=8, label='Coverage1 %')
 
+        ft = feature.split('_')
+        ft0 = ft[0][0].upper() + ft[0][1:]
 
-        plt.xlabel(f'{feature} values')
-        plt.ylabel('Coverage %')
 
-        if contains_bias == False:
-            plt.title(f'Coverage for sweeping {feature}, zero semantic')
+        ft_str = ft0 + ' ' + ft[1]
 
-        else:
-            plt.title(f'Coverage for sweeping {feature}, zero semantic and bias {bias}')
+        plt.xlabel(f'{ft_str} values', fontsize = 24)
+        plt.ylabel('Coverage %', fontsize = 24)
+
+        # if contains_bias == False:
+        #     plt.title(f'Coverage for sweeping {feature}, zero semantic')
+        #
+        # else:
+        #     plt.title(f'Coverage for sweeping {feature}, zero semantic and bias {bias}')
 
         plt.xticks(feature_values)
         # Show legend
@@ -884,15 +888,15 @@ def plot_sweep_topological_features_only(result_dir, figure_save_dir_base):
 
 
 
-        plt.figure(figsize=(20, 10))  # Adjust the width and height as needed
+        plt.figure(figsize=(14, 10))  # Adjust the width and height as needed
 
         plt.plot(feature_values, cpm_10_array, 'o-', color='orange', linewidth=0.5, markersize=8, label='cpm10')
         plt.plot(feature_values, cpm_1_array, 'o-', color='blue', linewidth=0.5, markersize=8, label='cpm1')
 
 
-        plt.xlabel(f'{feature} values')
-        plt.ylabel('cpm')
-        plt.title(f'cpm for sweeping {feature} and zero semantic')
+        plt.xlabel(f'{ft_str} values', fontsize = 24)
+        plt.ylabel('CPM', fontsize = 24)
+        # plt.title(f'cpm for sweeping {feature} and zero semantic')
         plt.xticks(feature_values)
         plt.legend()
 
@@ -1113,10 +1117,10 @@ def standardize_clustering(iGraph, nx_Graph, current_weighting, best_found_res, 
 
 
 if __name__ == '__main__': # 248213
-    CPM_gt10_plotter()
-    exit(0)
-    record_final_statistics('files/results/topo_only_scale_1_10')
-    exit(0)
+    # CPM_gt10_plotter()
+    # exit(0)
+    # record_final_statistics('files/results/topo_only_scale_1_10')
+    # exit(0)
     # clustering_dir = 'files/clusterings/'
     # CPM_gt10_plotter(clustering_dir)
 

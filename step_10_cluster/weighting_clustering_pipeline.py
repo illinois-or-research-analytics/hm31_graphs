@@ -109,6 +109,81 @@ def handle_arguments():
 
     return weights, scale
 
+
+
+def record_final_statistics(result_dir):
+    files = os.listdir(result_dir)
+
+    feature_of_interest = 'cocitation_frequency'
+
+    to_be_considered = []
+
+
+    for file in files:
+
+        if feature_of_interest in file and not 'swp' in file: #only take jsons
+            to_be_considered.append(file)
+
+    to_be_considered.sort()
+
+    print(to_be_considered)
+    for current_file in to_be_considered:
+        stats = []
+        print(current_file)
+        with open(f'{result_dir}/{current_file}', 'r') as file:
+            data_dict = json.load(file)
+
+        clusters = data_dict['clusters']
+        sing = 0
+
+        print(to_be_considered)
+
+        total = 0
+
+        clus = 0
+        clus10 = 0
+
+        for cluster_tag, cluster_array in clusters.items():
+            total += len(cluster_array)
+
+            if len(cluster_array) > 1:
+                stats.append(len(cluster_array))
+                clus += 1
+
+            else:
+                sing += 1
+
+            if len(cluster_array) > 10:
+                clus10 += 1
+
+
+
+            # Calculate Q1 (first quartile)
+        Q1 = np.percentile(stats, 25)
+        # Calculate Q3 (third quartile)
+        Q3 = np.percentile(stats, 75)
+        median = np.median(stats)
+        minimum = min(stats)
+        maximum = max(stats)
+        cov1 = data_dict['stats']['cov1']
+        cov10 = data_dict['stats']['cov10']
+
+
+
+
+        temp_dict = {'Q1': Q1, 'Q3':Q3, 'median':median, 'min':minimum, 'max':maximum, 'cov1':cov1, 'cov10':cov10, 'singleton':sing, 'current_file':current_file}
+        print(temp_dict)
+
+
+
+
+
+
+
+
+
+
+
 def record_clustering_statistics(clustering_dict, nx_Graph, discard_singletons = True, load = False, file_name = None):
 
     if load == False:
@@ -561,23 +636,33 @@ def CPM_gt10_plotter(files_dir = 'files/results/sweeping_res_constant_weight/clu
 
     plt.rcParams.update({'font.size': 16})  # Adjust the font size as needed
 
-
+    #kiiiiiir
     print(gt10)
     print(x_label)
 
+
+    x_min = min(x_label)
+    x_max = max(x_label)
+
+    # Define the number of intervals (e.g., 10 intervals)
+    num_intervals = 10
+
+    # Generate static x-labels
+    static_x_labels = np.linspace(x_min, x_max, num_intervals)
+
     base_dir = 'figures/res_sweep_constant_weights/'
 
-    plt.figure(figsize=(40, 10))  # Adjust the width and height as needed
+    plt.figure(figsize=(14, 10))  # Adjust the width and height as needed
 
     plt.plot(x_label, gt10, 'o-', linewidth=0.5, markersize=8)
 
     # Set labels and title
-    plt.xlabel('Log10 resolution value')
-    plt.ylabel('Log10 number of clusters of size > 10')
-    plt.title('Log10 Clusters greater than 10 with respect to CPM resolution value')
-    plt.xticks(x_label)
+    plt.xlabel('Log10 resolution value', fontsize = 20)
+    plt.ylabel('Log10 Clus10', fontsize = 20)
+    # plt.title('Log10 Clusters greater than 10 with respect to CPM resolution value')
+    plt.xticks(static_x_labels)
     # Save the plot as an image file (e.g., PNG)
-    plt.savefig(f'{base_dir}cpm_gt_10.png')
+    plt.savefig(f'{base_dir}cpm_gt_10_new.png')
 
     # Show the plot
     plt.show()
@@ -585,20 +670,20 @@ def CPM_gt10_plotter(files_dir = 'files/results/sweeping_res_constant_weight/clu
 
 
 
-    plt.figure(figsize=(40, 10))  # Adjust the width and height as needed
+    plt.figure(figsize=(14, 10))  # Adjust the width and height as needed
 
     plt.plot(x_label, coverage10_list, 'o-', color='orange', linewidth=0.5, markersize=8, label='Coverage10 %')
     plt.plot(x_label, coverage1_list, 'o-', color='blue', linewidth=0.5, markersize=8, label='Coverage1 %')
 
-    plt.xlabel('Log10 resolution value')
-    plt.ylabel('Coverage %')
-    plt.title('Coverage % for different resolution values and constant weights')
-    plt.xticks(x_label)
+    plt.xlabel('Log10 resolution value', fontsize = 20)
+    plt.ylabel('Coverage %', fontsize = 20)
+    #plt.title('Coverage % for different resolution values and constant weights')
+    plt.xticks(static_x_labels)
     # Show legend
     plt.legend()
 
     # Save the plot as an image file (e.g., PNG)
-    plt.savefig(f'{base_dir}res_sweep_node_coverage.png')
+    plt.savefig(f'{base_dir}res_sweep_node_coverage_new.png')
 
     # Show the plot
     plt.show()
@@ -1028,7 +1113,10 @@ def standardize_clustering(iGraph, nx_Graph, current_weighting, best_found_res, 
 
 
 if __name__ == '__main__': # 248213
-
+    CPM_gt10_plotter()
+    exit(0)
+    record_final_statistics('files/results/topo_only_scale_1_10')
+    exit(0)
     # clustering_dir = 'files/clusterings/'
     # CPM_gt10_plotter(clustering_dir)
 

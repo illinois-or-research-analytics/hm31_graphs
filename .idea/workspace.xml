@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="" />
+    <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/step_11_semantic_analysis/semantic_evaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_11_semantic_analysis/semantic_evaluator.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

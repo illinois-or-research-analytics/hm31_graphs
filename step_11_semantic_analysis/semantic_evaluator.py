@@ -10,6 +10,8 @@ import json
 from multiprocessing import Manager, Pool, cpu_count
 from itertools import starmap
 import tqdm
+import matplotlib.pyplot as plt
+
 
 # Set the PGDATABASE environment variable
 os.environ["PGDATABASE"] = "ernieplus"
@@ -81,12 +83,13 @@ if __name__ == "__main__":
     manager = Manager()
     manager_dict = manager.dict()
 
+    total = 0
 
     for cluster_name, cluster_list in clusters.items():
-        if len(cluster_list) > 100:
+        if len(cluster_list) > 50:
             arguments.append((cluster_list, idx, manager_dict))
             idx += 1
-
+            total += len(cluster_list)
 
 
 
@@ -95,11 +98,37 @@ if __name__ == "__main__":
 
     start = time.time()
 
-    # inputs = zip(f, s, t)
     with Pool(8) as pool:
         results = pool.starmap(wrapper, tqdm.tqdm(arguments, total=len(arguments)))
 
+    obtained_total = 0
+
+    cluster_sizes = []
+    avg_similarity = []
+
+    for key, value in manager_dict.items():
+        obtained_total += value[-1]
+        cluster_sizes.append(value[-1])
+        avg_similarity.append(value[0])
+
+    print(obtained_total, total)
+
+    plt.scatter(cluster_sizes, avg_similarity, c='blue', marker='o', alpha=0.7)
+
+    # Add labels and title
+    plt.xlabel('Cluster sizes')
+    plt.ylabel('Average similarity')
+    plt.title('Scatter Plot of Similarity vs Cluster size')
+
+    plt.show()
+    plt.savefig('similarity_vs_cluster_size.png')
+
+
     end = time.time()
+
+
+
+
 
 
     #estimate: ~ 1.5 hr

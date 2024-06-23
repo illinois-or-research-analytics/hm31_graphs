@@ -86,7 +86,7 @@ if __name__ == "__main__":
     total = 0
 
     for cluster_name, cluster_list in clusters.items():
-        if len(cluster_list) > 50:
+        if len(cluster_list) > 10:
             arguments.append((cluster_list, idx, manager_dict))
             idx += 1
             total += len(cluster_list)
@@ -98,7 +98,7 @@ if __name__ == "__main__":
 
     start = time.time()
 
-    with Pool(8) as pool:
+    with Pool(16) as pool:
         results = pool.starmap(wrapper, tqdm.tqdm(arguments, total=len(arguments)))
 
     obtained_total = 0
@@ -120,8 +120,8 @@ if __name__ == "__main__":
     plt.ylabel('Average similarity')
     plt.title('Scatter Plot of Similarity vs Cluster size')
 
-    plt.show()
-    # plt.savefig('similarity_vs_cluster_size.png')
+    # plt.show()
+    plt.savefig('similarity_vs_cluster_size_gt10.png')
 
 
     end = time.time()

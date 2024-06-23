@@ -121,7 +121,7 @@ if __name__ == "__main__":
     plt.title('Scatter Plot of Similarity vs Cluster size')
 
     plt.show()
-    plt.savefig('similarity_vs_cluster_size.png')
+    # plt.savefig('similarity_vs_cluster_size.png')
 
 
     end = time.time()

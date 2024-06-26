@@ -11,6 +11,8 @@ from multiprocessing import Manager, Pool, cpu_count
 from itertools import starmap
 import tqdm
 import matplotlib.pyplot as plt
+import networkx as nx
+
 
 
 # Set the PGDATABASE environment variable
@@ -57,11 +59,23 @@ def calculate_average_similarity(embedding_matrix):
     return average_similarity
 
 
-def wrapper(node_id_lst, cluster_index, manager_dict):
+def similarity_wrapper(node_id_lst, cluster_index, manager_dict):
     embeddings = fetch_embeddings_from_table(node_id_lst)
     average_similarity = calculate_average_similarity(embeddings)
 
     manager_dict[cluster_index] = (average_similarity, embeddings.shape[0])
+
+
+def calculate_single_community_degrees(nx_graph, community_nodes, manager_dict = None):
+    induced_community = nx.induced_subgraph(nx_graph, community_nodes)
+    degree_list = [d for n, d in induced_community.degree()]
+
+    manager_dict[community_nodes[0]] = degree_list
+
+
+def load_graphs( nx_path):
+    G_networkx = nx.read_gpickle(nx_path)
+    return G_networkx
 
 
 def read_json_clustering(file_path):
@@ -99,7 +113,7 @@ if __name__ == "__main__":
     start = time.time()
 
     with Pool(16) as pool:
-        results = pool.starmap(wrapper, tqdm.tqdm(arguments, total=len(arguments)))
+        results = pool.starmap(similarity_wrapper, tqdm.tqdm(arguments, total=len(arguments)))
 
     obtained_total = 0
 

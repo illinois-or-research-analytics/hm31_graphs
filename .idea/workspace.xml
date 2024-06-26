@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/step_11_semantic_analysis/similarity_vs_cluster_size_gt10.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/step_11_semantic_analysis/semantic_evaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_11_semantic_analysis/semantic_evaluator.py" afterDir="false" />
     </list>
@@ -91,7 +90,7 @@
       <window_info anchor="bottom" id="TODO" />
       <window_info anchor="bottom" id="File Transfer" />
       <window_info anchor="bottom" id="Python Console" weight="0.3300926" />
-      <window_info active="true" anchor="bottom" id="Run" visible="true" weight="0.3134259" />
+      <window_info active="true" anchor="bottom" id="Run" visible="true" weight="0.32146248" />
       <window_info anchor="bottom" id="HiveToolWindow" />
       <window_info anchor="bottom" id="GlueToolWindow" />
       <window_info anchor="bottom" id="EmrToolWindow" />
@@ -100,7 +99,7 @@
       <window_info anchor="bottom" id="SparkMonitoringToolWindow" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.34520417" />
       <window_info anchor="bottom" id="Problems View" order="1" weight="0.34520417" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.32146248" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.3134259" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3300095" />
       <window_info anchor="bottom" id="Services" order="4" weight="0.32146248" />
       <window_info anchor="right" id="Plots" weight="0.30783784" />

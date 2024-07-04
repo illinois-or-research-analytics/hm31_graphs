@@ -18,14 +18,15 @@ import networkx as nx
 # Set the PGDATABASE environment variable
 os.environ["PGDATABASE"] = "ernieplus"
 
-def fetch_embeddings_from_table(node_id_list):
+def fetch_embeddings_from_table(squashed_node_id_list):
     try:
+        squashed_node_id_list.sort()
         # Connect to the PostgreSQL database
         conn = psycopg2.connect("")
         cur = conn.cursor()
 
         # Convert the node_id_list to a batch query format
-        node_ids = ','.join(cur.mogrify("%s", (node_id,)).decode('utf-8') for node_id in node_id_list)
+        node_ids = ','.join(cur.mogrify("%s", (node_id,)).decode('utf-8') for node_id in squashed_node_id_list)
 
         table_name = 'hm31.cenm_squashed_cleaned_embeddings'
         # Execute the SELECT query to fetch the corresponding embeddings
@@ -51,12 +52,23 @@ def fetch_embeddings_from_table(node_id_list):
 
 
 def calculate_average_similarity(embedding_matrix):
-    A = np.matmul(embedding_matrix.transpose(), embedding_matrix)
-    lower_triangle = np.tril(A)
-    n = A.shape[1]
+    n = embedding_matrix.shape[0]
 
-    average_similarity = (2 * np.sum(lower_triangle))/(n*(n-1))
-    return average_similarity
+    if n < 100:
+        A = np.matmul(embedding_matrix, embedding_matrix.transpose())
+        lower_triangle = np.tril(A)
+
+
+        average_similarity = (2 * np.sum(lower_triangle))/(n*(n-1))
+        return average_similarity
+
+    else:
+        sum = 0
+        for i in range(n):
+            for j in range(i):
+                sum += np.matmul(embedding_matrix[i,:], embedding_matrix[j, :])
+        sum = (2* sum)/(n*(n-1))
+        return sum
 
 
 def similarity_wrapper(node_id_lst, cluster_index, manager_dict):
@@ -100,7 +112,7 @@ if __name__ == "__main__":
     total = 0
 
     for cluster_name, cluster_list in clusters.items():
-        if len(cluster_list) > 10:
+        if len(cluster_list) > 100:
             arguments.append((cluster_list, idx, manager_dict))
             idx += 1
             total += len(cluster_list)
@@ -125,7 +137,7 @@ if __name__ == "__main__":
         cluster_sizes.append(value[-1])
         avg_similarity.append(value[0])
 
-    print(obtained_total, total)
+    # print(obtained_total, total)
 
     plt.scatter(cluster_sizes, avg_similarity, c='blue', marker='o', alpha=0.7)
 
@@ -134,8 +146,8 @@ if __name__ == "__main__":
     plt.ylabel('Average similarity')
     plt.title('Scatter Plot of Similarity vs Cluster size')
 
-    # plt.show()
-    plt.savefig('similarity_vs_cluster_size_gt10.png')
+    plt.show()
+    # plt.savefig('similarity_vs_cluster_size_gt100.png')
 
 
     end = time.time()

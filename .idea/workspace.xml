@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a472373-387d-4838-88ee-523a748e715b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/step_11_semantic_analysis/similarity_vs_cluster_size_gt100.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/step_11_semantic_analysis/semantic_evaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/step_11_semantic_analysis/semantic_evaluator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step_11_semantic_analysis/similarity_vs_cluster_size_gt10.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,27 +52,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.Unnamed.executor": "Run",
-    "Python.semantic_evaluator.executor": "Run",
-    "Python.upload_mapping.executor": "Run",
-    "Python.weighting_clustering_pipeline.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/hm31/step_1/step_10_cluster/figures",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;Python.semantic_evaluator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.upload_mapping.executor&quot;: &quot;Run&quot;,
+    &quot;Python.weighting_clustering_pipeline.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/hm31/step_1/step_10_cluster/figures&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RdControllerToolWindowsLayoutState" isNewUi="true">
     <layout>
       <window_info id="Space Code Reviews" />
@@ -79,7 +81,7 @@
       <window_info id="Commit_Guest" />
       <window_info id="Pull Requests" />
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77446485" visible="true" weight="0.18411458" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77446485" visible="true" weight="0.1981081" />
       <window_info id="Commit" order="1" weight="0.26513514" />
       <window_info id="Structure" order="2" sideWeight="0.22553515" side_tool="true" weight="0.37421876" />
       <window_info anchor="bottom" id="DataprocToolWindow" />
@@ -90,7 +92,7 @@
       <window_info anchor="bottom" id="TODO" />
       <window_info anchor="bottom" id="File Transfer" />
       <window_info anchor="bottom" id="Python Console" weight="0.3300926" />
-      <window_info active="true" anchor="bottom" id="Run" visible="true" weight="0.32146248" />
+      <window_info active="true" anchor="bottom" id="Run" visible="true" weight="0.3300095" />
       <window_info anchor="bottom" id="HiveToolWindow" />
       <window_info anchor="bottom" id="GlueToolWindow" />
       <window_info anchor="bottom" id="EmrToolWindow" />
@@ -99,10 +101,10 @@
       <window_info anchor="bottom" id="SparkMonitoringToolWindow" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.34520417" />
       <window_info anchor="bottom" id="Problems View" order="1" weight="0.34520417" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.3134259" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.3300095" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3300095" />
       <window_info anchor="bottom" id="Services" order="4" weight="0.32146248" />
-      <window_info anchor="right" id="Plots" weight="0.30783784" />
+      <window_info anchor="right" id="Plots" visible="true" weight="0.2964865" />
       <window_info anchor="right" id="Endpoints" />
       <window_info anchor="right" id="BigDataToolWindow" />
       <window_info anchor="right" id="SciView" />
@@ -519,7 +521,7 @@
     <SUITE FILE_PATH="coverage/step_1$upload_mapping.coverage" NAME="upload_mapping Coverage Results" MODIFIED="1719071772939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/step_11_semantic_analysis" />
     <SUITE FILE_PATH="coverage/step_1$load_data.coverage" NAME="load_data Coverage Results" MODIFIED="1693093204189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/step_1$report_stats.coverage" NAME="report_stats Coverage Results" MODIFIED="1695487287120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/step_2" />
-    <SUITE FILE_PATH="coverage/step_1$semantic_evaluator.coverage" NAME="semantic_evaluator Coverage Results" MODIFIED="1719160409614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/step_11_semantic_analysis" />
+    <SUITE FILE_PATH="coverage/step_1$semantic_evaluator.coverage" NAME="semantic_evaluator Coverage Results" MODIFIED="1720122182535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/step_11_semantic_analysis" />
     <SUITE FILE_PATH="coverage/step_1$extract_doi.coverage" NAME="extract_doi Coverage Results" MODIFIED="1692991295360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/step_1$itnoG.coverage" NAME="itnoG Coverage Results" MODIFIED="1692904312794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

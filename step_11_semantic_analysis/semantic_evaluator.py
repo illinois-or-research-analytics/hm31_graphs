@@ -1,5 +1,7 @@
 import json
 import os
+
+import pandas as pd
 import psycopg2
 from psycopg2 import sql
 import multiprocessing
@@ -12,6 +14,7 @@ from itertools import starmap
 import tqdm
 import matplotlib.pyplot as plt
 import networkx as nx
+import pickle
 
 
 
@@ -20,7 +23,6 @@ os.environ["PGDATABASE"] = "ernieplus"
 
 def fetch_embeddings_from_table(squashed_node_id_list):
     try:
-        squashed_node_id_list.sort()
         # Connect to the PostgreSQL database
         conn = psycopg2.connect("")
         cur = conn.cursor()
@@ -50,32 +52,84 @@ def fetch_embeddings_from_table(squashed_node_id_list):
         cur.close()
         conn.close()
 
+import psycopg2
+import numpy as np
 
-def calculate_average_similarity(embedding_matrix):
-    n = embedding_matrix.shape[0]
+def fetch_original_ids():
+    try:
+        # Connect to the PostgreSQL database
+        conn = psycopg2.connect("")
+        cur = conn.cursor()
 
-    if n < 100:
-        A = np.matmul(embedding_matrix, embedding_matrix.transpose())
-        lower_triangle = np.tril(A)
+        # Define the query to fetch original_id ordered by squashed_id
+        query = "SELECT original_id FROM hm31.cenm_node_id_mapping ORDER BY squashed_id"
+        cur.execute(query)
+
+        # Fetch all results
+        results = cur.fetchall()
+
+        # Process the results into a list
+        original_id_list = [result[0] for result in results]
+
+        with open('original_ids.pkl', 'wb') as f:
+            pickle.dump(original_id_list, f)
+
+        return original_id_list
+
+    except Exception as e:
+        print("Error:", e)
+        return "fetch error"
+
+    finally:
+        if cur:
+            cur.close()
+        if conn:
+            conn.close()
 
 
-        average_similarity = (2 * np.sum(lower_triangle))/(n*(n-1))
-        return average_similarity
 
-    else:
+def calculate_average_similarity(embedding_matrix, squashed_node_id_list):
+        n = embedding_matrix.shape[0]
+        statistics_list = []
+        all_similarities = []
+
+    # if n < 10000:
+    #     A = np.matmul(embedding_matrix, embedding_matrix.transpose())
+    #     lower_triangle = np.tril(A)
+    #
+    #     average_similarity = (2 * np.sum(lower_triangle))/(n*(n-1))
+    #     return average_similarity
+    #
+    # else:
         sum = 0
         for i in range(n):
+            first_node_id = original_ids[squashed_node_id_list[i]]
             for j in range(i):
-                sum += np.matmul(embedding_matrix[i,:], embedding_matrix[j, :])
+                second_node_id = original_ids[squashed_node_id_list[j]]
+
+                v1 = embedding_matrix[i,:]
+                v2 = embedding_matrix[j,:]
+
+                similarity = np.dot(v1, v2)/(np.linalg.norm(v1)* np.linalg.norm(v2))
+                sum += similarity
+                statistics_list.append({'first_node_id': first_node_id, 'second_node_id': second_node_id, 'similarity': similarity})
+                all_similarities.append(similarity)
+
+        # similarity_df = pd.DataFrame(statistics_list)
+        # similarity_df.to_json()
         sum = (2* sum)/(n*(n-1))
-        return sum
+        stats = {'cluster_size': n, 'Q1': np.quantile(all_similarities, 0.25), 'Q2': np.median(all_similarities), 'Q3': np.quantile(all_similarities, 0.75), 'mean': sum, 'min': min(all_similarities), 'max': max(all_similarities)}
+
+        return sum, statistics_list, stats
 
 
-def similarity_wrapper(node_id_lst, cluster_index, manager_dict):
-    embeddings = fetch_embeddings_from_table(node_id_lst)
-    average_similarity = calculate_average_similarity(embeddings)
+def similarity_wrapper(squashed_node_id_list, cluster_index, manager_dict):
+    squashed_node_id_list.sort()
+    embeddings = fetch_embeddings_from_table(squashed_node_id_list)
+    average_similarity, similarity_df, stats = calculate_average_similarity(embeddings, squashed_node_id_list)
 
-    manager_dict[cluster_index] = (average_similarity, embeddings.shape[0])
+    # manager_dict[cluster_index] = (average_similarity, embeddings.shape[0], similarity_df, stats)
+    manager_dict[cluster_index] = (average_similarity, embeddings.shape[0], stats)
 
 
 def calculate_single_community_degrees(nx_graph, community_nodes, manager_dict = None):
@@ -97,11 +151,16 @@ def read_json_clustering(file_path):
     clusters = clustering_dict['clusters']
     return clusters
 
-if __name__ == "__main__":
+if __name__ == "__main__":# 3374836
+
     file_path = '../step_10_cluster/files/results/topo_only_scale_1_10/cocitation_jaccard_0.25.json'
 
     clusters = read_json_clustering(file_path)
     non_singletons = []
+
+    with open('original_ids.pkl', 'rb') as f:
+        original_ids = pickle.load(f)
+
 
     arguments = []
     idx = 0
@@ -112,7 +171,7 @@ if __name__ == "__main__":
     total = 0
 
     for cluster_name, cluster_list in clusters.items():
-        if len(cluster_list) > 100:
+        if len(cluster_list) > 10:
             arguments.append((cluster_list, idx, manager_dict))
             idx += 1
             total += len(cluster_list)
@@ -120,24 +179,33 @@ if __name__ == "__main__":
 
 
 
-    # def wrapper(node_id_lst, cluster_index, manager_dict):
 
     start = time.time()
 
     with Pool(16) as pool:
-        results = pool.starmap(similarity_wrapper, tqdm.tqdm(arguments, total=len(arguments)))
+        # results = pool.starmap(similarity_wrapper, tqdm.tqdm(arguments, total=len(arguments)))
+        results = pool.starmap(similarity_wrapper, arguments)
 
     obtained_total = 0
 
     cluster_sizes = []
     avg_similarity = []
+    idx = 0
+    whole_stat_dict = {}
 
     for key, value in manager_dict.items():
-        obtained_total += value[-1]
-        cluster_sizes.append(value[-1])
+        obtained_total += value[1]
+        cluster_sizes.append(value[1])
         avg_similarity.append(value[0])
+        whole_stat_dict[idx] = {'stats': value[2]}
+        idx += 1
 
-    # print(obtained_total, total)
+    with open('stats_gt10.json', 'w') as file:
+        json.dump(whole_stat_dict, file, indent=4)
+
+    # (average_similarity, embeddings.shape[0], similarity_df, stats)
+
+    print(obtained_total, total)
 
     plt.scatter(cluster_sizes, avg_similarity, c='blue', marker='o', alpha=0.7)
 
@@ -146,15 +214,8 @@ if __name__ == "__main__":
     plt.ylabel('Average similarity')
     plt.title('Scatter Plot of Similarity vs Cluster size')
 
-    plt.show()
-    # plt.savefig('similarity_vs_cluster_size_gt100.png')
-
-
+    # plt.show()
+    plt.savefig('similarity_vs_cluster_size_gt10.png')
     end = time.time()
-
-
-
-
-
-
+    print(f'elasped {end - start}')
     #estimate: ~ 1.5 hr

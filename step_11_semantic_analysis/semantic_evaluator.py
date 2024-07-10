@@ -15,6 +15,7 @@ import tqdm
 import matplotlib.pyplot as plt
 import networkx as nx
 import pickle
+from scipy.interpolate import make_interp_spline
 
 
 
@@ -151,6 +152,78 @@ def read_json_clustering(file_path):
     clusters = clustering_dict['clusters']
     return clusters
 
+def plot_with_errors(cluster_sizes, average_similarities):
+    stats_dict = {}
+    for i in range(len(cluster_sizes)):
+        cluster_size = cluster_sizes[i]
+        if not cluster_size in stats_dict:
+            stats_dict[cluster_size] = []
+        stats_dict[cluster_size].append(average_similarities[i])
+    stats_dict = {key: stats_dict[key] for key in sorted(stats_dict)}
+
+    # print(stats_dict)
+    avg = []
+    var = []
+    unique_sizes = []
+
+    for a_cluster_size in stats_dict.keys():
+        # print(a_cluster_size, stats_dict[a_cluster_size])
+        avg.append(np.mean(stats_dict[a_cluster_size]))
+        var.append(np.var(stats_dict[a_cluster_size]))
+        unique_sizes.append(a_cluster_size)
+
+    avg = np.asarray(avg)
+    # print(avg)
+    var = np.asarray(var)
+    unique_sizes = np.asarray(unique_sizes)
+
+    errors = np.sqrt(var)
+    lower_bounds = avg - errors
+    upper_bounds = avg + errors
+
+    # plt.scatter(unique_sizes, avg, c='blue', marker='o', alpha=0.7)
+    # plt.fill_between(unique_sizes, lower_bounds, upper_bounds, color='blue', alpha=0.2)
+    #
+    # plt.xlabel('Cluster Sizes')
+    # plt.ylabel('Average Similarity')
+    # plt.title('Scatter Plot with Error Regions')
+    # plt.show()
+    print(len(unique_sizes), len(avg))
+    x_new = np.linspace(unique_sizes.min(), unique_sizes.max(), 300)
+    spl_avg = make_interp_spline(unique_sizes, avg, k=2)
+    spl_lower = make_interp_spline(unique_sizes, lower_bounds, k=3)
+    spl_upper = make_interp_spline(unique_sizes, upper_bounds, k=3)
+
+    y_avg_smooth = spl_avg(x_new)
+    y_lower_smooth = spl_lower(x_new)
+    y_upper_smooth = spl_upper(x_new)
+
+    y_avg_smooth = np.clip(y_avg_smooth, 0, 1)
+    y_lower_smooth = np.clip(y_lower_smooth, 0, 1)
+    y_upper_smooth = np.clip(y_upper_smooth, 0, 1)
+
+
+# Plot the smooth curve
+    plt.plot(x_new, y_avg_smooth, label='Average Similarity', color='blue')
+
+    # Plot the shaded error region
+    plt.fill_between(x_new, y_lower_smooth, y_upper_smooth, color='blue', alpha=0.2, label='Error Region')
+    coefficients = np.polyfit(unique_sizes, avg, 1)
+    trendline = np.polyval(coefficients, x_new)
+
+    plt.plot(x_new, trendline, label='Trendline', color='red', linestyle='--')
+
+
+    plt.xlabel('Cluster Sizes')
+    plt.ylabel('Average Similarity')
+    plt.title('Smooth Curve with Shaded Error Regions')
+    plt.legend()
+    # plt.show()
+    plt.savefig('similarity_vs_cluster_size_gt10_exc600_smooth_trend.png')
+
+
+
+
 if __name__ == "__main__":# 3374836
 
     file_path = '../step_10_cluster/files/results/topo_only_scale_1_10/cocitation_jaccard_0.25.json'
@@ -171,14 +244,11 @@ if __name__ == "__main__":# 3374836
     total = 0
 
     for cluster_name, cluster_list in clusters.items():
-        if len(cluster_list) > 10:
+        # if len(cluster_list) > 10:
+        if len(cluster_list) > 10 and len(cluster_list) < 600:
             arguments.append((cluster_list, idx, manager_dict))
             idx += 1
             total += len(cluster_list)
-
-
-
-
 
     start = time.time()
 
@@ -207,15 +277,18 @@ if __name__ == "__main__":# 3374836
 
     print(obtained_total, total)
 
-    plt.scatter(cluster_sizes, avg_similarity, c='blue', marker='o', alpha=0.7)
+    # plt.scatter(cluster_sizes, avg_similarity, c='blue', marker='o', alpha=0.7)
 
-    # Add labels and title
-    plt.xlabel('Cluster sizes')
-    plt.ylabel('Average similarity')
-    plt.title('Scatter Plot of Similarity vs Cluster size')
-
+    # # Add labels and title
+    # plt.xlabel('Cluster sizes')
+    # plt.ylabel('Average similarity')
+    # plt.title('Scatter Plot of Similarity vs Cluster size')
+    #
     # plt.show()
-    plt.savefig('similarity_vs_cluster_size_gt10.png')
+    # # plt.savefig('similarity_vs_cluster_size_gt100.png')
+
+    plot_with_errors(cluster_sizes, avg_similarity)
+
     end = time.time()
     print(f'elasped {end - start}')
-    #estimate: ~ 1.5 hr
+    #estimate: ~ 10 min

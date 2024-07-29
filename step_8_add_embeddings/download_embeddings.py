@@ -6,10 +6,8 @@ def download(file, save_address, base_url ):
 
 #calculate all the filenames for embeddings and pmids to be downloaded
 def get_all_file_names(url):
-    # Send an HTTP GET request
     response = requests.get(url)
 
-    # Print the response content
     input_string = response.text
 
     pattern = r'<a href="([^"]+)">([^<]+)</a>'

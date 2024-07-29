@@ -3,7 +3,6 @@
 
 def parse(file_path):
     try:
-        # Open and read the XML file
         with open(file_path, 'r', encoding='utf-8') as file:
             xml_contents = file.read()
         #print("read")

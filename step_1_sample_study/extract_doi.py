@@ -7,7 +7,6 @@ import csv
 
 csv_file_path = '../data/exosome.csv'
 
-# Open the CSV file for reading
 with open(csv_file_path, 'r') as csv_file:
     csv_reader = csv.reader(csv_file)
 

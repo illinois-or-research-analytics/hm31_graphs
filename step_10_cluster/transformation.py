@@ -11,7 +11,6 @@ def main():
 
     args = parser.parse_args()
 
-    # Get the file name and function name from command-line arguments
     file_name = args.file_name
     function_name = args.function_name
     # float_list_str = args.float_list

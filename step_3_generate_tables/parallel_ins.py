@@ -3,14 +3,11 @@ import psycopg2
 from psycopg2 import sql
 import multiprocessing
 import re
-
-# Set the PGDATABASE environment variable
 os.environ["PGDATABASE"] = "ernieplus"
 
 
 def insert_values_into_table(values_list):
     try:
-        # Connect to the PostgreSQL database
         conn = psycopg2.connect("")
         cur = conn.cursor()
 

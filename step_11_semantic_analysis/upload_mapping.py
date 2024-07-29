@@ -1,7 +1,8 @@
 from pyspark.sql import SparkSession
 
+#upload mapping to Postgres
+
 def main():
-    # Initialize Spark session
     spark = SparkSession \
         .builder \
         .appName("Python Spark SQL basic example") \
@@ -19,14 +20,10 @@ def main():
     'jdbc_url' : "jdbc:postgresql://valhalla.cs.illinois.edu:5432/ernieplus"
     }
 
-
-    # Path to your CSV file
     csv_file_path = 'mapping.csv'
 
-    # Read CSV file into a DataFrame
     df = spark.read.csv(csv_file_path, header=True, inferSchema=True)
 
-    # Write DataFrame to PostgreSQL table
     write_df(df, jdbc_url, 'hm31.CENM_node_id_mapping', jdbc_properties)
 
     spark.stop()

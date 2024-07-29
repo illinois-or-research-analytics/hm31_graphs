@@ -24,22 +24,18 @@ os.environ["PGDATABASE"] = "ernieplus"
 
 def fetch_embeddings_from_table(squashed_node_id_list):
     try:
-        # Connect to the PostgreSQL database
         conn = psycopg2.connect("")
         cur = conn.cursor()
 
-        # Convert the node_id_list to a batch query format
         node_ids = ','.join(cur.mogrify("%s", (node_id,)).decode('utf-8') for node_id in squashed_node_id_list)
 
         table_name = 'hm31.cenm_squashed_cleaned_embeddings'
-        # Execute the SELECT query to fetch the corresponding embeddings
+
         query = f"SELECT squashed_id, embedding FROM {table_name} WHERE squashed_id IN ({node_ids})"
         cur.execute(query)
 
-        # Fetch all results
         results = cur.fetchall()
 
-        # Process the results if needed
         embeddings_lst = [embedding for node_id, embedding in results]
         embedding_arr = np.asarray(embeddings_lst)
 
@@ -58,18 +54,14 @@ import numpy as np
 
 def fetch_original_ids():
     try:
-        # Connect to the PostgreSQL database
         conn = psycopg2.connect("")
         cur = conn.cursor()
 
-        # Define the query to fetch original_id ordered by squashed_id
         query = "SELECT original_id FROM hm31.cenm_node_id_mapping ORDER BY squashed_id"
         cur.execute(query)
 
-        # Fetch all results
         results = cur.fetchall()
 
-        # Process the results into a list
         original_id_list = [result[0] for result in results]
 
         with open('original_ids.pkl', 'wb') as f:
@@ -263,12 +255,15 @@ if __name__ == "__main__":# 3374836
     idx = 0
     whole_stat_dict = {}
 
+    total_similarities = 0
+
     for key, value in manager_dict.items():
         obtained_total += value[1]
         cluster_sizes.append(value[1])
         avg_similarity.append(value[0])
         whole_stat_dict[idx] = {'stats': value[2]}
         idx += 1
+        total_similarities += (value[1]*(value[1]-1))/2
 
     with open('stats_gt10.json', 'w') as file:
         json.dump(whole_stat_dict, file, indent=4)
@@ -276,7 +271,7 @@ if __name__ == "__main__":# 3374836
     # (average_similarity, embeddings.shape[0], similarity_df, stats)
 
     print(obtained_total, total)
-
+    print(total_similarities)
     # plt.scatter(cluster_sizes, avg_similarity, c='blue', marker='o', alpha=0.7)
 
     # # Add labels and title

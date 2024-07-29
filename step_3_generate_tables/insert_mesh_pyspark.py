@@ -9,9 +9,7 @@ import time
 if __name__ == "__main__":
     file_path = 'all_mesh_retrieved.json'
 
-    # Open the JSON file for reading
     with open(file_path, 'r') as json_file:
-        # Load the JSON data
         all_mesh_terms = json.load(json_file)
 
     spark = SparkSession \

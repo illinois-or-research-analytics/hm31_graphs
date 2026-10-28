@@ -1,3 +1,4 @@
+import os
 #Switch from sql to local as a parquet file
 from pyspark.ml.feature import MinMaxScaler, VectorAssembler
 from pyspark.sql import SparkSession
@@ -44,7 +45,7 @@ if __name__ == '__main__':
 
     jdbc_properties = {
         "user": "hm31",
-        "password": "graphs",
+        "password": os.environ["ERNIE_DB_PASSWORD"],
         "driver": "org.postgresql.Driver",
         'jdbc_url' : "jdbc:postgresql://valhalla.cs.illinois.edu:5432/ernieplus"
     }

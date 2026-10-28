@@ -10,7 +10,7 @@ parquet_output='/shared/pubmed2024/'
 cores=70
 table_name='public.pubmed_etl_2024'
 user='hm31'
-pas='graphs'
+pas="${ERNIE_DB_PASSWORD:?Set ERNIE_DB_PASSWORD}"
 
 start_time=$(date +"%s")
 

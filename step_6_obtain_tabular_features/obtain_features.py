@@ -1,3 +1,4 @@
+import os
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, FloatType
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
@@ -106,7 +107,7 @@ if __name__ == "__main__":
     jdbc_url = "jdbc:postgresql://valhalla.cs.illinois.edu:5432/ernieplus"
     jdbc_properties = {
         "user": "hm31",
-        "password": "graphs",
+        "password": os.environ["ERNIE_DB_PASSWORD"],
         "driver": "org.postgresql.Driver"
     }
 

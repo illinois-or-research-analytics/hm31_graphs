@@ -1,3 +1,4 @@
+import os
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col
 from pyspark.sql import functions as F
@@ -84,7 +85,7 @@ george_df = george_df.withColumnRenamed("PMID", "pmid")
 jdbc_url = "jdbc:postgresql://valhalla.cs.illinois.edu:5432/ernieplus"
 jdbc_properties = {
     "user": "hm31",
-    "password": "graphs",
+    "password": os.environ["ERNIE_DB_PASSWORD"],
     "driver": "org.postgresql.Driver"
 }
 

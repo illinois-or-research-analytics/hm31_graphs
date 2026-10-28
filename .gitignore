@@ -9,3 +9,12 @@ test/
 step_9_normalization_and_weighting/normalized/
 step_9_normalization_and_weighting/parquets/
 step_10_cluster/files/
+
+# Data files are not tracked (data-use terms of the source network; see README)
+step_*/**/*.npy
+step_*/**/*.pkl
+step_*/**/*.pickle
+step_*/**/*.json
+step_*/**/*.csv
+step_*/**/*.tsv
+step_*/**/*.parquet
